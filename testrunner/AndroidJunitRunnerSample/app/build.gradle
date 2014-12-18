@@ -29,6 +29,7 @@ android {
 dependencies {
     // App's dependencies, including test
     compile 'com.android.support:support-annotations:21.0.3'
+    compile 'com.google.guava:guava:18.0'
 
     // Testing-only dependencies
     androidTestCompile 'com.android.support.test:testing-support-lib:0.1'

@@ -16,6 +16,8 @@
 
 package com.example.android.testing.androidjunitrunnersample;
 
+import static com.google.common.base.Preconditions.checkArgument;
+
 /**
  * A simple calculator with a basic set of operations.
  */
@@ -41,9 +43,7 @@ public class Calculator {
      * Divide operation
      */
     public double div(double firstOperand, double secondOperand) {
-        if (secondOperand == 0) {
-            throw new IllegalArgumentException("secondOperand must be != 0, you cannot divide by zero");
-        }
+        checkArgument(secondOperand != 0, "secondOperand must be != 0, you cannot divide by zero");
         return firstOperand / secondOperand;
     }
 
