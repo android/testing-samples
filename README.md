@@ -4,19 +4,19 @@ Android testing samples
 
 A collection of samples demonstrating different frameworks and techniques for automated testing.
 
-Pre-requisites
+Prerequisites
 --------------
 
 - Android SDK v21
-- Android Build Tools v21.1.1
+- Android Build Tools v21.1.2
 - Android Support Repository
 
 Getting Started
 ---------------
 
-These samples use the Gradle build system. To build this project, enter a project directory and use the `./gradlew build` command or use "Import Project" in Android Studio. Use `./gradlew connectedCheck` to run the tests on a connected emulator or device.
+These samples use the Gradle build system. To build a project, enter the project directory and use the `./gradlew assemble` command or use "Import Project" in Android Studio. Use `./gradlew connectedCheck` to run the tests on a connected emulator or device. 
 
-There is a top-level `build.gradle` file but only meant to be used on a CI (Continuous Integration) server.
+There is a top-level `build.gradle` file if you want to build and test all samples from the root directory. This is mostly helpful to build on a CI (Continuous Integration) server.
 
 Support
 -------
@@ -49,4 +49,5 @@ distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
 WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
 License for the specific language governing permissions and limitations under
 the License.
+
 
