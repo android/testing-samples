@@ -32,6 +32,7 @@ import android.test.suitebuilder.annotation.LargeTest;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
@@ -113,8 +114,10 @@ public class CalculatorInstrumentationTest
     private void performOperation(int btnOperationResId, String operandOne,
         String operandTwo, String expectedResult) {
         // Type the two operands in the EditText fields
-        onView(withId(R.id.operand_one_edit_text)).perform(typeText(operandOne));
-        onView(withId(R.id.operand_two_edit_text)).perform(typeText(operandTwo));
+        onView(withId(R.id.operand_one_edit_text)).perform(typeText(operandOne),
+                closeSoftKeyboard());
+        onView(withId(R.id.operand_two_edit_text)).perform(typeText(operandTwo),
+                closeSoftKeyboard());
 
         // Click on a given operation button
         onView(withId(btnOperationResId)).perform(click());

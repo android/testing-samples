@@ -68,7 +68,8 @@ public class ChangeTextBehaviorTest extends ActivityInstrumentationTestCase2<Mai
 
     public void testChangeText_newActivity() {
         // Type text and then press the button.
-        onView(withId(R.id.editTextUserInput)).perform(typeText(STRING_TO_BE_TYPED));
+        onView(withId(R.id.editTextUserInput)).perform(typeText(STRING_TO_BE_TYPED),
+                closeSoftKeyboard());
         onView(withId(R.id.activityChangeTextBtn)).perform(click());
 
         // This view is in a different Activity, no need to tell Espresso.

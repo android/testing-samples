@@ -21,6 +21,7 @@ import android.test.suitebuilder.annotation.LargeTest;
 import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.action.ViewActions.typeTextIntoFocusedView;
 import static android.support.test.espresso.assertion.ViewAssertions.doesNotExist;
@@ -73,7 +74,7 @@ public class MultiWindowTest extends ActivityInstrumentationTestCase2<SuggestAct
     public void testAutoCompleteTextView_twoSuggestions() {
         // Type "So" to trigger two suggestions.
         onView(withId(R.id.auto_complete_text_view))
-                .perform(typeText("So"));
+                .perform(typeText("So"), closeSoftKeyboard());
 
         // Check that both suggestions are displayed.
         onView(withText("South China Sea"))
@@ -87,7 +88,7 @@ public class MultiWindowTest extends ActivityInstrumentationTestCase2<SuggestAct
     public void testAutoCompleteTextView_oneSuggestion() {
         // Type "South" to trigger one suggestion.
         onView(withId(R.id.auto_complete_text_view))
-                .perform(typeTextIntoFocusedView("South "));
+                .perform(typeTextIntoFocusedView("South "), closeSoftKeyboard());
 
         // Should be displayed
         onView(withText("South China Sea"))
@@ -103,7 +104,7 @@ public class MultiWindowTest extends ActivityInstrumentationTestCase2<SuggestAct
     public void testAutoCompleteTextView_clickAndCheck() {
         // Type text into the text view
         onView(withId(R.id.auto_complete_text_view))
-                .perform(typeTextIntoFocusedView("South "));
+                .perform(typeTextIntoFocusedView("South "), closeSoftKeyboard());
 
         // Tap on a suggestion.
         onView(withText("South China Sea"))
@@ -119,7 +120,7 @@ public class MultiWindowTest extends ActivityInstrumentationTestCase2<SuggestAct
         // NB: The autocompletion box is implemented with a ListView, so the preferred way
         // to interact with it is onData(). We can use inRoot here too!
         onView(withId(R.id.auto_complete_text_view))
-                .perform(typeText("S"));
+                .perform(typeText("S"), closeSoftKeyboard());
 
         // This is useful because some of the completions may not be part of the View Hierarchy
         // unless you scroll around the list.
