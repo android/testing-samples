@@ -16,12 +16,12 @@
 
 package com.example.android.testing.espresso.CustomMatcherSample;
 
-import com.google.common.annotations.VisibleForTesting;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import com.google.common.annotations.VisibleForTesting;
 
 import java.util.Arrays;
 import java.util.List;

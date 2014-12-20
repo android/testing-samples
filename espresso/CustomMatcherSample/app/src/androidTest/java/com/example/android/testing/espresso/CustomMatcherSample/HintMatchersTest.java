@@ -16,8 +16,6 @@
 
 package com.example.android.testing.espresso.CustomMatcherSample;
 
-import com.google.common.annotations.VisibleForTesting;
-
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.LargeTest;
 
