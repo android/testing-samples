@@ -16,7 +16,7 @@ This project uses the Gradle build system. You don't need an IDE to build and ex
     * Choose a module
     * Add a *Specific instrumentation runner*: `android.support.test.runner.AndroidJUnitRunner`
 1. Connect a device or start an emulator
-    * [https://code.google.com/p/android-test-kit/wiki/DisablingAnimations Turn animations off].
+    * [Turn animations off](https://code.google.com/p/android-test-kit/wiki/DisablingAnimations).
 1. Run the newly created configuration
 
 The application will be started on the device/emulator and a series of actions will be performed automatically.
