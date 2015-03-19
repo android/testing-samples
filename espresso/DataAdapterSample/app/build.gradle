@@ -2,13 +2,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion '21.1.2'
-
+    compileSdkVersion 22
+    buildToolsVersion '22'
     defaultConfig {
         applicationId "com.example.android.testing.espresso.DataAdapterSample"
         minSdkVersion 10
-        targetSdkVersion 21
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -17,15 +16,15 @@ android {
     packagingOptions {
         exclude 'LICENSE.txt'
     }
+    productFlavors {
+    }
 }
 
 dependencies {
     // App dependencies
     compile 'com.android.support:support-annotations:21.0.3'
     compile 'com.google.guava:guava:18.0'
-
     // Testing-only dependencies
     androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.0'
-
 }

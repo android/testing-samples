@@ -1,17 +1,19 @@
-
 apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 22
     buildToolsVersion '22'
     defaultConfig {
-        applicationId "com.example.android.testing.espresso.MultiWindowSample"
-        minSdkVersion 10
+        applicationId "com.example.android.testing.uiautomator.BasicSample"
+        minSdkVersion 18
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    packagingOptions {
+        exclude 'LICENSE.txt'
     }
     buildTypes {
         release {
@@ -19,21 +21,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    packagingOptions {
-        exclude 'LICENSE.txt'
-    }
-    lintOptions {
-        abortOnError false
-    }
     productFlavors {
     }
 }
 
 dependencies {
-    // App dependencies
-    compile 'com.android.support:support-annotations:21.0.3'
     compile 'com.google.guava:guava:18.0'
     // Testing-only dependencies
     androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.0'
+    // UiAutomator Testing
+    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.0.0'
+    androidTestCompile 'org.hamcrest:hamcrest-integration:1.1'
 }
