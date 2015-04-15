@@ -1,5 +1,5 @@
 /*
- * Copyright 2014, The Android Open Source Project
+ * Copyright 2015, The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 package com.example.android.testing.androidjunitrunnersample.suite;
 
 import com.example.android.testing.androidjunitrunnersample.CalculatorInstrumentationTest;
-import com.example.android.testing.androidjunitrunnersample.OperationHintInstrumentationTest;
+import com.example.android.testing.androidjunitrunnersample.OperationHintLegacyInstrumentationTest;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -26,5 +26,5 @@ import org.junit.runners.Suite;
  * Runs all Junit3 and Junit4 Instrumentation tests.
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({CalculatorInstrumentationTest.class, OperationHintInstrumentationTest.class})
+@Suite.SuiteClasses({CalculatorInstrumentationTest.class, OperationHintLegacyInstrumentationTest.class})
 public class InstrumentationTestSuite {}

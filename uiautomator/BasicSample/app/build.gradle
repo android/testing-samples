@@ -28,7 +28,7 @@ android {
 dependencies {
     compile 'com.google.guava:guava:18.0'
     // Testing-only dependencies
-    androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
+    androidTestCompile 'com.android.support.test:runner:0.2'
     // UiAutomator Testing
     androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.0.0'
     androidTestCompile 'org.hamcrest:hamcrest-integration:1.1'

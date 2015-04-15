@@ -1,5 +1,5 @@
 /*
- * Copyright 2014, The Android Open Source Project
+ * Copyright 2015, The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,15 @@
  */
 package com.example.android.testing.espresso.MultiWindowSample;
 
+import android.support.test.rule.ActivityTestRule;
+import android.support.test.runner.AndroidJUnit4;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.LargeTest;
+
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
@@ -51,64 +58,80 @@ import static org.hamcrest.Matchers.not;
  * window will be layered on top of the screen. Espresso ignores this layer because it is
  * not connected to the keyboard/ime.
  * <p/>
- * Espresso provides the ability to switch the default window matcher used in both onView and onData
+ * Espresso provides the ability to switch the default window matcher used in both onView and
+ * onData
  * interactions.
  *
  * @see android.support.test.espresso.Espresso#onView
  * @see android.support.test.espresso.Espresso#onData
  */
+@RunWith(AndroidJUnit4.class)
 @LargeTest
-public class MultiWindowTest extends ActivityInstrumentationTestCase2<SuggestActivity> {
+public class MultiWindowTest {
 
-    public MultiWindowTest() {
-        super(SuggestActivity.class);
+    /**
+     * A JUnit {@link Rule @Rule} to launch your activity under test. This is a replacement
+     * for {@link ActivityInstrumentationTestCase2}.
+     * <p>
+     * Rules are interceptors which are executed for each test method and will run before
+     * any of your setup code in the {@link Before @Before} method.
+     * <p>
+     * {@link ActivityTestRule} will create and launch of the activity for you and also expose
+     * the activity under test. To get a reference to the activity you can use
+     * the {@link ActivityTestRule#getActivity()} method.
+     */
+    @Rule
+    public ActivityTestRule<SuggestActivity> mActivityRule = new ActivityTestRule<>(
+            SuggestActivity.class);
+
+    private SuggestActivity mActivity = null;
+
+    @Before
+    public void setActivity() {
+        mActivity = mActivityRule.getActivity();
     }
 
-    @Override
-    public void setUp() throws Exception {
-        super.setUp();
-        // Espresso will not launch our activity for us, we must launch it via getActivity().
-        getActivity();
-    }
-
-    public void testAutoCompleteTextView_twoSuggestions() {
+    @Test
+    public void autoCompleteTextView_twoSuggestions() {
         // Type "So" to trigger two suggestions.
         onView(withId(R.id.auto_complete_text_view))
                 .perform(typeText("So"), closeSoftKeyboard());
 
         // Check that both suggestions are displayed.
         onView(withText("South China Sea"))
-                .inRoot(withDecorView(not(is(getActivity().getWindow().getDecorView()))))
+                .inRoot(withDecorView(not(is(mActivity.getWindow().getDecorView()))))
                 .check(matches(isDisplayed()));
         onView(withText("Southern Ocean"))
-                .inRoot(withDecorView(not(is(getActivity().getWindow().getDecorView()))))
+                .inRoot(withDecorView(not(is(mActivity.getWindow().getDecorView()))))
                 .check(matches(isDisplayed()));
     }
 
-    public void testAutoCompleteTextView_oneSuggestion() {
+    @Test
+    public void autoCompleteTextView_oneSuggestion() {
         // Type "South" to trigger one suggestion.
         onView(withId(R.id.auto_complete_text_view))
                 .perform(typeTextIntoFocusedView("South "), closeSoftKeyboard());
 
         // Should be displayed
         onView(withText("South China Sea"))
-                .inRoot(withDecorView(not(is(getActivity().getWindow().getDecorView()))))
+                .inRoot(withDecorView(not(is(mActivity.getWindow().getDecorView()))))
                 .check(matches(isDisplayed()));
 
         // Should not be displayed.
         onView(withText("Southern Ocean"))
-                .inRoot(withDecorView(not(is(getActivity().getWindow().getDecorView()))))
+                .inRoot(withDecorView(not(is(mActivity.getWindow().getDecorView()))))
                 .check(doesNotExist());
     }
 
-    public void testAutoCompleteTextView_clickAndCheck() {
+    @Test
+    public void autoCompleteTextView_clickAndCheck() {
         // Type text into the text view
         onView(withId(R.id.auto_complete_text_view))
                 .perform(typeTextIntoFocusedView("South "), closeSoftKeyboard());
 
         // Tap on a suggestion.
         onView(withText("South China Sea"))
-                .inRoot(withDecorView(not(is(getActivity().getWindow().getDecorView()))))
+                .inRoot(withDecorView(not(is(mActivity.getWindow().getDecorView()))))
                 .perform(click());
 
         // By clicking on the auto complete term, the text should be filled in.
@@ -116,7 +139,8 @@ public class MultiWindowTest extends ActivityInstrumentationTestCase2<SuggestAct
                 .check(matches(withText("South China Sea")));
     }
 
-    public void testAutoCompleteTextView_onDataClickAndCheck() {
+    @Test
+    public void autoCompleteTextView_onDataClickAndCheck() {
         // NB: The autocompletion box is implemented with a ListView, so the preferred way
         // to interact with it is onData(). We can use inRoot here too!
         onView(withId(R.id.auto_complete_text_view))
@@ -125,7 +149,7 @@ public class MultiWindowTest extends ActivityInstrumentationTestCase2<SuggestAct
         // This is useful because some of the completions may not be part of the View Hierarchy
         // unless you scroll around the list.
         onData(allOf(instanceOf(String.class), is("Baltic Sea")))
-                .inRoot(withDecorView(not(is(getActivity().getWindow().getDecorView()))))
+                .inRoot(withDecorView(not(is(mActivity.getWindow().getDecorView()))))
                 .perform(click());
 
         // The text should be filled in.

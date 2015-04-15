@@ -1,5 +1,5 @@
 /*
- * Copyright 2014, The Android Open Source Project
+ * Copyright 2015, The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,13 @@ package com.example.android.testing.androidjunitrunnersample;
 
 import junit.framework.TestSuite;
 
-import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.internal.builders.AllDefaultPossibilitiesBuilder;
 import org.junit.runner.RunWith;
 
-import android.support.test.InstrumentationRegistry;
+import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.support.test.runner.AndroidJUnitRunner;
 import android.test.ActivityInstrumentationTestCase2;
@@ -37,50 +37,38 @@ import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertThat;
 
 /**
  * JUnit4 Ui Tests for {@link CalculatorActivity} using the {@link AndroidJUnitRunner}.
  * This class uses the JUnit4 syntax for tests.
- *
- * <p> With the new AndroidJUnit runner you can run both JUnit3 and JUnit4 tests in a single test
+ * <p>
+ * With the new AndroidJUnit runner you can run both JUnit3 and JUnit4 tests in a single test
  * suite. The {@link AndroidRunnerBuilder} which extends JUnit's
  * {@link AllDefaultPossibilitiesBuilder} will create a single {@link
- * TestSuite} from all tests and run them. </p>
+ * TestSuite} from all tests and run them.
  */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class CalculatorInstrumentationTest
-        extends ActivityInstrumentationTestCase2<CalculatorActivity> {
+public class CalculatorInstrumentationTest {
 
-    private CalculatorActivity mActivity;
-
-    public CalculatorInstrumentationTest() {
-        super(CalculatorActivity.class);
-    }
-
-    @Before
-    public void setUp() throws Exception {
-        super.setUp();
-        // As the way to access Instrumentation is changed in the new runner, we need to inject it
-        // manually into ActivityInstrumentationTestCase2.
-        injectInstrumentation(InstrumentationRegistry.getInstrumentation());
-
-        // Espresso does not start the Activity for you we need to do this manually here.
-        mActivity = getActivity();
-    }
-
-    @Test
-    public void checkPreconditions() {
-        assertThat(mActivity, notNullValue());
-        // Check that Instrumentation was correctly injected in setUp()
-        assertThat(getInstrumentation(), notNullValue());
-    }
+    /**
+     * A JUnit {@link Rule @Rule} to launch your activity under test. This is a replacement
+     * for {@link ActivityInstrumentationTestCase2}.
+     * <p>
+     * Rules are interceptors which are executed for each test method and will run before
+     * any of your setup code in the {@link Before @Before} method.
+     * <p>
+     * {@link ActivityTestRule} will create and launch of the activity for you and also expose
+     * the activity under test. To get a reference to the activity you can use
+     * the {@link ActivityTestRule#getActivity()} method.
+     */
+    @Rule
+    public ActivityTestRule<CalculatorActivity> mActivityRule = new ActivityTestRule<>(
+            CalculatorActivity.class);
 
     @Test
     public void noOperandShowsComputationError() {
-        final String expectedResult = mActivity.getString(R.string.computationError);
+        final String expectedResult = mActivityRule.getActivity().getString(R.string.computationError);
         onView(withId(R.id.operation_add_btn)).perform(click());
         onView(withId(R.id.operation_result_text_view)).check(matches(withText(expectedResult)));
     }
@@ -102,7 +90,8 @@ public class CalculatorInstrumentationTest
 
     @Test
     public void divZeroForOperandTwoShowsError() {
-        final String expectedResult = mActivity.getString(R.string.computationError);
+        final String expectedResult = mActivityRule.getActivity().getString(
+                R.string.computationError);
         performOperation(R.id.operation_div_btn, "128.0", "0.0", expectedResult);
     }
 
@@ -112,7 +101,7 @@ public class CalculatorInstrumentationTest
     }
 
     private void performOperation(int btnOperationResId, String operandOne,
-        String operandTwo, String expectedResult) {
+            String operandTwo, String expectedResult) {
         // Type the two operands in the EditText fields
         onView(withId(R.id.operand_one_edit_text)).perform(typeText(operandOne),
                 closeSoftKeyboard());
@@ -124,13 +113,6 @@ public class CalculatorInstrumentationTest
 
         // Check the expected test is displayed in the Ui
         onView(withId(R.id.operation_result_text_view)).check(matches(withText(expectedResult)));
-    }
-
-    @After
-    public void tearDown() throws Exception {
-        // Make sure that we call the tearDown() method of ActivityInstrumentationTestCase2
-        // to clean up and not leak any objects.
-        super.tearDown();
     }
 
 }

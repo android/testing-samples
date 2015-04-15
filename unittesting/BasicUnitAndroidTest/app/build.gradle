@@ -18,6 +18,6 @@ android {
 }
 
 dependencies {
-    androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
+    androidTestCompile 'com.android.support.test:runner:0.2'
     androidTestCompile 'org.hamcrest:hamcrest-library:1.1'
 }
