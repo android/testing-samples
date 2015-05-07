@@ -16,13 +16,13 @@
 
 package com.example.android.testing.espresso.basicsamplebundled;
 
-import com.google.common.base.Strings;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.google.common.base.Strings;
 
 /**
  * A simple {@link Activity} that shows a message.
