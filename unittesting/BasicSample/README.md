@@ -17,6 +17,7 @@ For more information see http://tools.android.com/tech-docs/unit-testing-support
 
 1. Download the project code, preferably using `git clone`.
 1. In Android Studio, select *File* | *Open...* and point to the `./build.gradle` file.
+1. Make sure you select "Unit Tests" as the test artifact in the "Build Variants" panel in Android Studio. 
 1. Check out the relevant code:
     * The application code is located in `src/main/java`
     * Unit Tests are in `src/test/java`
