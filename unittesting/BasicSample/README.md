@@ -20,9 +20,6 @@ For more information see http://tools.android.com/tech-docs/unit-testing-support
 1. Check out the relevant code:
     * The application code is located in `src/main/java`
     * Unit Tests are in `src/test/java`
-1. Enable Gradle experimental support for unit testing:
-    * Go to **Preferences > Gradle > Experimental**
-    * Enable **Enable Unit Testing Support**
 1. Create a test configuration with the JUnit4 runner: `org.junit.runners.JUnit4`
     * Open *Run* menu | *Edit Configurations*
     * Add a new *JUnit* configuration
