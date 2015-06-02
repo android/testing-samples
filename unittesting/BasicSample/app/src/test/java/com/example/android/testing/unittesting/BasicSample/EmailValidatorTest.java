@@ -32,51 +32,39 @@ import static org.junit.Assert.assertTrue;
 @SmallTest
 public class EmailValidatorTest {
 
-    /**
-     * Email validation pattern.
-     */
-    public static final Pattern EMAIL_PATTERN = Pattern.compile(
-            "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
-            "\\@" +
-            "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
-            "(" +
-                "\\." +
-                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
-            ")+"
-    );
 
     @Test
     public void emailValidator_CorrectEmailSimple_ReturnsTrue() {
-        assertTrue(EmailValidator.isValidEmail(EMAIL_PATTERN, "name@email.com"));
+        assertTrue(EmailValidator.isValidEmail("name@email.com"));
     }
 
     @Test
     public void emailValidator_CorrectEmailSubDomain_ReturnsTrue() {
-        assertTrue(EmailValidator.isValidEmail(EMAIL_PATTERN, "name@email.co.uk"));
+        assertTrue(EmailValidator.isValidEmail("name@email.co.uk"));
     }
 
     @Test
     public void emailValidator_InvalidEmailNoTld_ReturnsFalse() {
-        assertFalse(EmailValidator.isValidEmail(EMAIL_PATTERN, "name@email"));
+        assertFalse(EmailValidator.isValidEmail("name@email"));
     }
 
     @Test
     public void emailValidator_InvalidEmailDoubleDot_ReturnsFalse() {
-        assertFalse(EmailValidator.isValidEmail(EMAIL_PATTERN, "name@email..com"));
+        assertFalse(EmailValidator.isValidEmail("name@email..com"));
     }
 
     @Test
     public void emailValidator_InvalidEmailNoUsername_ReturnsFalse() {
-        assertFalse(EmailValidator.isValidEmail(EMAIL_PATTERN, "@email.com"));
+        assertFalse(EmailValidator.isValidEmail("@email.com"));
     }
 
     @Test
     public void emailValidator_EmptyString_ReturnsFalse() {
-        assertFalse(EmailValidator.isValidEmail(EMAIL_PATTERN, ""));
+        assertFalse(EmailValidator.isValidEmail(""));
     }
 
     @Test
     public void emailValidator_NullEmail_ReturnsFalse() {
-        assertFalse(EmailValidator.isValidEmail(EMAIL_PATTERN, null));
+        assertFalse(EmailValidator.isValidEmail(null));
     }
 }
