@@ -9,7 +9,7 @@ Prerequisites
 
 - Android SDK v22
 - Android Build Tools v22
-- Android Support Repository rev13
+- Android Support Repository rev15
 
 Getting Started
 ---------------
