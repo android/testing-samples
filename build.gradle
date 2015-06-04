@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.1.3'
+        classpath 'com.android.tools.build:gradle:1.2.3'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -15,11 +15,6 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
-    }
-
-    // Temporary workaround for bug: https://code.google.com/p/android-test-kit/issues/detail?id=136
-    configurations.all {
-        resolutionStrategy.force 'com.android.support:support-annotations:22.1.0'
     }
 
     apply plugin: 'findbugs'

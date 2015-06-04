@@ -152,7 +152,6 @@ public class LongListActivityTest {
      * @return a {@link DataInteraction} referencing the row
      */
     private static DataInteraction onRow(String str) {
-        return onData(allOf(
-                is(instanceOf(Map.class)), hasEntry(equalTo(LongListActivity.ROW_TEXT), is(str))));
+        return onData(hasEntry(equalTo(LongListActivity.ROW_TEXT), is(str)));
     }
 }

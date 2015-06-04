@@ -25,8 +25,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.Calendar;
-
 /**
  * {@link android.app.Activity} which contains a simple calculator. Numbers can be entered in the
  * two {@link EditText} fields and result can be obtained by pressing one of the
