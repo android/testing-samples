@@ -13,7 +13,7 @@ mocking libraries, like Mockito.
 
 For more information see http://tools.android.com/tech-docs/unit-testing-support
 
-## Setup the project in Android studio and rune tests.
+## Setup the project in Android studio and run tests.
 
 1. Download the project code, preferably using `git clone`.
 1. In Android Studio, select *File* | *Open...* and point to the `./build.gradle` file.
