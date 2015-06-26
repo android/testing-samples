@@ -1,0 +1,9 @@
+-keepattributes *Annotation*
+-dontwarn org.hamcrest.**
+-dontwarn org.junit.**
+-dontwarn org.mockito.**
+-dontwarn org.objenesis.**
+-dontwarn android.test.**
+-dontwarn com.squareup.javawriter.JavaWriter
+-dontwarn sun.misc.Unsafe
+-dontwarn android.support.test.runner.MonitoringInstrumentation
