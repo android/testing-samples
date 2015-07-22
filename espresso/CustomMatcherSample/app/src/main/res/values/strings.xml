@@ -16,13 +16,15 @@
 -->
 <resources>
 
-    <string name="app_name">Custom Matcher EditText Sample</string>
+  <string name="app_name">Custom Matcher EditText Sample</string>
     <string name="instructions">See MainActivity.java for valid options or type something ending
         in \"coffee\".
     </string>
-    <string name="hint">How do you like your coffee?</string>
-    <string name="validate">Validate</string>
-    <string name="good_choice">Good choice!</string>
-    <string name="bad_choice">Bad choice!</string>
-
+  <string name="hint">How do you like your coffee?</string>
+  <string name="validate">Validate</string>
+  <string name="good_choice">Good choice!</string>
+  <string name="bad_choice">Bad choice!</string>
+  <string name="available_preparations">Available preparations: "Espresso", "Latte", "Mocha",
+    "Café con leche", "Cold brew"</string>
+  <string name="preparation_modes">Preparation modes</string>
 </resources>
