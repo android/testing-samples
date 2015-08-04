@@ -9,8 +9,8 @@ transparency is the view hierarchy.
 By default Espresso uses a heuristic to guess which Window you intend to interact with.
 This heuristic is normally 'good enough' however if you want to interact with a Window
 that it does not select then you'll have to swap in your own root window matcher.
-Initially we only have 1 window, but by typing into the auto complete text view another
-window will be layered on top of the screen. Espresso ignores this layer because it is
+Initially there's only one window, but typing into the auto-complete text view creates another
+window that will be layered on top of the screen. Espresso ignores this layer because it is
 not connected to the keyboard/ime.
 
 Espresso provides the ability to switch the default window matcher used in both onView and onData
