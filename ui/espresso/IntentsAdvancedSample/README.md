@@ -1,7 +1,7 @@
 # Advanced sample for Espresso Intents
 
 Espresso Intents is a great way to do hermetic inter app testing. It works essentially like mockito and allows for Intent
-verification and stubbing. This samples shows how to stub an Intent and simulate that a picture is fetched
+verification and stubbing. This sample shows how to stub an Intent and simulate that a picture is fetched
 from the camera without leaving the main app.
 
 This project uses the Gradle build system. You don't need an IDE to build and execute it but Android Studio is recommended.
