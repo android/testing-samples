@@ -7,9 +7,9 @@ A collection of samples demonstrating different frameworks and techniques for au
 Prerequisites
 --------------
 
-- Android SDK v22
-- Android Build Tools v22
-- Android Support Repository rev15
+- Android SDK v23
+- Android Build Tools v23
+- Android Support Repository rev17
 
 Getting Started
 ---------------

@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion '22.0.1'
+    compileSdkVersion 23
+    buildToolsVersion '23.0.0'
     defaultConfig {
         applicationId "com.example.android.testing.espresso.CustomMatcherSample"
         minSdkVersion 10
-        targetSdkVersion 22
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
 
@@ -30,9 +30,11 @@ android {
 
 dependencies {
     // App dependencies
-    compile 'com.android.support:support-annotations:22.2.0'
+    compile 'com.android.support:support-annotations:23.0.0'
     compile 'com.google.guava:guava:18.0'
     // Testing-only dependencies
+    // Force usage of support annotations in the test app, since it is internally used by the runner module.
+    androidTestCompile 'com.android.support:support-annotations:23.0.0'
     androidTestCompile 'com.android.support.test:runner:0.3'
     androidTestCompile 'com.android.support.test:rules:0.3'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2'

@@ -17,5 +17,4 @@
 <resources>
     <string name="app_name">Data Adapter Sample</string>
     <string name="row_label">Clicked on row</string>
-    <string name="column_label">Clicked on column</string>
 </resources>
