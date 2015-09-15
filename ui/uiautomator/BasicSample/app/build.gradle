@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '23.0.0'
+    buildToolsVersion '23.0.1'
     defaultConfig {
         applicationId "com.example.android.testing.uiautomator.BasicSample"
         minSdkVersion 18
@@ -29,8 +29,8 @@ dependencies {
     compile 'com.google.guava:guava:18.0'
     // Testing-only dependencies
     // Force usage of support annotations in the test app, since it is internally used by the runner module.
-    androidTestCompile 'com.android.support:support-annotations:23.0.0'
-    androidTestCompile 'com.android.support.test:runner:0.3'
+    androidTestCompile 'com.android.support:support-annotations:23.0.1'
+    androidTestCompile 'com.android.support.test:runner:0.4'
     // UiAutomator Testing
     androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.1'
     androidTestCompile 'org.hamcrest:hamcrest-integration:1.3'
