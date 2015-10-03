@@ -19,7 +19,8 @@ The problem is that the same LICENSE.TXT file is found multiple times and AAPT d
     * Select your project by clicking the "Browse" button
     * Add a *Specific instrumentation runner*: `android.support.test.runner.AndroidJUnitRunner`
 1. Connect a device or start an emulator
-    * Turn animations off [link link]
+    * Turn animations off.
+    (On your device, under Settings->Developer options disable the following 3 settings: - Window animation scale - Transition animation scale - Animator duration scale)
 1. Run the newly created configuration
 
 The application will be started on the device/emulator and a series of actions will be performed automatically.
