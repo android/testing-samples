@@ -16,7 +16,7 @@
 
 package com.example.android.testing.espresso.BasicSample;
 
-import android.app.Activity;
+import android.support.v4.app.FragmentActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -28,7 +28,7 @@ import android.widget.TextView;
  * clicks on one of the two buttons. The first one shows it in the same activity and the second
  * one opens another activity and displays the message.
  */
-public class MainActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends FragmentActivity implements View.OnClickListener {
 
     // The TextView used to display the message inside the Activity.
     private TextView mTextView;
