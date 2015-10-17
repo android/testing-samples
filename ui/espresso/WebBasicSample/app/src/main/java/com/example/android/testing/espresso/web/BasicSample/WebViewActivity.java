@@ -23,6 +23,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.VisibleForTesting;
 import android.text.TextUtils;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -46,6 +47,7 @@ public class WebViewActivity extends Activity {
         setContentView(R.layout.activity_web_view);
         mWebView = (WebView) findViewById(R.id.web_view);
         mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.setWebViewClient(new WebViewClient());
         mWebView.loadUrl(urlFromIntent(getIntent()));
         mWebView.requestFocus();
     }
