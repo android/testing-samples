@@ -21,6 +21,10 @@ These samples use the Gradle build system. To build a project, enter the project
 
 There is a top-level `build.gradle` file if you want to build and test all samples from the root directory. This is mostly helpful to build on a CI (Continuous Integration) server.
 
+Android Testing Support Library
+---------------
+Many of these samples use the ATSL. Visit the [Android Testing Support Library site](https://google.github.io/android-testing-support-library/) for more information.
+
 Support
 -------
 
