@@ -18,9 +18,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    packagingOptions {
-        exclude 'LICENSE.txt'
-    }
     lintOptions {
         abortOnError false
     }

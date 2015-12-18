@@ -12,9 +12,6 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    packagingOptions {
-        exclude 'LICENSE.txt'
-    }
 }
 
 dependencies {

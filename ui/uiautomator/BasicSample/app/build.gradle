@@ -12,9 +12,6 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    packagingOptions {
-        exclude 'LICENSE.txt'
-    }
     buildTypes {
         release {
             minifyEnabled false

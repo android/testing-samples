@@ -20,9 +20,12 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.rule.ServiceTestRule;
+import android.support.test.runner.AndroidJUnit4;
+import android.test.suitebuilder.annotation.MediumTest;
 
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import java.util.concurrent.TimeoutException;
 
@@ -47,6 +50,8 @@ import static org.junit.Assert.assertThat;
  * all outstanding commands. So there is no guarantee to establish a successful connection
  * in a timely manner.
  */
+@MediumTest
+@RunWith(AndroidJUnit4.class)
 public class LocalServiceTest {
     @Rule
     public final ServiceTestRule mServiceRule = new ServiceTestRule();

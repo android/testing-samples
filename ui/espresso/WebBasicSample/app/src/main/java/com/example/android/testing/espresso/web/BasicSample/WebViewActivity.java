@@ -23,6 +23,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.VisibleForTesting;
 import android.text.TextUtils;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -48,6 +49,12 @@ public class WebViewActivity extends Activity {
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.loadUrl(urlFromIntent(getIntent()));
         mWebView.requestFocus();
+        mWebView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return false;
+            }
+        });
     }
 
     private static String urlFromIntent(@NonNull Intent intent) {
