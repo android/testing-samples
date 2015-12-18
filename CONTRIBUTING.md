@@ -1,5 +1,23 @@
 # How to become a contributor and submit your own code
 
+To contribute with a small fix, simply create a pull request. If you want to add a new sample or plan to request a big change, [contact us](https://groups.google.com/forum/#!forum/android-testing-support-library) first.
+
+## Contributing new samples
+
+If you want to contribute full samples, we'd love to review and accept them. In case you need ideas, these are some samples on the roadmap:
+
+* Advanced Idling Resource 
+* RecyclerView actions
+* Sharding 
+* RunListener 
+* Rules
+ 
+You can also contribute to this list if you have a sample request.
+
+## Code style and structure
+
+Please check out the [Code Style for Contributors](https://source.android.com/source/code-style.html) section in AOSP. Also, check out the rest of the samples and maintain as much consistency with them as possible.
+
 ## Contributor License Agreements
 
 We'd love to accept your sample apps and patches! Before we can take them, we
