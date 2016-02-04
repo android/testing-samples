@@ -16,12 +16,16 @@
 
 package com.example.android.testing.espresso.BasicSample;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Simple Dialer Activity which shows an {@link EditText} field to enter a phone number. Upon
@@ -46,7 +50,13 @@ public class DialerActivity extends Activity {
     }
 
     public void onCall(View view) {
-        startActivity(createCallIntentFromNumber());
+        boolean hasCallPhonePermission = ContextCompat.checkSelfPermission(this,
+            Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED;
+
+        if (hasCallPhonePermission)
+            startActivity(createCallIntentFromNumber());
+        else
+            Toast.makeText(this, R.string.warning_call_phone_permission, Toast.LENGTH_SHORT).show();
     }
 
     public void onPickContact(View view) {
