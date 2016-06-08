@@ -29,8 +29,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * An {@link Activity} that gets a text string from the user and displays it back when the user
- * clicks on one of the two buttons. The first one shows it in the same activity and the second
- * one opens another activity and displays the message.
+ * clicks on one of the two buttons. The first one shows it in the same web page atop the form and the second
+ * one opens another web page and displays the message.
  */
 public class WebViewActivity extends Activity {
 
