@@ -17,6 +17,8 @@
 package com.example.android.testing.espresso.BasicSample;
 
 import static android.app.Instrumentation.ActivityResult;
+import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static android.support.test.InstrumentationRegistry.getTargetContext;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
@@ -88,7 +90,18 @@ public class DialerActivityTest {
         intending(not(isInternal())).respondWith(new ActivityResult(Activity.RESULT_OK, null));
     }
 
-    //@Test DISABLED TODO: fix permissions in M
+    @Before
+    public void grantPhonePermission() {
+        // In M+, trying to call a number will trigger a runtime dialog. Make sure
+        // the permission is granted before running this test.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getInstrumentation().getUiAutomation().executeShellCommand(
+                    "pm grant " + getTargetContext().getPackageName()
+                            + " android.permission.CALL_PHONE");
+        }
+    }
+
+    @Test
     public void typeNumber_ValidInput_InitiatesCall() {
         // Types a phone number into the dialer edit text field and presses the call button.
         onView(withId(R.id.edit_text_caller_number))
@@ -118,5 +131,4 @@ public class DialerActivityTest {
         onView(withId(R.id.edit_text_caller_number))
                 .check(matches(withText(VALID_PHONE_NUMBER)));
     }
-
 }
