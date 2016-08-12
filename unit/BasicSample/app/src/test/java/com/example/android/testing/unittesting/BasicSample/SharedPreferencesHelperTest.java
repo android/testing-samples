@@ -28,7 +28,6 @@ import org.mockito.runners.MockitoJUnitRunner;
 import android.content.SharedPreferences;
 import android.test.suitebuilder.annotation.SmallTest;
 
-import java.io.IOException;
 import java.util.Calendar;
 
 
