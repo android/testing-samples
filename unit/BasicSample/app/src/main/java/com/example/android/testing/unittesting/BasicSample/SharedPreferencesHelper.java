@@ -18,7 +18,6 @@ package com.example.android.testing.unittesting.BasicSample;
 
 import android.content.SharedPreferences;
 
-import java.io.IOException;
 import java.util.Calendar;
 
 /**

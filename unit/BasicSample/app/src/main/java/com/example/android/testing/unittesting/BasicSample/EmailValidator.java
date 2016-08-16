@@ -48,7 +48,6 @@ public class EmailValidator implements TextWatcher {
     /**
      * Validates if the given input is a valid email address.
      *
-     * @param emailPattern The {@link Pattern} used to validate the given email.
      * @param email        The email to validate.
      * @return {@code true} if the input is a valid email. {@code false} otherwise.
      */
