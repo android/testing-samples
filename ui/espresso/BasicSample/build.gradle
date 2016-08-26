@@ -17,3 +17,11 @@ allprojects {
         jcenter()
     }
 }
+
+ext {
+    buildToolsVersion = "24.0.1"
+    supportLibVersion = "24.2.0"
+    runnerVersion = "0.5"
+    rulesVersion = "0.5"
+    espressoVersion = "2.2.2"
+}

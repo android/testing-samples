@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "23.0.1"
+    buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
         applicationId "com.example.android.testing.unittesting.basicunitandroidtest"
@@ -17,7 +17,7 @@ android {
 dependencies {
     // Testing-only dependencies
     // Force usage of support annotations in the test app, since it is internally used by the runner module.
-    androidTestCompile 'com.android.support:support-annotations:24.1.1'
-    androidTestCompile 'com.android.support.test:runner:0.4'
-    androidTestCompile 'org.hamcrest:hamcrest-library:1.3'
+    androidTestCompile 'com.android.support:support-annotations:' + rootProject.supportLibVersion;
+    androidTestCompile 'com.android.support.test:runner:' + rootProject.runnerVersion;
+    androidTestCompile 'org.hamcrest:hamcrest-library:' + rootProject.hamcrestVersion;
 }
