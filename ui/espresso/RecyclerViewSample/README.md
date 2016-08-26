@@ -1,4 +1,4 @@
- # RecyclerView sample for Espresso
+# RecyclerView sample for Espresso
 
 Espresso has a special entry point to interact with AdapterViews, `onData()`, however, RecyclerViews work differently than AdapterViews.
 
