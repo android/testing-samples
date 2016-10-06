@@ -27,7 +27,6 @@ import static org.junit.Assert.assertTrue;
 /**
  * Unit tests for the EmailValidator logic.
  */
-@SmallTest
 public class EmailValidatorTest {
 
 

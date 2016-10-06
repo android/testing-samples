@@ -34,7 +34,6 @@ import java.util.Calendar;
 /**
  * Unit tests for the {@link SharedPreferencesHelper} that mocks {@link SharedPreferences}.
  */
-@SmallTest
 @RunWith(MockitoJUnitRunner.class)
 public class SharedPreferencesHelperTest {
 
