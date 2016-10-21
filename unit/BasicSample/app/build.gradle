@@ -25,6 +25,7 @@ android {
         versionCode 1
         versionName "1.0"
         targetSdkVersion 24
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
     }
     productFlavors {
     }
@@ -34,4 +35,7 @@ dependencies {
     // Unit testing dependencies.
     testCompile 'junit:junit:' + rootProject.junitVersion;
     testCompile 'org.mockito:mockito-core:' + rootProject.mockitoVersion;
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
 }
