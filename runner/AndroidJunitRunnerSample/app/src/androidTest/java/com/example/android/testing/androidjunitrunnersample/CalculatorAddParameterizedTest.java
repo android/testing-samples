@@ -21,7 +21,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import android.test.suitebuilder.annotation.SmallTest;
+import android.support.test.filters.SmallTest;
 
 import java.lang.Iterable;
 import java.util.Arrays;

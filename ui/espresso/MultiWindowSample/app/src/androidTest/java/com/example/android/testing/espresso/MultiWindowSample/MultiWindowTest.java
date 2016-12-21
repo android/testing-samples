@@ -15,10 +15,10 @@
  */
 package com.example.android.testing.espresso.MultiWindowSample;
 
+import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.ActivityInstrumentationTestCase2;
-import android.test.suitebuilder.annotation.LargeTest;
 
 import org.junit.Before;
 import org.junit.Rule;

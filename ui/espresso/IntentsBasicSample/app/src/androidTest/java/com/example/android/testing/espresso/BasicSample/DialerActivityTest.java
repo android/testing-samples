@@ -43,9 +43,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.support.test.espresso.intent.rule.IntentsTestRule;
+import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
-import android.test.suitebuilder.annotation.LargeTest;
 
 import org.junit.Before;
 import org.junit.Rule;

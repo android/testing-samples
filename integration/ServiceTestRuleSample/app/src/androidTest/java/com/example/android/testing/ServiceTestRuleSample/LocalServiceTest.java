@@ -19,9 +19,9 @@ package com.example.android.testing.ServiceTestRuleSample;
 import android.content.Intent;
 import android.os.IBinder;
 import android.support.test.InstrumentationRegistry;
+import android.support.test.filters.MediumTest;
 import android.support.test.rule.ServiceTestRule;
 import android.support.test.runner.AndroidJUnit4;
-import android.test.suitebuilder.annotation.MediumTest;
 
 import org.junit.Rule;
 import org.junit.Test;
