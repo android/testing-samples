@@ -25,10 +25,10 @@ import android.content.Intent;
 import android.support.test.espresso.web.sugar.Web;
 import android.support.test.espresso.web.webdriver.DriverAtoms;
 import android.support.test.espresso.web.webdriver.Locator;
+import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.ActivityInstrumentationTestCase2;
-import android.test.suitebuilder.annotation.LargeTest;
 import android.webkit.WebView;
 
 import static android.support.test.espresso.web.assertion.WebViewAssertions.webMatches;

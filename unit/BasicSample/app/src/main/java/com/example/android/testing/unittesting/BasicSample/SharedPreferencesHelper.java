@@ -18,7 +18,6 @@ package com.example.android.testing.unittesting.BasicSample;
 
 import android.content.SharedPreferences;
 
-import java.io.IOException;
 import java.util.Calendar;
 
 /**
@@ -48,7 +47,7 @@ public class SharedPreferencesHelper {
      * {@link SharedPreferences}.
      *
      * @param sharedPreferenceEntry contains data to save to {@link SharedPreferences}.
-     * @return @{code true} if writing to {@link SharedPreferences} succeeded. @{code false}
+     * @return {@code true} if writing to {@link SharedPreferences} succeeded. {@code false}
      *         otherwise.
      */
     public boolean savePersonalInfo(SharedPreferenceEntry sharedPreferenceEntry){

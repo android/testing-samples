@@ -26,16 +26,13 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import android.content.SharedPreferences;
-import android.test.suitebuilder.annotation.SmallTest;
 
-import java.io.IOException;
 import java.util.Calendar;
 
 
 /**
  * Unit tests for the {@link SharedPreferencesHelper} that mocks {@link SharedPreferences}.
  */
-@SmallTest
 @RunWith(MockitoJUnitRunner.class)
 public class SharedPreferencesHelperTest {
 
