@@ -1,0 +1,35 @@
+include ':espressoBasicSample'
+project(':espressoBasicSample').projectDir = file('ui/espresso/BasicSample/app')
+
+include ':espressoCustomMatcherSample'
+project(':espressoCustomMatcherSample').projectDir = file('ui/espresso/CustomMatcherSample/app')
+
+include ':espressoMultiWindowSample'
+project(':espressoMultiWindowSample').projectDir = file('ui/espresso/MultiWindowSample/app')
+
+include ':espressoDataAdapterSample'
+project(':espressoDataAdapterSample').projectDir = file('ui/espresso/DataAdapterSample/app')
+
+include ':espressoIntentsBasicSample'
+project(':espressoIntentsBasicSample').projectDir = file('ui/espresso/IntentsBasicSample/app')
+
+include ':espressoIntentsAdvancedSample'
+project(':espressoIntentsAdvancedSample').projectDir = file('ui/espresso/IntentsAdvancedSample/app')
+
+include ':espressoWebBasicSample'
+project(':espressoWebBasicSample').projectDir = file('ui/espresso/WebBasicSample/app')
+
+include ':uiautomatorBasicSample'
+project(':uiautomatorBasicSample').projectDir = file('ui/uiautomator/BasicSample/app')
+
+include ':runnerAndroidJunitRunnerSample'
+project(':runnerAndroidJunitRunnerSample').projectDir = file('runner/AndroidJunitRunnerSample/app')
+
+include ':unitBasicSample'
+project(':unitBasicSample').projectDir = file('unit/BasicSample/app')
+
+include ':unitBasicUnitAndroidTest'
+project(':unitBasicUnitAndroidTest').projectDir = file('unit/BasicUnitAndroidTest/app')
+
+include ':integrationServiceTestRuleSample'
+project(':integrationServiceTestRuleSample').projectDir = file('integration/ServiceTestRuleSample/app')

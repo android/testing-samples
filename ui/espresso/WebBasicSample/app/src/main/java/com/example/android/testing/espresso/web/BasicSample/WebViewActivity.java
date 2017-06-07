@@ -47,6 +47,7 @@ public class WebViewActivity extends Activity {
         setContentView(R.layout.activity_web_view);
         mWebView = (WebView) findViewById(R.id.web_view);
         mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.setWebViewClient(new WebViewClient());
         mWebView.loadUrl(urlFromIntent(getIntent()));
         mWebView.requestFocus();
         mWebView.setWebViewClient(new WebViewClient() {
