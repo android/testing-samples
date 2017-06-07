@@ -34,7 +34,6 @@ import static org.junit.Assert.assertThat;
  * Tests that the parcelable interface is implemented correctly.
  */
 @RunWith(AndroidJUnit4.class)
-@SmallTest
 public class LogHistoryAndroidUnitTest {
 
     public static final String TEST_STRING = "This is a string";
