@@ -3,6 +3,9 @@
 buildscript {
     repositories {
         jcenter()
+        maven {
+            url "https://maven.google.com"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.2'
@@ -15,12 +18,15 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        maven {
+            url "https://maven.google.com"
+        }
     }
 }
 
 ext {
     buildToolsVersion = "25.0.0"
-    supportLibVersion = "24.2.0"
-    runnerVersion = "0.5"
-    rulesVersion = "0.5"
+    supportLibVersion = "25.4.0"
+    runnerVersion = "1.0.0"
+    rulesVersion = "1.0.0"
 }
