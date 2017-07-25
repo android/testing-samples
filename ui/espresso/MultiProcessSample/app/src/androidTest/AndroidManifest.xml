@@ -24,13 +24,24 @@
         android:minSdkVersion="26"
         android:targetSdkVersion="26"/>
 
+    <!--
+      This custom androidTest/AndroidManifest.xml is required because the current Gradle DSL
+      doesn't support the ability to define the new "targetProcesses" Instrumentation attribute and
+      to define custom "meta-data" tags that are required in this case.
+    -->
 
     <instrumentation
         android:name="android.support.test.runner.AndroidJUnitRunner"
         android:targetPackage="com.example.android.testing.espresso.multiprocesssample"
         android:targetProcesses="*" > <!-- The instrumentation attribute introduced in O -->
 
-        <!-- The following is used by AndroidJUnitRunner to init Espresso in the new PID -->
+        <!--
+          The following is used by AndroidJUnitRunner (AJUR) to init Espresso in the new PID. This
+          is mandatory and is required because AJUR is automatically instantiated by the Android
+          framework itself since it's simply an Instrumentation. However, Espresso is just a testing
+          framework that is used by AJUR so it's responsible to instantiate it on the remote process
+          in order for handle all the actions from the original process.
+        -->
         <meta-data
             android:name="remoteMethod"
             android:value="android.support.test.espresso.remote.EspressoRemote#remoteInit"/>
