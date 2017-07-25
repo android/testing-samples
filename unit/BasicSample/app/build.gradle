@@ -24,7 +24,7 @@ android {
         minSdkVersion 9
         versionCode 1
         versionName "1.0"
-        targetSdkVersion 24
+        targetSdkVersion 26
     }
     productFlavors {
     }
