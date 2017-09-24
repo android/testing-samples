@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion rootProject.buildToolsVersion
+    defaultConfig {
+        applicationId "com.example.android.testing.robolectric.BasicSample"
+        minSdkVersion 9
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    lintOptions {
+        abortOnError false
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    // App dependencies
+  //  compile 'com.android.support:support-annotations:' + rootProject.supportLibVersion;
+    compile 'com.google.guava:guava:20.0'
+
+    // Testing-only dependencies
+    // Force usage of support annotations in the test app, since it is internally used by the runner module.
+    testCompile "junit:junit:4.10"
+
+  //  testCompile 'com.android.support:support-annotations:' + rootProject.supportLibVersion;
+  //  testCompile 'com.android.support.test:runner:' + rootProject.runnerVersion;
+  //  testCompile 'com.android.support.test:rules:' + rootProject.rulesVersion;
+
+    testCompile "org.robolectric:robolectric:3.4.2"
+}
