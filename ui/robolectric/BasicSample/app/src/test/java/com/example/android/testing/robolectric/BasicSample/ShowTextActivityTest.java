@@ -17,10 +17,9 @@ import org.robolectric.annotation.Config;
  * Robolectric tests for {@link ShowTextActivity}.
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = BuildConfig.class)
 public class ShowTextActivityTest {
 
-    public static final String MESSAGE = "Example";
+    private static final String MESSAGE = "Example";
 
     private ShowTextActivity activity;
 
