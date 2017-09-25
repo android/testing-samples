@@ -25,5 +25,5 @@ dependencies {
 
     // Testing-only dependencies
     testCompile "junit:junit:4.10"
-    testCompile "org.robolectric:robolectric:3.4.2"
+    testCompile "org.robolectric:robolectric:" + rootProject.robolectricVersion
 }

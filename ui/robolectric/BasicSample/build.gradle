@@ -29,5 +29,5 @@ ext {
     supportLibVersion = "25.4.0"
     runnerVersion = "1.0.0"
     rulesVersion = "1.0.0"
-    robolectricVersion = "3.0.0"
+    robolectricVersion = "3.4.2"
 }
