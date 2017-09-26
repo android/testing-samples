@@ -17,7 +17,6 @@
 package com.example.android.testing.robolectric.BasicSample;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -28,9 +27,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
-import org.robolectric.RuntimeEnvironment;
-import org.robolectric.android.controller.ActivityController;
-import org.robolectric.annotation.Config;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
@@ -41,7 +37,6 @@ import static org.robolectric.Shadows.shadowOf;
  * Robolectric tests for {@link MainActivity}.
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = BuildConfig.class)
 public class MainActivityTest {
 
     private static final String STRING_TO_BE_TYPED = "Robolectric";
@@ -81,36 +76,5 @@ public class MainActivityTest {
         assertThat(actualIntent.getComponent(), equalTo(expectedIntent.getComponent()));
         assertThat(actualIntent.getStringExtra(ShowTextActivity.KEY_EXTRA_MESSAGE),
                 equalTo(STRING_TO_BE_TYPED));
-    }
-
-    @Test
-    public void createActivityFromIntent() {
-        Intent intent = new Intent(RuntimeEnvironment.application, MainActivity.class);
-        Robolectric.buildActivity(MainActivity.class, intent).setup().get();
-    }
-
-    @Test
-    public void pauseResumeActivity() {
-        ActivityController<MainActivity> controller = Robolectric.buildActivity(MainActivity.class);
-        controller.setup().get();
-        controller.pause().resume();
-    }
-
-    @Test
-    public void recreateActivity() {
-        Bundle bundle = new Bundle();
-        ActivityController<MainActivity> controller = Robolectric.buildActivity(MainActivity.class);
-        controller.setup().get();
-        controller.saveInstanceState(bundle)
-                .pause()
-                .stop()
-                .destroy();
-        controller = Robolectric.buildActivity(MainActivity.class)
-                .create(bundle)
-                .start()
-                .restoreInstanceState(bundle)
-                .resume()
-                .visible();
-        controller.get();
     }
 }
