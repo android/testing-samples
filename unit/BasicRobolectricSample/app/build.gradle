@@ -1,0 +1,29 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion rootProject.buildToolsVersion
+    defaultConfig {
+        applicationId "com.example.android.testing.robolectric.BasicRobolectricSample"
+        minSdkVersion 14
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+    }
+    lintOptions {
+        abortOnError false
+    }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:20.0'
+
+    // Testing-only dependencies
+    testImplementation "junit:junit:4.12"
+    testImplementation "org.robolectric:robolectric:" + rootProject.robolectricVersion
+}

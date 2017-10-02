@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.testing.robolectric.BasicSample;
+package com.example.android.testing.robolectric.BasicRobolectricSample;
 
 import android.content.Intent;
 import android.widget.Button;
