@@ -32,7 +32,7 @@ A collection of samples demonstrating different frameworks and techniques for au
 
 ### Robolectric Sample
 
-**[BasicSample](https://github.com/googlesamples/android-testing/tree/master/ui/robolectric/BasicSample)** - Basic Robolectric sample
+**[BasicRobolectricSample](https://github.com/googlesamples/android-testing/tree/master/unit/BasicRobolectricSample)** - Basic Robolectric sample
 
 ### AndroidJUnitRunner Sample
 
