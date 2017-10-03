@@ -13,6 +13,8 @@ android {
     lintOptions {
         abortOnError false
     }
+
+    // Include resources in Robolectric tests (requires Android Studio 3.0+).
     testOptions {
         unitTests {
             includeAndroidResources = true
@@ -25,5 +27,7 @@ dependencies {
 
     // Testing-only dependencies
     testImplementation "junit:junit:4.12"
+
+    // Robolectric dependencies
     testImplementation "org.robolectric:robolectric:" + rootProject.robolectricVersion
 }

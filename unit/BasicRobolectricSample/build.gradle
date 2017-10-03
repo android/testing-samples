@@ -25,7 +25,7 @@ allprojects {
 }
 
 ext {
-    buildToolsVersion = "25.0.0"
+    buildToolsVersion = "26.0.2"
     rulesVersion = "1.0.0"
     robolectricVersion = "3.4.2"
 }
