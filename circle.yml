@@ -1,0 +1,21 @@
+machine:
+  java:
+    version: oraclejdk8
+  environment:
+    GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx1024m -XX:+HeapDumpOnOutOfMemoryError" -Dkotlin.compiler.execution.strategy="out-of-process" -Djava.util.concurrent.ForkJoinPool.common.parallelism=2'
+
+dependencies:
+  pre:
+    - sudo pip install -U crcmod
+    - echo y | android update sdk --no-ui --all --filter "tools,platform-tools,build-tools-26.0.2,android-26,extra-android-m2repository"
+    - echo ${GCLOUD_SERVICE_KEY} | base64 --decode > ${HOME}/client-secret.json
+    - sudo /opt/google-cloud-sdk/bin/gcloud config set project android-devrel-ci
+    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
+    - sudo /opt/google-cloud-sdk/bin/gcloud auth activate-service-account travis-ci-for-blueprints@android-devrel-ci.iam.gserviceaccount.com --key-file ${HOME}/client-secret.json
+
+test:
+  override:
+    - ./test_all_ftl.sh
+  post:
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+    - find $CIRCLE_ARTIFACTS -name \*.xml -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
