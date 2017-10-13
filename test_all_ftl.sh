@@ -20,14 +20,15 @@ for line in $(find . -name 'gradlew'); do
    ./gradlew :app:assembleAndroidTest -PdisablePreDex | sed "s@^@$name @"  # Prefix every line with directory
    ./gradlew test -PdisablePreDex | sed "s@^@$name @"  # Prefix every line with directory
 
-   apkfile=app/build/outputs/apk/debug/app-debug.apk
-   testapkfile=app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
+   apkfile=app/build/outputs/apk/app-debug.apk 
+   testapkfile=app/build/outputs/apk/app-debug-androidTest.apk 
    if [ ! -f $apkfile ] || [ ! -f $testapkfile ] ; then
-      echo "APKs not found, probably due to project using multiple flavors. Skipping $name"
+      echo "APKs not found, probably no UI tests present. Skipping $name"
       popd > /dev/null  # Silent popd
       continue
    fi
    echo "Sending APKs to Firebase..."
+
    echo "y" | sudo /opt/google-cloud-sdk/bin/gcloud firebase test android run --app $apkfile --test $testapkfile -d Nexus5X -v 26 -l fr --results-bucket=android-testing-samples-test-results --results-dir=$CIRCLE_BUILD_NUM/$name
 
    code=${PIPESTATUS[0]}
