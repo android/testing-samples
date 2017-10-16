@@ -2,7 +2,7 @@
 
 set -e  # Exit immediately if a command exits with a non-zero status.
 
-for line in $(find ui/espresso/RecyclerViewSample -name 'gradlew'); do
+for line in $(find . -name 'gradlew'); do
    p=$(dirname "${line}");
    name="${p##*/}";
    echo
