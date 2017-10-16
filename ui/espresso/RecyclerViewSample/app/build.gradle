@@ -37,6 +37,7 @@ dependencies {
     // App dependencies
     compile 'com.android.support:support-annotations:' + rootProject.supportLibVersion;
     compile 'com.android.support:recyclerview-v7:' + rootProject.supportLibVersion;
+    compile 'com.android.support:design:' + rootProject.supportLibVersion;
 
     // Testing-only dependencies
     androidTestCompile 'com.android.support.test:runner:' + rootProject.runnerVersion;
@@ -47,4 +48,6 @@ dependencies {
     // Force usage of dependencies in the test app, since it is internally used by the runner module.
     androidTestCompile 'com.android.support:support-annotations:' + rootProject.supportLibVersion;
     androidTestCompile 'com.android.support:recyclerview-v7:' + rootProject.supportLibVersion;
+    androidTestCompile 'com.android.support:support-v4:' + rootProject.supportLibVersion;
+    androidTestCompile 'com.android.support:design:' + rootProject.supportLibVersion;
 }
