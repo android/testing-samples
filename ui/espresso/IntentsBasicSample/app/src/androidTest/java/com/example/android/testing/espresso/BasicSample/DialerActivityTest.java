@@ -76,7 +76,7 @@ public class DialerActivityTest {
      * Rules are interceptors which are executed for each test method and will run before
      * any of your setup code in the {@link Before @Before} method.
      * <p>
-     * This rule is based on {@link ActivityTestRule} and will create and launch of the activity
+     * This rule is based on {@link ActivityTestRule} and will create and launch the activity
      * for you and also expose the activity under test.
      */
     @Rule
