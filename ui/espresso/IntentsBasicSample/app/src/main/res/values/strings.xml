@@ -23,4 +23,5 @@
         This activity is never opened and does not contain any real contact data for
         keeping this sample simple and focused.
     </string>
+    <string name="warning_call_phone_permission">This app requires \'call phone\' permission to run</string>
 </resources>

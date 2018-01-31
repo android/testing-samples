@@ -18,12 +18,11 @@ package com.example.android.testing.androidjunitrunnersample;
 
 import junit.framework.TestSuite;
 
-import org.junit.Test;
 import org.junit.internal.builders.AllDefaultPossibilitiesBuilder;
 
+import android.support.test.filters.LargeTest;
 import android.support.test.runner.AndroidJUnitRunner;
 import android.test.ActivityInstrumentationTestCase2;
-import android.test.suitebuilder.annotation.LargeTest;
 
 import static com.example.android.testing.androidjunitrunnersample.HintMatcher.withHint;
 import static android.support.test.espresso.Espresso.onView;

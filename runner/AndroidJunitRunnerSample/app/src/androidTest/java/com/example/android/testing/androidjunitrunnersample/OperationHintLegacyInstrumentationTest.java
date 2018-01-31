@@ -20,9 +20,9 @@ import junit.framework.TestSuite;
 
 import org.junit.internal.builders.AllDefaultPossibilitiesBuilder;
 
+import android.support.test.filters.LargeTest;
 import android.support.test.runner.AndroidJUnitRunner;
 import android.test.ActivityInstrumentationTestCase2;
-import android.test.suitebuilder.annotation.LargeTest;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
