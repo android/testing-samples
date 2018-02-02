@@ -17,14 +17,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion '23.0.1'
+    compileSdkVersion 24
+    buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
         applicationId "com.example.android.testing.unittesting.BasicSample"
         minSdkVersion 8
         versionCode 1
         versionName "1.0"
-        targetSdkVersion 23
+        targetSdkVersion 24
     }
     productFlavors {
     }
@@ -32,6 +32,6 @@ android {
 
 dependencies {
     // Unit testing dependencies.
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.mockito:mockito-core:1.10.19'
+    testCompile 'junit:junit:' + rootProject.junitVersion;
+    testCompile 'org.mockito:mockito-core:' + rootProject.mockitoVersion;
 }
