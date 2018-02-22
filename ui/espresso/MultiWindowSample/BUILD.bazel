@@ -13,7 +13,7 @@ android_library(
 android_binary(
     name = "MultiWindowSample",
     custom_package = "com.example.android.testing.espresso.MultiWindowSample",
-    manifest = "app/src/main/AndroidManifest.xml",
+    manifest = "app/src/main/EmptyManifest.xml",
     deps = [":MultiWindowSampleLib"],
 )
 
@@ -21,7 +21,6 @@ android_library(
     name = "MultiWindowSampleTestLib",
     srcs = glob(["app/src/androidTest/**/*.java"]),
     custom_package = "com.example.android.testing.espresso.MultiWindowSample",
-    manifest = "app/src/androidTest/AndroidManifest.xml",
     deps = [
         ":MultiWindowSampleLib",
         "//:test_deps",

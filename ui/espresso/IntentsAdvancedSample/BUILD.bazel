@@ -13,7 +13,7 @@ android_library(
 android_binary(
     name = "IntentsAdvancedSample",
     custom_package = "com.example.android.testing.espresso.intents.AdvancedSample",
-    manifest = "app/src/main/AndroidManifest.xml",
+    manifest = "app/src/main/EmptyManifest.xml",
     deps = [":IntentsAdvancedSampleLib"],
 )
 
@@ -21,7 +21,6 @@ android_library(
     name = "IntentsAdvancedSampleTestLib",
     srcs = glob(["app/src/androidTest/**/*.java"]),
     custom_package = "com.example.android.testing.espresso.intents.AdvancedSample",
-    manifest = "app/src/androidTest/AndroidManifest.xml",
     deps = [
         ":IntentsAdvancedSampleLib",
         "//:test_deps",

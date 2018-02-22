@@ -7,23 +7,22 @@ android_library(
     deps = ["@com_google_guava_guava//jar"],
 )
 
+android_binary(
+    name = "BasicSample",
+    custom_package = "com.example.android.testing.uiautomator.BasicSample",
+    manifest = "app/src/main/EmptyManifest.xml",
+    deps = [":BasicSampleLib"],
+)
+
 android_library(
     name = "BasicSampleTestLib",
     srcs = glob(["app/src/androidTest/**/*.java"]),
     custom_package = "com.example.android.testing.uiautomator.BasicSample",
-    manifest = "app/src/androidTest/AndroidManifest.xml",
     deps = [
         ":BasicSampleLib",
         "//:test_deps",
         "@com_android_support_test_uiautomator_uiautomator_v18_2_1_3//aar",
     ],
-)
-
-android_binary(
-    name = "BasicSample",
-    custom_package = "com.example.android.testing.uiautomator.BasicSample",
-    manifest = "app/src/main/AndroidManifest.xml",
-    deps = [":BasicSampleLib"],
 )
 
 android_binary(

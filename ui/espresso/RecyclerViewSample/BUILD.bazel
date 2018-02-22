@@ -14,7 +14,7 @@ android_library(
 android_binary(
     name = "RecyclerViewSample",
     custom_package = "com.example.android.testing.espresso.RecyclerViewSample",
-    manifest = "app/src/main/AndroidManifest.xml",
+    manifest = "app/src/main/EmptyManifest.xml",
     deps = [":RecyclerViewSampleLib"],
 )
 
@@ -22,7 +22,6 @@ android_library(
     name = "RecyclerViewSampleTestLib",
     srcs = glob(["app/src/androidTest/**/*.java"]),
     custom_package = "com.example.android.testing.espresso.RecyclerViewSample",
-    manifest = "app/src/androidTest/AndroidManifest.xml",
     deps = [
         ":RecyclerViewSampleLib",
         "//:test_deps",

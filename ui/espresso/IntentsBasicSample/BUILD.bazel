@@ -14,7 +14,7 @@ android_library(
 android_binary(
     name = "IntentsBasicSample",
     custom_package = "com.example.android.testing.espresso.BasicSample",
-    manifest = "app/src/main/AndroidManifest.xml",
+    manifest = "app/src/main/EmptyManifest.xml",
     deps = [":IntentsBasicSampleLib"],
 )
 
@@ -22,7 +22,6 @@ android_library(
     name = "IntentsBasicSampleTestLib",
     srcs = glob(["app/src/androidTest/**/*.java"]),
     custom_package = "com.example.android.testing.espresso.BasicSample",
-    manifest = "app/src/androidTest/AndroidManifest.xml",
     deps = [
         ":IntentsBasicSampleLib",
         "//:test_deps",

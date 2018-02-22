@@ -1,6 +1,6 @@
 # Set the paths to your local SDK and NDK installations
 
-SDK_PATH = "/path/to/sdk"
+SDK_PATH = "/path/to/sdk/"
 
 NDK_PATH = "/path/to/sdk/ndk-bundle"
 
@@ -16,7 +16,7 @@ android_ndk_repository(
 
 git_repository(
     name = "android_test_support",
-    commit = "2ca4679c303ed66fff4411de0606f63ae26123dd",
+    commit = "e2f35260f8f9922257fee59f19c53a8d34020970",
     remote = "https://github.com/google/android-testing-support-library",
 )
 
