@@ -1,0 +1,43 @@
+android_library(
+    name = "DataAdapterSampleLib",
+    srcs = glob(["app/src/main/**/*.java"]),
+    custom_package = "com.example.android.testing.espresso.DataAdapterSample",
+    manifest = "app/src/main/AndroidManifest.xml",
+    resource_files = glob(["app/src/main/res/**/*"]),
+    deps = [
+        "@com_android_support_support_annotations_27_0_2//jar",
+        "@com_google_guava_guava//jar",
+    ],
+)
+
+android_binary(
+    name = "DataAdapterSample",
+    custom_package = "com.example.android.testing.espresso.DataAdapterSample",
+    manifest = "app/src/main/AndroidManifest.xml",
+    deps = [":DataAdapterSampleLib"],
+)
+
+android_library(
+    name = "DataAdapterSampleTestLib",
+    srcs = glob(["app/src/androidTest/**/*.java"]),
+    custom_package = "com.example.android.testing.espresso.DataAdapterSample",
+    manifest = "app/src/androidTest/AndroidManifest.xml",
+    deps = [
+        ":DataAdapterSampleLib",
+        "//:test_deps",
+    ],
+)
+
+android_binary(
+    name = "DataAdapterSampleTest",
+    custom_package = "com.example.android.testing.espresso.DataAdapterSample",
+    instruments = ":DataAdapterSample",
+    manifest = "app/src/androidTest/AndroidManifest.xml",
+    deps = [":DataAdapterSampleTestLib"],
+)
+
+android_instrumentation_test(
+    name = "DataAdapterSampleInstrumentationTest",
+    target_device = "@android_test_support//tools/android/emulated_devices/nexus_6:android_23_x86_qemu2",
+    test_app = ":DataAdapterSampleTest",
+)

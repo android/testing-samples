@@ -1,0 +1,43 @@
+android_library(
+    name = "CustomMatcherSampleLib",
+    srcs = glob(["app/src/main/**/*.java"]),
+    custom_package = "com.example.android.testing.espresso.CustomMatcherSample",
+    manifest = "app/src/main/AndroidManifest.xml",
+    resource_files = glob(["app/src/main/res/**/*"]),
+    deps = [
+        "@com_android_support_support_annotations_27_0_2//jar",
+        "@com_google_guava_guava//jar",
+    ],
+)
+
+android_binary(
+    name = "CustomMatcherSample",
+    custom_package = "com.example.android.testing.espresso.CustomMatcherSample",
+    manifest = "app/src/main/AndroidManifest.xml",
+    deps = [":CustomMatcherSampleLib"],
+)
+
+android_library(
+    name = "CustomMatcherSampleTestLib",
+    srcs = glob(["app/src/androidTest/**/*.java"]),
+    custom_package = "com.example.android.testing.espresso.CustomMatcherSample",
+    manifest = "app/src/androidTest/AndroidManifest.xml",
+    deps = [
+        ":CustomMatcherSampleLib",
+        "//:test_deps",
+    ],
+)
+
+android_binary(
+    name = "CustomMatcherSampleTest",
+    custom_package = "com.example.android.testing.espresso.CustomMatcherSample",
+    instruments = ":CustomMatcherSample",
+    manifest = "app/src/androidTest/AndroidManifest.xml",
+    deps = [":CustomMatcherSampleTestLib"],
+)
+
+android_instrumentation_test(
+    name = "CustomMatcherSampleInstrumentationTest",
+    target_device = "@android_test_support//tools/android/emulated_devices/nexus_6:android_23_x86_qemu2",
+    test_app = ":CustomMatcherSampleTest",
+)

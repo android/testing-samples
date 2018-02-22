@@ -1,0 +1,16 @@
+java_library(
+    name = "test_deps",
+    visibility = ["//visibility:public"],
+    exports = [
+        "@com_android_support_support_annotations_27_0_2//jar",
+        "@com_android_support_test_espresso_espresso_core_3_0_1//aar",
+        "@com_android_support_test_espresso_espresso_idling_resource_3_0_1//aar",
+        "@com_android_support_test_rules_1_0_1//aar",
+        "@com_android_support_test_runner_1_0_1//aar",
+        "@com_google_guava_guava//jar",
+        "@com_google_inject_guice//jar",
+        "@javax_inject_javax_inject//jar",
+        "@junit_junit//jar",
+        "@org_hamcrest_java_hamcrest//jar",
+    ],
+)

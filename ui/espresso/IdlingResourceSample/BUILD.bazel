@@ -1,0 +1,44 @@
+android_library(
+    name = "IdlingResourceSampleLib",
+    srcs = glob(["app/src/main/**/*.java"]),
+    custom_package = "com.example.android.testing.espresso.IdlingResourceSample",
+    manifest = "app/src/main/AndroidManifest.xml",
+    resource_files = glob(["app/src/main/res/**/*"]),
+    deps = [
+        "@com_android_support_support_annotations_27_0_2//jar",
+        "@com_android_support_test_espresso_espresso_idling_resource_3_0_1//aar",
+        "@com_google_guava_guava//jar",
+    ],
+)
+
+android_binary(
+    name = "IdlingResourceSample",
+    custom_package = "com.example.android.testing.espresso.IdlingResourceSample",
+    manifest = "app/src/main/AndroidManifest.xml",
+    deps = [":IdlingResourceSampleLib"],
+)
+
+android_library(
+    name = "IdlingResourceSampleTestLib",
+    srcs = glob(["app/src/androidTest/**/*.java"]),
+    custom_package = "com.example.android.testing.espresso.IdlingResourceSample",
+    manifest = "app/src/androidTest/AndroidManifest.xml",
+    deps = [
+        ":IdlingResourceSampleLib",
+        "//:test_deps",
+    ],
+)
+
+android_binary(
+    name = "IdlingResourceSampleTest",
+    custom_package = "com.example.android.testing.espresso.IdlingResourceSample",
+    instruments = ":IdlingResourceSample",
+    manifest = "app/src/androidTest/AndroidManifest.xml",
+    deps = [":IdlingResourceSampleTestLib"],
+)
+
+android_instrumentation_test(
+    name = "IdlingResourceSampleInstrumentationTest",
+    target_device = "@android_test_support//tools/android/emulated_devices/nexus_6:android_23_x86_qemu2",
+    test_app = ":IdlingResourceSampleTest",
+)
