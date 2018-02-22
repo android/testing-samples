@@ -85,6 +85,9 @@ Then, to run the tests:
 $ git clone https://github.com/google/android-testing
 $ cd android-testing
 
+# Edit the path to your local SDK at the top of the WORKSPACE file
+$ $EDITOR WORKSPACE
+
 # Test everything in a headless mode
 $ /tmp/bazel test //... --spawn_strategy=local
 
