@@ -14,7 +14,7 @@ android_library(
 android_binary(
     name = "IdlingResourceSample",
     custom_package = "com.example.android.testing.espresso.IdlingResourceSample",
-    manifest = "app/src/main/EmptyManifest.xml",
+    manifest = "app/src/main/AppManifest.xml",
     deps = [":IdlingResourceSampleLib"],
 )
 

@@ -10,7 +10,7 @@ android_library(
 android_binary(
     name = "BasicSample",
     custom_package = "com.example.android.testing.uiautomator.BasicSample",
-    manifest = "app/src/main/EmptyManifest.xml",
+    manifest = "app/src/main/AppManifest.xml",
     deps = [":BasicSampleLib"],
 )
 

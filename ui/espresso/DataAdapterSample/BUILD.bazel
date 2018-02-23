@@ -13,7 +13,7 @@ android_library(
 android_binary(
     name = "DataAdapterSample",
     custom_package = "com.example.android.testing.espresso.DataAdapterSample",
-    manifest = "app/src/main/EmptyManifest.xml",
+    manifest = "app/src/main/AppManifest.xml",
     deps = [":DataAdapterSampleLib"],
 )
 

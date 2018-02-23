@@ -1,4 +1,4 @@
-# Set the paths to your local SDK and NDK installations
+# Set the path to your local SDK installation
 
 SDK_PATH = "/path/to/sdk"
 
