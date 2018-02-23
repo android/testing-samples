@@ -1,3 +1,5 @@
+licenses(["notice"])  # Apache 2.0
+
 android_library(
     name = "IdlingResourceSampleLib",
     srcs = glob(["app/src/main/**/*.java"]),
