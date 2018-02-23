@@ -1,3 +1,5 @@
+licenses(["notice"])  # Apache 2.0
+
 java_library(
     name = "test_deps",
     visibility = ["//visibility:public"],
