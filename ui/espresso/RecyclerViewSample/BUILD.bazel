@@ -41,6 +41,6 @@ android_binary(
 
 android_instrumentation_test(
     name = "RecyclerViewSampleInstrumentationTest",
-    target_device = "@android_test_support//tools/android/emulated_devices/nexus_6:android_23_x86_qemu2",
+    target_device = "@android_test_support//tools/android/emulated_devices/generic_phone:android_23_x86_qemu2",
     test_app = ":RecyclerViewSampleTest",
 )
