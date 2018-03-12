@@ -9,7 +9,7 @@ android_sdk_repository(
 
 git_repository(
     name = "android_test_support",
-    commit = "2ca4679c303ed66fff4411de0606f63ae26123dd",
+    commit = "8bd3b317897c54f8a91d22065880002a0a68e70e",
     remote = "https://github.com/google/android-testing-support-library",
 )
 
