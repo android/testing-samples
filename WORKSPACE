@@ -19,7 +19,7 @@ android_test_repositories()
 
 git_repository(
     name = "gmaven_rules",
-    commit = "5e89b7cdc94d002c13576fad3b28b0ae30296e55",
+    commit = "ecc3a8fc236ad89fe6511feb743d1b08be1b53c9",
     remote = "https://github.com/aj-michael/gmaven_rules",
 )
 
