@@ -9,7 +9,7 @@ android_sdk_repository(
 
 git_repository(
     name = "android_test_support",
-    commit = "8bd3b317897c54f8a91d22065880002a0a68e70e",
+    commit = "ecc3a8fc236ad89fe6511feb743d1b08be1b53c9",
     remote = "https://github.com/google/android-testing-support-library",
 )
 
@@ -19,7 +19,7 @@ android_test_repositories()
 
 git_repository(
     name = "gmaven_rules",
-    commit = "ecc3a8fc236ad89fe6511feb743d1b08be1b53c9",
+    commit = "5e89b7cdc94d002c13576fad3b28b0ae30296e55",
     remote = "https://github.com/aj-michael/gmaven_rules",
 )
 
