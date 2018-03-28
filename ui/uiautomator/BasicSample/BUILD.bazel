@@ -1,3 +1,5 @@
+load("@gmaven_rules//:defs.bzl", "gmaven_artifact")
+
 licenses(["notice"])  # Apache 2.0
 
 android_library(
@@ -23,7 +25,7 @@ android_library(
     deps = [
         ":BasicSampleLib",
         "//:test_deps",
-        "@com_android_support_test_uiautomator_uiautomator_v18_2_1_3//aar",
+        gmaven_artifact("com.android.support.test.uiautomator:uiautomator:aar:v18.2.1.3"),
     ],
 )
 
