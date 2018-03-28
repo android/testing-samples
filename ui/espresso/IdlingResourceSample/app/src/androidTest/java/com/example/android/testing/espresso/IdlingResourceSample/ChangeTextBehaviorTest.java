@@ -25,6 +25,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 import android.support.test.espresso.Espresso;
+import android.support.test.espresso.IdlingRegistry;
 import android.support.test.espresso.IdlingResource;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
@@ -56,7 +57,9 @@ public class ChangeTextBehaviorTest {
     public void registerIdlingResource() {
         mIdlingResource = mActivityRule.getActivity().getIdlingResource();
         // To prove that the test fails, omit this call:
-        Espresso.registerIdlingResources(mIdlingResource);
+        //Espresso.registerIdlingResources(mIdlingResource);
+        //Deprecated 'Espresso.registerIdlingResources()' method is replaced with corresponding IdlingRegistry API method
+        IdlingRegistry.getInstance().register(mIdlingResource);
     }
 
     @Test
@@ -73,7 +76,9 @@ public class ChangeTextBehaviorTest {
     @After
     public void unregisterIdlingResource() {
         if (mIdlingResource != null) {
-            Espresso.unregisterIdlingResources(mIdlingResource);
+            //Espresso.unregisterIdlingResources(mIdlingResource);
+            //Deprecated 'Espresso.unregisterIdlingResources()' method is replaced with corresponding IdlingRegistry API method
+            IdlingRegistry.getInstance().unregister(mIdlingResource);
         }
     }
 }
