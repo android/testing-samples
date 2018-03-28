@@ -89,28 +89,28 @@ $ cd android-testing
 $ $EDITOR WORKSPACE
 
 # Test everything in a headless mode
-$ /tmp/bazel test //... --spawn_strategy=local
+$ /tmp/bazel test //... --config=headless
 
 # Test a single test, e.g. ui/espresso/BasicSample/BUILD.bazel
-$ /tmp/bazel test //ui/espresso/BasicSample:BasicSampleInstrumentationTest --spawn_strategy=local
+$ /tmp/bazel test //ui/espresso/BasicSample:BasicSampleInstrumentationTest --config=headless
 
 # Test everything with GUI enabled
-$ /tmp/bazel test //... --action_env=DISPLAY=$DISPLAY
+$ /tmp/bazel test //... --config=gui
 
 # Test with a local device or emulator. Ensure that `adb devices` lists the device.
-$ /tmp/bazel test //... --test_output=streamed --test_arg=--device_broker_type=LOCAL_ADB_SERVER
+$ /tmp/bazel test //... --config=local_adb
 
 # If multiple devices are connected, add --device_serial_number=$identifier where $identifier is the name of the device in `adb devices`
-$ /tmp/bazel test //... --test_output=streamed --test_arg=--device_broker_type=LOCAL_ADB_SERVER --test_arg=--device_serial_number=$identifier
+$ /tmp/bazel test //... --config=local_adb --test_arg=--device_serial_number=$identifier
 ```
 
 For more information, check out the tutorial for [Building an Android App with Bazel](https://docs.bazel.build/versions/master/tutorial/android-app.html), and the list of [Android Rules](https://docs.bazel.build/versions/master/be/android.html) in the Bazel Build Encyclopedia.
 
 Known issues:
 
-* Headless mode is unstable in sandboxed mode due to Xvfb issues, so the flag `--spawn_strategy=local` is required.
+* Headless mode is unstable in sandboxed mode due to Xvfb issues.
 * Building of APKs is supported on Linux, Mac and Windows, but testing is only supported on Linux.
-* `android_instrumentation_test.target_device` attribute still needs to be specified even if `LOCAL_ADB_SERVER` is used.
+* `android_instrumentation_test.target_device` attribute still needs to be specified even if `--config=local_adb` is used.
 * If using a local device or emulator, the APKs are not uninstalled automatically after the test. Use this command to
 remove the packages:
     * `adb shell pm list packages com.example.android.testing | cut -d ':' -f 2 | tr -d '\r' | xargs -L1 -t adb uninstall`
