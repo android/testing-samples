@@ -8,7 +8,7 @@ android_sdk_repository(
 )
 
 # Android Test Support
-ATS_COMMIT = "ecc3a8fc236ad89fe6511feb743d1b08be1b53c9"
+ATS_COMMIT = "be7fa5191b3e3eb70411357af13f011dcfb95b50"
 
 http_archive(
     name = "android_test_support",
@@ -21,7 +21,7 @@ load("@android_test_support//:repo.bzl", "android_test_repositories")
 android_test_repositories()
 
 # Google Maven Repository
-GMAVEN_COMMIT = "5e89b7cdc94d002c13576fad3b28b0ae30296e55"
+GMAVEN_COMMIT = "44d75d3e7bdfa8ff0b30ceb048b0f09bc6b72c70"
 
 http_archive(
     name = "gmaven_rules",
