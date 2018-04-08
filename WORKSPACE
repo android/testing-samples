@@ -1,10 +1,7 @@
-# Set the path to your local SDK installation
-
-SDK_PATH = "/path/to/sdk"
-
+# Set the path to your local SDK installation, or use the ANDROID_HOME environment variable.
 android_sdk_repository(
     name = "androidsdk",
-    path = SDK_PATH,
+    # path = "/path/to/sdk",
 )
 
 # Android Test Support
