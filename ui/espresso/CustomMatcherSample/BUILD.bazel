@@ -44,7 +44,6 @@ API_LEVELS = [
     "21_x86",
     "22_x86",
     "23_x86",
-    "24_x86",
 ]
 
 [android_instrumentation_test(
