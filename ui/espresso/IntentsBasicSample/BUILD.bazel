@@ -53,4 +53,4 @@ API_LEVELS = [
     name = "IntentsBasicSampleInstrumentationTest_%s" % API_LEVEL,
     target_device = "@android_test_support//tools/android/emulated_devices/generic_phone:android_%s_qemu2" % API_LEVEL,
     test_app = ":IntentsBasicSampleTest",
-)]
+) for API_LEVEL in API_LEVELS]
