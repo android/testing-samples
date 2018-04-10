@@ -34,8 +34,16 @@ android_binary(
     deps = [":BasicSampleTestLib"],
 )
 
-android_instrumentation_test(
-    name = "BasicSampleInstrumentationTest",
-    target_device = "@android_test_support//tools/android/emulated_devices/generic_phone:android_23_x86_qemu2",
+API_LEVELS = [
+    "19_x86",
+    "21_x86",
+    "22_x86",
+    "23_x86",
+    "24_x86",
+]
+
+[android_instrumentation_test(
+    name = "BasicSampleInstrumentationTest_%s" % API_LEVEL,
+    target_device = "@android_test_support//tools/android/emulated_devices/generic_phone:android_%s_qemu2" % API_LEVEL,
     test_app = ":BasicSampleTest",
-)
+) for API_LEVEL in API_LEVELS]
