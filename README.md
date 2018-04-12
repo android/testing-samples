@@ -70,7 +70,7 @@ Experimental Bazel Support
 
 Some of these samples can be built with [Bazel](https://bazel.build) on Linux. These samples contain a `BUILD.bazel` file, which is similar to a `build.gradle` file. The external dependencies are defined in the top level `WORKSPACE` file.
 
-This is __experimental__ feature. To run the tests, please install the latest version of Bazel (0.12.0rc2) from the [Bazel releases page](https://releases.bazel.build/0.12.0/rc2/index.html).
+This is __experimental__ feature. To run the tests, please install the latest version of Bazel (0.12.0 or later) by following the [instructions on the Bazel website](https://docs.bazel.build/versions/master/install-ubuntu.html).
 
 ### Bazel commands
 
@@ -110,7 +110,7 @@ $ bazel test //... --config=local_device
 $ bazel test //... --config=local_device --test_arg=--device_serial_number=$identifier
 ```
 
-For more information, check out the tutorial for [Building an Android App with Bazel](https://docs.bazel.build/versions/master/tutorial/android-app.html), and the list of [Android Rules](https://docs.bazel.build/versions/master/be/android.html) in the Bazel Build Encyclopedia.
+For more information, check out the documentation for [Android Instrumentation Tests in Bazel](https://docs.bazel.build/versions/master/android-instrumentation-test.html). You may also want to check out [Building an Android App with Bazel](https://docs.bazel.build/versions/master/tutorial/android-app.html), and the list of [Android Rules](https://docs.bazel.build/versions/master/be/android.html) in the Bazel Build Encyclopedia.
 
 Known issues:
 
