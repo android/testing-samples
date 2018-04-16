@@ -18,12 +18,12 @@ load("@android_test_support//:repo.bzl", "android_test_repositories")
 android_test_repositories()
 
 # Google Maven Repository
-GMAVEN_COMMIT = "44d75d3e7bdfa8ff0b30ceb048b0f09bc6b72c70"
+GMAVEN_TAG = "0.1.0"
 
 http_archive(
     name = "gmaven_rules",
-    strip_prefix = "gmaven_rules-%s" % GMAVEN_COMMIT,
-    urls = ["https://github.com/aj-michael/gmaven_rules/archive/%s.tar.gz" % GMAVEN_COMMIT],
+    strip_prefix = "gmaven_rules-%s" % GMAVEN_TAG,
+    urls = ["https://github.com/bazelbuild/gmaven_rules/archive/%s.tar.gz" % GMAVEN_TAG],
 )
 
 load("@gmaven_rules//:gmaven.bzl", "gmaven_rules")
