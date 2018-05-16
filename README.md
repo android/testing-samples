@@ -114,7 +114,6 @@ For more information, check out the documentation for [Android Instrumentation T
 
 Known issues:
 
-* Headless mode is unstable in sandboxed mode due to Xvfb issues.
 * Building of APKs is supported on Linux, Mac and Windows, but testing is only supported on Linux.
 * `android_instrumentation_test.target_device` attribute still needs to be specified even if `--config=local_device` is used.
 * If using a local device or emulator, the APKs are not uninstalled automatically after the test. Use this command to

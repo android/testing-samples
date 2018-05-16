@@ -2,7 +2,6 @@
 # Select a configuration by running `bazel test //my:target --config={headless, gui, local_device}`
 
 # Headless instrumentation tests
-test:headless --spawn_strategy=local
 test:headless --test_arg=--enable_display=false
 
 # Graphical instrumentation tests. Ensure that $DISPLAY is set.
