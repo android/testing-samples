@@ -17,8 +17,8 @@
 package com.example.android.testing.unittesting.basicunitandroidtest;
 
 import android.os.Parcel;
-import android.support.test.filters.SmallTest;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.filters.SmallTest;
+import androidx.test.runner.AndroidJUnit4;
 import android.util.Pair;
 
 import org.junit.Before;

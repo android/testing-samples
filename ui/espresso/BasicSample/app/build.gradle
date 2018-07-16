@@ -10,7 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     lintOptions {
         abortOnError false
@@ -21,12 +21,12 @@ android {
 
 dependencies {
     // App dependencies
-    compile 'com.android.support:support-annotations:' + rootProject.supportLibVersion;
-    compile 'com.google.guava:guava:18.0'
+    implementation 'com.android.support:support-annotations:' + rootProject.supportLibVersion;
+    implementation 'com.google.guava:guava:18.0'
     // Testing-only dependencies
     // Force usage of support annotations in the test app, since it is internally used by the runner module.
-    androidTestCompile 'com.android.support:support-annotations:' + rootProject.supportLibVersion;
-    androidTestCompile 'com.android.support.test:runner:' + rootProject.runnerVersion;
-    androidTestCompile 'com.android.support.test:rules:' + rootProject.rulesVersion;
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:' + rootProject.espressoVersion;
+    androidTestImplementation 'com.android.support:support-annotations:' + rootProject.supportLibVersion;
+    androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion;
+    androidTestImplementation 'androidx.test:rules:' + rootProject.rulesVersion;
+    androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion;
 }

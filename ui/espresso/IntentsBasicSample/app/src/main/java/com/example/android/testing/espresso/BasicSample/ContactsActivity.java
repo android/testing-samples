@@ -19,7 +19,7 @@ package com.example.android.testing.espresso.BasicSample;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.VisibleForTesting;
+import androidx.annotation.VisibleForTesting;
 
 /**
  * This a placeholder Activity for a contacts screen. This activity is never opened and does not

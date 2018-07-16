@@ -18,7 +18,7 @@ package com.example.android.testing.espresso.CustomMatcherSample;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.VisibleForTesting;
+import androidx.annotation.VisibleForTesting;
 import android.view.View;
 import android.widget.EditText;
 
