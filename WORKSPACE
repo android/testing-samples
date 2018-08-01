@@ -5,7 +5,7 @@ android_sdk_repository(
 )
 
 # Android Test Support
-ATS_COMMIT = "f614f877fc5059e5a1ac3b7e4f107f41a1df89f2"
+ATS_COMMIT = "e39a8c7769a5c8b498d0deb0deef3a25b289d410"
 
 http_archive(
     name = "android_test_support",
@@ -18,12 +18,12 @@ load("@android_test_support//:repo.bzl", "android_test_repositories")
 android_test_repositories()
 
 # Google Maven Repository
-GMAVEN_TAG = "0.1.0"
+GMAVEN_TAG = "20180723-2"
 
 http_archive(
     name = "gmaven_rules",
     strip_prefix = "gmaven_rules-%s" % GMAVEN_TAG,
-    urls = ["https://github.com/bazelbuild/gmaven_rules/archive/%s.tar.gz" % GMAVEN_TAG],
+    url = "https://github.com/bazelbuild/gmaven_rules/archive/%s.tar.gz" % GMAVEN_TAG,
 )
 
 load("@gmaven_rules//:gmaven.bzl", "gmaven_rules")
