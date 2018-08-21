@@ -14,7 +14,6 @@ This project uses the Gradle build system. You don't need an IDE to build and ex
     * Open *Run* menu | *Edit Configurations*
     * Add a new *Android Tests* configuration
     * Choose a module
-    * Add a *Specific instrumentation runner*: `android.support.test.runner.AndroidJUnitRunner`
 1. Connect a device or start an emulator
     * Turn animations off.
     (On your device, under Settings->Developer options disable the following 3 settings: "Window animation scale", "Transition animation scale" and "Animator duration scale")
