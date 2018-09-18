@@ -19,6 +19,9 @@ buildscript {
     repositories {
         jcenter()
         maven {
+            url "file:///usr/local/google/home/brettchabot/test_repo/1.1.0-alpha4/m2repository"
+        }
+        maven {
             url "https://maven.google.com"
         }
     }
@@ -33,6 +36,9 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        maven {
+            url "file:///usr/local/google/home/brettchabot/test_repo/1.1.0-alpha4/m2repository"
+        }
         maven {
             url "https://maven.google.com"
         }

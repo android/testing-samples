@@ -51,6 +51,7 @@ public class Calculator {
      * Multiply operation
      */
     public double mul(double firstOperand, double secondOperand) {
+
         return firstOperand * secondOperand;
     }
 }

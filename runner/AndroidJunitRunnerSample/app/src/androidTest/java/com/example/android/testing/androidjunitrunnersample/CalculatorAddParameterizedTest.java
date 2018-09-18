@@ -74,6 +74,7 @@ public class CalculatorAddParameterizedTest {
      */
     public CalculatorAddParameterizedTest(double operandOne, double operandTwo,
             double expectedResult) {
+
         mOperandOne = operandOne;
         mOperandTwo = operandTwo;
         mExpectedResult = expectedResult;
