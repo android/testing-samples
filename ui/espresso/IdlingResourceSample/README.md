@@ -11,14 +11,14 @@ Consider using the CountingIdlingResource class from the espresso-contrib packag
 Note that the `espresso-idling-resource` dependency is added into the `compile` scope:
 
 ```
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
-    compile 'com.android.support.test.espresso:espresso-idling-resource:2.2.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
+    implementation 'com.android.support.test.espresso:espresso-idling-resource:2.2.2'
 ```
 
 This dependency and its implementation are added to the app under test but are not needed in production. This bloats the released app but it's kept this way to simplify the sample. You can:
  * ProGuard/shrink your release build to minimize impact
  * Use a build type or product flavor for tests and remove the Idling Resource classes in the production/release variant.
- * Add the dependency to `androidTestCompile` and inject an IdlingResource-aware MessageDelayer from the test.
+ * Add the dependency to `androidTestImplementation` and inject an IdlingResource-aware MessageDelayer from the test.
  * Keep them, since the added methods and size are insignificant.
 
 
