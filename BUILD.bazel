@@ -7,7 +7,7 @@ java_library(
     visibility = ["//visibility:public"],
     exports = [
         gmaven_artifact("com.android.support:support-annotations:jar:27.0.2"),
-        gmaven_artifact("com.android.support.test.espresso:espresso-core:aar:3.0.1"),
+        gmaven_artifact("com.android.support.test.espresso:espresso-core:aar:3.0.2"),
         gmaven_artifact("com.android.support.test:rules:aar:1.0.1"),
         gmaven_artifact("com.android.support.test:runner:aar:1.0.1"),
         "@com_google_guava_guava//jar",
