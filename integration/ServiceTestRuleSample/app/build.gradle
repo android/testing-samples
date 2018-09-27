@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 26
     buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
         applicationId "com.example.android.testing.integrationtesting.ServiceTestRuleSample"
@@ -21,8 +21,6 @@ android {
 
 dependencies {
     // Testing-only dependencies
-    // Force usage of support annotations in the test app, since it is internally used by the runner module.
-    //androidTestImplementation 'androidx.annotation:annotation:1.0.0-beta01'
     androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion;
     androidTestImplementation 'androidx.test:rules:' + rootProject.rulesVersion;
 }

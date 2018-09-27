@@ -5,7 +5,7 @@ android {
     buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
         applicationId "com.example.android.testing.espresso.BasicSample"
-        minSdkVersion 16
+        minSdkVersion 9
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -24,11 +24,8 @@ dependencies {
     implementation 'androidx.annotation:annotation:' + rootProject.supportLibVersion;
     implementation 'com.google.guava:guava:18.0'
 
-    implementation 'androidx.test:core:1.0.0-alpha5';
-
     // Testing-only dependencies
     androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion;
     androidTestImplementation 'androidx.test:rules:' + rootProject.rulesVersion;
-    //androidTestImplementation 'androidx.test:core:1.0.0-alpha5';
     androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion;
 }

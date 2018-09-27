@@ -36,7 +36,7 @@ android {
 
 dependencies {
     // App dependencies
-    implementation 'androidx.annotation:annotation:1.0.0-beta01'
+    implementation 'androidx.annotation:annotation:' + rootProject.supportLibVersion
     implementation 'com.google.guava:guava:18.0'
 
     // Testing-only dependencies
@@ -45,8 +45,4 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion;
     // Note that espresso-idling-resource is used in the code under test.
     implementation 'androidx.test.espresso:espresso-idling-resource:' + rootProject.espressoVersion;
-
-    // Force usage of support annotations in the test app, since it is internally used by the
-    // runner module.
-    //androidTestImplementation 'com.android.support:support-annotations:' + rootProject.supportLibVersion;
 }

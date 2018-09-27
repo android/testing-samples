@@ -21,7 +21,7 @@ android {
 
 dependencies {
     // App dependencies
-    implementation 'androidx.annotation:annotation:1.0.0-beta01'
+    implementation 'androidx.annotation:annotation:' + rootProject.supportLibVersion;
     // Testing-only dependencies
     androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion;
     androidTestImplementation 'androidx.test:rules:' + rootProject.rulesVersion;

@@ -15,3 +15,5 @@ test:local_device --test_strategy=exclusive
 test:local_device --test_arg=--device_broker_type=LOCAL_ADB_SERVER
 # Uncomment and set $device_id if there is more than one connected device.
 # test:local_device --test_arg=--device_serial_number=$device_id
+
+test --flaky_test_attempts=3
