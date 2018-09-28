@@ -28,7 +28,6 @@ import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
-import android.test.ActivityInstrumentationTestCase2;
 
 import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
@@ -66,7 +65,7 @@ public class LongListActivityTest {
 
     /**
      * A JUnit {@link Rule @Rule} to launch your activity under test. This is a replacement
-     * for {@link ActivityInstrumentationTestCase2}.
+     * for {@link android.test.ActivityInstrumentationTestCase2}.
      * <p>
      * Rules are interceptors which are executed for each test method and will run before
      * any of your setup code in the {@link Before @Before} method.

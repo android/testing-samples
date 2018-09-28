@@ -11,7 +11,7 @@
         android:required="true"/>
 
     <instrumentation android:targetPackage="com.example.android.testing.espresso.intents.AdvancedSample"
-                     android:name="android.support.test.runner.AndroidJUnitRunner"/>
+                     android:name="androidx.test.runner.AndroidJUnitRunner"/>
 
     <application tools:replace="label" android:label="IntentsBasicSampleTest" />
 </manifest>

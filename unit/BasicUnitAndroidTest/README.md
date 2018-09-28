@@ -21,11 +21,11 @@ integration such as Android studio or run the tests on the command line.
     * `LogHistoryAndroidUnitTest` is the Android unit test
     * `MainActivity.java` shows the Parcelable in action but note that the test is not showing any
 activities on the device or emulator.
-1. Create the test configuration with a custom runner: `android.support.test.runner.AndroidJUnitRunner`
+1. Create the test configuration with a custom runner: `androidx.test.runner.AndroidJUnitRunner`
     * Open *Run* menu | *Edit Configurations*
     * Add a new *Android Tests* configuration
     * Choose a module
-    * Add a *Specific instrumentation runner*: `android.support.test.runner.AndroidJUnitRunner`
+    * Add a *Specific instrumentation runner*: `androidx.test.runner.AndroidJUnitRunner`
 1. Connect a device or start an emulator
 1. Run the newly created configuration
 

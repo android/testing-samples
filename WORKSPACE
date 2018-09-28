@@ -1,6 +1,8 @@
 # Set the path to your local SDK installation, or use the ANDROID_HOME environment variable.
 android_sdk_repository(
     name = "androidsdk",
+    api_level = 28,
+    build_tools_version = "28.0.2",
     # path = "/path/to/sdk",
 )
 
