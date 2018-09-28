@@ -3,29 +3,25 @@
 buildscript {
     repositories {
         jcenter()
-        maven {
-            url "https://maven.google.com"
-        }
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.2.0'
     }
 }
 
 allprojects {
     repositories {
         jcenter()
-        maven {
-            url "https://maven.google.com"
-        }
+        google()
     }
 }
 
 ext {
-    buildToolsVersion = "25.0.0"
-    supportLibVersion = "25.4.0"
-    runnerVersion = "1.0.0"
-    rulesVersion = "1.0.0"
-    espressoVersion = "3.0.0"
-    uiautomatorVersion = "2.1.3"
+    buildToolsVersion = "28.0.2"
+    androidxLibVersion = "1.0.0"
+    runnerVersion = "1.1.0-alpha4"
+    rulesVersion = "1.1.0-alpha4"
+    espressoVersion = "3.1.0-alpha4"
+    uiautomatorVersion = "2.2.0-alpha4"
 }

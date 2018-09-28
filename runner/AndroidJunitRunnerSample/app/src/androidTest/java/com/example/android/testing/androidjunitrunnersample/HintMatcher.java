@@ -16,7 +16,7 @@
 
 package com.example.android.testing.androidjunitrunnersample;
 
-import android.support.test.espresso.matcher.BoundedMatcher;
+import androidx.test.espresso.matcher.BoundedMatcher;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;

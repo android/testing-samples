@@ -17,8 +17,8 @@
 package com.example.android.testing.espresso.IdlingResourceSample;
 
 import android.os.Handler;
-import android.support.annotation.Nullable;
-import android.support.test.espresso.IdlingResource;
+import androidx.annotation.Nullable;
+import androidx.test.espresso.IdlingResource;
 
 import com.example.android.testing.espresso.IdlingResourceSample.IdlingResource.SimpleIdlingResource;
 

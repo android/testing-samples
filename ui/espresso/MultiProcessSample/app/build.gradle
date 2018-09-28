@@ -18,7 +18,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.0"
+    buildToolsVersion "28.0.2"
     defaultConfig {
         applicationId "com.example.android.testing.espresso.multiprocesssample"
         minSdkVersion 26
@@ -26,7 +26,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -36,9 +36,9 @@ android {
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
-    androidTestCompile('com.android.support.test.espresso:espresso-core:3.0.0', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    androidTestCompile "com.android.support.test:runner:1.0.0"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+    androidTestImplementation 'androidx.test.espresso:espresso-remote:3.1.0-alpha4'
+    androidTestImplementation "androidx.test:runner:1.1.0-alpha4"
+    androidTestImplementation "androidx.test:rules:1.1.0-alpha4"
 }

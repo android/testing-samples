@@ -20,7 +20,7 @@ import com.google.common.collect.Maps;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.VisibleForTesting;
+import androidx.annotation.VisibleForTesting;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

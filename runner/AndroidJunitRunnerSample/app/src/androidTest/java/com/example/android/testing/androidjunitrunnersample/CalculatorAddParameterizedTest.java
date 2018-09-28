@@ -21,7 +21,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import android.support.test.filters.SmallTest;
+import androidx.test.filters.SmallTest;
 
 import java.lang.Iterable;
 import java.util.Arrays;
@@ -74,6 +74,7 @@ public class CalculatorAddParameterizedTest {
      */
     public CalculatorAddParameterizedTest(double operandOne, double operandTwo,
             double expectedResult) {
+
         mOperandOne = operandOne;
         mOperandTwo = operandTwo;
         mExpectedResult = expectedResult;

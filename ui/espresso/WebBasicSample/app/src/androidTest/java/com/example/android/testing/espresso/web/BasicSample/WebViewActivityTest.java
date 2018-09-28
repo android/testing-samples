@@ -22,21 +22,20 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import android.content.Intent;
-import android.support.test.espresso.web.sugar.Web;
-import android.support.test.espresso.web.webdriver.DriverAtoms;
-import android.support.test.espresso.web.webdriver.Locator;
-import android.support.test.filters.LargeTest;
-import android.support.test.rule.ActivityTestRule;
-import android.support.test.runner.AndroidJUnit4;
-import android.test.ActivityInstrumentationTestCase2;
+import androidx.test.espresso.web.sugar.Web;
+import androidx.test.espresso.web.webdriver.DriverAtoms;
+import androidx.test.espresso.web.webdriver.Locator;
+import androidx.test.filters.LargeTest;
+import androidx.test.rule.ActivityTestRule;
+import androidx.test.runner.AndroidJUnit4;
 import android.webkit.WebView;
 
-import static android.support.test.espresso.web.assertion.WebViewAssertions.webMatches;
-import static android.support.test.espresso.web.sugar.Web.onWebView;
-import static android.support.test.espresso.web.webdriver.DriverAtoms.clearElement;
-import static android.support.test.espresso.web.webdriver.DriverAtoms.findElement;
-import static android.support.test.espresso.web.webdriver.DriverAtoms.getText;
-import static android.support.test.espresso.web.webdriver.DriverAtoms.webClick;
+import static androidx.test.espresso.web.assertion.WebViewAssertions.webMatches;
+import static androidx.test.espresso.web.sugar.Web.onWebView;
+import static androidx.test.espresso.web.webdriver.DriverAtoms.clearElement;
+import static androidx.test.espresso.web.webdriver.DriverAtoms.findElement;
+import static androidx.test.espresso.web.webdriver.DriverAtoms.getText;
+import static androidx.test.espresso.web.webdriver.DriverAtoms.webClick;
 import static org.hamcrest.Matchers.containsString;
 
 /**
@@ -54,7 +53,7 @@ public class WebViewActivityTest {
 
     /**
      * A JUnit {@link Rule @Rule} to launch your activity under test. This is a replacement
-     * for {@link ActivityInstrumentationTestCase2}.
+     * for {@link android.test.ActivityInstrumentationTestCase2}.
      * <p>
      * Rules are interceptors which are executed for each test method and will run before
      * any of your setup code in the {@link Before @Before} method.

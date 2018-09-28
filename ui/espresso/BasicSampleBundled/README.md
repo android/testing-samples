@@ -12,12 +12,12 @@ The problem is that the same LICENSE.TXT file is found multiple times and AAPT d
 1. Check out the relevant code:
     * The application under test is located in `src/`
     * Tests are in `tests/`
-1. Create the test configuration with a custom runner: `android.support.test.runner.AndroidJUnitRunner`
+1. Create the test configuration with a custom runner: `androidx.test.runner.AndroidJUnitRunner`
     * Open *Run* menu | *Run Configurations*
     * Click on Android JUnit Test
     * Add a new configuration by pressing the "new launch configuration" button
     * Select your project by clicking the "Browse" button
-    * Add a *Specific instrumentation runner*: `android.support.test.runner.AndroidJUnitRunner`
+    * Add a *Specific instrumentation runner*: `androidx.test.runner.AndroidJUnitRunner`
 1. Connect a device or start an emulator
     * Turn animations off.
     (On your device, under Settings->Developer options disable the following 3 settings: "Window animation scale", "Transition animation scale" and "Animator duration scale")

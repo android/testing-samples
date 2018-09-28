@@ -18,10 +18,10 @@ package com.example.android.testing.espresso.IdlingResourceSample;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.annotation.VisibleForTesting;
-import android.support.test.espresso.IdlingResource;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.VisibleForTesting;
+import androidx.test.espresso.IdlingResource;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;

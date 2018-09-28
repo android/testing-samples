@@ -16,8 +16,8 @@
 
 package com.example.android.testing.espresso.IdlingResourceSample.IdlingResource;
 
-import android.support.annotation.Nullable;
-import android.support.test.espresso.IdlingResource;
+import androidx.annotation.Nullable;
+import androidx.test.espresso.IdlingResource;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 

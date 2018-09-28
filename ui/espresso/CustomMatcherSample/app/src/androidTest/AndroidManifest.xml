@@ -7,7 +7,7 @@
     <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="26" />
 
     <instrumentation android:targetPackage="com.example.android.testing.espresso.CustomMatcherSample"
-                     android:name="android.support.test.runner.AndroidJUnitRunner"/>
+                     android:name="androidx.test.runner.AndroidJUnitRunner"/>
 
     <application tools:replace="label" android:label="CustomMatcherSampleTest" />
 </manifest>

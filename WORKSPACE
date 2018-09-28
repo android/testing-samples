@@ -1,6 +1,8 @@
 # Set the path to your local SDK installation, or use the ANDROID_HOME environment variable.
 android_sdk_repository(
     name = "androidsdk",
+    api_level = 28,
+    build_tools_version = "28.0.2",
     # path = "/path/to/sdk",
 )
 
@@ -18,7 +20,7 @@ load("@android_test_support//:repo.bzl", "android_test_repositories")
 android_test_repositories()
 
 # Google Maven Repository
-GMAVEN_TAG = "20180723-2"
+GMAVEN_TAG = "20180927-1"
 
 http_archive(
     name = "gmaven_rules",
