@@ -10,7 +10,7 @@ java_library(
         gmaven_artifact("androidx.test.espresso:espresso-core:aar:3.1.0-alpha4"),
         gmaven_artifact("androidx.test:rules:aar:1.1.0-alpha4"),
         gmaven_artifact("androidx.test:runner:aar:1.1.0-alpha4"),
-        gmaven_artifact("androidx.test:monitor:aar:1.1.0-alpha4"),
+        gmaven_artifact("androidx.test:monitor:aar:1.1.0-alpha4"),       
         "@com_google_guava_guava//jar",
         "@com_google_inject_guice//jar",
         "@javax_inject_javax_inject//jar",
