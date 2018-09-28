@@ -9,7 +9,7 @@ android_library(
     manifest = "app/src/main/AndroidManifest.xml",
     resource_files = glob(["app/src/main/res/**/*"]),
     deps = [
-        gmaven_artifact("com.android.support:support-annotations:27.0.2"),
+        gmaven_artifact("androidx.annotation:annotation:1.0.0"),
         "@com_google_guava_guava//jar",
     ],
 )
@@ -26,7 +26,7 @@ android_library(
     srcs = glob(["app/src/androidTest/**/*.java"]),
     custom_package = "com.example.android.testing.espresso.intents.AdvancedSample",
     deps = [
-        gmaven_artifact("com.android.support.test.espresso:espresso-intents:aar:3.0.1"),
+        gmaven_artifact("androidx.test.espresso:espresso-intents:aar:3.1.0-alpha4"),
         ":IntentsAdvancedSampleLib",
         "//:test_deps",
     ],

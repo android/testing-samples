@@ -27,11 +27,9 @@ android {
 
 dependencies {
     // App dependencies
-    implementation 'androidx.annotation:annotation:1.0.0-beta01';
+    implementation 'androidx.annotation:annotation:1.0.0';
     implementation 'com.google.guava:guava:18.0'
     // Testing-only dependencies
-    // Force usage of support annotations in the test app, since it is internally used by the runner module.
-    //androidTestImplementation 'com.android.support:support-annotations:' + rootProject.supportLibVersion;
     androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion;
     androidTestImplementation 'androidx.test:rules:' + rootProject.rulesVersion;
     androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion;

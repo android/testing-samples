@@ -31,7 +31,7 @@
     -->
 
     <instrumentation
-        android:name="android.support.test.runner.AndroidJUnitRunner"
+        android:name="androidx.test.runner.AndroidJUnitRunner"
         android:targetPackage="com.example.android.testing.espresso.multiprocesssample"
         android:targetProcesses="*" > <!-- The instrumentation attribute introduced in O -->
 
@@ -44,7 +44,7 @@
         -->
         <meta-data
             android:name="remoteMethod"
-            android:value="android.support.test.espresso.remote.EspressoRemote#remoteInit"/>
+            android:value="androidx.test.espresso.remote.EspressoRemote#remoteInit"/>
 
     </instrumentation>
 

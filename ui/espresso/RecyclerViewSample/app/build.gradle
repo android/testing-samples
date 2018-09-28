@@ -17,12 +17,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 28
     buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
         applicationId "com.example.android.testing.espresso.RecyclerViewSample"
         minSdkVersion 14
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
@@ -35,8 +35,8 @@ android {
 
 dependencies {
     // App dependencies
-    implementation 'androidx.annotation:annotation:' + + rootProject.supportLibVersion;
-    implementation 'androidx.recyclerview:recyclerview:' + + rootProject.supportLibVersion;
+    implementation 'androidx.annotation:annotation:' + rootProject.androidxLibVersion;
+    implementation 'androidx.recyclerview:recyclerview:' + rootProject.androidxLibVersion;
 
     // Testing-only dependencies
     androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion;

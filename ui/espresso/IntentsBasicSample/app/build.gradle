@@ -22,8 +22,8 @@ android {
 dependencies {
 
     // App dependencies
-    implementation 'androidx.annotation:annotation:' + rootProject.supportLibVersion;
-    implementation 'androidx.legacy:legacy-support-v4:' + rootProject.supportLibVersion;
+    implementation 'androidx.annotation:annotation:' + rootProject.androidxLibVersion;
+    implementation 'androidx.legacy:legacy-support-v4:' + rootProject.androidxLibVersion;
 
     // Testing-only dependencies
     androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion;

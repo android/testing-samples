@@ -28,7 +28,7 @@ android {
 
 dependencies {
     // App dependencies
-    implementation 'androidx.annotation:annotation:' + rootProject.supportLibVersion;
+    implementation 'androidx.annotation:annotation:' + rootProject.androidxLibVersion;
     implementation 'com.google.guava:guava:18.0'
     // Testing-only dependencies
     androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion;
