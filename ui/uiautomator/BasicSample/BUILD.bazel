@@ -25,7 +25,7 @@ android_library(
     deps = [
         ":BasicSampleLib",
         "//:test_deps",
-        gmaven_artifact("androidx.test.uiautomator:uiautomator:aar:2.2.0-alpha4"),
+        gmaven_artifact("androidx.test.uiautomator:uiautomator:aar:2.2.0-beta01"),
     ],
 )
 

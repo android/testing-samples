@@ -20,7 +20,7 @@ load("@android_test_support//:repo.bzl", "android_test_repositories")
 android_test_repositories()
 
 # Google Maven Repository
-GMAVEN_TAG = "20180927-1"
+GMAVEN_TAG = "20181004-1"
 
 http_archive(
     name = "gmaven_rules",
