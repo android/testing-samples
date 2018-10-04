@@ -29,7 +29,7 @@ android_library(
     deps = [
         ":IntentsBasicSampleLib",
         "//:test_deps",
-        gmaven_artifact("androidx.test.espresso:espresso-intents:aar:3.1.0-alpha4"),
+        gmaven_artifact("androidx.test.espresso:espresso-intents:aar:3.1.0-beta01"),
     ],
 )
 

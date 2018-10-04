@@ -21,8 +21,8 @@ allprojects {
 }
 
 ext {
-    buildToolsVersion = "28.0.2"
+    buildToolsVersion = "28.0.3"
     androidxLibVersion = "1.0.0"
-    runnerVersion = "1.1.0-alpha4"
-    rulesVersion = "1.1.0-alpha4"
+    runnerVersion = "1.1.0-beta01"
+    rulesVersion = "1.1.0-beta01"
 }
