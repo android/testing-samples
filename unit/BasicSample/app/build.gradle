@@ -21,7 +21,7 @@ android {
     buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
         applicationId "com.example.android.testing.unittesting.BasicSample"
-        minSdkVersion 9
+        minSdkVersion 14
         versionCode 1
         versionName "1.0"
         targetSdkVersion 26

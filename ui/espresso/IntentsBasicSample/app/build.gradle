@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.2'
     defaultConfig {
         applicationId "com.example.android.testing.espresso.BasicSample"
         minSdkVersion 14
@@ -30,4 +30,6 @@ dependencies {
     androidTestImplementation 'androidx.test:rules:' + rootProject.rulesVersion;
     androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion;
     androidTestImplementation 'androidx.test.espresso:espresso-intents:' + rootProject.espressoVersion;
+    androidTestImplementation 'androidx.test.ext:truth:' + rootProject.extTruthVersion;
+    androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
 }

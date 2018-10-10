@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.android.testing.unittesting.basicunitandroidtest"
-        minSdkVersion 9
+        minSdkVersion 14
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"

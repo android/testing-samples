@@ -5,7 +5,7 @@ android {
     buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
         applicationId "com.example.android.testing.integrationtesting.ServiceTestRuleSample"
-        minSdkVersion 9
+        minSdkVersion 14
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -21,6 +21,8 @@ android {
 
 dependencies {
     // Testing-only dependencies
+    androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion;
+    androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
     androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion;
     androidTestImplementation 'androidx.test:rules:' + rootProject.rulesVersion;
 }

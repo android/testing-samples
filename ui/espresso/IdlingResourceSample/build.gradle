@@ -18,6 +18,7 @@
 
 buildscript {
     repositories {
+        // Insert local test repo here
         jcenter()
         google()
     }
@@ -31,6 +32,7 @@ buildscript {
 
 allprojects {
     repositories {
+        // Insert local test repo here
         jcenter()
         google()
     }
@@ -39,7 +41,7 @@ allprojects {
 ext {
     buildToolsVersion = "28.0.3"
     androidxLibVersion = "1.0.0"
-    runnerVersion = "1.1.0-beta01"
-    rulesVersion = "1.1.0-beta01"
-    espressoVersion = "3.1.0-beta01"
+    runnerVersion = "1.1.0-beta02"
+    rulesVersion = "1.1.0-beta02"
+    espressoVersion = "3.1.0-beta02"
 }
