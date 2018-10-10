@@ -21,7 +21,7 @@ android {
     buildToolsVersion "28.0.2"
     defaultConfig {
         applicationId "com.example.android.testing.espresso.multiprocesssample"
-        minSdkVersion 26
+        minSdkVersion 14
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"

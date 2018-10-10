@@ -18,10 +18,9 @@ package com.example.android.testing.ServiceTestRuleSample;
 
 import android.content.Intent;
 import android.os.IBinder;
-import androidx.test.InstrumentationRegistry;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.MediumTest;
 import androidx.test.rule.ServiceTestRule;
-import androidx.test.runner.AndroidJUnit4;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -29,6 +28,7 @@ import org.junit.runner.RunWith;
 
 import java.util.concurrent.TimeoutException;
 
+import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 import static org.hamcrest.CoreMatchers.any;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -60,7 +60,7 @@ public class LocalServiceTest {
     public void testWithBoundService() throws TimeoutException {
         // Create the service Intent.
         Intent serviceIntent =
-                new Intent(InstrumentationRegistry.getTargetContext(), LocalService.class);
+                new Intent(getApplicationContext(), LocalService.class);
 
         // Data can be passed to the service via the Intent.
         serviceIntent.putExtra(LocalService.SEED_KEY, 42L);

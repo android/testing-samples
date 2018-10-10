@@ -34,6 +34,7 @@ import static androidx.test.espresso.intent.matcher.IntentMatchers.isInternal;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.toPackage;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static androidx.test.ext.truth.content.IntentSubject.assertThat;
 
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.core.AllOf.allOf;
@@ -42,10 +43,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
+
+import androidx.test.espresso.intent.Intents;
 import androidx.test.espresso.intent.rule.IntentsTestRule;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
+
+import com.google.common.collect.Iterables;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -114,6 +119,23 @@ public class DialerActivityTest {
                 hasAction(Intent.ACTION_CALL),
                 hasData(INTENT_DATA_PHONE_NUMBER),
                 toPackage(PACKAGE_ANDROID_DIALER)));
+    }
+
+    /**
+     * Duplicate typeNumber_ValidInput_InitiatesCall, but using truth assertions
+     */
+    @Test
+    public void typeNumber_ValidInput_InitiatesCall_truth() {
+        // Types a phone number into the dialer edit text field and presses the call button.
+        onView(withId(R.id.edit_text_caller_number))
+                .perform(typeText(VALID_PHONE_NUMBER), closeSoftKeyboard());
+        onView(withId(R.id.button_call_number)).perform(click());
+
+        // Verify that an intent to the dialer was sent with the correct action, phone
+        // number and package.
+        Intent receivedIntent = Iterables.getOnlyElement(Intents.getIntents());
+        assertThat(receivedIntent).hasAction(Intent.ACTION_CALL);
+        assertThat(receivedIntent).hasData(INTENT_DATA_PHONE_NUMBER);
     }
 
     @Test

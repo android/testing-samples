@@ -24,9 +24,9 @@ import org.junit.Test;
 import org.junit.internal.builders.AllDefaultPossibilitiesBuilder;
 import org.junit.runner.RunWith;
 
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
-import androidx.test.runner.AndroidJUnit4;
 import androidx.test.runner.AndroidJUnitRunner;
 
 import static androidx.test.espresso.Espresso.onView;
