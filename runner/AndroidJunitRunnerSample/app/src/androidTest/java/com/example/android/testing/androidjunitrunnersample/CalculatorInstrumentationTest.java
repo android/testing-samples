@@ -19,16 +19,16 @@ package com.example.android.testing.androidjunitrunnersample;
 import junit.framework.TestSuite;
 
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.internal.builders.AllDefaultPossibilitiesBuilder;
 import org.junit.runner.RunWith;
 
+import androidx.test.core.app.ActivityScenario;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
-import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnitRunner;
 
+import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
@@ -51,23 +51,16 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 public class CalculatorInstrumentationTest {
 
     /**
-     * A JUnit {@link Rule @Rule} to launch your activity under test. This is a replacement
-     * for {@link android.test.ActivityInstrumentationTestCase2}.
-     * <p>
-     * Rules are interceptors which are executed for each test method and will run before
-     * any of your setup code in the {@link Before @Before} method.
-     * <p>
-     * {@link ActivityTestRule} will create and launch of the activity for you and also expose
-     * the activity under test. To get a reference to the activity you can use
-     * the {@link ActivityTestRule#getActivity()} method.
+     * Use {@link ActivityScenario} to create and launch of the activity.
      */
-    @Rule
-    public ActivityTestRule<CalculatorActivity> mActivityRule = new ActivityTestRule<>(
-            CalculatorActivity.class);
+    @Before
+    public void launchActivity() {
+        ActivityScenario.launch(CalculatorActivity.class);
+    }
 
     @Test
     public void noOperandShowsComputationError() {
-        final String expectedResult = mActivityRule.getActivity().getString(R.string.computationError);
+        final String expectedResult = getApplicationContext().getString(R.string.computationError);
         onView(withId(R.id.operation_add_btn)).perform(click());
         onView(withId(R.id.operation_result_text_view)).check(matches(withText(expectedResult)));
     }
@@ -89,8 +82,7 @@ public class CalculatorInstrumentationTest {
 
     @Test
     public void divZeroForOperandTwoShowsError() {
-        final String expectedResult = mActivityRule.getActivity().getString(
-                R.string.computationError);
+        final String expectedResult = getApplicationContext().getString(R.string.computationError);
         performOperation(R.id.operation_div_btn, "128.0", "0.0", expectedResult);
     }
 

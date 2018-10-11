@@ -16,11 +16,12 @@
 
 package com.example.android.testing.espresso.multiprocesssample;
 
+import androidx.test.core.app.ActivityScenario;
 import androidx.test.filters.LargeTest;
-import androidx.test.rule.ActivityTestRule;
-import androidx.test.runner.AndroidJUnit4;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 import android.util.Log;
 
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -44,9 +45,10 @@ public class ExampleInstrumentedTest {
     private static final String DEFAULT_PROC_NAME =
             "com.example.android.testing.espresso.multiprocesssample";
 
-    @Rule
-    public ActivityTestRule<DefaultProcessActivity> rule =
-            new ActivityTestRule<>(DefaultProcessActivity.class);
+    @Before
+    public void launchActivity() {
+        ActivityScenario.launch(DefaultProcessActivity.class);
+    }
 
     @Test
     public void verifyAssertingOnViewInRemoteProcessIsSuccessful() {

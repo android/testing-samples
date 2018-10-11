@@ -18,7 +18,7 @@ package com.example.android.testing.unittesting.basicunitandroidtest;
 
 import android.os.Parcel;
 import androidx.test.filters.SmallTest;
-import androidx.test.runner.AndroidJUnit4;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 import android.util.Pair;
 
 import org.junit.Before;
@@ -27,8 +27,7 @@ import org.junit.runner.RunWith;
 
 import java.util.List;
 
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
+import static com.google.common.truth.Truth.assertThat;
 
 /**
  * Tests that the parcelable interface is implemented correctly.
@@ -63,8 +62,8 @@ public class LogHistoryAndroidUnitTest {
         List<Pair<String, Long>> createdFromParcelData = createdFromParcel.getData();
 
         // Verify that the received data is correct.
-        assertThat(createdFromParcelData.size(), is(1));
-        assertThat(createdFromParcelData.get(0).first, is(TEST_STRING));
-        assertThat(createdFromParcelData.get(0).second, is(TEST_LONG));
+        assertThat(createdFromParcelData.size()).isEqualTo(1);
+        assertThat(createdFromParcelData.get(0).first).isEqualTo(TEST_STRING);
+        assertThat(createdFromParcelData.get(0).second).isEqualTo(TEST_LONG);
     }
 }

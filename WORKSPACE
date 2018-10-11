@@ -54,7 +54,7 @@ maven_jar(
 
 maven_jar(
     name = "com_google_guava_guava",
-    artifact = "com.google.guava:guava:18.0",
+    artifact = "com.google.guava:guava:26.0-android",
 )
 
 maven_jar(

@@ -1,4 +1,5 @@
 load("@gmaven_rules//:defs.bzl", "gmaven_artifact")
+load("//:common_defs.bzl", "androidxLibVersion", "coreVersion", "espressoVersion", "extTruthVersion", "minSdkVersion", "targetSdkVersion")
 
 licenses(["notice"])  # Apache 2.0
 
@@ -9,8 +10,8 @@ android_library(
     manifest = "app/src/main/AndroidManifest.xml",
     resource_files = glob(["app/src/main/res/**/*"]),
     deps = [
-        gmaven_artifact("androidx.annotation:annotation:1.0.0"),
-        gmaven_artifact("androidx.core:core:aar:1.0.0"),
+        gmaven_artifact("androidx.annotation:annotation:" + androidxLibVersion),
+        gmaven_artifact("androidx.core:core:aar:" + androidxLibVersion),
         "@com_google_guava_guava//jar",
     ],
 )
@@ -19,6 +20,10 @@ android_binary(
     name = "IntentsBasicSample",
     custom_package = "com.example.android.testing.espresso.BasicSample",
     manifest = "app/src/main/AppManifest.xml",
+    manifest_values = {
+        "minSdkVersion": minSdkVersion,
+        "targetSdkVersion": targetSdkVersion,
+    },
     deps = [":IntentsBasicSampleLib"],
 )
 
@@ -29,9 +34,9 @@ android_library(
     deps = [
         ":IntentsBasicSampleLib",
         "//:test_deps",
-        gmaven_artifact("androidx.test.espresso:espresso-intents:aar:3.1.0-beta02"),
-        gmaven_artifact("androidx.test.ext:truth:aar:1.0.0-beta02"),
-	"@truth//jar",
+        gmaven_artifact("androidx.test.espresso:espresso-intents:aar:" + espressoVersion),
+        gmaven_artifact("androidx.test.ext:truth:aar:" + extTruthVersion),
+        "@truth//jar",
     ],
 )
 
@@ -40,6 +45,10 @@ android_binary(
     custom_package = "com.example.android.testing.espresso.BasicSample",
     instruments = ":IntentsBasicSample",
     manifest = "app/src/androidTest/AndroidManifest.xml",
+    manifest_values = {
+        "minSdkVersion": minSdkVersion,
+        "targetSdkVersion": targetSdkVersion,
+    },
     deps = [":IntentsBasicSampleTestLib"],
 )
 

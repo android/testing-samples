@@ -24,15 +24,14 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
-import androidx.test.espresso.Espresso;
+import androidx.test.core.app.ActivityScenario;
+import androidx.test.espresso.IdlingRegistry;
 import androidx.test.espresso.IdlingResource;
 import androidx.test.filters.LargeTest;
-import androidx.test.rule.ActivityTestRule;
-import androidx.test.runner.AndroidJUnit4;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -46,17 +45,25 @@ public class ChangeTextBehaviorTest {
 
     private static final String STRING_TO_BE_TYPED = "Espresso";
 
-    @Rule
-    public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<>(
-            MainActivity.class);
-
     private IdlingResource mIdlingResource;
 
+
+    /**
+     * Use {@link ActivityScenario to launch and get access to the activity.
+     * {@link ActivityScenario#onActivity(ActivityScenario.ActivityAction)} provides a thread-safe
+     * mechanism to access the activity.
+     */
     @Before
     public void registerIdlingResource() {
-        mIdlingResource = mActivityRule.getActivity().getIdlingResource();
-        // To prove that the test fails, omit this call:
-        Espresso.registerIdlingResources(mIdlingResource);
+        ActivityScenario activityScenario = ActivityScenario.launch(MainActivity.class);
+        activityScenario.onActivity(new ActivityScenario.ActivityAction<MainActivity>() {
+            @Override
+            public void perform(MainActivity activity) {
+                mIdlingResource = activity.getIdlingResource();
+                // To prove that the test fails, omit this call:
+                IdlingRegistry.getInstance().register(mIdlingResource);
+            }
+        });
     }
 
     @Test
@@ -73,7 +80,7 @@ public class ChangeTextBehaviorTest {
     @After
     public void unregisterIdlingResource() {
         if (mIdlingResource != null) {
-            Espresso.unregisterIdlingResources(mIdlingResource);
+            IdlingRegistry.getInstance().unregister(mIdlingResource);
         }
     }
 }
