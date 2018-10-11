@@ -22,7 +22,7 @@
     <!-- Multi-Process Espresso only works on API level 26 and above-->
     <uses-sdk
         android:minSdkVersion="26"
-        android:targetSdkVersion="26"/>
+        android:targetSdkVersion="28"/>
 
     <!--
       This custom androidTest/AndroidManifest.xml is required because the current Gradle DSL
