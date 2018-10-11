@@ -32,6 +32,7 @@ load("@gmaven_rules//:gmaven.bzl", "gmaven_rules")
 
 gmaven_rules()
 
+
 maven_jar(
     name = "com_google_inject_guice",
     artifact = "com.google.inject:guice:4.0",
