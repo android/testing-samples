@@ -27,7 +27,7 @@ android_library(
     srcs = glob(["app/src/androidTest/**/*.java"]),
     custom_package = "com.example.android.testing.espresso.RecyclerViewSample",
     deps = [
-        gmaven_artifact("androidx.test.espresso:espresso-contrib:aar:3.1.0-beta01"),
+        gmaven_artifact("androidx.test.espresso:espresso-contrib:aar:3.1.0-beta02"),
         ":RecyclerViewSampleLib",
         "//:test_deps",
     ],

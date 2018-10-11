@@ -10,7 +10,7 @@ android_library(
     resource_files = glob(["app/src/main/res/**/*"]),
     deps = [
         gmaven_artifact("androidx.annotation:annotation:1.0.0"),
-        gmaven_artifact("androidx.test.espresso:espresso-idling-resource:aar:3.1.0-beta01"),
+        gmaven_artifact("androidx.test.espresso:espresso-idling-resource:aar:3.1.0-beta02"),
         "@com_google_guava_guava//jar",
     ],
 )
@@ -27,7 +27,7 @@ android_library(
     srcs = glob(["app/src/androidTest/**/*.java"]),
     custom_package = "com.example.android.testing.espresso.IdlingResourceSample",
     deps = [
-        gmaven_artifact("androidx.test.espresso:espresso_idling_resource:aar:3.1.0-beta01"),
+        gmaven_artifact("androidx.test.espresso:espresso_idling_resource:aar:3.1.0-beta02"),
         ":IdlingResourceSampleLib",
         "//:test_deps",
     ],
