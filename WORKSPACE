@@ -20,7 +20,7 @@ load("@android_test_support//:repo.bzl", "android_test_repositories")
 android_test_repositories()
 
 # Google Maven Repository
-GMAVEN_TAG = "20181004-1"
+GMAVEN_TAG = "20181010-1"
 
 http_archive(
     name = "gmaven_rules",
@@ -55,4 +55,9 @@ maven_jar(
 maven_jar(
     name = "com_google_guava_guava",
     artifact = "com.google.guava:guava:18.0",
+)
+
+maven_jar(
+    name = "truth",
+    artifact = "com.google.truth:truth:0.42",
 )

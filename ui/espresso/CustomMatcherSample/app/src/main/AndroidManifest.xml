@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.android.testing.espresso.CustomMatcherSample">
 
-    <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="26" />
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="28" />
 
     <application
             android:icon="@drawable/ic_launcher"
