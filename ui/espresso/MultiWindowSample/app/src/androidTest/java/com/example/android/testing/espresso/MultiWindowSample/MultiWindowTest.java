@@ -16,8 +16,8 @@
 package com.example.android.testing.espresso.MultiWindowSample;
 
 import androidx.test.filters.LargeTest;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.rule.ActivityTestRule;
-import androidx.test.runner.AndroidJUnit4;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -155,7 +155,6 @@ public class MultiWindowTest {
         onView(withId(R.id.auto_complete_text_view))
                 .check(matches(withText("Baltic Sea")));
     }
-
 }
 
 

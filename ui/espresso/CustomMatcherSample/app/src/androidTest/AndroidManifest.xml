@@ -4,8 +4,6 @@
       package="com.example.android.testing.espresso.CustomMatcherSample"
       android:versionCode="1"
       android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="28" />
-
     <instrumentation android:targetPackage="com.example.android.testing.espresso.CustomMatcherSample"
                      android:name="androidx.test.runner.AndroidJUnitRunner"/>
 

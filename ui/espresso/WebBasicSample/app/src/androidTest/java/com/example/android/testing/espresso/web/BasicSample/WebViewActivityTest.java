@@ -22,12 +22,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import android.content.Intent;
+
+import androidx.test.core.app.ActivityScenario;
 import androidx.test.espresso.web.sugar.Web;
 import androidx.test.espresso.web.webdriver.DriverAtoms;
 import androidx.test.espresso.web.webdriver.Locator;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
-import androidx.test.runner.AndroidJUnit4;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 import android.webkit.WebView;
 
 import static androidx.test.espresso.web.assertion.WebViewAssertions.webMatches;

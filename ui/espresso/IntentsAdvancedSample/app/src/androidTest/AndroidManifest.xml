@@ -4,7 +4,6 @@
       package="com.example.android.testing.espresso.intents.AdvancedSample"
       android:versionCode="1"
       android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="28" />
 
     <uses-feature
         android:name="android.hardware.camera"

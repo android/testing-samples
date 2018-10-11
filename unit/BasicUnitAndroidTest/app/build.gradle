@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 28
     buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
         applicationId "com.example.android.testing.unittesting.basicunitandroidtest"
         minSdkVersion 14
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -16,6 +16,8 @@ android {
 
 dependencies {
     // Testing-only dependencies
+    androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion;
+    androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
     androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion;
-    androidTestImplementation 'org.hamcrest:hamcrest-library:' + rootProject.hamcrestVersion;
+    androidTestImplementation 'com.google.truth:truth:' + rootProject.truthVersion
 }

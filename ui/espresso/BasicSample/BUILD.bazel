@@ -1,5 +1,7 @@
 licenses(["notice"])  # Apache 2.0
 
+load("//:common_defs.bzl", "minSdkVersion", "targetSdkVersion")
+
 android_library(
     name = "BasicSampleLib",
     srcs = glob(["app/src/main/**/*.java"]),
@@ -23,6 +25,10 @@ android_binary(
     name = "BasicSample",
     custom_package = "com.example.android.testing.espresso.BasicSample",
     manifest = "app/src/main/AppManifest.xml",
+    manifest_values = {
+        "minSdkVersion": minSdkVersion,
+        "targetSdkVersion": targetSdkVersion,
+    },
     deps = [":BasicSampleLib"],
 )
 
@@ -31,6 +37,10 @@ android_binary(
     custom_package = "com.example.android.testing.espresso.BasicSample",
     instruments = ":BasicSample",
     manifest = "app/src/androidTest/AndroidManifest.xml",
+    manifest_values = {
+        "minSdkVersion": minSdkVersion,
+        "targetSdkVersion": targetSdkVersion,
+    },
     deps = [":BasicSampleTestLib"],
 )
 
