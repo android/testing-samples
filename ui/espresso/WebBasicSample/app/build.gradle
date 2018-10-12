@@ -18,14 +18,14 @@ android {
     productFlavors {
     }
     packagingOptions {
-      exclude 'META-INF/maven/com.google.guava/guava/pom.properties'
-      exclude 'META-INF/maven/com.google.guava/guava/pom.xml'
+        exclude 'META-INF/maven/com.google.guava/guava/pom.properties'
+        exclude 'META-INF/maven/com.google.guava/guava/pom.xml'
     }
 }
 
 dependencies {
     // App dependencies
-    implementation 'androidx.annotation:annotation:'+ rootProject.androidxLibVersion;
+    implementation 'androidx.annotation:annotation:' + rootProject.androidxLibVersion;
     implementation 'com.google.guava:guava:' + rootProject.guavaVersion
     // Testing-only dependencies
     androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion;

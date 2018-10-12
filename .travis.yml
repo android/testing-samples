@@ -1,0 +1,25 @@
+# Only build and run local tests (no UI tests are executed)
+
+language: android
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-28.0.2
+    - android-28
+    - extra-android-m2repository
+  licenses:
+    - android-sdk-preview-license-.+
+    - android-sdk-license-.+
+    - google-gdk-license-.+
+jdk:
+  - oraclejdk8
+script:
+  - ./test_all.sh test
+before_cache:
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+cache:
+  directories:
+    - $HOME/.m2
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
