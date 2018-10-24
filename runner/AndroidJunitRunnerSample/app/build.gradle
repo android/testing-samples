@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 28
     buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
         applicationId "com.example.android.testing.androidjunitrunnersample"
@@ -21,6 +21,12 @@ android {
     }
     productFlavors {
     }
+
+    useLibrary 'android.test.runner'
+
+    useLibrary 'android.test.base'
+    useLibrary 'android.test.mock'
+
 }
 
 dependencies {
