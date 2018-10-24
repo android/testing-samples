@@ -17,6 +17,7 @@ android {
     }
     productFlavors {
     }
+    testOptions.unitTests.includeAndroidResources = true
 }
 
 dependencies {
@@ -25,7 +26,15 @@ dependencies {
     implementation 'com.google.guava:guava:26.0-android'
 
     // Testing-only dependencies
+    testImplementation 'androidx.test:core:' + rootProject.coreVersion;
+    testImplementation 'androidx.lifecycle:lifecycle-common:2.0.0';
+    testImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
+    testImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion;
+    testImplementation 'org.robolectric:robolectric:' + rootProject.robolectricVersion;
+
+    // Android Testing-only dependencies
     androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion;
+    androidTestImplementation 'androidx.lifecycle:lifecycle-common:2.0.0';
     androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
     androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion;
     androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion;
