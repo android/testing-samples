@@ -1,3 +1,5 @@
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
 # Set the path to your local SDK installation, or use the ANDROID_HOME environment variable.
 android_sdk_repository(
     name = "androidsdk",
@@ -7,7 +9,7 @@ android_sdk_repository(
 )
 
 # Android Test Support
-ATS_COMMIT = "e39a8c7769a5c8b498d0deb0deef3a25b289d410"
+ATS_COMMIT = "9d8f2913bee25f8d0f25dee2b601a84eaf47c7bc"
 
 http_archive(
     name = "android_test_support",
@@ -20,7 +22,7 @@ load("@android_test_support//:repo.bzl", "android_test_repositories")
 android_test_repositories()
 
 # Google Maven Repository
-GMAVEN_TAG = "20181010-1"
+GMAVEN_TAG = "20181031-1"
 
 http_archive(
     name = "gmaven_rules",
