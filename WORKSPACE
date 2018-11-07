@@ -9,7 +9,7 @@ android_sdk_repository(
 )
 
 # Android Test Support
-ATS_COMMIT = "c69935b7c09aa2074588013b2159ba1972f31952"
+ATS_COMMIT = "66c68ee36b7541b0134f53d5f5ee88e13bdadc29"
 
 http_archive(
     name = "android_test_support",
