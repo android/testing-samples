@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 28
-    buildToolsVersion '28.0.2'
+    buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
         applicationId "com.example.android.testing.espresso.BasicSample"
         minSdkVersion 14
@@ -16,6 +16,11 @@ android {
         abortOnError false
     }
     productFlavors {
+    }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
     }
 }
 
@@ -34,4 +39,14 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-intents:' + rootProject.espressoVersion;
     androidTestImplementation 'androidx.test.ext:truth:' + rootProject.extTruthVersion;
     androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
+
+
+    testImplementation 'androidx.test:core:' + rootProject.coreVersion;
+    testImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
+    testImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion;
+    testImplementation 'androidx.test.espresso:espresso-intents:' + rootProject.espressoVersion;
+    testImplementation 'androidx.test.ext:truth:' + rootProject.extTruthVersion;
+    testImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
+    testImplementation 'org.robolectric:robolectric:' + rootProject.robolectricVersion;
+
 }

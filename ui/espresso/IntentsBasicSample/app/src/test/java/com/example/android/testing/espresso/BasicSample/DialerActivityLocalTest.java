@@ -16,12 +16,29 @@
 
 package com.example.android.testing.espresso.BasicSample;
 
+import android.Manifest;
+import android.app.Activity;
+import android.app.Application;
+import android.content.Intent;
+import android.net.Uri;
+
+import com.google.common.collect.Iterables;
+
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import androidx.test.core.app.ApplicationProvider;
+import androidx.test.espresso.intent.Intents;
+import androidx.test.espresso.intent.rule.IntentsTestRule;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.rule.ActivityTestRule;
+
 import static android.app.Instrumentation.ActivityResult;
-import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
-import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.intent.Intents.intended;
@@ -31,39 +48,22 @@ import static androidx.test.espresso.intent.matcher.IntentMatchers.hasAction;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasData;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.isInternal;
-import static androidx.test.espresso.intent.matcher.IntentMatchers.toPackage;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.ext.truth.content.IntentSubject.assertThat;
-
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.core.AllOf.allOf;
-
-import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Build;
-
-import androidx.test.espresso.intent.Intents;
-import androidx.test.espresso.intent.rule.IntentsTestRule;
-import androidx.test.filters.LargeTest;
-import androidx.test.rule.ActivityTestRule;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
-
-import com.google.common.collect.Iterables;
-
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static org.robolectric.Shadows.shadowOf;
 
 @RunWith(AndroidJUnit4.class)
-@LargeTest
-public class DialerActivityTest {
+public class DialerActivityLocalTest {
 
-    private static final String VALID_PHONE_NUMBER = "123-345-6789";
+    //private static final String VALID_PHONE_NUMBER = "123-345-6789";
+    // TODO: '-' not recognized in robolectric #4129
+    private static final String VALID_PHONE_NUMBER = "1233456789";
 
     private static final Uri INTENT_DATA_PHONE_NUMBER = Uri.parse("tel:" + VALID_PHONE_NUMBER);
+
 
     /**
      * A JUnit {@link Rule @Rule} to init and release Espresso Intents before and after each
@@ -88,20 +88,17 @@ public class DialerActivityTest {
 
     @Before
     public void grantPhonePermission() {
-        // In M+, trying to call a number will trigger a runtime dialog. Make sure
-        // the permission is granted before running this test.
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            getInstrumentation().getUiAutomation().executeShellCommand(
-                    "pm grant " + getApplicationContext().getPackageName()
-                            + " android.permission.CALL_PHONE");
-        }
+        // TODO: convert to GrantPermissionRule #4133
+        Application application = ApplicationProvider.getApplicationContext();
+        shadowOf(application).grantPermissions(Manifest.permission.CALL_PHONE);
     }
 
     @Test
     public void typeNumber_ValidInput_InitiatesCall() {
         // Types a phone number into the dialer edit text field and presses the call button.
         onView(withId(R.id.edit_text_caller_number))
-                .perform(typeText(VALID_PHONE_NUMBER), closeSoftKeyboard());
+                .perform(typeText(VALID_PHONE_NUMBER));
+        // , closeSoftKeyboard() doesn't work on robo #4148
         onView(withId(R.id.button_call_number)).perform(click());
 
         // Verify that an intent to the dialer was sent with the correct action, phone
@@ -118,7 +115,8 @@ public class DialerActivityTest {
     public void typeNumber_ValidInput_InitiatesCall_truth() {
         // Types a phone number into the dialer edit text field and presses the call button.
         onView(withId(R.id.edit_text_caller_number))
-                .perform(typeText(VALID_PHONE_NUMBER), closeSoftKeyboard());
+                .perform(typeText(VALID_PHONE_NUMBER));
+        // , closeSoftKeyboard() doesn't work on robo #4148
         onView(withId(R.id.button_call_number)).perform(click());
 
         // Verify that an intent to the dialer was sent with the correct action, phone
@@ -129,6 +127,7 @@ public class DialerActivityTest {
     }
 
     @Test
+    @Ignore // doesn't work on Robo #4150
     public void pickContactButton_click_SelectsPhoneNumber() {
         // Stub all Intents to ContactsActivity to return VALID_PHONE_NUMBER. Note that the Activity
         // is never launched and result is stubbed.

@@ -7,7 +7,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.0'
+        classpath 'com.android.tools.build:gradle:3.2.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -32,4 +32,5 @@ ext {
     espressoVersion = "3.1.0"
     extJUnitVersion = "1.0.0"
     extTruthVersion = "1.0.0"
+    robolectricVersion = "4.0.2"
 }
