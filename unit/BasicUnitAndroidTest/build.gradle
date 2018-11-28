@@ -4,6 +4,9 @@ buildscript {
     repositories {
         // Insert local test repo here
         jcenter()
+        maven {
+            url "file:///usr/local/google/home/brettchabot/test_repo/1.1.0-alpha01/m2repository"
+        }
         google()
     }
     dependencies {
@@ -18,6 +21,9 @@ allprojects {
     repositories {
         // Insert local test repo here
         jcenter()
+        maven {
+            url "file:///usr/local/google/home/brettchabot/test_repo/1.1.0-alpha01/m2repository"
+        }
         google()
     }
 }
@@ -25,9 +31,9 @@ allprojects {
 ext {
     buildToolsVersion = "28.0.3"
     androidxLibVersion = "1.0.0"
-    coreVersion = "1.0.0"
-    extJUnitVersion = "1.0.0"
-    runnerVersion = "1.1.0"
+    coreVersion = "1.1.0-alpha01"
+    extJUnitVersion = "1.1.0-alpha01"
+    runnerVersion = "1.1.1-alpha01"
     hamcrestVersion = "1.3"
     truthVersion = "0.42"
 }
