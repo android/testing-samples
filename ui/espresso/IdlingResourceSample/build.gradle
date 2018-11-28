@@ -20,9 +20,6 @@ buildscript {
     repositories {
         // Insert local test repo here
         jcenter()
-        maven {
-            url "file:///usr/local/google/home/brettchabot/test_repo/1.1.0-alpha01/m2repository"
-        }
         google()
     }
     dependencies {
@@ -37,9 +34,6 @@ allprojects {
     repositories {
         // Insert local test repo here
         jcenter()
-        maven {
-            url "file:///usr/local/google/home/brettchabot/test_repo/1.1.0-alpha01/m2repository"
-        }
         google()
     }
 }
