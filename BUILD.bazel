@@ -3,7 +3,7 @@ load("//:common_defs.bzl", "androidxLibVersion", "coreVersion", "espressoVersion
 
 licenses(["notice"])  # Apache 2.0
 
-java_library(
+android_library(
     name = "test_deps",
     visibility = ["//visibility:public"],
     exports = [

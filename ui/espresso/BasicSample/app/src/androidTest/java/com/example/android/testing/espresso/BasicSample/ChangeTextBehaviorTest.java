@@ -16,16 +16,15 @@
 
 package com.example.android.testing.espresso.BasicSample;
 
-import org.junit.Before;
+import android.app.Activity;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import android.app.Activity;
-
-import androidx.test.core.app.ActivityScenario;
 import androidx.test.espresso.action.ViewActions;
 import androidx.test.espresso.matcher.ViewMatchers;
+import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 
@@ -51,13 +50,11 @@ public class ChangeTextBehaviorTest {
     public static final String STRING_TO_BE_TYPED = "Espresso";
 
     /**
-     * Use {@link ActivityScenario} to create and launch the activity under test. This is a
-     * replacement for {@link androidx.test.rule.ActivityTestRule}.
+     * Use {@link ActivityScenarioRule} to create and launch the activity under test, and close it
+     * after test completes. This is a replacement for {@link androidx.test.rule.ActivityTestRule}.
      */
-    @Before
-    public void launchActivity() {
-      ActivityScenario.launch(MainActivity.class);
-    }
+    @Rule public ActivityScenarioRule<MainActivity> activityScenarioRule
+            = new ActivityScenarioRule<>(MainActivity.class);
 
     @Test
     public void changeText_sameActivity() {
