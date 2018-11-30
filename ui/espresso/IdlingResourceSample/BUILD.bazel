@@ -30,7 +30,7 @@ android_binary(
 android_library(
     name = "IdlingResourceSampleTestLib",
     srcs = glob(["app/src/androidTest/**/*.java"]),
-    custom_package = "com.example.android.testing.espresso.IdlingResourceSample",
+    custom_package = "com.example.android.testing.espresso.IdlingResourceSample.test",
     deps = [
         gmaven_artifact("androidx.test.espresso:espresso_idling_resource:aar:" + espressoVersion),
         ":IdlingResourceSampleLib",
@@ -40,7 +40,7 @@ android_library(
 
 android_binary(
     name = "IdlingResourceSampleTest",
-    custom_package = "com.example.android.testing.espresso.IdlingResourceSample",
+    custom_package = "com.example.android.testing.espresso.IdlingResourceSample.test",
     instruments = ":IdlingResourceSample",
     manifest = "app/src/androidTest/AndroidManifest.xml",
     manifest_values = {

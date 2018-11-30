@@ -29,7 +29,7 @@ android_binary(
 android_library(
     name = "IntentsAdvancedSampleTestLib",
     srcs = glob(["app/src/androidTest/**/*.java"]),
-    custom_package = "com.example.android.testing.espresso.intents.AdvancedSample",
+    custom_package = "com.example.android.testing.espresso.intents.AdvancedSample.test",
     deps = [
         gmaven_artifact("androidx.test.espresso:espresso-intents:aar:" + espressoVersion),
         ":IntentsAdvancedSampleLib",
@@ -39,7 +39,7 @@ android_library(
 
 android_binary(
     name = "IntentsAdvancedSampleTest",
-    custom_package = "com.example.android.testing.espresso.intents.AdvancedSample",
+    custom_package = "com.example.android.testing.espresso.intents.AdvancedSample.test",
     instruments = ":IntentsAdvancedSample",
     manifest = "app/src/androidTest/AndroidManifest.xml",
     manifest_values = {

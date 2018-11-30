@@ -26,7 +26,7 @@ android_binary(
 android_library(
     name = "RecyclerViewSampleTestLib",
     srcs = glob(["app/src/androidTest/**/*.java"]),
-    custom_package = "com.example.android.testing.espresso.RecyclerViewSample",
+    custom_package = "com.example.android.testing.espresso.RecyclerViewSample.test",
     deps = [
         gmaven_artifact("androidx.test.espresso:espresso-contrib:aar:" + espressoVersion),
         ":RecyclerViewSampleLib",
@@ -36,7 +36,7 @@ android_library(
 
 android_binary(
     name = "RecyclerViewSampleTest",
-    custom_package = "com.example.android.testing.espresso.RecyclerViewSample",
+    custom_package = "com.example.android.testing.espresso.RecyclerViewSample.test",
     instruments = ":RecyclerViewSample",
     manifest = "app/src/androidTest/AndroidManifest.xml",
     manifest_values = {
