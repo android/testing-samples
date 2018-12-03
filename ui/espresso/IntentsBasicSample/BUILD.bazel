@@ -30,7 +30,7 @@ android_binary(
 android_library(
     name = "IntentsBasicSampleTestLib",
     srcs = glob(["app/src/androidTest/**/*.java"]),
-    custom_package = "com.example.android.testing.espresso.BasicSample",
+    custom_package = "com.example.android.testing.espresso.BasicSample.test",
     deps = [
         ":IntentsBasicSampleLib",
         "//:test_deps",
@@ -42,7 +42,7 @@ android_library(
 
 android_binary(
     name = "IntentsBasicSampleTest",
-    custom_package = "com.example.android.testing.espresso.BasicSample",
+    custom_package = "com.example.android.testing.espresso.BasicSample.test",
     instruments = ":IntentsBasicSample",
     manifest = "app/src/androidTest/AndroidManifest.xml",
     manifest_values = {

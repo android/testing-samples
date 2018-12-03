@@ -29,7 +29,7 @@ android_binary(
 android_library(
     name = "CustomMatcherSampleTestLib",
     srcs = glob(["app/src/androidTest/**/*.java"]),
-    custom_package = "com.example.android.testing.espresso.CustomMatcherSample",
+    custom_package = "com.example.android.testing.espresso.CustomMatcherSample.test",
     deps = [
         ":CustomMatcherSampleLib",
         "//:test_deps",
@@ -38,7 +38,7 @@ android_library(
 
 android_binary(
     name = "CustomMatcherSampleTest",
-    custom_package = "com.example.android.testing.espresso.CustomMatcherSample",
+    custom_package = "com.example.android.testing.espresso.CustomMatcherSample.test",
     instruments = ":CustomMatcherSample",
     manifest = "app/src/androidTest/AndroidManifest.xml",
     manifest_values = {

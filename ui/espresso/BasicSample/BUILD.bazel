@@ -11,16 +11,6 @@ android_library(
     deps = ["@com_google_guava_guava//jar"],
 )
 
-android_library(
-    name = "BasicSampleTestLib",
-    srcs = glob(["app/src/androidTest/**/*.java"]),
-    custom_package = "com.example.android.testing.espresso.BasicSample",
-    deps = [
-        ":BasicSampleLib",
-        "//:test_deps",
-    ],
-)
-
 android_binary(
     name = "BasicSample",
     custom_package = "com.example.android.testing.espresso.BasicSample",
@@ -32,9 +22,19 @@ android_binary(
     deps = [":BasicSampleLib"],
 )
 
+android_library(
+    name = "BasicSampleTestLib",
+    srcs = glob(["app/src/androidTest/**/*.java"]),
+    custom_package = "com.example.android.testing.espresso.BasicSample.test",
+    deps = [
+        ":BasicSampleLib",
+        "//:test_deps",
+    ],
+)
+
 android_binary(
     name = "BasicSampleTest",
-    custom_package = "com.example.android.testing.espresso.BasicSample",
+    custom_package = "com.example.android.testing.espresso.BasicSample.test",
     instruments = ":BasicSample",
     manifest = "app/src/androidTest/AndroidManifest.xml",
     manifest_values = {

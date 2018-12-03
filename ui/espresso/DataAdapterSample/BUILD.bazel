@@ -29,7 +29,7 @@ android_binary(
 android_library(
     name = "DataAdapterSampleTestLib",
     srcs = glob(["app/src/androidTest/**/*.java"]),
-    custom_package = "com.example.android.testing.espresso.DataAdapterSample",
+    custom_package = "com.example.android.testing.espresso.DataAdapterSample.test",
     deps = [
         ":DataAdapterSampleLib",
         "//:test_deps",
@@ -38,7 +38,7 @@ android_library(
 
 android_binary(
     name = "DataAdapterSampleTest",
-    custom_package = "com.example.android.testing.espresso.DataAdapterSample",
+    custom_package = "com.example.android.testing.espresso.DataAdapterSample.test",
     instruments = ":DataAdapterSample",
     manifest = "app/src/androidTest/AndroidManifest.xml",
     manifest_values = {

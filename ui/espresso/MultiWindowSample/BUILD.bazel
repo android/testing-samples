@@ -29,7 +29,7 @@ android_binary(
 android_library(
     name = "MultiWindowSampleTestLib",
     srcs = glob(["app/src/androidTest/**/*.java"]),
-    custom_package = "com.example.android.testing.espresso.MultiWindowSample",
+    custom_package = "com.example.android.testing.espresso.MultiWindowSample.test",
     deps = [
         ":MultiWindowSampleLib",
         "//:test_deps",
@@ -38,7 +38,7 @@ android_library(
 
 android_binary(
     name = "MultiWindowSampleTest",
-    custom_package = "com.example.android.testing.espresso.MultiWindowSample",
+    custom_package = "com.example.android.testing.espresso.MultiWindowSample.test",
     instruments = ":MultiWindowSample",
     manifest = "app/src/androidTest/AndroidManifest.xml",
     manifest_values = {
