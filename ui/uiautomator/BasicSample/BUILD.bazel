@@ -22,7 +22,7 @@ android_binary(
 android_library(
     name = "BasicSampleTestLib",
     srcs = glob(["app/src/androidTest/**/*.java"]),
-    custom_package = "com.example.android.testing.uiautomator.BasicSample",
+    custom_package = "com.example.android.testing.uiautomator.BasicSample.test",
     deps = [
         ":BasicSampleLib",
         "//:test_deps",
@@ -32,7 +32,7 @@ android_library(
 
 android_binary(
     name = "BasicSampleTest",
-    custom_package = "com.example.android.testing.uiautomator.BasicSample",
+    custom_package = "com.example.android.testing.uiautomator.BasicSample.test",
     instruments = ":BasicSample",
     manifest = "app/src/androidTest/AndroidManifest.xml",
     deps = [":BasicSampleTestLib"],
