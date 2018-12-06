@@ -9,12 +9,12 @@ android_sdk_repository(
 )
 
 # Android Test Support
-ATS_COMMIT = "66c68ee36b7541b0134f53d5f5ee88e13bdadc29"
+ATS_COMMIT = "08cef122e396ecec39a7b0f670c9b4bce0a28a19"
 
 http_archive(
     name = "android_test_support",
     strip_prefix = "android-test-%s" % ATS_COMMIT,
-    urls = ["https://github.com/android/android-test/archive/%s.tar.gz" % ATS_COMMIT],
+    urls = ["https://github.com/meteorcloudy/android-test/archive/%s.tar.gz" % ATS_COMMIT],
 )
 
 load("@android_test_support//:repo.bzl", "android_test_repositories")
