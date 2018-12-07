@@ -25,8 +25,8 @@ allprojects {
 ext {
     buildToolsVersion = "28.0.3"
     androidxLibVersion = "1.0.0"
-    coreVersion = "1.1.0-alpha01"
-    extJUnitVersion = "1.1.0-alpha01"
-    runnerVersion = "1.1.1-alpha01"
-    espressoVersion = "3.1.1-alpha01"
+    coreVersion = "1.1.0-beta01"
+    extJUnitVersion = "1.1.0-beta01"
+    runnerVersion = "1.1.1-beta01"
+    espressoVersion = "3.1.1-beta01"
 }
