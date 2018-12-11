@@ -9,10 +9,16 @@ android_sdk_repository(
 )
 
 # Android Test Support
+#
+# This repository contains the supporting tools to run Android instrumentation tests,
+# like the emulator definitions (android_device) and the device broker/test runner.
 ATS_COMMIT = "10c8fdf6a1c9c48a268e2db19646732c62c1313c"
+
+ATS_SHA256 = "f427adae66469846e41b16b49062a8e320fed5a426ec7072f9bf5cc064450418"
 
 http_archive(
     name = "android_test_support",
+    sha256 = ATS_SHA256,
     strip_prefix = "android-test-%s" % ATS_COMMIT,
     urls = ["https://github.com/android/android-test/archive/%s.tar.gz" % ATS_COMMIT],
 )
@@ -22,6 +28,7 @@ load("@android_test_support//:repo.bzl", "android_test_repositories")
 android_test_repositories()
 
 # Google Maven Repository
+# This repository contains the external dependency definitions for Google Maven artifacts.
 GMAVEN_TAG = "20181206-1"
 
 http_archive(
