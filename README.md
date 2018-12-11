@@ -88,7 +88,7 @@ $ $EDITOR WORKSPACE
 $ bazel test //... --config=headless
 
 # Test a single test, e.g. ui/espresso/BasicSample/BUILD.bazel
-$ bazel test //ui/espresso/BasicSample:BasicSampleInstrumentationTest --config=headless
+$ bazel test //ui/uiautomator/BasicSample:BasicSampleInstrumentationTest_21_x86 --config=headless
 
 # Query for all android_instrumentation_test targets
 $ bazel query 'kind(android_instrumentation_test, //...)'
@@ -102,7 +102,6 @@ $ bazel query 'kind(android_instrumentation_test, //...)'
 //ui/espresso/RecyclerViewSample:RecyclerViewSampleInstrumentationTest_19_x86
 //ui/espresso/MultiWindowSample:MultiWindowSampleInstrumentationTest_23_x86
 //ui/espresso/MultiWindowSample:MultiWindowSampleInstrumentationTest_22_x86
-
 ...
 
 # Test everything with GUI enabled
