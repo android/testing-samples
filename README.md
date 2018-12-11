@@ -68,6 +68,8 @@ Many of these samples use the ATSL. Visit the [Android Testing Support Library s
 Experimental Bazel Support
 --------------------------
 
+Bazel CI: [![Build status](https://badge.buildkite.com/18dda320b265e9a8f20cb6141b1e80ca58fb62bdb443e527be.svg)](https://buildkite.com/bazel/android-testing)
+
 Some of these samples can be built with [Bazel](https://bazel.build) on Linux. These samples contain a `BUILD.bazel` file, which is similar to a `build.gradle` file. The external dependencies are defined in the top level `WORKSPACE` file.
 
 This is __experimental__ feature. To run the tests, please install the latest version of Bazel (0.12.0 or later) by following the [instructions on the Bazel website](https://docs.bazel.build/versions/master/install-ubuntu.html).
@@ -90,15 +92,18 @@ $ bazel test //ui/espresso/BasicSample:BasicSampleInstrumentationTest --config=h
 
 # Query for all android_instrumentation_test targets
 $ bazel query 'kind(android_instrumentation_test, //...)'
-//ui/uiautomator/BasicSample:BasicSampleInstrumentationTest
-//ui/espresso/RecyclerViewSample:RecyclerViewSampleInstrumentationTest
-//ui/espresso/MultiWindowSample:MultiWindowSampleInstrumentationTest
-//ui/espresso/IntentsBasicSample:IntentsBasicSampleInstrumentationTest
-//ui/espresso/IntentsAdvancedSample:IntentsAdvancedSampleInstrumentationTest
-//ui/espresso/IdlingResourceSample:IdlingResourceSampleInstrumentationTest
-//ui/espresso/DataAdapterSample:DataAdapterSampleInstrumentationTest
-//ui/espresso/CustomMatcherSample:CustomMatcherSampleInstrumentationTest
-//ui/espresso/BasicSample:BasicSampleInstrumentationTest
+//ui/uiautomator/BasicSample:BasicSampleInstrumentationTest_23_x86
+//ui/uiautomator/BasicSample:BasicSampleInstrumentationTest_22_x86
+//ui/uiautomator/BasicSample:BasicSampleInstrumentationTest_21_x86
+//ui/uiautomator/BasicSample:BasicSampleInstrumentationTest_19_x86
+//ui/espresso/RecyclerViewSample:RecyclerViewSampleInstrumentationTest_23_x86
+//ui/espresso/RecyclerViewSample:RecyclerViewSampleInstrumentationTest_22_x86
+//ui/espresso/RecyclerViewSample:RecyclerViewSampleInstrumentationTest_21_x86
+//ui/espresso/RecyclerViewSample:RecyclerViewSampleInstrumentationTest_19_x86
+//ui/espresso/MultiWindowSample:MultiWindowSampleInstrumentationTest_23_x86
+//ui/espresso/MultiWindowSample:MultiWindowSampleInstrumentationTest_22_x86
+
+...
 
 # Test everything with GUI enabled
 $ bazel test //... --config=gui
