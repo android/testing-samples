@@ -70,7 +70,7 @@ Experimental Bazel Support
 
 [![Build status](https://badge.buildkite.com/18dda320b265e9a8f20cb6141b1e80ca58fb62bdb443e527be.svg)](https://buildkite.com/bazel/android-testing)
 
-Some of these samples can be built with [Bazel](https://bazel.build) on Linux. These samples contain a `BUILD.bazel` file, which is similar to a `build.gradle` file. The external dependencies are defined in the top level `WORKSPACE` file.
+Some of these samples can be tested with [Bazel](https://bazel.build) on Linux. These samples contain a `BUILD.bazel` file, which is similar to a `build.gradle` file. The external dependencies are defined in the top level `WORKSPACE` file.
 
 This is __experimental__ feature. To run the tests, please install the latest version of Bazel (0.12.0 or later) by following the [instructions on the Bazel website](https://docs.bazel.build/versions/master/install-ubuntu.html).
 
