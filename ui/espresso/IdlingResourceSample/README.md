@@ -8,11 +8,11 @@ This sample showcases how to implement a very simple IdlingResource interface an
 
 Consider using the CountingIdlingResource class from the espresso-contrib package. It's a very easy to use Idling Resource implementation that can handle multiple parallel operations keeping track of the number of pending operations.
 
-Note that the `espresso-idling-resource` dependency is added into the `compile` scope:
+Note that the `espresso-idling-resource` dependency is added into the `implementation` scope:
 
 ```
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
-    compile 'com.android.support.test.espresso:espresso-idling-resource:2.2.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
+    implementation 'com.android.support.test.espresso:espresso-idling-resource:2.2.2'
 ```
 
 This dependency and its implementation are added to the app under test but are not needed in production. This bloats the released app but it's kept this way to simplify the sample. You can:
