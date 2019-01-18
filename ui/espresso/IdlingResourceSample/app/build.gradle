@@ -43,7 +43,7 @@ dependencies {
     androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion
     androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion
     androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion
-    androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion;
+    androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
     // Note that espresso-idling-resource is used in the code under test.
-    implementation 'androidx.test.espresso:espresso-idling-resource:' + rootProject.espressoVersion;
+    implementation 'androidx.test.espresso:espresso-idling-resource:' + rootProject.espressoVersion
 }
