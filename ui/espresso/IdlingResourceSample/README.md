@@ -11,8 +11,8 @@ Consider using the CountingIdlingResource class from the espresso-contrib packag
 Note that the `espresso-idling-resource` dependency is added into the `implementation` scope:
 
 ```
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
-    compile 'com.android.support.test.espresso:espresso-idling-resource:2.2.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation 'androidx.test.espresso:espresso-idling-resource:3.1.1'
 ```
 
 This dependency and its implementation are added to the app under test but are not needed in production. This bloats the released app but it's kept this way to simplify the sample. You can:
