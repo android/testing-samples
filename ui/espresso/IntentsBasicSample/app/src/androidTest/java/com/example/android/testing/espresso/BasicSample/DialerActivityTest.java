@@ -50,6 +50,7 @@ import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
+import androidx.test.rule.GrantPermissionRule;
 import com.google.common.collect.Iterables;
 
 import org.junit.Before;
@@ -74,6 +75,8 @@ public class DialerActivityTest {
         }
     }
 
+    @Rule public GrantPermissionRule grantPermissionRule = GrantPermissionRule.grant("android.permission.CALL_PHONE");
+
     /**
      * A JUnit {@link Rule @Rule} to init and release Espresso Intents before and after each
      * test run.
@@ -93,17 +96,6 @@ public class DialerActivityTest {
         // By default Espresso Intents does not stub any Intents. Stubbing needs to be setup before
         // every test run. In this case all external Intents will be blocked.
         intending(not(isInternal())).respondWith(new ActivityResult(Activity.RESULT_OK, null));
-    }
-
-    @Before
-    public void grantPhonePermission() {
-        // In M+, trying to call a number will trigger a runtime dialog. Make sure
-        // the permission is granted before running this test.
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            getInstrumentation().getUiAutomation().executeShellCommand(
-                    "pm grant " + getApplicationContext().getPackageName()
-                            + " android.permission.CALL_PHONE");
-        }
     }
 
     @Test
