@@ -1,4 +1,5 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("@bazel_tools//tools/build_defs/repo:jvm.bzl", "jvm_maven_import_external")
 
 # Set the path to your local SDK installation, or use the ANDROID_HOME environment variable.
 android_sdk_repository(
@@ -41,32 +42,50 @@ load("@gmaven_rules//:gmaven.bzl", "gmaven_rules")
 
 gmaven_rules()
 
-maven_jar(
+jvm_maven_import_external(
     name = "com_google_inject_guice",
+    server_urls = ["http://central.maven.org/maven2"],
+    licenses = ["notice"], # Apache 2.0
     artifact = "com.google.inject:guice:4.0",
+    artifact_sha256 = "b378ffc35e7f7125b3c5f3a461d4591ae1685e3c781392f0c854ed7b7581d6d2",
 )
 
-maven_jar(
+jvm_maven_import_external(
     name = "junit_junit",
+    server_urls = ["http://central.maven.org/maven2"],
+    licenses = ["notice"], # Apache 2.0
     artifact = "junit:junit:4.12",
+    artifact_sha256 = "59721f0805e223d84b90677887d9ff567dc534d7c502ca903c0c2b17f05c116a",
 )
 
-maven_jar(
+jvm_maven_import_external(
     name = "javax_inject_javax_inject",
+    server_urls = ["http://central.maven.org/maven2"],
+    licenses = ["notice"], # Apache 2.0
     artifact = "javax.inject:javax.inject:1",
+    artifact_sha256 = "91c77044a50c481636c32d916fd89c9118a72195390452c81065080f957de7ff",
 )
 
-maven_jar(
+jvm_maven_import_external(
     name = "org_hamcrest_java_hamcrest",
+    server_urls = ["http://central.maven.org/maven2"],
+    licenses = ["notice"], # Apache 2.0
     artifact = "org.hamcrest:java-hamcrest:2.0.0.0",
+    artifact_sha256 = "09bc7044d57a497846e2480250e7a72ff3ae58efefc8c3a9ceecd0f4e092851c",
 )
 
-maven_jar(
+jvm_maven_import_external(
     name = "com_google_guava_guava",
+    server_urls = ["http://central.maven.org/maven2"],
+    licenses = ["notice"], # Apache 2.0
     artifact = "com.google.guava:guava:26.0-android",
+    artifact_sha256 = "1d044ebb866ef08b7d04e998b4260c9b52fab6e6d6b68d207859486bb3686cd5",
 )
 
-maven_jar(
+jvm_maven_import_external(
     name = "truth",
+    server_urls = ["http://central.maven.org/maven2"],
+    licenses = ["notice"], # Apache 2.0
     artifact = "com.google.truth:truth:0.42",
+    artifact_sha256 = "dd652bdf0c4427c59848ac0340fd6b6d20c2cbfaa3c569a8366604dbcda5214c",
 )
