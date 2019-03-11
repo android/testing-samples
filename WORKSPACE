@@ -29,64 +29,65 @@ load("@android_test_support//:repo.bzl", "android_test_repositories")
 
 android_test_repositories()
 
-# Google Maven Repository
-# This repository contains the external dependency definitions for Google Maven artifacts.
-GMAVEN_TAG = "20181206-1"
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+RULES_JVM_EXTERNAL_TAG = "1.0"
+RULES_JVM_EXTERNAL_SHA = "48e0f1aab74fabba98feb8825459ef08dcc75618d381dff63ec9d4dd9860deaa"
 
 http_archive(
+    name = "rules_jvm_external",
+    strip_prefix = "rules_jvm_external-%s" % RULES_JVM_EXTERNAL_TAG,
+    sha256 = RULES_JVM_EXTERNAL_SHA,
+    url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % RULES_JVM_EXTERNAL_TAG,
+)
+
+# Keeping a copy of gmaven_rules around so dependencies can use it
+# TODO(jin): remove this when android/android-test no longer depends on gmaven_rules.
+http_archive(
     name = "gmaven_rules",
-    strip_prefix = "gmaven_rules-%s" % GMAVEN_TAG,
-    url = "https://github.com/bazelbuild/gmaven_rules/archive/%s.tar.gz" % GMAVEN_TAG,
+    strip_prefix = "rules_jvm_external-%s" % RULES_JVM_EXTERNAL_TAG,
+    sha256 = RULES_JVM_EXTERNAL_SHA,
+    url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % RULES_JVM_EXTERNAL_TAG,
 )
 
-load("@gmaven_rules//:gmaven.bzl", "gmaven_rules")
-
-gmaven_rules()
-
-jvm_maven_import_external(
-    name = "com_google_inject_guice",
-    server_urls = ["http://central.maven.org/maven2"],
-    licenses = ["notice"], # Apache 2.0
-    artifact = "com.google.inject:guice:4.0",
-    artifact_sha256 = "b378ffc35e7f7125b3c5f3a461d4591ae1685e3c781392f0c854ed7b7581d6d2",
+load("@rules_jvm_external//:defs.bzl", "maven_install")
+load("//:common_defs.bzl",
+     "androidxLibVersion",
+     "coreVersion",
+     "espressoVersion",
+     "extJUnitVersion",
+     "extTruthVersion",
+     "rulesVersion",
+     "runnerVersion",
+     "uiAutomatorVersion",
 )
 
-jvm_maven_import_external(
-    name = "junit_junit",
-    server_urls = ["http://central.maven.org/maven2"],
-    licenses = ["notice"], # Apache 2.0
-    artifact = "junit:junit:4.12",
-    artifact_sha256 = "59721f0805e223d84b90677887d9ff567dc534d7c502ca903c0c2b17f05c116a",
-)
-
-jvm_maven_import_external(
-    name = "javax_inject_javax_inject",
-    server_urls = ["http://central.maven.org/maven2"],
-    licenses = ["notice"], # Apache 2.0
-    artifact = "javax.inject:javax.inject:1",
-    artifact_sha256 = "91c77044a50c481636c32d916fd89c9118a72195390452c81065080f957de7ff",
-)
-
-jvm_maven_import_external(
-    name = "org_hamcrest_java_hamcrest",
-    server_urls = ["http://central.maven.org/maven2"],
-    licenses = ["notice"], # Apache 2.0
-    artifact = "org.hamcrest:java-hamcrest:2.0.0.0",
-    artifact_sha256 = "09bc7044d57a497846e2480250e7a72ff3ae58efefc8c3a9ceecd0f4e092851c",
-)
-
-jvm_maven_import_external(
-    name = "com_google_guava_guava",
-    server_urls = ["http://central.maven.org/maven2"],
-    licenses = ["notice"], # Apache 2.0
-    artifact = "com.google.guava:guava:26.0-android",
-    artifact_sha256 = "1d044ebb866ef08b7d04e998b4260c9b52fab6e6d6b68d207859486bb3686cd5",
-)
-
-jvm_maven_import_external(
-    name = "truth",
-    server_urls = ["http://central.maven.org/maven2"],
-    licenses = ["notice"], # Apache 2.0
-    artifact = "com.google.truth:truth:0.42",
-    artifact_sha256 = "dd652bdf0c4427c59848ac0340fd6b6d20c2cbfaa3c569a8366604dbcda5214c",
+maven_install(
+    name = "maven",
+    artifacts = [
+        "androidx.annotation:annotation:" + androidxLibVersion,
+        "androidx.core:core:" + androidxLibVersion,
+        "androidx.recyclerview:recyclerview:" + androidxLibVersion,
+        "androidx.test:core:" + coreVersion,
+        "androidx.test.espresso:espresso-contrib:" + espressoVersion,
+        "androidx.test.espresso:espresso-core:" + espressoVersion,
+        "androidx.test.espresso:espresso-idling-resource:" + espressoVersion,
+        "androidx.test.espresso:espresso-intents:" + espressoVersion,
+        "androidx.test.ext:junit:" + extJUnitVersion,
+        "androidx.test.ext:truth:" + extTruthVersion,
+        "androidx.test:monitor:" + runnerVersion,
+        "androidx.test:rules:" + rulesVersion,
+        "androidx.test:runner:" + runnerVersion,
+        "androidx.test.uiautomator:uiautomator:" + uiAutomatorVersion,
+        "com.google.inject:guice:4.0",
+        "junit:junit:4.12",
+        "javax.inject:javax.inject:1",
+        "org.hamcrest:java-hamcrest:2.0.0.0",
+        "com.google.guava:guava:26.0-android",
+        "com.google.truth:truth:0.42",
+    ],
+    repositories = [
+        "https://maven.google.com",
+        "https://repo1.maven.org/maven2",
+    ],
 )
