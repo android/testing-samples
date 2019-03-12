@@ -1,4 +1,4 @@
-load("@gmaven_rules//:defs.bzl", "gmaven_artifact")
+load("@rules_jvm_external//:defs.bzl", "artifact")
 load("//:common_defs.bzl", "androidxLibVersion", "coreVersion", "espressoVersion", "extJUnitVersion", "extTruthVersion", "rulesVersion", "runnerVersion")
 
 licenses(["notice"])  # Apache 2.0
@@ -7,17 +7,17 @@ android_library(
     name = "test_deps",
     visibility = ["//visibility:public"],
     exports = [
-        gmaven_artifact("androidx.annotation:annotation:jar:" + androidxLibVersion),
-        gmaven_artifact("androidx.test.espresso:espresso-core:aar:" + espressoVersion),
-        gmaven_artifact("androidx.test:rules:aar:" + rulesVersion),
-        gmaven_artifact("androidx.test:runner:aar:" + runnerVersion),
-        gmaven_artifact("androidx.test:monitor:aar:" + runnerVersion),
-        gmaven_artifact("androidx.test.ext:junit:aar:" + extJUnitVersion),
-        gmaven_artifact("androidx.test:core:aar:" + coreVersion),
-        "@com_google_guava_guava//jar",
-        "@com_google_inject_guice//jar",
-        "@javax_inject_javax_inject//jar",
-        "@junit_junit//jar",
-        "@org_hamcrest_java_hamcrest//jar",
+        artifact("androidx.annotation:annotation"),
+        artifact("androidx.test.espresso:espresso-core"),
+        artifact("androidx.test:rules"),
+        artifact("androidx.test:runner"),
+        artifact("androidx.test:monitor"),
+        artifact("androidx.test.ext:junit"),
+        artifact("androidx.test:core"),
+        artifact("com.google.guava:guava"),
+        artifact("com.google.inject:guice"),
+        artifact("javax.inject:javax.inject"),
+        artifact("junit:junit"),
+        artifact("org.hamcrest:java-hamcrest"),
     ],
 )
