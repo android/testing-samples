@@ -25,7 +25,9 @@ import org.junit.runner.RunWith
 @LargeTest
 class RecyclerViewSampleKtTest {
 
-    private val ITEM_BELOW_THE_FOLD = 40
+    companion object {
+        private val ITEM_BELOW_THE_FOLD = 40
+    }
 
     /**
      * Use [ActivityScenario] to create and launch the activity under test. This is a
