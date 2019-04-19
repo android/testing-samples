@@ -50,6 +50,7 @@ import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
+import androidx.test.rule.GrantPermissionRule;
 import com.google.common.collect.Iterables;
 
 import org.junit.Before;
@@ -64,6 +65,17 @@ public class DialerActivityTest {
     private static final String VALID_PHONE_NUMBER = "123-345-6789";
 
     private static final Uri INTENT_DATA_PHONE_NUMBER = Uri.parse("tel:" + VALID_PHONE_NUMBER);
+
+    private static String PACKAGE_ANDROID_DIALER = "com.android.phone";
+
+    static {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // Starting with Android Lollipop the dialer package has changed.
+            PACKAGE_ANDROID_DIALER = "com.android.server.telecom";
+        }
+    }
+
+    @Rule public GrantPermissionRule grantPermissionRule = GrantPermissionRule.grant("android.permission.CALL_PHONE");
 
     /**
      * A JUnit {@link Rule @Rule} to init and release Espresso Intents before and after each
@@ -86,17 +98,6 @@ public class DialerActivityTest {
         intending(not(isInternal())).respondWith(new ActivityResult(Activity.RESULT_OK, null));
     }
 
-    @Before
-    public void grantPhonePermission() {
-        // In M+, trying to call a number will trigger a runtime dialog. Make sure
-        // the permission is granted before running this test.
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            getInstrumentation().getUiAutomation().executeShellCommand(
-                    "pm grant " + getApplicationContext().getPackageName()
-                            + " android.permission.CALL_PHONE");
-        }
-    }
-
     @Test
     public void typeNumber_ValidInput_InitiatesCall() {
         // Types a phone number into the dialer edit text field and presses the call button.
@@ -108,7 +109,8 @@ public class DialerActivityTest {
         // number and package. Think of Intents intended API as the equivalent to Mockito's verify.
         intended(allOf(
                 hasAction(Intent.ACTION_CALL),
-                hasData(INTENT_DATA_PHONE_NUMBER)));
+                hasData(INTENT_DATA_PHONE_NUMBER),
+                toPackage(PACKAGE_ANDROID_DIALER)));
     }
 
     /**
