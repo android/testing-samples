@@ -63,7 +63,7 @@ There is a top-level `build.gradle` file if you want to build and test all sampl
 
 Android Testing Support Library
 ---------------
-Many of these samples use the ATSL. Visit the [Android Testing Support Library site](https://google.github.io/android-testing-support-library/) for more information.
+Many of these samples use the ATSL. Visit the [Android Testing Support Library site](https://android.github.io/android-test/) for more information.
 
 Experimental Bazel Support
 --------------------------
