@@ -28,8 +28,9 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.anyOf;
 import static org.hamcrest.Matchers.endsWith;
 import static org.hamcrest.Matchers.not;
+import static org.robolectric.annotation.LooperMode.Mode.PAUSED;
+import static org.robolectric.annotation.TextLayoutMode.Mode.REALISTIC;
 
-import android.os.SystemClock;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
@@ -37,6 +38,9 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.annotation.LooperMode;
+import org.robolectric.annotation.TextLayoutMode;
+import org.robolectric.annotation.TextLayoutMode.Mode;
 
 /**
  * Tests for {@link MainActivity} showcasing the use of custom matchers (see
@@ -44,7 +48,9 @@ import org.junit.runner.RunWith;
  */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class HintMatchersTest {
+@TextLayoutMode(REALISTIC)
+@LooperMode(PAUSED)
+public class HintMatchersLocalTest {
 
     private static final String INVALID_STRING_TO_BE_TYPED = "Earl Grey";
 
@@ -128,7 +134,6 @@ public class HintMatchersTest {
 
     @Test
     public void validation_resultIsIncorrect() {
-      SystemClock.setCurrentTimeMillis(100);
         // Type a valid string and click on the button.
         onView(withId(R.id.editText))
                 .perform(typeText(INVALID_STRING_TO_BE_TYPED), closeSoftKeyboard());

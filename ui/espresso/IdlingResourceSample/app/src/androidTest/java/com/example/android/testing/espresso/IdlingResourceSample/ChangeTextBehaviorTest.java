@@ -27,11 +27,13 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import androidx.test.core.app.ActivityScenario;
 import androidx.test.espresso.IdlingRegistry;
 import androidx.test.espresso.IdlingResource;
+import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.filters.LargeTest;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -47,16 +49,20 @@ public class ChangeTextBehaviorTest {
 
     private IdlingResource mIdlingResource;
 
-
     /**
-     * Use {@link ActivityScenario to launch and get access to the activity.
+     * Use {@link ActivityScenarioRule to launch and get access to the activity, and close it on
+     * test completion.
+     *
      * {@link ActivityScenario#onActivity(ActivityScenario.ActivityAction)} provides a thread-safe
      * mechanism to access the activity.
      */
+    @Rule
+    public ActivityScenarioRule<MainActivity> activityScenarioRule =
+        new ActivityScenarioRule<>(MainActivity.class);
+
     @Before
     public void registerIdlingResource() {
-        ActivityScenario activityScenario = ActivityScenario.launch(MainActivity.class);
-        activityScenario.onActivity(new ActivityScenario.ActivityAction<MainActivity>() {
+        activityScenarioRule.getScenario().onActivity(new ActivityScenario.ActivityAction<MainActivity>() {
             @Override
             public void perform(MainActivity activity) {
                 mIdlingResource = activity.getIdlingResource();
