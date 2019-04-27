@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.android.testing.espresso.FragmentScenarioSample"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    // share the unified tests
+    sourceSets {
+        test {
+            java.srcDir 'src/sharedTest/java'
+        }
+        androidTest {
+            java.srcDir 'src/sharedTest/java'
+        }
+    }
+    testOptions {
+        // include the android resources in local tests. See http://robolectric.org/migrating/#migrating-to-40
+        unitTests.includeAndroidResources = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:' + rootProject.androidxCompatVersion
+    implementation 'androidx.core:core-ktx:' + rootProject.androidxCoreVersion
+    implementation 'androidx.fragment:fragment-ktx:' + rootProject.androidxFragmentVersion
+    // TODO: ideally this would only be present in test scope
+    implementation 'androidx.fragment:fragment-testing:' + rootProject.androidxFragmentVersion
+    implementation 'androidx.test:core:' + rootProject.coreVersion
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.robolectric:robolectric:' + rootProject.robolectricVersion
+    testImplementation 'androidx.test:core:' + rootProject.coreVersion
+    testImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion
+    testImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
+
+    androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion
+    androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion
+    androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion
+    androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
+    androidTestImplementation 'androidx.fragment:fragment-testing:' + rootProject.androidxFragmentVersion
+    androidTestImplementation 'org.robolectric:annotations:' + rootProject.robolectricVersion
+
+}

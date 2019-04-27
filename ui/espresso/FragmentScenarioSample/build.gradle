@@ -1,0 +1,41 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.3.21'
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+        
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+        
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    buildToolsVersion = "28.0.3"
+    androidxCoreVersion = "1.1.0-alpha05"
+    androidxCompatVersion = "1.1.0-alpha04"
+    androidxFragmentVersion = "1.1.0-alpha04"
+    coreVersion = "1.2.0-alpha04"
+    extJUnitVersion = "1.1.1-alpha04"
+    runnerVersion = "1.2.0-alpha04"
+    rulesVersion = "1.2.0-alpha04"
+    espressoVersion = "3.2.0-alpha04"
+    robolectricVersion = "4.3-SNAPSHOT"
+}
