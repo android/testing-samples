@@ -28,7 +28,7 @@ class SampleDialogFragmentTest {
 
     scenario.onFragment { fragment ->
       assertThat(fragment.dialog).isNotNull()
-      assertThat(fragment.dialog!!.isShowing).isTrue()
+      assertThat(fragment.requireDialog().isShowing).isTrue()
     }
 
     // Now use espresso to look for the fragment's text view and verify it is displayed.

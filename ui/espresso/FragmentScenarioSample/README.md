@@ -21,7 +21,7 @@ This project uses the Gradle build system. You don't need an IDE to build and ex
 1. Create and run the local Test configuration
     * Open *Run* menu | *Edit Configurations*
     * Add a new *Android JUnit* configuration
-    * Set `Use classpath of module` to module `app`
+    * Set `Use classpath of module` to `app`
     * Set `Class` to FragmentScenarioTest
     * Run the configuration
 
