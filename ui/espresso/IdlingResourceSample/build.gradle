@@ -21,7 +21,6 @@ buildscript {
         // Insert local test repo here
         jcenter()
         google()
-        mavenLocal()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.0'
@@ -36,7 +35,6 @@ allprojects {
         // Insert local test repo here
         jcenter()
         google()
-        mavenLocal()
     }
 }
 

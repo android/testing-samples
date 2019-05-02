@@ -16,6 +16,15 @@
 
 package com.example.android.testing.espresso.CustomMatcherSample;
 
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import androidx.test.core.app.ActivityScenario;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.filters.LargeTest;
+
 import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -28,15 +37,6 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.anyOf;
 import static org.hamcrest.Matchers.endsWith;
 import static org.hamcrest.Matchers.not;
-
-import android.os.SystemClock;
-import androidx.test.ext.junit.rules.ActivityScenarioRule;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
-import androidx.test.filters.LargeTest;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 
 /**
  * Tests for {@link MainActivity} showcasing the use of custom matchers (see
@@ -128,7 +128,6 @@ public class HintMatchersTest {
 
     @Test
     public void validation_resultIsIncorrect() {
-      SystemClock.setCurrentTimeMillis(100);
         // Type a valid string and click on the button.
         onView(withId(R.id.editText))
                 .perform(typeText(INVALID_STRING_TO_BE_TYPED), closeSoftKeyboard());
