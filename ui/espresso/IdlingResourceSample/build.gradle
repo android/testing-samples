@@ -45,5 +45,4 @@ ext {
     extJUnitVersion = "1.1.1-alpha05"
     runnerVersion = "1.2.0-alpha05"
     espressoVersion = "3.2.0-alpha05"
-    robolectricVersion = "4.3-alpha-3"
 }

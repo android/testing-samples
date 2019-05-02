@@ -32,7 +32,6 @@ android {
     lintOptions {
         abortOnError false
     }
-    testOptions.unitTests.includeAndroidResources = true
 }
 
 dependencies {
@@ -47,10 +46,4 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
     // Note that espresso-idling-resource is used in the code under test.
     implementation 'androidx.test.espresso:espresso-idling-resource:' + rootProject.espressoVersion
-
-    testImplementation 'androidx.test:core:' + rootProject.coreVersion
-    testImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion
-    testImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
-    testImplementation 'org.robolectric:robolectric:' + rootProject.robolectricVersion
-
 }

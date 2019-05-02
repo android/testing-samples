@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
-        applicationId "com.example.android.testing.espresso.BasicSample"
+        applicationId "com.example.android.testing.espresso.IntentsBasicSample"
         minSdkVersion 14
         targetSdkVersion 28
         versionCode 1
@@ -20,6 +20,15 @@ android {
     testOptions {
         unitTests {
             includeAndroidResources = true
+        }
+    }
+    // share test source between local test and androidTest
+    sourceSets {
+        test {
+            java.srcDir 'src/sharedTest/java'
+        }
+        androidTest {
+            java.srcDir 'src/sharedTest/java'
         }
     }
 }
@@ -39,7 +48,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-intents:' + rootProject.espressoVersion;
     androidTestImplementation 'androidx.test.ext:truth:' + rootProject.extTruthVersion;
     androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
-
+    androidTestImplementation 'org.robolectric:annotations:' + rootProject.robolectricVersion;
 
     testImplementation 'androidx.test:core:' + rootProject.coreVersion;
     testImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;

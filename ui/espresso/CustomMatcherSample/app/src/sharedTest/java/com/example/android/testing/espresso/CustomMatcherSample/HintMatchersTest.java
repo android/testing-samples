@@ -28,8 +28,6 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.anyOf;
 import static org.hamcrest.Matchers.endsWith;
 import static org.hamcrest.Matchers.not;
-import static org.robolectric.annotation.LooperMode.Mode.PAUSED;
-import static org.robolectric.annotation.TextLayoutMode.Mode.REALISTIC;
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -40,7 +38,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.annotation.LooperMode;
 import org.robolectric.annotation.TextLayoutMode;
-import org.robolectric.annotation.TextLayoutMode.Mode;
 
 /**
  * Tests for {@link MainActivity} showcasing the use of custom matchers (see
@@ -48,9 +45,11 @@ import org.robolectric.annotation.TextLayoutMode.Mode;
  */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-@TextLayoutMode(REALISTIC)
-@LooperMode(PAUSED)
-public class HintMatchersLocalTest {
+// Configure Robolectric to use the more realistic text layout and threading model.
+// These annotations can be removed once this is default behavior in Robolectric
+@TextLayoutMode(TextLayoutMode.Mode.REALISTIC)
+@LooperMode(LooperMode.Mode.PAUSED)
+public class HintMatchersTest {
 
     private static final String INVALID_STRING_TO_BE_TYPED = "Earl Grey";
 
