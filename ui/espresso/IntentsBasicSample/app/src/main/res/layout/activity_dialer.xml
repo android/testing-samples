@@ -26,10 +26,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-
-            android:hint="@string/type_a_phone_number"/>
-    <!-- TODO: fails on Robolectric #4149 -->
-    <!--android:inputType="phone"-->
+            android:hint="@string/type_a_phone_number"
+            android:inputType="phone" />
 
     <Button android:id="@+id/button_call_number"
             style="?android:attr/buttonStyleSmall"
