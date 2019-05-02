@@ -50,6 +50,7 @@ dependencies {
     testImplementation 'androidx.test:core:' + rootProject.coreVersion
     testImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion
     testImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
+    testAnnotationProcessor 'com.google.auto.service:auto-service:1.0-rc4'
 
     androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion
     androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion
