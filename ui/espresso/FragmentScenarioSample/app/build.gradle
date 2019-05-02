@@ -41,15 +41,17 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:' + rootProject.androidxCompatVersion
     implementation 'androidx.core:core-ktx:' + rootProject.androidxCoreVersion
     implementation 'androidx.fragment:fragment-ktx:' + rootProject.androidxFragmentVersion
+
     // TODO: ideally this would only be present in test scope
-    implementation 'androidx.fragment:fragment-testing:' + rootProject.androidxFragmentVersion
-    implementation 'androidx.test:core:' + rootProject.coreVersion
+    debugImplementation 'androidx.fragment:fragment-testing:' + rootProject.androidxFragmentVersion
+    debugImplementation 'androidx.test:core:' + rootProject.coreVersion
 
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.robolectric:robolectric:' + rootProject.robolectricVersion
     testImplementation 'androidx.test:core:' + rootProject.coreVersion
     testImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion
     testImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
+    testImplementation 'com.google.truth:truth:' + rootProject.truthVersion
     testAnnotationProcessor 'com.google.auto.service:auto-service:1.0-rc4'
 
     androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion
@@ -57,6 +59,6 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion
     androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
     androidTestImplementation 'androidx.fragment:fragment-testing:' + rootProject.androidxFragmentVersion
+    androidTestImplementation 'com.google.truth:truth:' + rootProject.truthVersion
     androidTestImplementation 'org.robolectric:annotations:' + rootProject.robolectricVersion
-
 }
