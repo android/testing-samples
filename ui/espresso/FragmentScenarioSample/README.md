@@ -10,7 +10,7 @@ This project uses the Gradle build system. You don't need an IDE to build and ex
     * The application under test is located in `src/main/java`
     * The test source is located in `src/sharedTest/java`. There is a single set of test source that can be executed
     either on local host using Robolectric or on emulator/device.
-1. Create and runthe Android Instrumented Test configuration
+1. Create and run the Android Instrumented Test configuration
     * Open *Run* menu | *Edit Configurations*
     * Add a new *Android Instrumented Tests* configuration
     * Choose the `app` module
