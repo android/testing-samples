@@ -14,14 +14,14 @@ This project uses the Gradle build system. You don't need an IDE to build and ex
     * Open *Run* menu | *Edit Configurations*
     * Add a new *Android Instrumented Tests* configuration
     * Choose the `app` module
-    *. Connect a device or start an emulator
+    * Connect a device or start an emulator
     * Turn animations off.
     (On your device, under Settings->Developer options disable the following 3 settings: "Window animation scale", "Transition animation scale" and "Animator duration scale")
     * Run the newly created configuration
 1. Create and run the local Test configuration
     * Open *Run* menu | *Edit Configurations*
-    * Add a new *Android JUnit * configuration
-    * Set 'Use classpath of modul` to `app`
+    * Add a new *Android JUnit* configuration
+    * Set `Use classpath of module` to module `app`
     * Set `Class` to FragmentScenarioTest
     * Run the configuration
 

@@ -38,4 +38,5 @@ ext {
     rulesVersion = "1.2.0-alpha05"
     espressoVersion = "3.2.0-alpha05"
     robolectricVersion = "4.3-alpha-3"
+    truthVersion = "0.42"
 }

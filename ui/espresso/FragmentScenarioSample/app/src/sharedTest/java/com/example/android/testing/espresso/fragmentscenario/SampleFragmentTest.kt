@@ -1,6 +1,6 @@
 package com.example.android.testing.espresso.fragmentscenario
 
-import androidx.fragment.app.testing.FragmentScenario
+import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.withId
@@ -22,7 +22,7 @@ class SampleFragmentTest {
     @Test
     fun launchFragmentAndVerifyUI() {
         // use launchInContainer to launch the fragment with UI
-        FragmentScenario.launchInContainer(SampleFragment::class.java)
+        launchFragmentInContainer<SampleFragment>()
 
         // now use espresso to look for the fragment's text view and verify it is displayed
         onView(withId(R.id.textView)).check(matches(withText("I am a fragment")));
