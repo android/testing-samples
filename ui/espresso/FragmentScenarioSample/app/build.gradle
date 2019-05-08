@@ -43,8 +43,8 @@ dependencies {
     implementation 'androidx.fragment:fragment-ktx:' + rootProject.androidxFragmentVersion
 
     // TODO: ideally this would only be present in test scope
-    implementation 'androidx.fragment:fragment-testing:' + rootProject.androidxFragmentVersion
-    implementation 'androidx.test:core:' + rootProject.coreVersion
+    debugImplementation 'androidx.fragment:fragment-testing:' + rootProject.androidxFragmentVersion
+    debugImplementation 'androidx.test:core:' + rootProject.coreVersion
 
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.robolectric:robolectric:' + rootProject.robolectricVersion
