@@ -16,20 +16,18 @@
 
 package com.example.android.testing.espresso.CustomMatcherSample;
 
-import androidx.test.espresso.matcher.BoundedMatcher;
-
-import org.hamcrest.Description;
-import org.hamcrest.Matcher;
-
-import android.view.View;
-import android.widget.EditText;
-
 import static com.google.common.base.Preconditions.checkNotNull;
 import static org.hamcrest.Matchers.is;
 
+import android.view.View;
+import android.widget.EditText;
+import androidx.test.espresso.matcher.BoundedMatcher;
+import org.hamcrest.Description;
+import org.hamcrest.Matcher;
+
 /**
- * A custom matcher that checks the hint property of an {@link android.widget.EditText}. It
- * accepts either a {@link String} or a {@link org.hamcrest.Matcher}.
+ * A custom matcher that checks the hint property of an {@link EditText}. It
+ * accepts either a {@link String} or a {@link Matcher}.
  */
 public class HintMatcher {
 

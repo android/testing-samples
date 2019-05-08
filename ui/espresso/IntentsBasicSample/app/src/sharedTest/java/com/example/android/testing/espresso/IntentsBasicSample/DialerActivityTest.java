@@ -14,11 +14,9 @@
  * limitations under the License.
  */
 
-package com.example.android.testing.espresso.BasicSample;
+package com.example.android.testing.espresso.IntentsBasicSample;
 
 import static android.app.Instrumentation.ActivityResult;
-import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
-import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
@@ -35,28 +33,26 @@ import static androidx.test.espresso.intent.matcher.IntentMatchers.toPackage;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.ext.truth.content.IntentSubject.assertThat;
-
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.core.AllOf.allOf;
+import static org.robolectric.annotation.TextLayoutMode.Mode.REALISTIC;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
-
 import androidx.test.espresso.intent.Intents;
 import androidx.test.espresso.intent.rule.IntentsTestRule;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
-
 import androidx.test.rule.GrantPermissionRule;
 import com.google.common.collect.Iterables;
-
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.annotation.TextLayoutMode;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
@@ -65,15 +61,6 @@ public class DialerActivityTest {
     private static final String VALID_PHONE_NUMBER = "123-345-6789";
 
     private static final Uri INTENT_DATA_PHONE_NUMBER = Uri.parse("tel:" + VALID_PHONE_NUMBER);
-
-    private static String PACKAGE_ANDROID_DIALER = "com.android.phone";
-
-    static {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            // Starting with Android Lollipop the dialer package has changed.
-            PACKAGE_ANDROID_DIALER = "com.android.server.telecom";
-        }
-    }
 
     @Rule public GrantPermissionRule grantPermissionRule = GrantPermissionRule.grant("android.permission.CALL_PHONE");
 
@@ -109,8 +96,7 @@ public class DialerActivityTest {
         // number and package. Think of Intents intended API as the equivalent to Mockito's verify.
         intended(allOf(
                 hasAction(Intent.ACTION_CALL),
-                hasData(INTENT_DATA_PHONE_NUMBER),
-                toPackage(PACKAGE_ANDROID_DIALER)));
+                hasData(INTENT_DATA_PHONE_NUMBER)));
     }
 
     /**
