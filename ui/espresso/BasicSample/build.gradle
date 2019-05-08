@@ -8,7 +8,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.android.tools.build:gradle:3.2.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -27,10 +27,10 @@ allprojects {
 ext {
     buildToolsVersion = "28.0.3"
     androidxLibVersion = "1.0.0"
-    coreVersion = "1.2.0-alpha05"
-    extJUnitVersion = "1.1.1-alpha05"
-    runnerVersion = "1.2.0-alpha05"
-    espressoVersion = "3.2.0-alpha05"
-    robolectricVersion = "4.3-alpha-3"
-    truthVersion = '1.2.0-alpha05'
+    robolectricVersion = "4.3-beta-1"
+    truthVersion = '1.2.0-beta01'
+    coreVersion = "1.2.0-beta01"
+    extJUnitVersion = "1.1.1-beta01"
+    runnerVersion = "1.2.0-beta01"
+    espressoVersion = "3.2.0-beta01"
 }

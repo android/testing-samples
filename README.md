@@ -11,6 +11,8 @@ A collection of samples demonstrating different frameworks and techniques for au
 
 **[DataAdapterSample](https://github.com/googlesamples/android-testing/blob/master/ui/espresso/DataAdapterSample)** - Showcases the `onData()` entry point for Espresso, for lists and AdapterViews
 
+**[FragmentScenarioSample](https://github.com/googlesamples/android-testing/blob/master/ui/espresso/FragmentScenarioSample)** - Basic usage of `FragmentScenario` with Espresso. 
+
 **[IdlingResourceSample](https://github.com/googlesamples/android-testing/blob/master/ui/espresso/IdlingResourceSample)** - Synchronization with background jobs
 
 **[IntentsBasicSample](https://github.com/googlesamples/android-testing/blob/master/ui/espresso/IntentsBasicSample)** - Basic usage of `intended()` and `intending()`
