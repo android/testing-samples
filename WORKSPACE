@@ -71,7 +71,7 @@ maven_install(
         "androidx.test:rules:" + rulesVersion,
         "androidx.test:runner:" + runnerVersion,
         "androidx.test.uiautomator:uiautomator:" + uiAutomatorVersion,
-        "com.google.inject:guice:4.0",
+        maven.artifact("com.google.inject", "guice", "4.0", neverlink = True),
         "junit:junit:4.12",
         "javax.inject:javax.inject:1",
         "org.hamcrest:java-hamcrest:2.0.0.0",
