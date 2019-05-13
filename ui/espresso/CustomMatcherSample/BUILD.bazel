@@ -28,11 +28,14 @@ android_binary(
 
 android_library(
     name = "CustomMatcherSampleTestLib",
-    srcs = glob(["app/src/androidTest/**/*.java"]),
+    srcs = glob(["app/src/sharedTest/**/*.java"]),
     custom_package = "com.example.android.testing.espresso.CustomMatcherSample.test",
     deps = [
         ":CustomMatcherSampleLib",
         "//:test_deps",
+        "@maven//:org_robolectric_robolectric",
+        "@maven//:org_robolectric_annotations",
+        "@maven//:junit_junit",
     ],
 )
 
