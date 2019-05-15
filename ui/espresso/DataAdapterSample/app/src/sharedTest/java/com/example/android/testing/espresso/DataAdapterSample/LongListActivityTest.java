@@ -16,7 +16,9 @@
 
 package com.example.android.testing.espresso.DataAdapterSample;
 
+import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -63,13 +65,12 @@ public class LongListActivityTest {
     private static final String LAST_ITEM_ID = "item: 99";
 
     /**
-     * Use {@link ActivityScenario} to create and launch the activity under test. This is a
+     * Use {@link ActivityScenarioRule} to create and launch the activity under test. This is a
      * replacement for {@link androidx.test.rule.ActivityTestRule}.
      */
-    @Before
-    public void launchActivity() {
-        ActivityScenario.launch(LongListActivity.class);
-    }
+    @Rule
+    public ActivityScenarioRule<LongListActivity> rule = new ActivityScenarioRule<>(
+        LongListActivity.class);
 
     /**
      * Test that the list is long enough for this sample, the last item shouldn't appear.
