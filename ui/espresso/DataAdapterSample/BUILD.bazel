@@ -28,7 +28,7 @@ android_binary(
 
 android_library(
     name = "DataAdapterSampleTestLib",
-    srcs = glob(["app/src/androidTest/**/*.java"]),
+    srcs = glob(["app/src/sharedTest/**/*.java"]),
     custom_package = "com.example.android.testing.espresso.DataAdapterSample.test",
     deps = [
         ":DataAdapterSampleLib",
