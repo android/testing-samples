@@ -17,3 +17,7 @@ test:local_device --test_arg=--device_broker_type=LOCAL_ADB_SERVER
 # test:local_device --test_arg=--device_serial_number=$device_id
 
 test --flaky_test_attempts=3
+
+# The unified launcher runs in Python 2 host configuration
+# https://github.com/bazelbuild/bazel/issues/7899
+build --host_force_python=PY2 

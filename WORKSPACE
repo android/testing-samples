@@ -13,10 +13,9 @@ android_sdk_repository(
 #
 # This repository contains the supporting tools to run Android instrumentation tests,
 # like the emulator definitions (android_device) and the device broker/test runner.
-ATS_TAG = "2e990782519786bca2f8bf23b2c5933f0d69da8d"
+ATS_TAG = "1edfdab3134a7f01b37afabd3eebfd2c5bb05151"
 
-ATS_SHA256 = "de74535cc212a5d9f3e2d24d9a6cf9e1a3734e834563458ad6dd5474dd6aa9c7"
-
+ATS_SHA256 = "dcd1ff76aef1a26329d77863972780c8fe1fc8ff625747342239f0489c2837ec"
 
 http_archive(
     name = "android_test_support",
