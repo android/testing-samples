@@ -47,7 +47,7 @@ class SharedPreferencesHelper(private val sharedPreferences: SharedPreferences) 
      * [SharedPreferences].
      *
      * @param sharedPreferenceEntry contains data to save to [SharedPreferences].
-     * @return `true` if writing to [SharedPreferences] succeeded, `false` otherwise.
+     * @return true if writing to [SharedPreferences] succeeded, false otherwise.
      */
     fun savePersonalInfo(sharedPreferenceEntry: SharedPreferenceEntry): Boolean {
         // Start a SharedPreferences transaction.
@@ -63,8 +63,8 @@ class SharedPreferencesHelper(private val sharedPreferences: SharedPreferences) 
 
     companion object {
         // Keys for saving values in SharedPreferences.
-        internal val KEY_NAME = "key_name"
-        internal val KEY_DOB = "key_dob_millis"
-        internal val KEY_EMAIL = "key_email"
+        internal const val KEY_NAME = "key_name"
+        internal const val KEY_DOB = "key_dob_millis"
+        internal const val KEY_EMAIL = "key_email"
     }
 }

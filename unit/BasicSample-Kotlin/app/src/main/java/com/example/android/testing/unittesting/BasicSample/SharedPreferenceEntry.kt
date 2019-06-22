@@ -20,5 +20,9 @@ import java.util.Calendar
 
 /**
  * Model class containing personal information that will be saved to SharedPreferences.
+ *
+ * @property name name of the person.
+ * @property dateOfBirth dob of the person.
+ * @property email email of the person.
  */
-class SharedPreferenceEntry(val name: String, val dateOfBirth: Calendar, val email: String)
+data class SharedPreferenceEntry(val name: String, val dateOfBirth: Calendar, val email: String)

@@ -20,9 +20,7 @@ import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
-/**
- * Unit tests for the EmailValidator logic.
- */
+/** Unit tests for the EmailValidator logic. */
 class EmailValidatorTest {
 
     @Test fun emailValidator_CorrectEmailSimple_ReturnsTrue() {
@@ -52,5 +50,4 @@ class EmailValidatorTest {
     @Test fun emailValidator_NullEmail_ReturnsFalse() {
         assertFalse(EmailValidator.isValidEmail(null))
     }
-
 }
