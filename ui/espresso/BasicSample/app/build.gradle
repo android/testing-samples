@@ -54,5 +54,5 @@ dependencies {
     testImplementation 'org.robolectric:robolectric:' + rootProject.robolectricVersion
     testImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
     testImplementation 'androidx.test.espresso:espresso-intents:' + rootProject.espressoVersion
-    testImplementation 'androidx.test.ext:truth:' + rootProject.truthVersion
+    testImplementation 'androidx.test.ext:truth:' + rootProject.extTruthVersion
 }
