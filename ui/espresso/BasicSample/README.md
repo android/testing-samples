@@ -21,7 +21,7 @@ This project uses the Gradle build system. You don't need an IDE to build and ex
     * The application will be started on the device/emulator and a series of actions will be performed automatically.
 1. Create and run the local Test configuration
     * Open Run menu | Edit Configurations
-    * Add a new *Android JUnit * configuration
+    * Add a new `Android JUnit` configuration
     * Set `Use classpath of module` to `app`
     * Set `Class` to `ChangeTextBehaviorLocalTest`
     * Run the configuration    
