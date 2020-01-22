@@ -5,7 +5,7 @@ load("@bazel_tools//tools/build_defs/repo:jvm.bzl", "jvm_maven_import_external")
 android_sdk_repository(
     name = "androidsdk",
     api_level = 28,
-    build_tools_version = "28.0.2",
+    build_tools_version = "29.0.2",
     # path = "/path/to/sdk",
 )
 
