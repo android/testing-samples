@@ -60,6 +60,7 @@ maven_install(
         "androidx.core:core:" + androidxLibVersion,
         "androidx.recyclerview:recyclerview:" + androidxLibVersion,
         "androidx.test:core:" + coreVersion,
+        "androidx.test.espresso:espresso-accessibility:" + espressoVersion,
         "androidx.test.espresso:espresso-contrib:" + espressoVersion,
         "androidx.test.espresso:espresso-core:" + espressoVersion,
         "androidx.test.espresso:espresso-idling-resource:" + espressoVersion,
