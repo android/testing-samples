@@ -30,7 +30,9 @@ android_library(
     srcs = glob(["app/src/androidTest/**/*.java"]),
     custom_package = "com.example.android.testing.espresso.AccessibilitySample.test",
     deps = [
+        artifact("androidx.viewpager:viewpager"),
         artifact("androidx.test.espresso:espresso-accessibility"),
+        artifact("com.google.android.apps.common.testing.accessibility.framework:accessibility-test-framework"),
         ":BasicSampleLib",
         "//:test_deps",
     ],
@@ -45,7 +47,12 @@ android_binary(
         "minSdkVersion": minSdkVersion,
         "targetSdkVersion": targetSdkVersion,
     },
-    deps = [":BasicSampleTestLib"],
+    deps = [
+        artifact("androidx.viewpager:viewpager"),
+        artifact("androidx.test.espresso:espresso-accessibility"),
+        artifact("com.google.android.apps.common.testing.accessibility.framework:accessibility-test-framework"),
+        ":BasicSampleTestLib",
+    ],
 )
 
 API_LEVELS = [
