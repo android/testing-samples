@@ -10,6 +10,7 @@ platforms:
     - "--spawn_strategy=standalone" # Reduce flakes.
     test_targets:
     - "//..."
+    - "-//ui/espresso/AccessibilitySample/..."
   ubuntu1804:
     build_targets:
     - "//..."
@@ -19,6 +20,7 @@ platforms:
     - "--spawn_strategy=standalone" # Reduce flakes.
     test_targets:
     - "//..."
+    - "-//ui/espresso/AccessibilitySample/..."
   macos:
     # Testing does not work for macos and windows yet
     build_targets: # Results of `bazel query 'kind(android_binary, //...)'
@@ -40,6 +42,8 @@ platforms:
       - "//ui/espresso/CustomMatcherSample:CustomMatcherSample"
       - "//ui/espresso/BasicSample:BasicSampleTest"
       - "//ui/espresso/BasicSample:BasicSample"
+      - "//ui/espresso/AccessibilitySample:BasicSampleTest"
+      - "//ui/espresso/AccessibilitySample:BasicSample"
   windows:
     build_targets: # Results of `bazel query 'kind(android_binary, //...)'
       - "//ui/uiautomator/BasicSample:BasicSampleTest"
@@ -60,3 +64,6 @@ platforms:
       - "//ui/espresso/CustomMatcherSample:CustomMatcherSample"
       - "//ui/espresso/BasicSample:BasicSampleTest"
       - "//ui/espresso/BasicSample:BasicSample"
+      - "//ui/espresso/AccessibilitySample:BasicSampleTest"
+      - "//ui/espresso/AccessibilitySample:BasicSample"
+

@@ -6,7 +6,7 @@ load("@rules_jvm_external//:defs.bzl", "artifact")
 android_library(
     name = "BasicSampleLib",
     srcs = glob(["app/src/main/**/*.java"]),
-    custom_package = "com.example.android.testing.espresso.BasicSample",
+    custom_package = "com.example.android.testing.espresso.AccessibilitySample",
     manifest = "app/src/main/AndroidManifest.xml",
     resource_files = glob(["app/src/main/res/**/*"]),
     deps = [
@@ -16,7 +16,7 @@ android_library(
 
 android_binary(
     name = "BasicSample",
-    custom_package = "com.example.android.testing.espresso.BasicSample",
+    custom_package = "com.example.android.testing.espresso.AccessibilitySample",
     manifest = "app/src/main/AppManifest.xml",
     manifest_values = {
         "minSdkVersion": minSdkVersion,
@@ -28,8 +28,11 @@ android_binary(
 android_library(
     name = "BasicSampleTestLib",
     srcs = glob(["app/src/androidTest/**/*.java"]),
-    custom_package = "com.example.android.testing.espresso.BasicSample.test",
+    custom_package = "com.example.android.testing.espresso.AccessibilitySample.test",
     deps = [
+        artifact("androidx.viewpager:viewpager"),
+        artifact("androidx.test.espresso:espresso-accessibility"),
+        artifact("com.google.android.apps.common.testing.accessibility.framework:accessibility-test-framework"),
         ":BasicSampleLib",
         "//:test_deps",
     ],
@@ -37,14 +40,19 @@ android_library(
 
 android_binary(
     name = "BasicSampleTest",
-    custom_package = "com.example.android.testing.espresso.BasicSample.test",
+    custom_package = "com.example.android.testing.espresso.AccessibilitySample.test",
     instruments = ":BasicSample",
     manifest = "app/src/androidTest/AndroidManifest.xml",
     manifest_values = {
         "minSdkVersion": minSdkVersion,
         "targetSdkVersion": targetSdkVersion,
     },
-    deps = [":BasicSampleTestLib"],
+    deps = [
+        artifact("androidx.viewpager:viewpager"),
+        artifact("androidx.test.espresso:espresso-accessibility"),
+        artifact("com.google.android.apps.common.testing.accessibility.framework:accessibility-test-framework"),
+        ":BasicSampleTestLib",
+    ],
 )
 
 API_LEVELS = [

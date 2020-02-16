@@ -30,8 +30,9 @@ android_test_repositories()
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-RULES_JVM_EXTERNAL_TAG = "2.1"
-RULES_JVM_EXTERNAL_SHA = "515ee5265387b88e4547b34a57393d2bcb1101314bcc5360ec7a482792556f42"
+
+RULES_JVM_EXTERNAL_TAG = "3.1"
+RULES_JVM_EXTERNAL_SHA = "e246373de2353f3d34d35814947aa8b7d0dd1a58c2f7a6c41cfeaff3007c2d14"
 
 http_archive(
     name = "rules_jvm_external",
@@ -60,6 +61,7 @@ maven_install(
         "androidx.core:core:" + androidxLibVersion,
         "androidx.recyclerview:recyclerview:" + androidxLibVersion,
         "androidx.test:core:" + coreVersion,
+        "androidx.test.espresso:espresso-accessibility:" + espressoVersion,
         "androidx.test.espresso:espresso-contrib:" + espressoVersion,
         "androidx.test.espresso:espresso-core:" + espressoVersion,
         "androidx.test.espresso:espresso-idling-resource:" + espressoVersion,
@@ -70,6 +72,7 @@ maven_install(
         "androidx.test:rules:" + rulesVersion,
         "androidx.test:runner:" + runnerVersion,
         "androidx.test.uiautomator:uiautomator:" + uiAutomatorVersion,
+        "androidx.viewpager:viewpager:1.0.0",
         maven.artifact("com.google.inject", "guice", "4.0", neverlink = True),
         "junit:junit:4.12",
         "javax.inject:javax.inject:1",
@@ -83,9 +86,12 @@ maven_install(
         ),
         "com.google.guava:guava:26.0-android",
         "com.google.truth:truth:0.42",
+        "com.google.android.apps.common.testing.accessibility.framework:accessibility-test-framework:2.0",
     ],
     repositories = [
         "https://maven.google.com",
         "https://repo1.maven.org/maven2",
     ],
+    jetify = True,
+    version_conflict_policy = "pinned",
 )
