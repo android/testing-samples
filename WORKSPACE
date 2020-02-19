@@ -9,6 +9,9 @@ android_sdk_repository(
     # path = "/path/to/sdk",
 )
 
+# Required for running emulator tests on RBE on Bazel CI
+android_ndk_repository(name = "androidndk")
+
 # Android Test Support
 #
 # This repository contains the supporting tools to run Android instrumentation tests,
@@ -95,3 +98,20 @@ maven_install(
     jetify = True,
     version_conflict_policy = "pinned",
 )
+
+http_archive(
+    name = "bazel_toolchains",
+    sha256 = "4d348abfaddbcee0c077fc51bb1177065c3663191588ab3d958f027cbfe1818b",
+    strip_prefix = "bazel-toolchains-2.1.0",
+    urls = [
+        "https://github.com/bazelbuild/bazel-toolchains/releases/download/2.1.0/bazel-toolchains-2.1.0.tar.gz",
+        "https://mirror.bazel.build/github.com/bazelbuild/bazel-toolchains/archive/2.1.0.tar.gz",
+    ],
+)
+
+load("@bazel_toolchains//rules:rbe_repo.bzl", "rbe_autoconfig")
+
+rbe_autoconfig(name = "rbe_default")
+
+# RBE support for android_device and android_instrumentation_test on RBE.
+register_execution_platforms(":android_platform")

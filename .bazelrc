@@ -20,4 +20,55 @@ test --flaky_test_attempts=3
 
 # The unified launcher runs in Python 2 host configuration
 # https://github.com/bazelbuild/bazel/issues/7899
-build --host_force_python=PY2 
+build --host_force_python=PY2
+
+# ------------------------
+# General RBE configuration
+# ------------------------
+build:remote --jobs=100
+
+# Java toolchain setup
+build:remote --java_toolchain=@bazel_tools//tools/jdk:toolchain_hostjdk8
+build:remote --host_java_toolchain=@bazel_tools//tools/jdk:toolchain_hostjdk8
+build:remote --host_javabase=@rbe_default//java:jdk
+build:remote --javabase=@rbe_default//java:jdk
+
+# C++ toolchain setup
+build:remote --extra_toolchains=@rbe_default//config:cc-toolchain
+build:remote --crosstool_top=@rbe_default//cc:toolchain
+
+# Remote instance setup
+build:remote --remote_instance_name=projects/bazel-untrusted/instances/default_instance
+build:remote --project_id=bazel-untrusted
+
+# Set various strategies so that all actions execute remotely. Mixing remote
+# and local execution will lead to errors unless the toolchain and remote
+# machine exactly match the host machine.
+build:remote --spawn_strategy=remote
+build:remote --define=EXECUTOR=remote
+
+# Enable the remote cache so action results can be shared across machines,
+# developers, and workspaces.
+build:remote --remote_cache=remotebuildexecution.googleapis.com
+
+# Enable remote execution so actions are performed on the remote systems.
+build:remote --remote_executor=remotebuildexecution.googleapis.com
+
+# Enable authentication. This will pick up application default credentials by
+# default.
+build:remote --google_default_credentials
+
+# -------------------------------------------
+# Custom RBE configuration for Android builds
+# -------------------------------------------
+
+build:remote_android --config=remote  # Reuse general configuration
+
+# Platform configuration
+build:remote_android --extra_execution_platforms=:android_platform
+build:remote_android --host_platform=:android_platform
+build:remote_android --platforms=:android_platform
+
+build:remote_android --strategy=DexBuilder=remote
+build:remote_android --noexperimental_check_desugar_deps # Workaround for singlejar incompatibility with RBE
+build:remote_android --incompatible_strict_action_env

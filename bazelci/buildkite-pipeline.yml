@@ -5,9 +5,8 @@ platforms:
     build_targets:
     - "//..."
     test_flags:
-    - "--local_test_jobs=8" # Run at most 8 tests (= emulators) in parallel
-    - "--flaky_test_attempts=3" # Flakes.
-    - "--spawn_strategy=standalone" # Reduce flakes.
+    - "--config=remote_android"
+    - "--flaky_test_attempts=3"
     test_targets:
     - "//..."
     - "-//ui/espresso/AccessibilitySample/..."
@@ -15,9 +14,8 @@ platforms:
     build_targets:
     - "//..."
     test_flags:
-    - "--local_test_jobs=8" # Run at most 8 tests (= emulators) in parallel
-    - "--flaky_test_attempts=3" # Flakes.
-    - "--spawn_strategy=standalone" # Reduce flakes.
+    - "--config=remote_android"
+    - "--flaky_test_attempts=3"
     test_targets:
     - "//..."
     - "-//ui/espresso/AccessibilitySample/..."
