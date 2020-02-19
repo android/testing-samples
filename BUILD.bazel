@@ -36,7 +36,7 @@ platform(
     remote_execution_properties = """
         properties: {
             name: "container-image"
-            value: "docker://gcr.io/di-cloud-exp/rbe-ubuntu16-04-android@sha256:8511fb519f9c0c8307979450b0d8b0e5c972fead9c5718ddb788817a2e551173"
+            value: "docker://gcr.io/di-cloud-exp/rbe-ubuntu16-04-android@sha256:eb3828f71faf595f44b20b97d205e73e8a21982f1d7a170c3ec8f9d33ce3179a"
         }
         properties: {
             name: "dockerNetwork"

@@ -25,7 +25,7 @@ build --host_force_python=PY2
 # ------------------------
 # General RBE configuration
 # ------------------------
-build:remote --jobs=50
+build:remote --jobs=100
 
 # Java toolchain setup
 build:remote --java_toolchain=@bazel_tools//tools/jdk:toolchain_hostjdk8
@@ -35,7 +35,7 @@ build:remote --javabase=@rbe_default//java:jdk
 
 # C++ toolchain setup
 build:remote --extra_toolchains=@rbe_default//config:cc-toolchain
-build:remote --crosstool_top=@bazel_toolchains//configs/ubuntu16_04_clang/9.0.0/bazel_1.0.0/cc:toolchain
+build:remote --crosstool_top=@rbe_default//cc:toolchain
 
 # Remote instance setup
 build:remote --remote_instance_name=projects/bazel-untrusted/instances/default_instance
