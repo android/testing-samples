@@ -20,7 +20,7 @@ test --flaky_test_attempts=3
 
 # The unified launcher runs in Python 2 host configuration
 # https://github.com/bazelbuild/bazel/issues/7899
-build --host_force_python=PY2 
+build --host_force_python=PY2
 
 # ------------------------
 # General RBE configuration
@@ -45,9 +45,6 @@ build:remote --project_id=bazel-untrusted
 # and local execution will lead to errors unless the toolchain and remote
 # machine exactly match the host machine.
 build:remote --spawn_strategy=remote
-build:remote --strategy=Javac=remote
-build:remote --strategy=Closure=remote
-build:remote --strategy=Genrule=remote
 build:remote --define=EXECUTOR=remote
 
 # Enable the remote cache so action results can be shared across machines,
@@ -57,16 +54,9 @@ build:remote --remote_cache=remotebuildexecution.googleapis.com
 # Enable remote execution so actions are performed on the remote systems.
 build:remote --remote_executor=remotebuildexecution.googleapis.com
 
-# Enable encryption.
-build:remote --tls_enabled=true
-
-# Set a higher timeout value, just in case.
-build:remote --remote_timeout=3600
-
 # Enable authentication. This will pick up application default credentials by
-# default. You can use --auth_credentials=some_file.json to use a service
-# account credential instead.
-build:remote --auth_enabled=true
+# default.
+build:remote --google_default_credentials
 
 # -------------------------------------------
 # Custom RBE configuration for Android builds
