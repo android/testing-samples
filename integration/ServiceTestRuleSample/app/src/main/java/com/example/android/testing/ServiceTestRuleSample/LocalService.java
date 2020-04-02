@@ -40,6 +40,9 @@ public class LocalService extends Service {
     private Random mGenerator = new Random();
 
     private long mSeed;
+    
+    // Testing...
+    //Second line..
 
     @Override
     public IBinder onBind(Intent intent) {
