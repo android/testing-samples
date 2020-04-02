@@ -41,7 +41,6 @@ public class LocalService extends Service {
 
     private long mSeed;
     
-
     //Second line Modifying..
 	
     @Override
