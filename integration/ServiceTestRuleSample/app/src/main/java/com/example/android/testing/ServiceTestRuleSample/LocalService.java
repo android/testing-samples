@@ -41,9 +41,9 @@ public class LocalService extends Service {
 
     private long mSeed;
     
-    // Testing...
-    //Second line..
 
+    //Second line Modifying..
+	
     @Override
     public IBinder onBind(Intent intent) {
         // If the Intent comes with a seed for the number generator, apply it.
