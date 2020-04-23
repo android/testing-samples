@@ -22,12 +22,12 @@ import android.text.TextWatcher;
 import java.util.regex.Pattern;
 
 /**
- * An Email format validator for {@link android.widget.EditText}.
+ * An Email format validator for {@link android.widget.EditText}......
  */
 public class EmailValidator implements TextWatcher {
 
     /**
-     * Email validation pattern.
+     * Email validation pattern......
      */
     public static final Pattern EMAIL_PATTERN = Pattern.compile(
             "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
