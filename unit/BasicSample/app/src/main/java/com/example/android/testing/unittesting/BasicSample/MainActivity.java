@@ -47,10 +47,10 @@ public class MainActivity extends Activity {
     // The date picker where the user enters his date of birth.
     private DatePicker mDobPicker;
 
-    // The input field where the user enters his email.
+    // The input field where the user enters his email...2
     private EditText mEmailText;
 
-    // The validator for the email input field.
+    // The validator for the email input field...2
     private EmailValidator mEmailValidator;
 
     @Override

@@ -46,10 +46,10 @@ public class EmailValidator implements TextWatcher {
     }
 
     /**
-     * Validates if the given input is a valid email address.
+     * Validates if the given input is a valid email address....2
      *
      * @param email        The email to validate.
-     * @return {@code true} if the input is a valid email. {@code false} otherwise.
+     * @return {@code true} if the input is a valid email. {@code false} otherwise....2
      */
     public static boolean isValidEmail(CharSequence email) {
         return email != null && EMAIL_PATTERN.matcher(email).matches();
