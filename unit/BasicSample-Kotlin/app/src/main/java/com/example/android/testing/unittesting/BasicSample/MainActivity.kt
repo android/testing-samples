@@ -71,9 +71,7 @@ class MainActivity : Activity() {
         populateUi()
     }
 
-    /**
-     * Initialize all fields from the personal info saved in the SharedPreferences.
-     */
+    /** Initialize all fields from the personal info saved in the SharedPreferences. */
     private fun populateUi() {
         val sharedPreferenceEntry = sharedPreferencesHelper.getPersonalInfo()
         nameText.setText(sharedPreferenceEntry.name)
@@ -83,9 +81,7 @@ class MainActivity : Activity() {
         emailText.setText(sharedPreferenceEntry.email)
     }
 
-    /**
-     * Called when the "Save" button is clicked.
-     */
+    /** Called when the Save button is clicked. */
     fun onSaveClick(@Suppress("UNUSED_PARAMETER") view: View) {
         // Don't save if the fields do not validate.
         if (!emailValidator.isValid) {
@@ -113,13 +109,10 @@ class MainActivity : Activity() {
         }
     }
 
-    /**
-     * Called when the "Revert" button is clicked.
-     */
+    /** Called when the Revert button is clicked. */
     fun onRevertClick(@Suppress("UNUSED_PARAMETER") view: View) {
         populateUi()
         Toast.makeText(this, "Personal information reverted", Toast.LENGTH_LONG).show()
         Log.i(TAG, "Personal information reverted")
     }
-
 }

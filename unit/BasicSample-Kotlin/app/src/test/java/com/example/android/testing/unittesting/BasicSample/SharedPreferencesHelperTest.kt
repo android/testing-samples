@@ -31,15 +31,15 @@ import org.mockito.Mock
 import org.mockito.junit.MockitoJUnitRunner
 import java.util.Calendar
 
-/**
- * Unit tests for the [SharedPreferencesHelper] that mocks [SharedPreferences].
- */
+/** Unit tests for the [SharedPreferencesHelper] that mocks [SharedPreferences]. */
 @RunWith(MockitoJUnitRunner::class)
 class SharedPreferencesHelperTest {
 
     private val TEST_NAME = "Test name"
     private val TEST_EMAIL = "test@email.com"
-    private val TEST_DATE_OF_BIRTH = Calendar.getInstance().apply { set(1980, 1, 1) }
+    private val TEST_DATE_OF_BIRTH = Calendar.getInstance().apply {
+        set(1980, 1, 1)
+    }
 
     private lateinit var sharedPreferenceEntry: SharedPreferenceEntry
     private lateinit var mockSharedPreferencesHelper: SharedPreferencesHelper
@@ -79,9 +79,7 @@ class SharedPreferencesHelperTest {
         assertFalse(mockBrokenSharedPreferencesHelper.savePersonalInfo(sharedPreferenceEntry))
     }
 
-    /**
-     * Creates a mocked SharedPreferences.
-     */
+    /** Creates a mocked SharedPreferences. */
     private fun createMockSharedPreference(): SharedPreferencesHelper {
         // Mocking reading the SharedPreferences as if mockSharedPreferences was previously written
         // correctly.
@@ -100,9 +98,7 @@ class SharedPreferencesHelperTest {
         return SharedPreferencesHelper(mockSharedPreferences)
     }
 
-    /**
-     * Creates a mocked SharedPreferences that fails when writing.
-     */
+    /** Creates a mocked SharedPreferences that fails when writing. */
     private fun createBrokenMockSharedPreference(): SharedPreferencesHelper {
         // Mocking a commit that fails.
         given(mockBrokenEditor.commit()).willReturn(false)
@@ -111,5 +107,4 @@ class SharedPreferencesHelperTest {
         given(mockBrokenSharedPreferences.edit()).willReturn(mockBrokenEditor)
         return SharedPreferencesHelper(mockBrokenSharedPreferences)
     }
-
 }
