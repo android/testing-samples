@@ -29,6 +29,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
     androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion;
     // UiAutomator Testing
-    androidTestImplementation 'androidx.test.uiautomator:uiautomator:' + rootProject.uiautomatorVersion;
+    androidTestImplementation 'androidx.test.uiautomator:uiautomator:' + rootProject.uiAutomatorVersion;
     androidTestImplementation 'org.hamcrest:hamcrest-integration:1.3'
 }
