@@ -28,8 +28,8 @@ task clean(type: Delete) {
 }
 
 ext {
-    buildToolsVersion = "28.0.3"
-    androidxCoreVersion = "1.1.0-rc02"
+    buildToolsVersion = "29.0.3"
+    androidxCoreVersion = "1.2.0"
     androidxCompatVersion = "1.1.0-rc01"
     androidxFragmentVersion = "1.1.0-rc01"
     coreVersion = "1.3.0-beta02"

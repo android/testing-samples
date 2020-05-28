@@ -8,10 +8,13 @@ set -ex  # Exit immediately if a command exits with a non-zero status.
 #repourl="file:\/\/\~/test_repo\/m2repository"
 #repourl="https:\/\/oss.sonatype.org\/content\/repositories\/orgrobolectric-1216"
 #repourl="http:\/\/localhost:1480"
-buildToolsVersion="28.0.3"
-androidxLibVersion="1.0.0"
-compileSdkVersion="28"
-targetSdkVersion="28"
+buildToolsVersion="29.0.3"
+androidxAnnotationVersion="1.1.0"
+androidxCoreVersion="1.2.0"
+androidxRecyclerVersion="1.1.0"
+guavaVersion="29.0-android"
+compileSdkVersion="29"
+targetSdkVersion="29"
 runnerVersion="1.3.0-beta02"
 rulesVersion="1.3.0-beta02"
 coreVersion="1.3.0-beta02"
@@ -36,7 +39,10 @@ for p in $(cat projects.conf); do
    sed -i "s/rulesVersion = \".*\"/rulesVersion = \"$rulesVersion\"/" build.gradle
    sed -i "s/espressoVersion = \".*\"/espressoVersion = \"$espressoVersion\"/" build.gradle
    sed -i "s/buildToolsVersion = \".*\"/buildToolsVersion = \"$buildToolsVersion\"/" build.gradle
-   sed -i "s/androidxLibVersion = \".*\"/androidxLibVersion = \"$androidxLibVersion\"/" build.gradle
+   sed -i "s/androidxAnnotationVersion = \".*\"/androidxAnnotationVersion = \"$androidxAnnotationVersion\"/" build.gradle
+   sed -i "s/androidxCoreVersion = \".*\"/androidxCoreVersion = \"$androidxCoreVersion\"/" build.gradle
+   sed -i "s/androidxRecyclerVersion = \".*\"/androidxRecyclerVersion = \"$androidxRecyclerVersion\"/" build.gradle
+   sed -i "s/guavaVersion = \".*\"/guavaVersion = \"$guavaVersion\"/" build.gradle
    sed -i "s/compileSdkVersion .*/compileSdkVersion $compileSdkVersion/" app/build.gradle
    sed -i "s/targetSdkVersion .*/targetSdkVersion $targetSdkVersion/" app/build.gradle
    sed -i "s/uiautomatorVersion = \".*\"/uiautomatorVersion = \"$uiautomatorVersion\"/" build.gradle

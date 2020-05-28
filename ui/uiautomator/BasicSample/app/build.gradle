@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
         applicationId "com.example.android.testing.uiautomator.BasicSample"
         minSdkVersion 18
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
@@ -23,7 +23,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.google.guava:guava:26.0-android'
+    implementation 'com.google.guava:guava:' + rootProject.guavaVersion
     // Testing-only dependencies
     androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion;
     androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
