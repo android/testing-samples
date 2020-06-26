@@ -58,6 +58,9 @@ build:remote --remote_executor=remotebuildexecution.googleapis.com
 # default.
 build:remote --google_default_credentials
 
+# Disable remote cache hits to force a run on the new VMs.
+build:remote --noremote_accept_cached
+
 # -------------------------------------------
 # Custom RBE configuration for Android builds
 # -------------------------------------------
