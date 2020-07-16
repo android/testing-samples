@@ -3,25 +3,25 @@
 platforms:
   ubuntu1604:
     build_flags:
-      - '--remote_default_platform_properties=properties:{name:"cache-buster" value:"123456789mnbasdjkhrew"}'
+      - "--action_env=cachebuster=1234abcd"
     build_targets:
       - "//..."
     test_flags:
       - "--config=remote_android"
-      - '--remote_default_platform_properties=properties:{name:"cache-buster" value:"123456789mnbasdjkhrew"}'
       - "--flaky_test_attempts=3"
+      - "--action_env=cachebuster=1234abcd"
     test_targets:
       - "//..."
       - "-//ui/espresso/AccessibilitySample/..."
   ubuntu1804:
     build_flags:
-      - '--remote_default_platform_properties=properties:{name:"cache-buster" value:"123456789mnbasdjkhrew"}'
+      - "--action_env=cachebuster=1234abcd"
     build_targets:
       - "//..."
     test_flags:
       - "--config=remote_android"
-      - '--remote_default_platform_properties=properties:{name:"cache-buster" value:"123456789mnbasdjkhrew"}'
       - "--flaky_test_attempts=3"
+      - "--action_env=cachebuster=1234abcd"
     test_targets:
       - "//..."
       - "-//ui/espresso/AccessibilitySample/..."
