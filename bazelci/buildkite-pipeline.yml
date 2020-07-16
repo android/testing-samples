@@ -2,23 +2,29 @@
 ---
 platforms:
   ubuntu1604:
+    build_flags:
+      - '--remote_default_platform_properties=properties:{name:"cache-buster" value:"123456789mnbasdjkhrew"}'
     build_targets:
-    - "//..."
+      - "//..."
     test_flags:
-    - "--config=remote_android"
-    - "--flaky_test_attempts=3"
+      - "--config=remote_android"
+      - '--remote_default_platform_properties=properties:{name:"cache-buster" value:"123456789mnbasdjkhrew"}'
+      - "--flaky_test_attempts=3"
     test_targets:
-    - "//..."
-    - "-//ui/espresso/AccessibilitySample/..."
+      - "//..."
+      - "-//ui/espresso/AccessibilitySample/..."
   ubuntu1804:
+    build_flags:
+      - '--remote_default_platform_properties=properties:{name:"cache-buster" value:"123456789mnbasdjkhrew"}'
     build_targets:
-    - "//..."
+      - "//..."
     test_flags:
-    - "--config=remote_android"
-    - "--flaky_test_attempts=3"
+      - "--config=remote_android"
+      - '--remote_default_platform_properties=properties:{name:"cache-buster" value:"123456789mnbasdjkhrew"}'
+      - "--flaky_test_attempts=3"
     test_targets:
-    - "//..."
-    - "-//ui/espresso/AccessibilitySample/..."
+      - "//..."
+      - "-//ui/espresso/AccessibilitySample/..."
   macos:
     # Testing does not work for macos and windows yet
     build_targets: # Results of `bazel query 'kind(android_binary, //...)'
@@ -64,4 +70,3 @@ platforms:
       - "//ui/espresso/BasicSample:BasicSample"
       - "//ui/espresso/AccessibilitySample:BasicSampleTest"
       - "//ui/espresso/AccessibilitySample:BasicSample"
-
