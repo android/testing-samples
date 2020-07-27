@@ -43,7 +43,7 @@ task clean(type: Delete) {
 }
 
 ext {
-    buildToolsVersion = "29.0.3"
+    buildToolsVersion = "30.0.1"
     androidxAnnotationVersion = "1.1.0"
     coreVersion = "1.3.0-rc01"
     extJUnitVersion = "1.1.2-rc01"

@@ -23,7 +23,7 @@ allprojects {
 }
 
 ext {
-    buildToolsVersion = "29.0.3"
+    buildToolsVersion = "30.0.1"
     androidxAnnotationVersion = "1.1.0"
     androidxCoreVersion = "1.2.0"
     coreVersion = "1.3.0-rc01"

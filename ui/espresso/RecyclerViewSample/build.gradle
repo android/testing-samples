@@ -39,7 +39,7 @@ allprojects {
 }
 
 ext {
-    buildToolsVersion = "29.0.3"
+    buildToolsVersion = "30.0.1"
     androidxAnnotationVersion = "1.1.0"
     androidxRecyclerVersion = "1.1.0"
     guavaVersion = "29.0-android"

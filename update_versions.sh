@@ -8,7 +8,7 @@ set -ex  # Exit immediately if a command exits with a non-zero status.
 #repourl="file:\/\/\~/test_repo\/m2repository"
 #repourl="https:\/\/oss.sonatype.org\/content\/repositories\/orgrobolectric-1216"
 #repourl="http:\/\/localhost:1480"
-buildToolsVersion="29.0.3"
+buildToolsVersion="30.0.1"
 compileSdkVersion="29"
 targetSdkVersion="29"
 androidxAnnotationVersion="1.1.0"
