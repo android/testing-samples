@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
         applicationId "com.example.android.testing.androidjunitrunnersample"
         minSdkVersion 14
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
@@ -31,7 +31,7 @@ android {
 
 dependencies {
     // App's dependencies, including test
-    implementation 'androidx.annotation:annotation:' + rootProject.androidxLibVersion;
+    implementation 'androidx.annotation:annotation:' + rootProject.androidxAnnotationVersion;
     implementation 'com.google.guava:guava:' + rootProject.guavaVersion
 
     // Testing-only dependencies

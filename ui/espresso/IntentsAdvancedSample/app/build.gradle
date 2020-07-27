@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
         applicationId "com.example.android.testing.espresso.intents.AdvancedSample"
         minSdkVersion 14
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
@@ -21,7 +21,7 @@ android {
 
 dependencies {
     // App dependencies
-    implementation 'androidx.annotation:annotation:' + rootProject.androidxLibVersion;
+    implementation 'androidx.annotation:annotation:' + rootProject.androidxAnnotationVersion;
     // Testing-only dependencies
     androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion;
     androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;

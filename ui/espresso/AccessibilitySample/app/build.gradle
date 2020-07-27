@@ -32,8 +32,8 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 
 dependencies {
     // App dependencies
-    implementation 'androidx.annotation:annotation:' + rootProject.androidxLibVersion;
-    implementation 'com.google.guava:guava:26.0-android'
+    implementation 'androidx.annotation:annotation:' + rootProject.androidxAnnotationVersion;
+    implementation 'com.google.guava:guava:' + rootProject.guavaVersion
     // accessibility breaks without this on classpath
     implementation 'com.android.support:viewpager:28.0.0-alpha1'
 
