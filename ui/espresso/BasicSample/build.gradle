@@ -30,8 +30,8 @@ ext {
     robolectricVersion = "4.4-alpha-2"
     guavaVersion = "29.0-android"
     extTruthVersion = '1.3.0-rc01'
-    coreVersion = "1.3.0-rc01"
-    extJUnitVersion = "1.1.2-rc01"
-    runnerVersion = "1.3.0-rc01"
-    espressoVersion = "3.3.0-rc01"
+    coreVersion = "1.3.0-rc02"
+    extJUnitVersion = "1.1.2-rc02"
+    runnerVersion = "1.3.0-rc02"
+    espressoVersion = "3.3.0-rc02"
 }
