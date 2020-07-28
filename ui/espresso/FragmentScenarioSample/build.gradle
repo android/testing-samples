@@ -28,7 +28,7 @@ task clean(type: Delete) {
 }
 
 ext {
-    buildToolsVersion = "29.0.3"
+    buildToolsVersion = "30.0.1"
     androidxCoreVersion = "1.2.0"
     androidxCompatVersion = "1.1.0-rc01"
     androidxFragmentVersion = "1.1.0-rc01"
