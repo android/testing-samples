@@ -55,6 +55,18 @@ public class RecyclerViewSampleTest {
     @Rule
     public ActivityScenarioRule<MainActivity> activityScenarioRule =
         new ActivityScenarioRule<MainActivity>(MainActivity.class);
+    
+    @Test
+    public void itemWithText_exists() {
+        String itemElementText = activityRule.getActivity().getResources()
+                .getString(R.string.item_element_text);
+
+        // scrollTo will fail if no item matches.
+        onView(ViewMatchers.withId(R.id.recyclerView))
+                .perform(RecyclerViewActions.scrollTo(
+                        hasDescendant(withText(itemElementText))
+                ));
+    }
 
     @Test
     public void scrollToItemBelowFold_checkItsText() {
