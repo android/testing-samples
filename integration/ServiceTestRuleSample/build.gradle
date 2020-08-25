@@ -24,8 +24,8 @@ allprojects {
 
 ext {
     buildToolsVersion = "30.0.1"
-    coreVersion = "1.3.0-rc02"
-    extJUnitVersion = "1.1.2-rc02"
-    runnerVersion = "1.3.0-rc02"
-    rulesVersion = "1.3.0-rc02"
+    coreVersion = "1.3.0"
+    extJUnitVersion = "1.1.2"
+    runnerVersion = "1.3.0"
+    rulesVersion = "1.3.0"
 }
