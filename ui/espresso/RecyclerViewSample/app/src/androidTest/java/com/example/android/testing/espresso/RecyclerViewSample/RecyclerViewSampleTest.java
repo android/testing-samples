@@ -20,12 +20,14 @@ import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
 import androidx.test.core.app.ActivityScenario;
 import androidx.test.espresso.contrib.RecyclerViewActions;
 import androidx.test.espresso.matcher.ViewMatchers;
+import androidx.test.espresso.PerformException;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.filters.LargeTest;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -55,16 +57,14 @@ public class RecyclerViewSampleTest {
     @Rule
     public ActivityScenarioRule<MainActivity> activityScenarioRule =
         new ActivityScenarioRule<MainActivity>(MainActivity.class);
-    
-    @Test
-    public void itemWithText_exists() {
-        String itemElementText = activityRule.getActivity().getResources()
-                .getString(R.string.item_element_text);
 
-        // scrollTo will fail if no item matches.
+    @Test(expected = PerformException.class)
+    public void itemWithText_doesNotExist() {
+        // Attempt to scroll to an item that contains the special text.
         onView(ViewMatchers.withId(R.id.recyclerView))
+                // scrollTo will fail the test if no item matches.
                 .perform(RecyclerViewActions.scrollTo(
-                        hasDescendant(withText(itemElementText))
+                        hasDescendant(withText("not in the list"))
                 ));
     }
 
