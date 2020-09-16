@@ -33,28 +33,29 @@ android_test_repositories()
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-
 RULES_JVM_EXTERNAL_TAG = "3.1"
+
 RULES_JVM_EXTERNAL_SHA = "e246373de2353f3d34d35814947aa8b7d0dd1a58c2f7a6c41cfeaff3007c2d14"
 
 http_archive(
     name = "rules_jvm_external",
-    strip_prefix = "rules_jvm_external-%s" % RULES_JVM_EXTERNAL_TAG,
     sha256 = RULES_JVM_EXTERNAL_SHA,
+    strip_prefix = "rules_jvm_external-%s" % RULES_JVM_EXTERNAL_TAG,
     url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % RULES_JVM_EXTERNAL_TAG,
 )
 
 load("@rules_jvm_external//:defs.bzl", "maven_install")
 load("@rules_jvm_external//:specs.bzl", "maven")
-load("//:common_defs.bzl",
-     "androidxLibVersion",
-     "coreVersion",
-     "espressoVersion",
-     "extJUnitVersion",
-     "extTruthVersion",
-     "rulesVersion",
-     "runnerVersion",
-     "uiAutomatorVersion",
+load(
+    "//:common_defs.bzl",
+    "androidxLibVersion",
+    "coreVersion",
+    "espressoVersion",
+    "extJUnitVersion",
+    "extTruthVersion",
+    "rulesVersion",
+    "runnerVersion",
+    "uiAutomatorVersion",
 )
 
 maven_install(
@@ -76,7 +77,12 @@ maven_install(
         "androidx.test:runner:" + runnerVersion,
         "androidx.test.uiautomator:uiautomator:" + uiAutomatorVersion,
         "androidx.viewpager:viewpager:1.0.0",
-        maven.artifact("com.google.inject", "guice", "4.0", neverlink = True),
+        maven.artifact(
+            "com.google.inject",
+            "guice",
+            "4.0",
+            neverlink = True,
+        ),
         "junit:junit:4.12",
         "javax.inject:javax.inject:1",
         "org.hamcrest:java-hamcrest:2.0.0.0",
@@ -91,11 +97,11 @@ maven_install(
         "com.google.truth:truth:0.42",
         "com.google.android.apps.common.testing.accessibility.framework:accessibility-test-framework:2.0",
     ],
+    jetify = True,
     repositories = [
         "https://maven.google.com",
         "https://repo1.maven.org/maven2",
     ],
-    jetify = True,
     version_conflict_policy = "pinned",
 )
 
@@ -112,6 +118,3 @@ http_archive(
 load("@bazel_toolchains//rules:rbe_repo.bzl", "rbe_autoconfig")
 
 rbe_autoconfig(name = "rbe_default")
-
-# RBE support for android_device and android_instrumentation_test on RBE.
-register_execution_platforms(":android_platform")
