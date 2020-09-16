@@ -31,6 +31,7 @@ import android.widget.TextView;
  * operation {@link Button}s at the bottom.
  */
 public class CalculatorActivity extends Activity {
+    private static boolean isFirstLaunch = true;
 
     private static final String TAG = "CalculatorActivity";
 
@@ -49,6 +50,10 @@ public class CalculatorActivity extends Activity {
         mResultTextView = (TextView) findViewById(R.id.operation_result_text_view);
         mOperandOneEditText = (EditText) findViewById(R.id.operand_one_edit_text);
         mOperandTwoEditText = (EditText) findViewById(R.id.operand_two_edit_text);
+        if (!isFirstLaunch) {
+            finish();
+        }
+        isFirstLaunch = false;
     }
 
     /**
