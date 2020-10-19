@@ -38,7 +38,7 @@ allprojects {
 }
 
 ext {
-    buildToolsVersion = "30.0.1"
+    buildToolsVersion = "30.0.2"
     junitVersion = "4.12"
     mockitoVersion = "1.10.19"
 }

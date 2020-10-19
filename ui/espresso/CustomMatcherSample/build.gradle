@@ -23,13 +23,13 @@ allprojects {
 }
 
 ext {
-    buildToolsVersion = "30.0.1"
+    buildToolsVersion = "30.0.2"
     androidxAnnotationVersion = "1.1.0"
     guavaVersion = "29.0-android"
-    coreVersion = "1.3.0"
-    extJUnitVersion = "1.1.2"
-    runnerVersion = "1.3.0"
-    rulesVersion = "1.3.0"
-    espressoVersion = "3.3.0"
-    robolectricVersion = "4.4"
+    coreVersion = "1.3.1-alpha01"
+    extJUnitVersion = "1.1.3-alpha01"
+    runnerVersion = "1.3.1-alpha01"
+    rulesVersion = "1.3.1-alpha01"
+    espressoVersion = "3.4.0-alpha01"
+    robolectricVersion = "4.5-alpha-1"
 }
