@@ -20,7 +20,6 @@ allprojects {
     repositories {
         // Insert local test repo here
         jcenter()
-
         google()
     }
 }
