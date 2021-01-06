@@ -11,6 +11,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
     }
     lintOptions {
         abortOnError false
@@ -21,6 +23,10 @@ android {
         unitTests {
             includeAndroidResources = true
         }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -34,6 +40,7 @@ dependencies {
     // App dependencies
     implementation 'androidx.annotation:annotation:' + rootProject.androidxAnnotationVersion;
     implementation 'com.google.guava:guava:' + rootProject.guavaVersion
+    implementation 'androidx.multidex:multidex:2.0.1'
 
     // Testing-only dependencies
     androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion
