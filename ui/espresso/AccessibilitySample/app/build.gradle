@@ -11,6 +11,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
     }
     lintOptions {
         abortOnError false
@@ -21,6 +23,10 @@ android {
         unitTests {
             includeAndroidResources = true
         }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -34,8 +40,7 @@ dependencies {
     // App dependencies
     implementation 'androidx.annotation:annotation:' + rootProject.androidxAnnotationVersion;
     implementation 'com.google.guava:guava:' + rootProject.guavaVersion
-    // accessibility breaks without this on classpath
-    implementation 'com.android.support:viewpager:28.0.0-alpha1'
+    implementation 'androidx.multidex:multidex:2.0.1'
 
     // Testing-only dependencies
     androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion
@@ -43,4 +48,5 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion
     androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
     androidTestImplementation 'androidx.test.espresso:espresso-accessibility:' + rootProject.espressoVersion
+    androidTestImplementation 'com.google.android.apps.common.testing.accessibility.framework:accessibility-test-framework:3.1'
 }
