@@ -27,7 +27,14 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+	multiDexEnabled true
     }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
     lintOptions {
         abortOnError false
     }
@@ -37,6 +44,7 @@ dependencies {
     // App dependencies
     implementation 'androidx.annotation:annotation:' + rootProject.androidxAnnotationVersion;
     implementation 'androidx.recyclerview:recyclerview:' + rootProject.androidxRecyclerVersion;
+    implementation 'androidx.multidex:multidex:2.0.1'
 
     // Testing-only dependencies
     androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion;
