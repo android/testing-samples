@@ -35,7 +35,7 @@ import static org.junit.runners.Parameterized.Parameters;
 /**
  * JUnit4 tests for the calculator's add logic.
  *
- * <p> This test uses a Junit4s Parameterized tests features which uses annotations to pass
+ * <p> This test uses Junit4s Parameterized tests features which uses annotations to pass
  * parameters into a unit test. The way this works is that you have to use the {@link Parameterized}
  * runner to run your tests.
  * </p>
