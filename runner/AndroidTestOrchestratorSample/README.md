@@ -4,7 +4,7 @@ The Android Test Orchestrator allows you to run each of your app's tests in isol
 See https://developer.android.com/training/testing/junit-runner#using-android-test-orchestrator for more background.
 
 This sample is a subset of the AndroidJUnitRunner sample, but it
-ilustrates how to enable the Android Test Orchestrator in the app/build.gradle file.
+illustrates how to enable the Android Test Orchestrator in the app/build.gradle file.
 
 This project uses the Gradle build system. You don't need an IDE to build and execute it but Android Studio is recommended.
 
