@@ -75,6 +75,10 @@ Some of these samples can be tested with [Bazel](https://bazel.build) on Linux. 
 
 This is __experimental__ feature. To run the tests, please install the latest version of Bazel (0.12.0 or later) by following the [instructions on the Bazel website](https://docs.bazel.build/versions/master/install-ubuntu.html).
 
+Code Maintainablitiy Badge
+--------------------------
+[![Maintainability](https://cloud.quality-gate.com/dashboard/api/badge?projectName=android_testing-samples&branchName=master)](https://cloud.quality-gate.com/dashboard/branches/86508#overview)
+
 ### Bazel commands
 
 ```
