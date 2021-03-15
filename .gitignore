@@ -8,3 +8,4 @@ build
 .settings/	
 .classpath
 bazel-*
+.DS_Store
