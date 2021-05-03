@@ -30,7 +30,7 @@ public class ImageViewHasDrawableMatcher {
 
     public static Matcher<View> hasDrawable() {
         return new BoundedDiagnosingMatcher<View, ImageView>(ImageView.class) {
-             @Override
+            @Override
             protected void describeMoreTo(Description description) {
                 description.appendText("has drawable");
             }
