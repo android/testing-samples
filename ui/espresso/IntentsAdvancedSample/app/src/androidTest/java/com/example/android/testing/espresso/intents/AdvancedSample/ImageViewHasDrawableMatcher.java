@@ -21,13 +21,14 @@ import android.view.View;
 import android.widget.ImageView;
 
 import org.hamcrest.Description;
+import org.hamcrest.Matcher;
 
 /**
  * A Matcher for Espresso that checks if an ImageView has a drawable applied to it.
  */
 public class ImageViewHasDrawableMatcher {
 
-    public static BoundedDiagnosingMatcher<View, ImageView> hasDrawable() {
+    public static Matcher<View> hasDrawable() {
         return new BoundedDiagnosingMatcher<View, ImageView>(ImageView.class) {
              @Override
             protected void describeMoreTo(Description description) {
