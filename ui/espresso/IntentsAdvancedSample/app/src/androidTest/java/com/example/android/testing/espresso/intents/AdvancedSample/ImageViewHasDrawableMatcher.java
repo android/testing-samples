@@ -17,7 +17,6 @@
 package com.example.android.testing.espresso.intents.AdvancedSample;
 
 import androidx.test.espresso.matcher.BoundedDiagnosingMatcher;
-import androidx.test.espresso.matcher.BoundedMatcher;
 import android.view.View;
 import android.widget.ImageView;
 
