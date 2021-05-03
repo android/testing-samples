@@ -16,6 +16,7 @@
 
 package com.example.android.testing.espresso.intents.AdvancedSample;
 
+import androidx.test.espresso.matcher.BoundedDiagnosingMatcher;
 import androidx.test.espresso.matcher.BoundedMatcher;
 import android.view.View;
 import android.widget.ImageView;
@@ -27,15 +28,15 @@ import org.hamcrest.Description;
  */
 public class ImageViewHasDrawableMatcher {
 
-    public static BoundedMatcher<View, ImageView> hasDrawable() {
-        return new BoundedMatcher<View, ImageView>(ImageView.class) {
-            @Override
-            public void describeTo(Description description) {
+    public static BoundedDiagnosingMatcher<View, ImageView> hasDrawable() {
+        return new BoundedDiagnosingMatcher<View, ImageView>(ImageView.class) {
+             @Override
+            protected void describeMoreTo(Description description) {
                 description.appendText("has drawable");
             }
 
             @Override
-            public boolean matchesSafely(ImageView imageView) {
+            protected boolean matchesSafely(ImageView imageView, Description mismatchDescription) {
                 return imageView.getDrawable() != null;
             }
         };
