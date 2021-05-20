@@ -2,12 +2,7 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("@bazel_tools//tools/build_defs/repo:jvm.bzl", "jvm_maven_import_external")
 
 # Set the path to your local SDK installation, or use the ANDROID_HOME environment variable.
-android_sdk_repository(
-    name = "androidsdk",
-    api_level = 28,
-    build_tools_version = "28.0.2",
-    # path = "/path/to/sdk",
-)
+android_sdk_repository(name = "androidsdk")
 
 # Required for running emulator tests on RBE on Bazel CI
 android_ndk_repository(name = "androidndk")
