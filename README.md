@@ -69,6 +69,7 @@ Many of these samples use the AndroidX Test Library. Visit the [Testing site on 
 Experimental Bazel Support
 --------------------------
 
+[![QualityGate](https://quality-gate.com/backend/api/timeline?branchName=master&projectName=android_testing-samples)](https://quality-gate.com/dashboard/branches/86508#overview)
 [![Build status](https://badge.buildkite.com/18dda320b265e9a8f20cb6141b1e80ca58fb62bdb443e527be.svg)](https://buildkite.com/bazel/android-testing)
 
 Some of these samples can be tested with [Bazel](https://bazel.build) on Linux. These samples contain a `BUILD.bazel` file, which is similar to a `build.gradle` file. The external dependencies are defined in the top level `WORKSPACE` file.
