@@ -30,6 +30,8 @@ android {
     }
 }
 
+
+
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
     kotlinOptions {
         jvmTarget = "1.8"
@@ -47,6 +49,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion
     androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion
     androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
-    androidTestImplementation 'androidx.test.espresso:espresso-accessibility:' + rootProject.espressoVersion
-    androidTestImplementation 'com.google.android.apps.common.testing.accessibility.framework:accessibility-test-framework:3.1'
+    androidTestImplementation('androidx.test.espresso:espresso-accessibility:' + rootProject.espressoVersion) {
+        // workaround for https://github.com/android/android-test/issues/861
+        exclude group: 'org.checkerframework', module: 'checker'
+    }
+    androidTestImplementation 'com.google.truth:truth:1.1.3'
 }
