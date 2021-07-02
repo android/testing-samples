@@ -5,46 +5,46 @@ A collection of samples demonstrating different frameworks and techniques for au
 
 ### Espresso Samples
 
-**[BasicSample](https://github.com/googlesamples/android-testing/blob/master/ui/espresso/BasicSample)** - Basic Espresso sample
+**[BasicSample](https://github.com/googlesamples/android-testing/blob/main/ui/espresso/BasicSample)** - Basic Espresso sample
 
-**[CustomMatcherSample](https://github.com/googlesamples/android-testing/blob/master/ui/espresso/CustomMatcherSample)** - Shows how to extend Espresso to match the *hint* property of an EditText
+**[CustomMatcherSample](https://github.com/googlesamples/android-testing/blob/main/ui/espresso/CustomMatcherSample)** - Shows how to extend Espresso to match the *hint* property of an EditText
 
-**[DataAdapterSample](https://github.com/googlesamples/android-testing/blob/master/ui/espresso/DataAdapterSample)** - Showcases the `onData()` entry point for Espresso, for lists and AdapterViews
+**[DataAdapterSample](https://github.com/googlesamples/android-testing/blob/main/ui/espresso/DataAdapterSample)** - Showcases the `onData()` entry point for Espresso, for lists and AdapterViews
 
-**[FragmentScenarioSample](https://github.com/googlesamples/android-testing/blob/master/ui/espresso/FragmentScenarioSample)** - Basic usage of `FragmentScenario` with Espresso. 
+**[FragmentScenarioSample](https://github.com/googlesamples/android-testing/blob/main/ui/espresso/FragmentScenarioSample)** - Basic usage of `FragmentScenario` with Espresso.
 
-**[IdlingResourceSample](https://github.com/googlesamples/android-testing/blob/master/ui/espresso/IdlingResourceSample)** - Synchronization with background jobs
+**[IdlingResourceSample](https://github.com/googlesamples/android-testing/blob/main/ui/espresso/IdlingResourceSample)** - Synchronization with background jobs
 
-**[IntentsBasicSample](https://github.com/googlesamples/android-testing/blob/master/ui/espresso/IntentsBasicSample)** - Basic usage of `intended()` and `intending()`
+**[IntentsBasicSample](https://github.com/googlesamples/android-testing/blob/main/ui/espresso/IntentsBasicSample)** - Basic usage of `intended()` and `intending()`
 
-**[IntentsAdvancedSample](https://github.com/googlesamples/android-testing/blob/master/ui/espresso/IntentsAdvancedSample)** - Simulates a user fetching a bitmap using the camera
+**[IntentsAdvancedSample](https://github.com/googlesamples/android-testing/blob/main/ui/espresso/IntentsAdvancedSample)** - Simulates a user fetching a bitmap using the camera
 
-**[MultiWindowSample](https://github.com/googlesamples/android-testing/blob/master/ui/espresso/MultiWindowSample)** - Shows how to point Espresso to different windows
+**[MultiWindowSample](https://github.com/googlesamples/android-testing/blob/main/ui/espresso/MultiWindowSample)** - Shows how to point Espresso to different windows
 
-**[RecyclerViewSample](https://github.com/googlesamples/android-testing/blob/master/ui/espresso/RecyclerViewSample)** - RecyclerView actions for Espresso
+**[RecyclerViewSample](https://github.com/googlesamples/android-testing/blob/main/ui/espresso/RecyclerViewSample)** - RecyclerView actions for Espresso
 
-**[WebBasicSample](https://github.com/googlesamples/android-testing/blob/master/ui/espresso/WebBasicSample)** - Use Espresso-web to interact with WebViews
+**[WebBasicSample](https://github.com/googlesamples/android-testing/blob/main/ui/espresso/WebBasicSample)** - Use Espresso-web to interact with WebViews
 
-**[BasicSampleBundled](https://github.com/googlesamples/android-testing/blob/master/ui/espresso/BasicSampleBundled)** - Basic sample for Eclipse and other IDEs
+**[BasicSampleBundled](https://github.com/googlesamples/android-testing/blob/main/ui/espresso/BasicSampleBundled)** - Basic sample for Eclipse and other IDEs
 
-**[MultiProcessSample](https://github.com/googlesamples/android-testing/blob/master/ui/espresso/MultiProcessSample)** - Showcases how to use multiprocess Espresso.
+**[MultiProcessSample](https://github.com/googlesamples/android-testing/blob/main/ui/espresso/MultiProcessSample)** - Showcases how to use multiprocess Espresso.
 ### UiAutomator Sample
 
-**[BasicSample](https://github.com/googlesamples/android-testing/tree/master/ui/uiautomator/BasicSample)** - Basic UI Automator sample
+**[BasicSample](https://github.com/googlesamples/android-testing/tree/main/ui/uiautomator/BasicSample)** - Basic UI Automator sample
 
 ### AndroidJUnitRunner Sample
 
-**[AndroidJunitRunnerSample](https://github.com/googlesamples/android-testing/tree/master/runner/AndroidJunitRunnerSample)** - Showcases test annotations, parameterized tests and testsuite creation
+**[AndroidJunitRunnerSample](https://github.com/googlesamples/android-testing/tree/main/runner/AndroidJunitRunnerSample)** - Showcases test annotations, parameterized tests and testsuite creation
 
 ### JUnit4 Rules Sample
 
 **All previous samples use ActivityTestRule or IntentsTestRule but there's one specific to ServiceTestRule:
 
-**[BasicSample](https://github.com/googlesamples/android-testing/blob/master/ui/espresso/BasicSample)** - Simple usage of `ActivityTestRule`
+**[BasicSample](https://github.com/googlesamples/android-testing/blob/main/ui/espresso/BasicSample)** - Simple usage of `ActivityTestRule`
 
-**[IntentsBasicSample](https://github.com/googlesamples/android-testing/blob/master/ui/espresso/IntentsBasicSample)** - Simple usage of `IntentsTestRule`
+**[IntentsBasicSample](https://github.com/googlesamples/android-testing/blob/main/ui/espresso/IntentsBasicSample)** - Simple usage of `IntentsTestRule`
 
-**[ServiceTestRuleSample](https://github.com/googlesamples/android-testing/tree/master/integration/ServiceTestRuleSample)** - Simple usage of `ServiceTestRule`
+**[ServiceTestRuleSample](https://github.com/googlesamples/android-testing/tree/main/integration/ServiceTestRuleSample)** - Simple usage of `ServiceTestRule`
 
 Prerequisites
 --------------
