@@ -32,6 +32,10 @@ A collection of samples demonstrating different frameworks and techniques for au
 
 **[BasicSample](https://github.com/googlesamples/android-testing/tree/master/ui/uiautomator/BasicSample)** - Basic UI Automator sample
 
+### Robolectric Sample
+
+**[BasicRobolectricSample](https://github.com/googlesamples/android-testing/tree/master/unit/BasicRobolectricSample)** - Basic Robolectric sample
+
 ### AndroidJUnitRunner Sample
 
 **[AndroidJunitRunnerSample](https://github.com/googlesamples/android-testing/tree/master/runner/AndroidJunitRunnerSample)** - Showcases test annotations, parameterized tests and testsuite creation
