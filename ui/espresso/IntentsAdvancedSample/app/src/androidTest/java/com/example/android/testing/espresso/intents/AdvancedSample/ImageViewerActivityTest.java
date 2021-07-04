@@ -21,10 +21,14 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import androidx.test.espresso.intent.rule.IntentsTestRule;
+
+import androidx.test.espresso.intent.Intents;
+import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
+import androidx.test.platform.app.InstrumentationRegistry;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -48,25 +52,28 @@ import static org.hamcrest.Matchers.not;
 public class ImageViewerActivityTest {
 
     /**
-     * A JUnit {@link Rule @Rule} to init and release Espresso Intents before and after each
-     * test run.
-     * <p>
-     * Rules are interceptors which are executed for each test method and will run before
-     * any of your setup code in the {@link Before @Before} method.
-     * <p>
-     * This rule is based on {@link ActivityTestRule} and will create and launch of the activity
-     * for you and also expose the activity under test.
+     * Use {@link ActivityScenarioRule} to create and launch the activity under test, and close it
+     * after test completes. This is a replacement for {@link androidx.test.rule.ActivityTestRule}.
      */
     @Rule
-    public IntentsTestRule<ImageViewerActivity> mIntentsRule = new IntentsTestRule<>(
+    public ActivityScenarioRule<ImageViewerActivity> mActivityScenarioRule = new ActivityScenarioRule<>(
             ImageViewerActivity.class);
 
     @Before
     public void stubCameraIntent() {
+        // Initializes Intents and begins recording intents.
+        Intents.init();
+
         ActivityResult result = createImageCaptureActivityResultStub();
 
         // Stub the Intent.
         intending(hasAction(MediaStore.ACTION_IMAGE_CAPTURE)).respondWith(result);
+    }
+
+    @After
+    public void tearDown() {
+        // Clears Intents state.
+        Intents.release();
     }
 
     @Test
@@ -85,7 +92,8 @@ public class ImageViewerActivityTest {
         // Put the drawable in a bundle.
         Bundle bundle = new Bundle();
         bundle.putParcelable(ImageViewerActivity.KEY_IMAGE_DATA, BitmapFactory.decodeResource(
-                mIntentsRule.getActivity().getResources(), R.drawable.ic_launcher));
+                InstrumentationRegistry.getInstrumentation().getTargetContext().getResources(),
+                R.drawable.ic_launcher));
 
         // Create the Intent that will include the bundle.
         Intent resultData = new Intent();
