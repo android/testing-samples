@@ -1,15 +1,6 @@
 # https://github.com/googlesamples/android-testing#experimental-bazel-support
 ---
 platforms:
-  ubuntu1604:
-    build_targets:
-    - "//..."
-    test_flags:
-    - "--config=remote_android"
-    - "--flaky_test_attempts=3"
-    test_targets:
-    - "//..."
-    - "-//ui/espresso/AccessibilitySample/..."
   ubuntu1804:
     build_targets:
     - "//..."
