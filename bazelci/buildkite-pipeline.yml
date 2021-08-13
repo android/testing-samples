@@ -4,7 +4,10 @@ platforms:
   ubuntu1804:
     build_targets:
     - "//..."
+    build_flags:
+    - "--test_lang_filters=-android_instrumentation" # BazelCI does not have Android Emulator
     test_flags:
+    - "--test_lang_filters=-android_instrumentation" # BazelCI does not have Android Emulator
     - "--config=remote_android"
     - "--flaky_test_attempts=3"
     test_targets:
