@@ -40,7 +40,7 @@ dependencies {
     implementation 'com.google.guava:guava:' + rootProject.guavaVersion
 
     // Testing-only dependencies
-    androidTestImplementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    androidTestImplementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion
     androidTestImplementation 'androidx.test:core-ktx:' + rootProject.coreVersion
     androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion

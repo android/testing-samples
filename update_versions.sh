@@ -5,7 +5,7 @@
 set -ex  # Exit immediately if a command exits with a non-zero status.
 
 #repourl="" # Leave empty to be ignored
-#repourl="file:\/\/\/~\/test_repos\/1.3.1-alpha01\/m2repository"
+#repourl="file:\/\/\/~\/test_repos\/1.4.1-alpha01\/m2repository"
 #repourl="https:\/\/oss.sonatype.org\/content\/repositories\/orgrobolectric-1216"
 #repourl="http:\/\/localhost:1480"
 buildToolsVersion="30.0.2"
@@ -16,12 +16,12 @@ androidxCoreVersion="1.2.0"
 androidxRecyclerVersion="1.1.0"
 guavaVersion="29.0-android"
 truthVersion="1.0.1"
-runnerVersion="1.4.0"
-rulesVersion="1.4.0"
-coreVersion="1.4.0"
-extJUnitVersion="1.1.3"
-extTruthVersion="1.4.0"
-espressoVersion="3.4.0"
+runnerVersion="1.4.1-alpha01"
+rulesVersion="1.4.1-alpha01"
+coreVersion="1.4.1-alpha01"
+extJUnitVersion="1.1.4-alpha01"
+extTruthVersion="1.5.0-alpha01"
+espressoVersion="3.5.0-alpha01"
 robolectricVersion="4.5.1"
 uiAutomatorVersion="2.2.0"
 
