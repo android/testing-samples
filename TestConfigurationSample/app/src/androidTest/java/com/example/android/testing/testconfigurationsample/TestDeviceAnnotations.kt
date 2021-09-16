@@ -16,9 +16,9 @@
 package com.example.android.testing.testconfigurationsample
 
 /**
- * Annotate tests with this annotation when testing API 23 regression bugs.
+ * Annotate tests with this annotation when testing API 26 regression bugs.
  */
-annotation class TestDeviceApi23
+annotation class TestDeviceApi26
 
 /**
  * Annotate tests with this annotation when testing large-screen specific features.

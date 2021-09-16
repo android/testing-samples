@@ -66,8 +66,8 @@ class MainActivityTests {
      *
      * See the Github Actions setup of this project for an example.
      */
-    @Test @TestDeviceApi23
-    fun regressionTestKnownIssueApi23() {
+    @Test @TestDeviceApi26
+    fun regressionTestKnownIssueApi26() {
         // Add instrumented tests here
         runBlocking { delay(10000) }
         Assert.assertTrue(true)

@@ -58,9 +58,9 @@ android {
                 systemImageSource = "aosp"
                 abi = "x86"
             }
-            pixel2api23(ManagedVirtualDevice) {
+            pixel2api26(ManagedVirtualDevice) {
                 device = "Pixel 2"
-                apiLevel = 23
+                apiLevel = 26
                 systemImageSource = "aosp"
                 abi = "x86"
             }
