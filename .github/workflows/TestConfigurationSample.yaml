@@ -83,15 +83,15 @@ jobs:
 
       - name: Run all tests
         working-directory: ${{ env.SAMPLE_PATH }}
-        run: ./gradlew pixel2api29DebugAndroidTest -i -Pandroid.experimental.androidTest.useUnifiedTestPlatform=true -Pandroid.testInstrumentationRunnerArguments.notAnnotation=com.example.android.testing.testconfigurationsample.TestDeviceLargeScreen
+        run: ./gradlew -i pixel2api29DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.notAnnotation=com.example.android.testing.testconfigurationsample.TestDeviceLargeScreen
 
       - name: Run regression tests
         working-directory: ${{ env.SAMPLE_PATH }}
-        run: ./gradlew -i pixel2api23DebugAndroidTest -Pandroid.experimental.androidTest.useUnifiedTestPlatform=true -Pandroid.testInstrumentationRunnerArguments.annotation=com.example.android.testing.testconfigurationsample.TestDeviceApi23
+        run: ./gradlew -i pixel2api23DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.annotation=com.example.android.testing.testconfigurationsample.TestDeviceApi23
 
       - name: Run large screen tests
         working-directory: ${{ env.SAMPLE_PATH }}
-        run: ./gradlew -i nexus9api29DebugAndroidTest -Pandroid.experimental.androidTest.useUnifiedTestPlatform=true -Pandroid.testInstrumentationRunnerArguments.annotation=com.example.android.testing.testconfigurationsample.TestDeviceLargeScreen
+        run: ./gradlew -i nexus9api29DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.annotation=com.example.android.testing.testconfigurationsample.TestDeviceLargeScreen
 
       - name: Upload test reports
         if: always()
