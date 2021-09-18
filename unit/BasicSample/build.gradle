@@ -18,11 +18,11 @@
 buildscript {
     repositories {
         // Insert local test repo here
-        jcenter()
         google()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.1'
+        classpath 'com.android.tools.build:gradle:7.0.2'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -32,13 +32,13 @@ buildscript {
 allprojects {
     repositories {
         // Insert local test repo here
-        jcenter()
         google()
+        mavenCentral()
     }
 }
 
 ext {
-    buildToolsVersion = "30.0.2"
+    buildToolsVersion = "31.0.0"
     junitVersion = "4.12"
     mockitoVersion = "1.10.19"
 }
