@@ -17,13 +17,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+    ext.agpVersion = "7.0.2"
     repositories {
         // Insert local test repo here
-        jcenter()
         google()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.1'
+        classpath "com.android.tools.build:gradle:$agpVersion"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -33,8 +34,8 @@ buildscript {
 allprojects {
     repositories {
         // Insert local test repo here
-        jcenter()
         google()
+        mavenCentral()
     }
 }
 
@@ -43,8 +44,8 @@ task clean(type: Delete) {
 }
 
 ext {
-    buildToolsVersion = "30.0.2"
-    androidxAnnotationVersion = "1.1.0"
+    buildToolsVersion = "31.0.0"
+    androidxAnnotationVersion = "1.2.0"
     coreVersion = "1.4.1-alpha01"
     extJUnitVersion = "1.1.4-alpha01"
     runnerVersion = "1.4.1-alpha01"
