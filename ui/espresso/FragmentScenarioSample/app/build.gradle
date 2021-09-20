@@ -33,11 +33,18 @@ android {
         // include the android resources in local tests. See http://robolectric.org/migrating/#migrating-to-40
         unitTests.includeAndroidResources = true
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
     implementation 'androidx.appcompat:appcompat:' + rootProject.androidxCompatVersion
     implementation 'androidx.core:core-ktx:' + rootProject.androidxCoreVersion
     implementation 'androidx.fragment:fragment-ktx:' + rootProject.androidxFragmentVersion

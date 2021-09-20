@@ -17,7 +17,6 @@ import org.robolectric.annotation.LooperMode
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(AndroidJUnit4::class)
-@LooperMode(LooperMode.Mode.PAUSED)
 class SampleFragmentTest {
     @Test
     fun launchFragmentAndVerifyUI() {
