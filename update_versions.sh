@@ -5,7 +5,7 @@
 set -ex  # Exit immediately if a command exits with a non-zero status.
 
 #repourl="" # Leave empty to be ignored
-#repourl="file:\/\/\/~\/test_repos\/1.4.1-alpha01\/m2repository"
+#repourl="file:\/\/\/usr\/local\/company\/home\/user\/test_repos\/1.4.1-alpha02\/m2repository"
 #repourl="https:\/\/oss.sonatype.org\/content\/repositories\/orgrobolectric-1216"
 #repourl="http:\/\/localhost:1480"
 buildToolsVersion="31.0.0"
@@ -20,12 +20,12 @@ androidxFragmentVersion="1.3.6"
 androidxRecyclerVersion="1.2.1"
 guavaVersion="30.1.1-android"
 truthVersion="1.1.3"
-runnerVersion="1.4.1-alpha01"
-rulesVersion="1.4.1-alpha01"
-coreVersion="1.4.1-alpha01"
-extJUnitVersion="1.1.4-alpha01"
-extTruthVersion="1.5.0-alpha01"
-espressoVersion="3.5.0-alpha01"
+runnerVersion="1.4.1-alpha02"
+rulesVersion="1.4.1-alpha02"
+coreVersion="1.4.1-alpha02"
+extJUnitVersion="1.1.4-alpha02"
+extTruthVersion="1.5.0-alpha02"
+espressoVersion="3.5.0-alpha02"
 robolectricVersion="4.6.1"
 uiAutomatorVersion="2.2.0"
 
@@ -59,7 +59,7 @@ for p in $(cat projects.conf); do
    sed -i "s/robolectricVersion = \".*\"/robolectricVersion = \"$robolectricVersion\"/" build.gradle
    if [ ! -z "$repourl" ]
    then
-         sed -i "s/.*google()/        google()\n        maven {\n            url \"$repourl\"\n        }/" build.gradle
+         sed -i "s/.*google()/        google()\n        maven {\n            url \"$repourl\"\n          allowInsecureProtocol=true\n        }/" build.gradle
    fi
    popd > /dev/null  # Silent popd
   done
