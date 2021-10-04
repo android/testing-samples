@@ -1,0 +1,13 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        maven {
+            url "file:///Users/brettchabot/test-repos/m2repository"
+            allowInsecureProtocol = true
+        }
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "ScreenshotSample"
+include ':app'
