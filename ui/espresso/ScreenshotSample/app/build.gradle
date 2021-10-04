@@ -15,7 +15,6 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
         testInstrumentationRunnerArguments useTestStorageService: 'true'
     }
 
@@ -36,14 +35,13 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.6.0'
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'com.google.android.material:material:1.4.0'
+    implementation "androidx.core:core-ktx:$androidxCoreVersion"
+    implementation "androidx.appcompat:appcompat:$androidxCompatVersion"
+    implementation "com.google.android.material:material:1.4.0"
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit-ktx:1.1.4-alpha03'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0-alpha03'
-    androidTestImplementation 'androidx.test.espresso:espresso-screenshot:3.5.0-alpha03'
-    androidTestUtil 'androidx.test.services:test-services:1.4.1-alpha03'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    androidTestImplementation "androidx.test.ext:junit-ktx:$extJUnitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+    androidTestUtil "androidx.test.services:test-services:$servicesVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 }
