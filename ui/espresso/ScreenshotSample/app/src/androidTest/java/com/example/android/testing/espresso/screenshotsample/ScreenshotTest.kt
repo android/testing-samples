@@ -32,7 +32,6 @@ class ScreenshotTest {
   @get:Rule
   val activityScenarioRule = activityScenarioRule<MainActivity>()
 
-
   /**
    * Captures and saves an image of the entire [MainActivity] contents.
    */
