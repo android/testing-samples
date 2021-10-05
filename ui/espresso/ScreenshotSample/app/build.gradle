@@ -33,10 +33,16 @@ android {
     }
     testOptions {
         devices {
+            // run with ../gradlew  -Pandroid.sdk.channel=3 -Pandroid.experimental.androidTest.useUnifiedTestPlatform=true nexusOneApi30DebugAndroidTest
             nexusOneApi30 (com.android.build.api.dsl.ManagedVirtualDevice) {
-                // Use device profiles you typically see in Android Studio
+                // A lower resolution device is used here for better performance, although using
+                // an ATD image will greatly reduce the performance impact of emulating higher
+                // resolution screens
                 device = "Nexus One"
                 apiLevel = 30
+                // The AOSP ATD image is used so emulator consumes less resources
+                // The androidx.test screenshot APIs will automatically enable hardware rendering
+                // to take a screenshot
                 systemImageSource = "aosp-atd"
                 abi = "x86"
             }
