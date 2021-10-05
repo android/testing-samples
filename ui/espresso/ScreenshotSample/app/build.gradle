@@ -31,6 +31,17 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    testOptions {
+        devices {
+            nexusOneApi30 (com.android.build.api.dsl.ManagedVirtualDevice) {
+                // Use device profiles you typically see in Android Studio
+                device = "Nexus One"
+                apiLevel = 30
+                systemImageSource = "aosp-atd"
+                abi = "x86"
+            }
+        }
+    }
 }
 
 dependencies {
