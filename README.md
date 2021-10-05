@@ -23,6 +23,8 @@ A collection of samples demonstrating different frameworks and techniques for au
 
 **[RecyclerViewSample](https://github.com/googlesamples/android-testing/blob/main/ui/espresso/RecyclerViewSample)** - RecyclerView actions for Espresso
 
+**[ScreenshotSample](https://github.com/googlesamples/android-testing/blob/main/ui/espresso/ScreenshotSample)** - Screenshot capturing and saving using Espresso and androidx.test.core APIs
+
 **[WebBasicSample](https://github.com/googlesamples/android-testing/blob/main/ui/espresso/WebBasicSample)** - Use Espresso-web to interact with WebViews
 
 **[BasicSampleBundled](https://github.com/googlesamples/android-testing/blob/main/ui/espresso/BasicSampleBundled)** - Basic sample for Eclipse and other IDEs
