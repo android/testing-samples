@@ -18,6 +18,7 @@ package com.example.android.testing.androidjunitrunnersample;
 
 import junit.framework.TestSuite;
 
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.internal.builders.AllDefaultPossibilitiesBuilder;
