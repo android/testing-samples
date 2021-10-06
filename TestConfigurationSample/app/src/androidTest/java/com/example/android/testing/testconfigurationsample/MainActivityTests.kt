@@ -19,7 +19,6 @@ import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
-import org.junit.Assert
 import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
@@ -70,6 +69,6 @@ class MainActivityTests {
     fun regressionTestKnownIssueApi26() {
         // Add instrumented tests here
         runBlocking { delay(10000) }
-        Assert.assertTrue(true)
+        assertTrue(true)
     }
 }

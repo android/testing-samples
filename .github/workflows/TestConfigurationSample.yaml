@@ -47,8 +47,8 @@ jobs:
 
   gradleManagedVirtualDevicesTest:
     needs: build
-    runs-on: macOS-latest # enables hardware acceleration in the virtual machine
-    timeout-minutes: 90
+    runs-on: macos-latest
+    timeout-minutes: 30
 
     steps:
       - name: Checkout
@@ -62,7 +62,7 @@ jobs:
         with:
           java-version: 11
 
-      - name: Generate cache key
+      - name: Generate cache key for Gradle cache
         run: ./scripts/checksum.sh $SAMPLE_PATH checksum.txt
 
       - uses: actions/cache@v2
@@ -73,25 +73,25 @@ jobs:
             ~/.gradle/caches/build-cache-*
           key: gradle-${{ hashFiles('checksum.txt') }}
 
-      - name: AVD cache
+      - name: Cache pixel2api29 system image
         uses: actions/cache@v2
-        id: avd-cache
         with:
           path: |
-            ~/.android/gradle/avd/*
-          key: avd
+            ~/.android/gradle/avd/dev29_aosp_x86_Pixel_2.ini
+            ~/.android/gradle/avd/dev29_aosp_x86_Pixel_2.avd
+          key: pixel2api29
 
       - name: Run all tests
         working-directory: ${{ env.SAMPLE_PATH }}
-        run: ./gradlew -i pixel2api29DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.notAnnotation=com.example.android.testing.testconfigurationsample.TestDeviceLargeScreen
+        run: ./gradlew pixel2api29DebugAndroidTest
 
-      - name: Run regression tests
-        working-directory: ${{ env.SAMPLE_PATH }}
-        run: ./gradlew -i pixel2api26DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.annotation=com.example.android.testing.testconfigurationsample.TestDeviceApi26
-
-      - name: Run large screen tests
-        working-directory: ${{ env.SAMPLE_PATH }}
-        run: ./gradlew -i nexus9api29DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.annotation=com.example.android.testing.testconfigurationsample.TestDeviceLargeScreen
+#      - name: Run regression tests
+#        working-directory: ${{ env.SAMPLE_PATH }}
+#        run: ./gradlew -i pixel2api26DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.annotation=com.example.android.testing.testconfigurationsample.TestDeviceApi26
+#
+#      - name: Run large screen tests
+#        working-directory: ${{ env.SAMPLE_PATH }}
+#        run: ./gradlew -i nexus9api29DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.annotation=com.example.android.testing.testconfigurationsample.TestDeviceLargeScreen
 
       - name: Upload test reports
         if: always()
