@@ -33,7 +33,7 @@ android {
     }
     testOptions {
         devices {
-            // run with ../gradlew  -Pandroid.sdk.channel=3 -Pandroid.experimental.androidTest.useUnifiedTestPlatform=true nexusOneApi30DebugAndroidTest
+            // run with ../gradlew  -Pandroid.sdk.channel=3 nexusOneApi30DebugAndroidTest
             nexusOneApi30 (com.android.build.api.dsl.ManagedVirtualDevice) {
                 // A lower resolution device is used here for better performance, although using
                 // an ATD image will greatly reduce the performance impact of emulating higher
