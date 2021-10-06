@@ -35,12 +35,10 @@ android {
         devices {
             // run with ../gradlew  -Pandroid.sdk.channel=3 nexusOneApi30DebugAndroidTest
             nexusOneApi30 (com.android.build.api.dsl.ManagedVirtualDevice) {
-                // A lower resolution device is used here for better performance, although using
-                // an ATD image will greatly reduce the performance impact of emulating higher
-                // resolution screens
+                // A lower resolution device is used here for better emulator performance
                 device = "Nexus One"
                 apiLevel = 30
-                // The AOSP ATD image is used so emulator consumes less resources
+                // Also use the AOSP ATD image for better emulator performance
                 // The androidx.test screenshot APIs will automatically enable hardware rendering
                 // to take a screenshot
                 systemImageSource = "aosp-atd"
