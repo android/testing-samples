@@ -19,11 +19,13 @@ package com.example.android.testing.androidjunitrunnersample;
 import junit.framework.TestSuite;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.internal.builders.AllDefaultPossibilitiesBuilder;
 import org.junit.runner.RunWith;
 
 import androidx.test.core.app.ActivityScenario;
+import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 import androidx.test.runner.AndroidJUnitRunner;
@@ -36,27 +38,23 @@ import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static com.example.android.testing.androidjunitrunnersample.HintMatcher.withHint;
 
 /**
- * JUnit4 Ui Tests for {@link CalculatorActivity} using the {@link AndroidJUnitRunner}.
- * This class uses the JUnit4 syntax for tests.
- * <p>
- * With the new AndroidJUnit runner you can run both JUnit3 and JUnit4 tests in a single test
- * suite. The {@link AndroidRunnerBuilder} which extends JUnit's
- * {@link AllDefaultPossibilitiesBuilder} will create a single {@link
- * TestSuite} from all tests and run them.
+ * Ui Tests for {@link CalculatorActivity} using the {@link AndroidJUnitRunner}.
  */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class CalculatorInstrumentationTest {
 
+
     /**
-     * Use {@link ActivityScenario} to create and launch of the activity.
+     * Use {@link ActivityScenarioRule} to create and launch of the activity before each test, and close
+     * it after each test.
      */
-    @Before
-    public void launchActivity() {
-        ActivityScenario.launch(CalculatorActivity.class);
-    }
+    @Rule
+    public ActivityScenarioRule<CalculatorActivity> mActivityScenarioRule
+            = new ActivityScenarioRule<>(CalculatorActivity.class);
 
     @Test
     public void noOperandShowsComputationError() {
@@ -105,5 +103,4 @@ public class CalculatorInstrumentationTest {
         // Check the expected test is displayed in the Ui
         onView(withId(R.id.operation_result_text_view)).check(matches(withText(expectedResult)));
     }
-
 }
