@@ -1,5 +1,3 @@
-import com.android.build.api.dsl.ManagedVirtualDevice
-
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -50,7 +48,7 @@ android {
 
     testOptions {
         devices {
-            pixel2api29(ManagedVirtualDevice) {
+            pixel2api29(com.android.build.api.dsl.ManagedVirtualDevice) {
                 // Use device profiles you typically see in Android Studio
                 device = "Pixel 2"
                 apiLevel = 29
@@ -58,13 +56,13 @@ android {
                 systemImageSource = "aosp"
                 abi = "x86"
             }
-            pixel2api26(ManagedVirtualDevice) {
+            pixel2api26(com.android.build.api.dsl.ManagedVirtualDevice) {
                 device = "Pixel 2"
                 apiLevel = 26
                 systemImageSource = "aosp"
                 abi = "x86"
             }
-            nexus9api29(ManagedVirtualDevice) {
+            nexus9api29(com.android.build.api.dsl.ManagedVirtualDevice) {
                 device = "Nexus 9"
                 apiLevel = 29
                 systemImageSource = "aosp"

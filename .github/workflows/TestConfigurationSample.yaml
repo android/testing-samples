@@ -79,17 +79,29 @@ jobs:
           path: ~/.android/gradle/avd/dev29_aosp_x86_Pixel_2.*
           key: pixel2api29
 
+      - name: Cache pixel2api26 system image
+        uses: actions/cache@v2
+        with:
+          path: ~/.android/gradle/avd/dev26_aosp_x86_Pixel_2.*
+          key: pixel2api26
+
+      - name: Cache nexus9api29 system image
+        uses: actions/cache@v2
+        with:
+          path: ~/.android/gradle/avd/dev29_aosp_x86_Nexus_9.*
+          key: nexus9api29
+
       - name: Run all tests
         working-directory: ${{ env.SAMPLE_PATH }}
-        run: ./gradlew pixel2api29DebugAndroidTest
+        run: ./gradlew pixel2api29DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.notAnnotation=com.example.android.testing.testconfigurationsample.TestDeviceLargeScreen
 
-#      - name: Run regression tests
-#        working-directory: ${{ env.SAMPLE_PATH }}
-#        run: ./gradlew -i pixel2api26DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.annotation=com.example.android.testing.testconfigurationsample.TestDeviceApi26
-#
-#      - name: Run large screen tests
-#        working-directory: ${{ env.SAMPLE_PATH }}
-#        run: ./gradlew -i nexus9api29DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.annotation=com.example.android.testing.testconfigurationsample.TestDeviceLargeScreen
+      - name: Run regression tests
+        working-directory: ${{ env.SAMPLE_PATH }}
+        run: ./gradlew -i pixel2api26DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.annotation=com.example.android.testing.testconfigurationsample.TestDeviceApi26
+
+      - name: Run large screen tests
+        working-directory: ${{ env.SAMPLE_PATH }}
+        run: ./gradlew -i nexus9api29DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.annotation=com.example.android.testing.testconfigurationsample.TestDeviceLargeScreen
 
       - name: Upload test reports
         if: always()
