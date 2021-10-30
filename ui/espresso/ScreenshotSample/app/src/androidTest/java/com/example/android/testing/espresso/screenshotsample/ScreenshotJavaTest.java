@@ -42,7 +42,7 @@ public class ScreenshotJavaTest {
      */
     @Test
     public void saveActivityBitmap() throws IOException {
-        writeToTestStorage(captureToBitmap(onView(isRoot())), nameRule.getMethodName());
+        writeToTestStorage(captureToBitmap(onView(isRoot())), getClass().getSimpleName() + "_" + nameRule.getMethodName());
     }
 
     /**
@@ -50,7 +50,7 @@ public class ScreenshotJavaTest {
      */
     @Test
     public void saveViewBitmap() throws IOException {
-        writeToTestStorage(captureToBitmap(onView(withText("Hello World!"))), nameRule.getMethodName());
+        writeToTestStorage(captureToBitmap(onView(withText("Hello World!"))), getClass().getSimpleName() + "_" + nameRule.getMethodName());
     }
 
     /**
@@ -58,6 +58,6 @@ public class ScreenshotJavaTest {
      */
     @Test
     public void saveDeviceScreenBitmap() throws IOException {
-        writeToTestStorage(takeScreenshot(), nameRule.getMethodName());
+        writeToTestStorage(takeScreenshot(), getClass().getSimpleName() + "_" + nameRule.getMethodName());
     }
 }

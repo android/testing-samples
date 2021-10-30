@@ -17,12 +17,8 @@ import java.io.IOException
 /*
  * Illustrates usage of APIs to capture a bitmap from view and saving it to test storage.
  *
- * The exact path will vary based on android API version, but the saved files can be retrieved via
- * Device File Explorer at a path like
- * /storage/emulated/0/googletest/test_outputfiles
- *
- * A future Android Gradle Plugin version should auto-retrieve these files from the device onto the
- * host.
+ * When this test is executed via gradle managed devices, the saved image files will be stored at
+ * build/outputs/managed_device_android_test_additional_output/debugAndroidTest/managedDevice/nexusOneApi30/
  */
 @RunWith(AndroidJUnit4::class)
 class ScreenshotTest {
@@ -43,7 +39,7 @@ class ScreenshotTest {
   fun saveActivityBitmap() {
     onView(isRoot())
       .captureToBitmap()
-      .writeToTestStorage(nameRule.methodName)
+      .writeToTestStorage("${javaClass.simpleName}_${nameRule.methodName}")
   }
 
   /**
@@ -54,7 +50,7 @@ class ScreenshotTest {
   fun saveViewBitmap() {
     onView(withText("Hello World!"))
       .captureToBitmap()
-      .writeToTestStorage(nameRule.methodName)
+      .writeToTestStorage("${javaClass.simpleName}_${nameRule.methodName}")
   }
 
   /**
@@ -64,6 +60,6 @@ class ScreenshotTest {
   @Throws(IOException::class)
   fun saveDeviceScreenBitmap() {
     takeScreenshot()
-      .writeToTestStorage(nameRule.methodName)
+      .writeToTestStorage("${javaClass.simpleName}_${nameRule.methodName}")
   }
 }
