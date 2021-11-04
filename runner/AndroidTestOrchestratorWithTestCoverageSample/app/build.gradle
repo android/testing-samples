@@ -19,12 +19,6 @@ android {
             testCoverageEnabled true
         }
     }
-
-    useLibrary 'android.test.runner'
-
-    useLibrary 'android.test.base'
-    useLibrary 'android.test.mock'
-
     testOptions {
         execution 'ANDROIDX_TEST_ORCHESTRATOR'
     }
