@@ -109,3 +109,13 @@ jobs:
         with:
           name: test-reports
           path: ${{ env.SAMPLE_PATH }}/app/build/reports/androidTests
+
+      - name: Upload emulator logs
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: emulator-logs
+          path: |
+            ${{ env.SAMPLE_PATH }}/app/build/outputs/androidTest-results/managedDevice/
+            !${{ env.SAMPLE_PATH }}/**/*:*.xml
+            !${{ env.SAMPLE_PATH }}/**/*|*
