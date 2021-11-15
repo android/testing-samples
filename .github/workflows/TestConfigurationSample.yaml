@@ -116,6 +116,6 @@ jobs:
         with:
           name: emulator-logs
           path: |
-            ${{ env.SAMPLE_PATH }}/app/build/outputs/androidTest-results/managedDevice/
+            ${{ env.SAMPLE_PATH }}/app/build/outputs/androidTest-results/managedDevice/**
             !${{ env.SAMPLE_PATH }}/**/*:*.xml
             !${{ env.SAMPLE_PATH }}/**/*|*
