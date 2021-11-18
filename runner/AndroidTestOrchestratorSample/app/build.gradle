@@ -22,11 +22,6 @@ android {
     productFlavors {
     }
 
-    useLibrary 'android.test.runner'
-
-    useLibrary 'android.test.base'
-    useLibrary 'android.test.mock'
-
     testOptions {
         execution 'ANDROIDX_TEST_ORCHESTRATOR'
     }
@@ -41,6 +36,7 @@ dependencies {
     androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion;
     androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
     androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion;
+    androidTestImplementation 'androidx.test:monitor:' + rootProject.monitorVersion;
     androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion;
-    androidTestUtil 'androidx.test:orchestrator:' + rootProject.runnerVersion;
+    androidTestUtil 'androidx.test:orchestrator:' + rootProject.orchestratorVersion;
 }

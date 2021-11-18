@@ -16,6 +16,7 @@
 
 package com.example.android.testing.androidtestorchestratorsample;
 
+import androidx.test.platform.graphics.HardwareRendererCompat;
 import junit.framework.TestSuite;
 
 import org.junit.Before;
