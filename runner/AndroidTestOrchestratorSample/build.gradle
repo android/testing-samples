@@ -30,8 +30,8 @@ ext {
     coreVersion = "1.4.0"
     extJUnitVersion = "1.1.3"
     runnerVersion = "1.4.0"
-    monitorVersion = "1.5.0-beta01"
+    monitorVersion = "1.5.0-rc01"
     rulesVersion = "1.4.0"
     espressoVersion = "3.4.0"
-    orchestratorVersion = "1.4.1-beta01"
+    orchestratorVersion = "1.4.1-rc01"
 }
