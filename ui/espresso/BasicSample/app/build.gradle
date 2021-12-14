@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+
 android {
     compileSdkVersion 30
     buildToolsVersion rootProject.buildToolsVersion
