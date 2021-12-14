@@ -21,9 +21,10 @@ androidxRecyclerVersion="1.2.1"
 guavaVersion="30.1.1-android"
 truthVersion="1.1.3"
 runnerVersion="1.4.1-alpha03"
+monitorVersion="1.5.0"
 rulesVersion="1.4.1-alpha03"
-servicesVersion="1.4.1-alpha03"
-orchestratorVersion="1.4.1-alpha03"
+servicesVersion="1.4.1"
+orchestratorVersion="1.4.1"
 coreVersion="1.4.1-alpha03"
 extJUnitVersion="1.1.4-alpha03"
 extTruthVersion="1.5.0-alpha03"
@@ -45,6 +46,7 @@ for p in $(cat projects.conf); do
    sed -i "s/coreVersion = \".*\"/coreVersion = \"$coreVersion\"/" build.gradle
    sed -i "s/extJUnitVersion = \".*\"/extJUnitVersion = \"$extJUnitVersion\"/" build.gradle
    sed -i "s/extTruthVersion = \".*\"/extTruthVersion = \"$extTruthVersion\"/" build.gradle
+   sed -i "s/monitorVersion = \".*\"/monitorVersion = \"$monitorVersion\"/" build.gradle
    sed -i "s/runnerVersion = \".*\"/runnerVersion = \"$runnerVersion\"/" build.gradle
    sed -i "s/rulesVersion = \".*\"/rulesVersion = \"$rulesVersion\"/" build.gradle
    sed -i "s/servicesVersion = \".*\"/servicesVersion = \"$servicesVersion\"/" build.gradle
