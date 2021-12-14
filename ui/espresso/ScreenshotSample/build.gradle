@@ -10,7 +10,7 @@ buildscript {
     ext.runnerVersion = "1.4.1-alpha03"
     ext.rulesVersion = "1.4.1-alpha03"
     ext.espressoVersion = "3.5.0-alpha03"
-    ext.servicesVersion = "1.4.1-alpha03"
+    ext.servicesVersion = "1.4.1"
     ext.truthVersion = "1.1.3"
 
     repositories {
