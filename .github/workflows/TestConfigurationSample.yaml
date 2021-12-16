@@ -93,7 +93,7 @@ jobs:
 
       - name: Run all tests
         working-directory: ${{ env.SAMPLE_PATH }}
-        run: ./gradlew pixel2api29DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.notAnnotation=com.example.android.testing.testconfigurationsample.TestDeviceLargeScreen
+        run: ./gradlew pixel2api29DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.notAnnotation=com.example.android.testing.testconfigurationsample.TestDeviceLargeScreen --info
 
       - name: Run regression tests
         working-directory: ${{ env.SAMPLE_PATH }}
