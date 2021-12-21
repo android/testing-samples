@@ -1,2 +1,3 @@
 rootProject.name = "TestConfigurationSample"
 include ':app'
+include ':nav-tests'

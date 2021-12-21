@@ -1,25 +1,25 @@
 import com.android.build.api.dsl.ManagedVirtualDevice
 
 plugins {
-    id 'com.android.application'
+    id 'com.android.test'
     id 'org.jetbrains.kotlin.android'
 }
 
 android {
+
+    targetProjectPath ':app'
+
     compileSdk 31
-    buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.android.testing.testconfigurationsample"
-        minSdk 23
+        applicationId "com.example.android.testing.navtests"
+        minSdk 21
         targetSdk 31
         versionCode 1
         versionName "1.0"
 
+        testApplicationId "com.example.android.testing.navtests"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary true
-        }
     }
 
     buildTypes {
@@ -35,18 +35,6 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures {
-        compose true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion compose_version
-    }
-    packagingOptions {
-        resources {
-            excludes += ['/META-INF/AL2.0', '/META-INF/LGPL2.1']
-        }
-    }
-
 
     testOptions {
         devices {
@@ -75,11 +63,7 @@ android {
 }
 
 dependencies {
-    implementation "com.google.android.material:material:$material_version"
-    implementation "androidx.compose.ui:ui:$compose_version"
-    implementation "androidx.compose.material:material:$compose_version"
-    implementation "androidx.compose.ui:ui-tooling:$compose_version"
-    implementation "androidx.activity:activity-compose:$activity_compose_version"
-    androidTestImplementation "androidx.test.ext:junit:$junit_version"
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
+
+    implementation 'junit:junit:4.13.2'
+    implementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
