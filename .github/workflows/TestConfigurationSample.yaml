@@ -73,11 +73,13 @@ jobs:
             ~/.gradle/caches/build-cache-*
           key: gradle-${{ hashFiles('checksum.txt') }}
 
-      - name: Cache pixel2api29 system image
+      - name: Cache pixel2api30 system image
         uses: actions/cache@v2
         with:
-          path: ~/.android/gradle/avd/dev29_aosp_x86_Pixel_2.*
-          key: pixel2api29
+          path: |
+            ~/.android/gradle/avd/dev30_aosp_x86_Pixel_2.*
+            ~/.android/gradle/avd/dev30_aosp_x86_64_Pixel_2.*
+          key: pixel2api30
 
       - name: Cache pixel2api26 system image
         uses: actions/cache@v2
@@ -93,7 +95,7 @@ jobs:
 
       - name: Run all tests
         working-directory: ${{ env.SAMPLE_PATH }}
-        run: ./gradlew pixel2api29DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.notAnnotation=com.example.android.testing.testconfigurationsample.TestDeviceLargeScreen --info
+        run: ./gradlew pixel2api30DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.notAnnotation=com.example.android.testing.testconfigurationsample.TestDeviceLargeScreen --info
 
       - name: Run regression tests
         working-directory: ${{ env.SAMPLE_PATH }}

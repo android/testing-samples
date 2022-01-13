@@ -48,10 +48,10 @@ android {
 
     testOptions {
         devices {
-            pixel2api29(com.android.build.api.dsl.ManagedVirtualDevice) {
+            pixel2api30(com.android.build.api.dsl.ManagedVirtualDevice) {
                 // Use device profiles you typically see in Android Studio
                 device = "Pixel 2"
-                apiLevel = 29
+                apiLevel = 30
                 // You can also specify "google" if you require Google Play Services.
                 systemImageSource = "aosp"
                 abi = "x86"
