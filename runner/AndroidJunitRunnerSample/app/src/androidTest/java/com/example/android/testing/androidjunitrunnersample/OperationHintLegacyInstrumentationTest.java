@@ -16,20 +16,19 @@
 
 package com.example.android.testing.androidjunitrunnersample;
 
-import junit.framework.TestSuite;
-
-import org.junit.internal.builders.AllDefaultPossibilitiesBuilder;
-
-import androidx.test.filters.LargeTest;
-import androidx.test.runner.AndroidJUnitRunner;
-import android.test.ActivityInstrumentationTestCase2;
-
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static com.example.android.testing.androidjunitrunnersample.HintMatcher.withHint;
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertThat;
+
+import android.test.ActivityInstrumentationTestCase2;
+
+import androidx.test.filters.LargeTest;
+import androidx.test.runner.AndroidJUnitRunner;
+
+import junit.framework.TestSuite;
+
+import org.junit.internal.builders.AllDefaultPossibilitiesBuilder;
 
 /**
  * JUnit3 Ui Tests for {@link CalculatorActivity} using the {@link AndroidJUnitRunner}. This class
@@ -63,7 +62,7 @@ public class OperationHintLegacyInstrumentationTest
     }
 
     public void testPreconditions() {
-        assertThat(mActivity, notNullValue());
+        assertNotNull(mActivity);
     }
 
     public void testEditText_OperandOneHint() {

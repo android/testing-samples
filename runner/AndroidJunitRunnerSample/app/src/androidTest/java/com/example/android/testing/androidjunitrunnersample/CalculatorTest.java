@@ -16,16 +16,14 @@
 
 package com.example.android.testing.androidjunitrunnersample;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static org.junit.Assert.assertEquals;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.SmallTest;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
 
 /**
@@ -45,36 +43,36 @@ public class CalculatorTest {
     @Test
     public void addTwoNumbers() {
         double resultAdd = mCalculator.add(1d, 1d);
-        assertThat(resultAdd, is(equalTo(2d)));
+        assertEquals(resultAdd, 2d, 0);
     }
 
     @Test
     public void subTwoNumbers() {
         double resultSub = mCalculator.sub(1d, 1d);
-        assertThat(resultSub, is(equalTo(0d)));
+        assertEquals(resultSub, 0d, 0);
     }
 
     @Test
     public void subWorksWithNegativeResult() {
         double resultSub = mCalculator.sub(1d, 17d);
-        assertThat(resultSub, is(equalTo(-16d)));
+        assertEquals(resultSub, -16d, 0);
     }
 
     @Test
     public void divTwoNumbers() {
-        double resultDiv = mCalculator.div(32d,2d);
-        assertThat(resultDiv, is(equalTo(16d)));
+        double resultDiv = mCalculator.div(32d, 2d);
+        assertEquals(resultDiv, 16d, 0);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void divDivideByZeroThrows() {
-        mCalculator.div(32d,0d);
+        mCalculator.div(32d, 0d);
     }
 
     @Test
     public void mulTwoNumbers() {
         double resultMul = mCalculator.mul(32d, 2d);
-        assertThat(resultMul, is(equalTo(64d)));
+        assertEquals(resultMul, 64d, 0);
     }
 
 }
