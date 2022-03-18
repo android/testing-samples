@@ -95,15 +95,15 @@ jobs:
 
       - name: Run all tests
         working-directory: ${{ env.SAMPLE_PATH }}
-        run: ./gradlew pixel2api30DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.notAnnotation=com.example.android.testing.testconfigurationsample.TestDeviceLargeScreen --info
+        run: ./gradlew pixel2api30DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.notAnnotation=com.example.android.testing.testconfigurationsample.TestDeviceLargeScreen -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect" --info
 
       - name: Run regression tests
         working-directory: ${{ env.SAMPLE_PATH }}
-        run: ./gradlew -i pixel2api26DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.annotation=com.example.android.testing.testconfigurationsample.TestDeviceApi26
+        run: ./gradlew -i pixel2api26DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.annotation=com.example.android.testing.testconfigurationsample.TestDeviceApi26 -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect"
 
       - name: Run large screen tests
         working-directory: ${{ env.SAMPLE_PATH }}
-        run: ./gradlew -i nexus9api29DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.annotation=com.example.android.testing.testconfigurationsample.TestDeviceLargeScreen
+        run: ./gradlew -i nexus9api29DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.annotation=com.example.android.testing.testconfigurationsample.TestDeviceLargeScreen -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect"
 
       - name: Upload test reports
         if: always()
