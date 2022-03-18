@@ -81,11 +81,11 @@ jobs:
             ~/.android/gradle/avd/dev30_aosp_x86_64_Pixel_2.*
           key: pixel2api30
 
-      - name: Cache pixel2api26 system image
+      - name: Cache pixel2api27 system image
         uses: actions/cache@v2
         with:
-          path: ~/.android/gradle/avd/dev26_aosp_x86_Pixel_2.*
-          key: pixel2api26
+          path: ~/.android/gradle/avd/dev27_aosp_x86_Pixel_2.*
+          key: pixel2api27
 
       - name: Cache nexus9api29 system image
         uses: actions/cache@v2
@@ -99,7 +99,7 @@ jobs:
 
       - name: Run regression tests
         working-directory: ${{ env.SAMPLE_PATH }}
-        run: ./gradlew -i pixel2api26DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.annotation=com.example.android.testing.testconfigurationsample.TestDeviceApi26 -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect"
+        run: ./gradlew -i pixel2api27DebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.annotation=com.example.android.testing.testconfigurationsample.TestDeviceApi27 -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect"
 
       - name: Run large screen tests
         working-directory: ${{ env.SAMPLE_PATH }}
