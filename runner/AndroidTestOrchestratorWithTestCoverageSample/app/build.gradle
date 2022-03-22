@@ -36,4 +36,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
     androidTestUtil 'androidx.test:orchestrator:' + rootProject.runnerVersion
     androidTestUtil 'androidx.test.services:test-services:' + rootProject.testServicesVersion
+
+    androidTestImplementation 'com.google.truth:truth:' + rootProject.truthVersion;
 }

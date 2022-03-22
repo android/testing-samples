@@ -16,6 +16,8 @@
 
 package com.example.android.testing.androidtestorchestratorsample;
 
+import static com.google.common.truth.Truth.assertThat;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,9 +28,6 @@ import androidx.test.filters.SmallTest;
 import java.lang.Iterable;
 import java.util.Arrays;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
 import static org.junit.runners.Parameterized.Parameters;
 
 
@@ -88,6 +87,6 @@ public class CalculatorAddParameterizedTest {
     @Test
     public void testAdd_TwoNumbers() {
         double resultAdd = mCalculator.add(mOperandOne, mOperandTwo);
-        assertThat(resultAdd, is(equalTo(mExpectedResult)));
+        assertThat(resultAdd).isEqualTo(mExpectedResult);
     }
 }
