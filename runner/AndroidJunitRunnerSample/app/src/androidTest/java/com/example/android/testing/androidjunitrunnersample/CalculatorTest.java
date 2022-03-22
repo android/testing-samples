@@ -16,16 +16,15 @@
 
 package com.example.android.testing.androidjunitrunnersample;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static com.google.common.truth.Truth.assertThat;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.SmallTest;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
 
 
 /**
@@ -45,25 +44,25 @@ public class CalculatorTest {
     @Test
     public void addTwoNumbers() {
         double resultAdd = mCalculator.add(1d, 1d);
-        assertThat(resultAdd, is(equalTo(2d)));
+        assertThat(resultAdd).isEqualTo(2d);
     }
 
     @Test
     public void subTwoNumbers() {
         double resultSub = mCalculator.sub(1d, 1d);
-        assertThat(resultSub, is(equalTo(0d)));
+        assertThat(resultSub).isEqualTo(0d);
     }
 
     @Test
     public void subWorksWithNegativeResult() {
         double resultSub = mCalculator.sub(1d, 17d);
-        assertThat(resultSub, is(equalTo(-16d)));
+        assertThat(resultSub).isEqualTo(-16d);
     }
 
     @Test
     public void divTwoNumbers() {
         double resultDiv = mCalculator.div(32d,2d);
-        assertThat(resultDiv, is(equalTo(16d)));
+        assertThat(resultDiv).isEqualTo(16d);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -74,7 +73,7 @@ public class CalculatorTest {
     @Test
     public void mulTwoNumbers() {
         double resultMul = mCalculator.mul(32d, 2d);
-        assertThat(resultMul, is(equalTo(64d)));
+        assertThat(resultMul).isEqualTo(64d);
     }
 
 }

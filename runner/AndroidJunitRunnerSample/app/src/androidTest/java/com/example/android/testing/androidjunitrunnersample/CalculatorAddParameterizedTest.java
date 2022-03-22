@@ -16,20 +16,17 @@
 
 package com.example.android.testing.androidjunitrunnersample;
 
+import static com.google.common.truth.Truth.assertThat;
+import static org.junit.runners.Parameterized.Parameters;
+
+import androidx.test.filters.SmallTest;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import androidx.test.filters.SmallTest;
-
-import java.lang.Iterable;
 import java.util.Arrays;
-
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-import static org.junit.runners.Parameterized.Parameters;
 
 
 /**
@@ -73,7 +70,7 @@ public class CalculatorAddParameterizedTest {
      * to reuse them in your tests.
      */
     public CalculatorAddParameterizedTest(double operandOne, double operandTwo,
-            double expectedResult) {
+                                          double expectedResult) {
 
         mOperandOne = operandOne;
         mOperandTwo = operandTwo;
@@ -88,7 +85,7 @@ public class CalculatorAddParameterizedTest {
     @Test
     public void testAdd_TwoNumbers() {
         double resultAdd = mCalculator.add(mOperandOne, mOperandTwo);
-        assertThat(resultAdd, is(equalTo(mExpectedResult)));
+        assertThat(resultAdd).isEqualTo(mExpectedResult);
     }
 
 }
