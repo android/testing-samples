@@ -32,4 +32,5 @@ ext {
     runnerVersion = "1.5.0-alpha02"
     rulesVersion = "1.4.1-alpha05"
     espressoVersion = "3.5.0-alpha05"
+    truthVersion = "1.1.3"
 }

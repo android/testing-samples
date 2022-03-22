@@ -39,4 +39,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
     androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion;
     androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion;
+
+    // https://truth.dev/
+    androidTestImplementation 'com.google.truth:truth:' + rootProject.truthVersion;
 }
