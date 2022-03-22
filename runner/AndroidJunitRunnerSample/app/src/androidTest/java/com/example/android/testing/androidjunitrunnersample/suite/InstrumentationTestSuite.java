@@ -17,7 +17,7 @@
 package com.example.android.testing.androidjunitrunnersample.suite;
 
 import com.example.android.testing.androidjunitrunnersample.CalculatorInstrumentationTest;
-import com.example.android.testing.androidjunitrunnersample.OperationHintLegacyInstrumentationTest;
+import com.example.android.testing.androidjunitrunnersample.OperationHintInstrumentationTest;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -26,5 +26,5 @@ import org.junit.runners.Suite;
  * Runs all Junit3 and Junit4 Instrumentation tests.
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({CalculatorInstrumentationTest.class, OperationHintLegacyInstrumentationTest.class})
+@Suite.SuiteClasses({CalculatorInstrumentationTest.class, OperationHintInstrumentationTest.class})
 public class InstrumentationTestSuite {}

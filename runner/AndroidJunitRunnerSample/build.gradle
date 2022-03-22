@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.agpVersion = "7.0.2"
+    ext.agpVersion = "7.1.0-alpha13"
     repositories {
         // Insert local test repo here
         google()

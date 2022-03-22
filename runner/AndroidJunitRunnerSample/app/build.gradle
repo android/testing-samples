@@ -22,11 +22,19 @@ android {
     productFlavors {
     }
 
-    useLibrary 'android.test.runner'
-
-    useLibrary 'android.test.base'
-    useLibrary 'android.test.mock'
-
+    testOptions {
+        devices {
+            // run with ../gradlew -P android.sdk.channel=3 nexusOneApi30DebugAndroidTest
+            nexusOneApi30 (com.android.build.api.dsl.ManagedVirtualDevice) {
+                // A lower resolution device is used here for better emulator performance
+                device = "Nexus One"
+                apiLevel = 30
+                // Also use the AOSP ATD image for better emulator performance
+                systemImageSource = "aosp-atd"
+                abi = "x86"
+            }
+        }
+    }
 }
 
 dependencies {
