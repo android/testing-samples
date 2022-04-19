@@ -47,9 +47,8 @@ public class ImageViewerActivity extends Activity {
     private void dispatchTakePictureIntent() {
         // Open the camera to take a photo.
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        }
+        startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+
     }
 
     public void onOpenCamera(View view) {

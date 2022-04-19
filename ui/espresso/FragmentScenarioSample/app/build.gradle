@@ -30,8 +30,22 @@ android {
         }
     }
     testOptions {
-        // include the android resources in local tests. See http://robolectric.org/migrating/#migrating-to-40
-        unitTests.includeAndroidResources = true
+        unitTests {
+            includeAndroidResources = true
+        }
+        devices {
+            // run with ../gradlew  nexusOneApi30DebugAndroidTest
+            nexusOneApi30(com.android.build.api.dsl.ManagedVirtualDevice) {
+                // A lower resolution device is used here for better emulator performance
+                device = "Nexus One"
+                apiLevel = 30
+                // Also use the AOSP ATD image for better emulator performance
+                // The androidx.test screenshot APIs will automatically enable hardware rendering
+                // to take a screenshot
+                systemImageSource = "aosp-atd"
+                abi = "x86"
+            }
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

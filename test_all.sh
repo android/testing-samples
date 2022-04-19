@@ -9,7 +9,7 @@ for p in $(cat projects.conf); do
    echo "====================================================================="
 
    pushd $p > /dev/null  # Silent pushd
-   ./gradlew $@ testDebug cAT | sed "s@^@$p @"  # Prefix every line with directory
+   ./gradlew $@ nexusOneApi30DebugAndroidTest | sed "s@^@$p @"  # Prefix every line with directory
    code=${PIPESTATUS[0]}
    if [ "$code" -ne "0" ]; then
        exit $code

@@ -33,7 +33,7 @@ android {
     }
     testOptions {
         devices {
-            // run with ../gradlew  -Pandroid.sdk.channel=3 nexusOneApi30DebugAndroidTest
+            // run with ../gradlew  nexusOneApi30DebugAndroidTest
             nexusOneApi30 (com.android.build.api.dsl.ManagedVirtualDevice) {
                 // A lower resolution device is used here for better emulator performance
                 device = "Nexus One"
