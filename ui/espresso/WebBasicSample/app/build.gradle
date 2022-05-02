@@ -35,7 +35,6 @@ android {
                 // The androidx.test screenshot APIs will automatically enable hardware rendering
                 // to take a screenshot
                 systemImageSource = "aosp-atd"
-                abi = "x86"
             }
         }
     }
