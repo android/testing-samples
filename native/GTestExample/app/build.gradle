@@ -15,7 +15,6 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        testInstrumentationRunnerArguments useTestStorageService: 'true'
         externalNativeBuild {
             cmake {
                 arguments "-DANDROID_STL=c++_shared"
@@ -48,11 +47,11 @@ android {
 }
 
 dependencies {
-    androidTestImplementation 'junit:junit:' + rootProject.junitVersion
-    implementation 'androidx.test.ext:junit-gtest:' + rootProject.junitGtestVersion
-    implementation 'com.android.ndk.thirdparty:googletest:' + rootProject.googletestVersion
-    androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
-    androidTestImplementation 'androidx.test.espresso:espresso-remote:' + rootProject.espressoVersion
-    androidTestImplementation "androidx.test:runner:" + rootProject.runnerVersion
+    androidTestImplementation "junit:junit:$rootProject.junitVersion"
+    implementation "androidx.test.ext:junit-gtest:$rootProject.junitGtestVersion"
+    implementation "com.android.ndk.thirdparty:googletest:$rootProject.googletestVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-remote:$rootProject.espressoVersion"
+    androidTestImplementation "androidx.test:runner:$rootProject.runnerVersion"
     androidTestImplementation "androidx.test.ext:junit-ktx:$extJUnitVersion"
 }
