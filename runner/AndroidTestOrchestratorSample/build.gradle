@@ -34,4 +34,5 @@ ext {
     rulesVersion = "1.4.1-alpha06"
     espressoVersion = "3.5.0-alpha06"
     orchestratorVersion = "1.4.2-alpha03"
+    truthVersion = "1.1.3"
 }
