@@ -5,12 +5,12 @@ plugins {
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdk 31
+    compileSdk 32
 
     defaultConfig {
         applicationId "com.example.android.testing.nativesample"
         minSdk 18
-        targetSdk 31
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -44,14 +44,26 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    testOptions {
+        managedDevices {
+            devices {
+                // run with ../gradlew  nexusOneApi30DebugAndroidTest
+                nexusOneApi30(com.android.build.api.dsl.ManagedVirtualDevice) {
+                    // A lower resolution device is used here for better emulator performance
+                    device = "Nexus One"
+                    apiLevel = 30
+                    // Also use the AOSP ATD image for better emulator performance
+                    systemImageSource = "aosp-atd"
+                }
+            }
+        }
+    }
 }
 
 dependencies {
     androidTestImplementation "junit:junit:$rootProject.junitVersion"
     implementation "androidx.test.ext:junit-gtest:$rootProject.junitGtestVersion"
     implementation "com.android.ndk.thirdparty:googletest:$rootProject.googletestVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-remote:$rootProject.espressoVersion"
     androidTestImplementation "androidx.test:runner:$rootProject.runnerVersion"
     androidTestImplementation "androidx.test.ext:junit-ktx:$extJUnitVersion"
 }

@@ -5,5 +5,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "NativeSample"
+rootProject.name = "BasicNativeAndroidTest"
 include ':app'
