@@ -27,10 +27,10 @@ ext {
     buildToolsVersion = "31.0.0"
     androidxAnnotationVersion = "1.2.0"
     guavaVersion = "30.1.1-android"
-    coreVersion = "1.4.1-alpha06"
-    extJUnitVersion = "1.1.4-alpha06"
-    runnerVersion = "1.5.0-alpha03"
-    rulesVersion = "1.4.1-alpha06"
-    espressoVersion = "3.5.0-alpha06"
+    coreVersion = "1.4.1-alpha07"
+    extJUnitVersion = "1.1.4-alpha07"
+    runnerVersion = "1.5.0-alpha04"
+    rulesVersion = "1.4.1-alpha07"
+    espressoVersion = "3.5.0-alpha07"
 }
 
