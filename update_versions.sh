@@ -11,7 +11,7 @@ set -ex  # Exit immediately if a command exits with a non-zero status.
 # Versions:                             # axt_versions.bzl equivalents
 buildToolsVersion="31.0.0"
 agpVersion="7.3.0-alpha07"
-kotlinVersion="1.6.10"                  # KOTLIN_VERSION
+kotlinVersion="1.6.21"                  # KOTLIN_VERSION
 compileSdkVersion="30"
 targetSdkVersion="30"
 androidxAnnotationVersion="1.2.0"       # ANDROIDX_ANNOTATION_VERSION
@@ -21,15 +21,15 @@ androidxFragmentVersion="1.3.6"         # ANDROIDX_FRAGMENT_VERSION
 androidxRecyclerVersion="1.2.1"         # ANDROIDX_RECYCLERVIEW_VERSION
 guavaVersion="30.1.1-android"           # GUAVA_VERSION
 truthVersion="1.1.3"                    # TRUTH_VERSION
-runnerVersion="1.5.0-alpha03"           # RUNNER_VERSION
-monitorVersion="1.6.0-alpha03"          # MONITOR_VERSION
-rulesVersion="1.4.1-alpha06"            # RULES_VERSION
-servicesVersion="1.4.2-alpha03"         # SERVICES_VERSION
-orchestratorVersion="1.4.2-alpha03"     # ORCHESTRATOR_VERSION
-coreVersion="1.4.1-alpha06"             # CORE_VERSION
-extJUnitVersion="1.1.4-alpha06"         # ANDROIDX_JUNIT_VERSION
-extTruthVersion="1.5.0-alpha06"         # ANDROIDX_TRUTH_VERSION
-espressoVersion="3.5.0-alpha06"         # ESPRESSO_VERSION
+runnerVersion="1.5.0-alpha04"           # RUNNER_VERSION
+monitorVersion="1.6.0-alpha04"          # MONITOR_VERSION
+rulesVersion="1.4.1-alpha07"            # RULES_VERSION
+servicesVersion="1.4.2-alpha04"         # SERVICES_VERSION
+orchestratorVersion="1.4.2-alpha04"     # ORCHESTRATOR_VERSION
+coreVersion="1.4.1-alpha07"             # CORE_VERSION
+extJUnitVersion="1.1.4-alpha07"         # ANDROIDX_JUNIT_VERSION
+extTruthVersion="1.5.0-alpha07"         # ANDROIDX_TRUTH_VERSION
+espressoVersion="3.5.0-alpha07"         # ESPRESSO_VERSION
 robolectricVersion="4.8.1"
 uiAutomatorVersion="2.2.0"              # UIAUTOMATOR_VERSION
 
