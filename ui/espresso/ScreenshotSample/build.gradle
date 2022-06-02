@@ -1,10 +1,10 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.agpVersion = "7.3.0-alpha07"
+    ext.agpVersion = "7.3.0-beta01"
     ext.kotlinVersion = "1.6.21"
-    ext.androidxCoreVersion = "1.6.0"
-    ext.buildToolsVersion = "31.0.0"
-    ext.androidxCompatVersion = "1.3.1"
+    ext.androidxCoreVersion = "1.7.0"
+    ext.buildToolsVersion = "32.0.0"
+    ext.androidxCompatVersion = "1.4.1"
     ext.coreVersion = "1.4.1-alpha07"
     ext.extJUnitVersion = "1.1.4-alpha07"
     ext.runnerVersion = "1.5.0-alpha04"

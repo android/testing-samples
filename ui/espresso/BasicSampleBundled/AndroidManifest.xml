@@ -14,7 +14,8 @@
 
         <activity
             android:name="com.example.android.testing.espresso.basicsamplebundled.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
