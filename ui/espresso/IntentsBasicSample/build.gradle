@@ -27,7 +27,7 @@ ext {
     buildToolsVersion = "32.0.0"
     androidxAnnotationVersion = "1.3.0"
     androidxCoreVersion = "1.7.0"
-    coreVersion = "1.4.1-alpha07"
+    coreVersion = "1.5.0-alpha01"
     extJUnitVersion = "1.1.4-alpha07"
     runnerVersion = "1.5.0-alpha04"
     rulesVersion = "1.4.1-alpha07"

@@ -31,7 +31,7 @@ ext {
     androidxCoreVersion = "1.7.0"
     androidxCompatVersion = "1.4.1"
     androidxFragmentVersion = "1.4.1"
-    coreVersion = "1.4.1-alpha07"
+    coreVersion = "1.5.0-alpha01"
     extJUnitVersion = "1.1.4-alpha07"
     runnerVersion = "1.5.0-alpha04"
     rulesVersion = "1.4.1-alpha07"
