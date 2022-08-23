@@ -5,7 +5,7 @@ buildscript {
     ext.androidxCoreVersion = "1.7.0"
     ext.buildToolsVersion = "32.0.0"
     ext.androidxCompatVersion = "1.4.1"
-    ext.coreVersion = "1.5.0-alpha01"
+    ext.coreVersion = "1.5.0-alpha02"
     ext.extJUnitVersion = "1.1.4-alpha07"
     ext.runnerVersion = "1.5.0-alpha04"
     ext.rulesVersion = "1.4.1-alpha07"
