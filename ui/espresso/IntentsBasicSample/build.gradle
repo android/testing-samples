@@ -34,5 +34,5 @@ ext {
     espressoVersion = "3.5.0-alpha07"
     extJUnitVersion = "1.1.4-alpha07"
     extTruthVersion = "1.5.0-alpha07"
-    robolectricVersion = "4.8.1"
+    robolectricVersion = "4.9"
 }
