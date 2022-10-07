@@ -5,12 +5,12 @@ plugins {
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdk 31
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.example.android.testing.espresso.screenshotsample"
         minSdk 18
-        targetSdk 31
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
