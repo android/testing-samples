@@ -27,9 +27,6 @@ import org.junit.runner.RunWith
  */
 @RunWith(AndroidJUnit4::class)
 class RequiresDisplayTest {
-    @Test
-    fun shouldAlwaysRun() {}
-
     @RequiresDisplay(
         widthSizeClass = WidthSizeClass.Companion.WidthSizeClassEnum.COMPACT,
         heightSizeClass = HeightSizeClass.Companion.HeightSizeClassEnum.COMPACT
