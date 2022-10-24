@@ -28,7 +28,7 @@ allprojects {
 ext {
     buildToolsVersion = "32.0.0"
     robolectricVersion = "4.9"
-    extTruthVersion = "1.5.0-beta01"
+    extTruthVersion = "1.5.0-beta02"
     extJUnitVersion = "1.1.4-beta01"
     espressoDeviceVersion = "1.0.0-alpha01"
 }

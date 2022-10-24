@@ -29,8 +29,8 @@ ext {
     guavaVersion = "31.1-android"
     coreVersion = "1.5.0-beta01"
     extJUnitVersion = "1.1.4-beta01"
-    runnerVersion = "1.5.0-beta01"
-    rulesVersion = "1.4.1-beta01"
-    espressoVersion = "3.5.0-beta01"
+    runnerVersion = "1.5.0-beta02"
+    rulesVersion = "1.5.0-beta01"
+    espressoVersion = "3.5.0-beta02"
 }
 

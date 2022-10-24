@@ -7,9 +7,9 @@ buildscript {
     ext.androidxCompatVersion = "1.5.1"
     ext.coreVersion = "1.5.0-beta01"
     ext.extJUnitVersion = "1.1.4-beta01"
-    ext.runnerVersion = "1.5.0-beta01"
-    ext.rulesVersion = "1.4.1-beta01"
-    ext.espressoVersion = "3.5.0-beta01"
+    ext.runnerVersion = "1.5.0-beta02"
+    ext.rulesVersion = "1.5.0-beta01"
+    ext.espressoVersion = "3.5.0-beta02"
     ext.servicesVersion = "1.4.2-beta01"
     ext.truthVersion = "1.1.3"
 
