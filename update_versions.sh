@@ -10,7 +10,7 @@ set -ex  # Exit immediately if a command exits with a non-zero status.
 #repourl="http:\/\/localhost:1480"
 # Versions:                             # axt_versions.bzl equivalents
 buildToolsVersion="32.0.0"
-agpVersion="7.3.0"
+agpVersion="7.3.1"
 kotlinVersion="1.7.10"                  # KOTLIN_VERSION
 compileSdkVersion="33"
 targetSdkVersion="33"
