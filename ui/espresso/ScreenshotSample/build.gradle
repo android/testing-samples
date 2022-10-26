@@ -5,12 +5,12 @@ buildscript {
     ext.androidxCoreVersion = "1.9.0"
     ext.buildToolsVersion = "32.0.0"
     ext.androidxCompatVersion = "1.5.1"
-    ext.coreVersion = "1.5.0-beta01"
-    ext.extJUnitVersion = "1.1.4-beta01"
-    ext.runnerVersion = "1.5.0-beta02"
-    ext.rulesVersion = "1.5.0-beta01"
-    ext.espressoVersion = "3.5.0-beta02"
-    ext.servicesVersion = "1.4.2-beta01"
+    ext.coreVersion = "1.5.0-rc01"
+    ext.extJUnitVersion = "1.1.4-rc01"
+    ext.runnerVersion = "1.5.0-rc01"
+    ext.rulesVersion = "1.5.0-rc01"
+    ext.espressoVersion = "3.5.0-rc01"
+    ext.servicesVersion = "1.4.2-rc01"
     ext.truthVersion = "1.1.3"
 
     repositories {
