@@ -47,6 +47,7 @@ android {
             }
         }
     }
+    namespace 'com.example.android.testing.espresso.screenshotsample'
 }
 
 dependencies {
