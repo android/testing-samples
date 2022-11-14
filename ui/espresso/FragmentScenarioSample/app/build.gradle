@@ -64,9 +64,9 @@ dependencies {
 
     // TODO: ideally this would only be present in test scope
     debugImplementation 'androidx.fragment:fragment-testing:' + rootProject.androidxFragmentVersion
-    debugImplementation 'androidx.test:core:' + rootProject.coreVersion
+    //debugImplementation 'androidx.test:core:' + rootProject.coreVersion
 
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.robolectric:robolectric:' + rootProject.robolectricVersion
     testImplementation 'androidx.test:core:' + rootProject.coreVersion
     testImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion
