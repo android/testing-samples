@@ -32,10 +32,10 @@ ext {
     androidxCompatVersion = "1.5.1"
     androidxFragmentVersion = "1.5.3"
     coreVersion = "1.5.0"
-    extJUnitVersion = "1.1.4"
-    runnerVersion = "1.5.0"
+    extJUnitVersion = "1.1.5"
+    runnerVersion = "1.5.2"
     rulesVersion = "1.5.0"
-    espressoVersion = "3.5.0"
+    espressoVersion = "3.5.1"
     robolectricVersion = "4.9"
     truthVersion = "1.1.3"
 }
