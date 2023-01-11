@@ -23,15 +23,6 @@ android {
     }
     productFlavors {
     }
-    // Configure the `test` and `android` variants to share the same test source
-    sourceSets {
-        test {
-            java.srcDir 'src/sharedTest/java'
-        }
-        androidTest {
-            java.srcDir 'src/sharedTest/java'
-        }
-    }
     testOptions {
         unitTests {
             includeAndroidResources = true
