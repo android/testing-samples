@@ -1,4 +1,7 @@
 import week1.ExampleObject
+import week1.User
+import java.util.Calendar
+import kotlin.random.Random
 
 fun main() {
     /*
@@ -7,17 +10,22 @@ fun main() {
     - compiles into either Java or JS
     - interoperable with Java
 
-    Basically, you can think of Kotlin as a more modern version of Java. It functions pretty much the same, but includes a lot of features that deal with problems in base Java.
+    Basically, you can think of Kotlin as a more modern version of Java. It functions pretty much the same, but
+    includes a lot of features that deal with problems in base Java.
 
     See Basics and Concepts sections of Kotlin docs. Unlike Javadocs, these are actually decent.
     https://kotlinlang.org/docs/home.html
      */
+
+    val myJavaClass: MyJavaClass = MyJavaClass()
+    println(myJavaClass.name)
 
     variableDeclaration()
     conditionals()
     loops()
     nullSafety()
     collections()
+    dataClass()
 }
 
 private fun printSeparator(sectionName: String) {
@@ -93,7 +101,19 @@ fun conditionals() {
 
     // conditionals can also be used in assignments or as part of function returns
     val nString = if (n == 1) "one" else n.toString() // notice that if statements don't always need braces
+    println("CONDITIONAL ASSIGNMENT EXAMPLE")
+    println("n=$n, nString=$nString")
+    // this also applies for functions
+    println("random positive int: ${returnRandomInt()}")
+    println("random negative int: ${returnRandomInt(true)}")
 }
+
+fun returnRandomInt(negative: Boolean = false) =
+    if (negative) {
+        Random.nextInt(Int.MIN_VALUE, 0)
+    } else {
+        Random.nextInt(1, Int.MAX_VALUE)
+    }
 
 fun loops() {
     // docs: https://kotlinlang.org/docs/control-flow.html
@@ -272,5 +292,11 @@ fun collections() {
     vice versa.
      */
     val myList: List<Int> = mutableListOf(0, 0, 0)
+}
 
+fun dataClass() {
+    printSeparator("Data Classes")
+    val birthday1 = Calendar.Builder().setDate(1990, 1, 1).build()
+    val user1 = User("Bob", "abc", birthday1)
+    println(user1.age)
 }
