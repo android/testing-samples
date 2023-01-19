@@ -1,6 +1,7 @@
 import week1.ExampleObject
 import week1.User
-import java.util.Calendar
+import java.time.LocalDate
+import java.util.Locale
 import kotlin.random.Random
 
 fun main() {
@@ -296,7 +297,18 @@ fun collections() {
 
 fun dataClass() {
     printSeparator("Data Classes")
-    val birthday1 = Calendar.Builder().setDate(1990, 1, 1).build()
-    val user1 = User("Bob", "abc", birthday1)
-    println(user1.age)
+    val usBirthday = LocalDate.of(1990, 1, 1)
+    val caBirthday = LocalDate.of(1950, 1, 1)
+    val usUser = User("Bob", "abc", usBirthday)
+    val caUser = User("Joe", "def", caBirthday, Locale.CANADA)
+    println(usUser)
+    println(caUser)
+
+    usUser.apply {
+        println("$name is $age years old")
+    }
+
+    caUser.let { user ->
+        println("${user.name} is ${user.age} yeards old")
+    }
 }
