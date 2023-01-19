@@ -27,6 +27,19 @@ fun main() {
     nullSafety()
     collections()
     dataClass()
+
+    /*
+    Sealed classes you can think of roughly as enums but for classes
+    Home app uses this for a lot of states
+    Examples:
+    https://github.com/pelotoncycle/android/blob/master/shared/common/jvm/src/main/java/com/peloton/common/base/LoadedValue.kt
+    https://github.com/pelotoncycle/android/blob/master/shared/maple/core/src/main/kotlin/com/onepeloton/maple/state/PinIndicatorState.kt
+
+    sealed class FacebookReturn {
+        class Success<T>(val result: T) : FacebookReturn()
+        class Error(val exception: FacebookException) : FacebookReturn()
+    }
+     */
 }
 
 private fun printSeparator(sectionName: String) {
