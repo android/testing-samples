@@ -30,8 +30,8 @@ android {
                     // A lower resolution device is used here for better emulator performance
                     device = "Nexus One"
                     apiLevel = 30
-                    // Also use the AOSP ATD image for better emulator performance
-                    systemImageSource = "aosp-atd"
+                    // TODO: switch to aosp-atd image once it supports browser intents
+                    systemImageSource = "aosp"
                 }
             }
         }
