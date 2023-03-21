@@ -55,6 +55,9 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$androidxCompatVersion"
     implementation "com.google.android.material:material:1.4.0"
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    // force upgrade to 1.1.0 because its required by androidTestImplementation,
+    // and without this statement AGP will silently downgrade to tracing:1.0.0
+    implementation "androidx.tracing:tracing:1.1.0"
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation "androidx.test.ext:junit-ktx:$extJUnitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
