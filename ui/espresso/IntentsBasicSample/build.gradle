@@ -29,7 +29,7 @@ ext {
     androidxCoreVersion = "1.9.0"
     coreVersion = "1.6.0-alpha01"
     extJUnitVersion = "1.2.0-alpha01"
-    runnerVersion = "1.6.0-alpha02"
+    runnerVersion = "1.6.0-alpha03"
     rulesVersion = "1.6.0-alpha01"
     espressoVersion = "3.6.0-alpha01"
     extJUnitVersion = "1.2.0-alpha01"
