@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.agpVersion = "7.3.1"
+    ext.agpVersion = '8.1.0'
     repositories {
         // Insert local test repo here
         google()
@@ -24,7 +24,6 @@ allprojects {
 }
 
 ext {
-    buildToolsVersion = "32.0.0"
     androidxAnnotationVersion = "1.5.0"
     guavaVersion = "31.1-android"
     coreVersion = "1.6.0-alpha01"

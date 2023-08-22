@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 33
-    buildToolsVersion = rootProject.buildToolsVersion
+    compileSdk 33
     defaultConfig {
         applicationId "com.example.android.testing.espresso.DataAdapterSample"
         minSdkVersion 14
@@ -40,6 +39,8 @@ android {
             java.srcDir 'src/sharedTest/java'
         }
     }
+    namespace 'com.example.android.testing.espresso.DataAdapterSample'
+    testNamespace 'com.example.android.testing.espresso.DataAdapterSample.test'
 }
 
 dependencies {

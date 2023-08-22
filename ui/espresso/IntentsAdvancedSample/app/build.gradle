@@ -12,9 +12,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    lintOptions {
-        abortOnError false
-    }
     productFlavors {
     }
     testOptions {
@@ -33,6 +30,11 @@ android {
                 }
             }
         }
+    }
+    namespace 'com.example.android.testing.espresso.intents.AdvancedSample'
+    testNamespace 'com.example.android.testing.espresso.intents.AdvancedSample.test'
+    lint {
+        abortOnError false
     }
 }
 

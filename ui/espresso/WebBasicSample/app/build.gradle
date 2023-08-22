@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 33
-    buildToolsVersion = rootProject.buildToolsVersion
+    compileSdk 33
     defaultConfig {
         applicationId "com.example.android.testing.espresso.web.BasicSample"
         minSdkVersion 14
@@ -12,14 +11,12 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    lintOptions {
-        abortOnError false
-    }
     productFlavors {
     }
     packagingOptions {
-      exclude 'META-INF/maven/com.google.guava/guava/pom.properties'
-      exclude 'META-INF/maven/com.google.guava/guava/pom.xml'
+        resources {
+            excludes += ['META-INF/maven/com.google.guava/guava/pom.properties', 'META-INF/maven/com.google.guava/guava/pom.xml']
+        }
     }
     testOptions {
         unitTests {
@@ -37,6 +34,10 @@ android {
                 }
             }
         }
+    }
+    namespace 'com.example.android.testing.espresso.web.BasicSample'
+    lint {
+        abortOnError false
     }
 }
 

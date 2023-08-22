@@ -16,8 +16,7 @@
   ~ limitations under the License.
   -->
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.testing.espresso.multiprocesssample.test">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Multi-Process Espresso only works on API level 26 and above-->
     <uses-sdk

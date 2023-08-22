@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 33
-    buildToolsVersion rootProject.buildToolsVersion
+    compileSdk 33
     defaultConfig {
         applicationId "com.example.android.testing.integrationtesting.ServiceTestRuleSample"
         minSdkVersion 14
@@ -11,9 +10,6 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-    lintOptions {
-        abortOnError false
     }
     productFlavors {
     }
@@ -30,6 +26,10 @@ android {
                 }
             }
         }
+    }
+    namespace 'com.example.android.testing.ServiceTestRuleSample'
+    lint {
+        abortOnError false
     }
 }
 

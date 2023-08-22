@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 33
-    buildToolsVersion rootProject.buildToolsVersion
+    compileSdk 33
     defaultConfig {
         applicationId "com.example.android.testing.espresso.AccessibilitySample"
         minSdkVersion 14
@@ -13,9 +12,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         multiDexEnabled true
-    }
-    lintOptions {
-        abortOnError false
     }
     productFlavors {
     }
@@ -39,6 +35,11 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    namespace 'com.example.android.testing.espresso.AccessibilitySample'
+    testNamespace 'com.example.android.testing.espresso.AccessibilitySample.test'
+    lint {
+        abortOnError false
     }
 }
 

@@ -9,10 +9,9 @@ set -ex  # Exit immediately if a command exits with a non-zero status.
 #repourl="https:\/\/oss.sonatype.org\/content\/repositories\/orgrobolectric-1216"
 #repourl="http:\/\/localhost:1480"
 # Versions:                             # axt_versions.bzl equivalents
-buildToolsVersion="32.0.0"
-agpVersion="7.3.1"
-kotlinVersion="1.7.10"                  # KOTLIN_VERSION
-compileSdkVersion="33"
+agpVersion="8.1.0"
+kotlinVersion="1.8.20"                  # KOTLIN_VERSION
+compileSdk="33"
 targetSdkVersion="33"
 androidxAnnotationVersion="1.5.0"       # ANDROIDX_ANNOTATION_VERSION
 androidxCompatVersion="1.5.1"           # ANDROIDX_COMPAT_VERSION
@@ -42,7 +41,6 @@ for p in $(cat projects.conf); do
    pushd $p > /dev/null  # Silent pushd
 
    # Replace versions
-   sed -i "s/buildToolsVersion = \([\"']\).*\1/buildToolsVersion = \"$buildToolsVersion\"/" build.gradle
    sed -i "s/agpVersion = \([\"']\).*\1/agpVersion = \"$agpVersion\"/" build.gradle
    sed -i "s/kotlinVersion = \([\"']\).*\1/kotlinVersion = \"$kotlinVersion\"/" build.gradle
    sed -i "s/coreVersion = \([\"']\).*\1/coreVersion = \"$coreVersion\"/" build.gradle
@@ -61,7 +59,7 @@ for p in $(cat projects.conf); do
    sed -i "s/androidxRecyclerVersion = \([\"']\).*\1/androidxRecyclerVersion = \"$androidxRecyclerVersion\"/" build.gradle
    sed -i "s/guavaVersion = \([\"']\).*\1/guavaVersion = \"$guavaVersion\"/" build.gradle
    sed -i "s/truthVersion = \([\"']\).*\1/truthVersion = \"$truthVersion\"/" build.gradle
-   sed -i "s/compileSdkVersion .*/compileSdkVersion $compileSdkVersion/" app/build.gradle
+   sed -i "s/compileSdk .*/compileSdk $compileSdk/" app/build.gradle
    sed -i "s/targetSdkVersion .*/targetSdkVersion $targetSdkVersion/" app/build.gradle
    sed -i "s/uiAutomatorVersion = \([\"']\).*\1/uiAutomatorVersion = \"$uiAutomatorVersion\"/" build.gradle
    sed -i "s/robolectricVersion = \([\"']\).*\1/robolectricVersion = \"$robolectricVersion\"/" build.gradle

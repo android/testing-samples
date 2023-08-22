@@ -17,8 +17,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 33
-    buildToolsVersion = rootProject.buildToolsVersion
+    compileSdk 33
     defaultConfig {
         applicationId "com.example.android.testing.espresso.RecyclerViewSample"
         minSdkVersion 14
@@ -35,9 +34,6 @@ android {
         targetCompatibility 1.8
     }
 
-    lintOptions {
-        abortOnError false
-    }
     testOptions {
         unitTests {
             includeAndroidResources = true
@@ -54,6 +50,11 @@ android {
                 }
             }
         }
+    }
+    namespace 'com.example.android.testing.espresso.RecyclerViewSample'
+    testNamespace 'com.example.android.testing.espresso.RecyclerViewSample.test'
+    lint {
+        abortOnError false
     }
 }
 
