@@ -26,7 +26,7 @@ ext {
     guavaVersion = "31.1-android"
     coreVersion = "1.6.0-alpha01"
     extJUnitVersion = "1.2.0-alpha01"
-    runnerVersion = "1.6.0-alpha03"
+    runnerVersion = "1.6.0-alpha04"
     rulesVersion = "1.6.0-alpha01"
     espressoVersion = "3.6.0-alpha01"
     uiAutomatorVersion = "2.2.0"

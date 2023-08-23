@@ -9,7 +9,7 @@ set -ex  # Exit immediately if a command exits with a non-zero status.
 #repourl="https:\/\/oss.sonatype.org\/content\/repositories\/orgrobolectric-1216"
 #repourl="http:\/\/localhost:1480"
 # Versions:                             # axt_versions.bzl equivalents
-agpVersion="8.1.0"
+agpVersion="8.1.1"
 kotlinVersion="1.8.20"                  # KOTLIN_VERSION
 compileSdk="33"
 targetSdkVersion="33"
@@ -20,7 +20,7 @@ androidxFragmentVersion="1.5.3"         # ANDROIDX_FRAGMENT_VERSION
 androidxRecyclerVersion="1.2.1"         # ANDROIDX_RECYCLERVIEW_VERSION
 guavaVersion="31.1-android"           # GUAVA_VERSION
 truthVersion="1.1.3"                    # TRUTH_VERSION
-runnerVersion="1.6.0-alpha03"           # RUNNER_VERSION
+runnerVersion="1.6.0-alpha04"           # RUNNER_VERSION
 monitorVersion="1.7.0-alpha01"          # MONITOR_VERSION
 rulesVersion="1.6.0-alpha01"            # RULES_VERSION
 servicesVersion="1.5.0-alpha01"         # SERVICES_VERSION
