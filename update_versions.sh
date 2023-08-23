@@ -30,7 +30,7 @@ extJUnitVersion="1.2.0-alpha01"         # ANDROIDX_JUNIT_VERSION
 extTruthVersion="1.6.0-alpha01"         # ANDROIDX_TRUTH_VERSION
 espressoVersion="3.6.0-alpha01"         # ESPRESSO_VERSION
 espressoDeviceVersion="1.0.0-alpha04"  # ESPRESSO_DEVICE_VERSION
-robolectricVersion="4.9"
+robolectricVersion="4.10.3"
 uiAutomatorVersion="2.2.0"              # UIAUTOMATOR_VERSION
 
 for p in $(cat projects.conf); do
