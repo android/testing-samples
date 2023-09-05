@@ -5,12 +5,12 @@ plugins {
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.android.testing.nativesample"
         minSdk 18
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -58,6 +58,7 @@ android {
             }
         }
     }
+    namespace 'com.example.android.testing.nativesample'
 }
 
 dependencies {

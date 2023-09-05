@@ -2,10 +2,8 @@ apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
 
-apply plugin: 'kotlin-android-extensions'
-
 android {
-    compileSdkVersion 33
+    compileSdk 33
     defaultConfig {
         applicationId "com.example.android.testing.espresso.FragmentScenarioSample"
         minSdkVersion 15
@@ -53,6 +51,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    namespace 'com.example.android.testing.espresso.fragmentscenario'
 }
 
 dependencies {

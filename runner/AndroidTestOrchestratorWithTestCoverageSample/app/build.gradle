@@ -1,12 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion rootProject.buildToolsVersion
+    compileSdk 33
     defaultConfig {
         applicationId "com.example.android.testing.androidtestorchestratorsample"
         minSdkVersion 14
-        targetSdkVersion 31
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
@@ -22,6 +21,7 @@ android {
     testOptions {
         execution 'ANDROIDX_TEST_ORCHESTRATOR'
     }
+    namespace 'com.example.android.testing.androidtestorchestratorsample'
 }
 
 dependencies {

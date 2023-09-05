@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 33
-    buildToolsVersion rootProject.buildToolsVersion
+    compileSdk 33
     defaultConfig {
         applicationId "com.example.android.testing.espresso.CustomMatcherSample"
         minSdkVersion 14
@@ -17,9 +16,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-    }
-    lintOptions {
-        abortOnError false
     }
     productFlavors {
     }
@@ -48,6 +44,11 @@ android {
                 }
             }
         }
+    }
+    namespace 'com.example.android.testing.espresso.CustomMatcherSample'
+    testNamespace 'com.example.android.testing.espresso.CustomMatcherSample.test'
+    lint {
+        abortOnError false
     }
 }
 

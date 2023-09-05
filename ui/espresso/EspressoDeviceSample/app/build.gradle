@@ -2,11 +2,8 @@ apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
 
-apply plugin: 'kotlin-android-extensions'
-
 android {
-    compileSdkVersion 33
-    buildToolsVersion = rootProject.buildToolsVersion
+    compileSdk 33
     defaultConfig {
         applicationId "com.example.android.testing.espresso.EspressoDeviceSample"
         minSdkVersion 14
@@ -15,9 +12,6 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-    lintOptions {
-        abortOnError false
     }
     productFlavors {
     }
@@ -39,6 +33,11 @@ android {
                 }
             }
         }
+    }
+    namespace 'com.example.android.testing.espresso.EspressoDeviceSample'
+    testNamespace 'com.example.android.testing.espresso.EspressoDeviceSample.test'
+    lint {
+        abortOnError false
     }
 }
 

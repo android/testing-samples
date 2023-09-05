@@ -2,7 +2,7 @@
 
 buildscript {
     ext.kotlinVersion = "1.7.10"
-    ext.agpVersion = "7.3.1"
+    ext.agpVersion = '8.1.1'
     repositories {
         // Insert local test repo here
         google()
@@ -26,7 +26,6 @@ allprojects {
 }
 
 ext {
-    buildToolsVersion = "32.0.0"
     robolectricVersion = "4.9"
     extTruthVersion = "1.6.0-alpha01"
     extJUnitVersion = "1.2.0-alpha01"

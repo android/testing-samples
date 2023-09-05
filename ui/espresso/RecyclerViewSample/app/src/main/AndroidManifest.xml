@@ -15,8 +15,7 @@
   ~ limitations under the License.
   -->
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.testing.espresso.RecyclerViewSample" >
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:icon="@drawable/ic_launcher"
