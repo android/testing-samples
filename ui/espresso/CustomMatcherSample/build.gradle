@@ -31,5 +31,5 @@ ext {
     runnerVersion = "1.6.0-alpha03"
     rulesVersion = "1.6.0-alpha01"
     espressoVersion = "3.6.0-alpha01"
-    robolectricVersion = "4.9"
+    robolectricVersion = "4.10.3"
 }

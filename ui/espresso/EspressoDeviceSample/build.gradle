@@ -26,7 +26,7 @@ allprojects {
 }
 
 ext {
-    robolectricVersion = "4.9"
+    robolectricVersion = "4.10.3"
     extTruthVersion = "1.6.0-alpha01"
     extJUnitVersion = "1.2.0-alpha01"
     espressoDeviceVersion = "1.0.0-alpha01"

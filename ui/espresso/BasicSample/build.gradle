@@ -27,7 +27,7 @@ allprojects {
 
 ext {
     androidxAnnotationVersion = "1.5.0"
-    robolectricVersion = "4.9"
+    robolectricVersion = "4.10.3"
     guavaVersion = "31.1-android"
     extTruthVersion = "1.6.0-alpha01"
     coreVersion = "1.6.0-alpha01"
