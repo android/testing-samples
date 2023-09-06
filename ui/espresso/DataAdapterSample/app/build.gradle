@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: "com.android.application"
 
 android {
     compileSdk 33
@@ -33,29 +33,29 @@ android {
     // share test source between local test and androidTest
     sourceSets {
         test {
-            java.srcDir 'src/sharedTest/java'
+            java.srcDir "src/sharedTest/java"
         }
         androidTest {
-            java.srcDir 'src/sharedTest/java'
+            java.srcDir "src/sharedTest/java"
         }
     }
-    namespace 'com.example.android.testing.espresso.DataAdapterSample'
-    testNamespace 'com.example.android.testing.espresso.DataAdapterSample.test'
+    namespace "com.example.android.testing.espresso.DataAdapterSample"
+    testNamespace "com.example.android.testing.espresso.DataAdapterSample.test"
 }
 
 dependencies {
     // App dependencies
-    implementation 'androidx.annotation:annotation:' + rootProject.androidxAnnotationVersion;
-    implementation 'com.google.guava:guava:' + rootProject.guavaVersion
+    implementation "androidx.annotation:annotation:" + rootProject.androidxAnnotationVersion;
+    implementation "com.google.guava:guava:" + rootProject.guavaVersion
 
     // Testing-only dependencies
-    androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion;
-    androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
-    androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion;
-    androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion;
+    androidTestImplementation "androidx.test:core:" + rootProject.coreVersion;
+    androidTestImplementation "androidx.test.ext:junit:" + rootProject.extJUnitVersion;
+    androidTestImplementation "androidx.test:runner:" + rootProject.runnerVersion;
+    androidTestImplementation "androidx.test.espresso:espresso-core:" + rootProject.espressoVersion;
 
-    testImplementation 'androidx.test:core:' + rootProject.coreVersion;
-    testImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
-    testImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion;
-    testImplementation 'org.robolectric:robolectric:' + rootProject.robolectricVersion
+    testImplementation "androidx.test:core:" + rootProject.coreVersion;
+    testImplementation "androidx.test.ext:junit:" + rootProject.extJUnitVersion;
+    testImplementation "androidx.test.espresso:espresso-core:" + rootProject.espressoVersion;
+    testImplementation "org.robolectric:robolectric:" + rootProject.robolectricVersion
 }

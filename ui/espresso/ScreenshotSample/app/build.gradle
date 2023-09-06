@@ -1,8 +1,8 @@
 plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
+    id "com.android.application"
+    id "kotlin-android"
 }
-apply plugin: 'kotlin-android'
+apply plugin: "kotlin-android"
 
 android {
     compileSdk 33
@@ -15,13 +15,13 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        testInstrumentationRunnerArguments useTestStorageService: 'true'
+        testInstrumentationRunnerArguments useTestStorageService: "true"
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
     }
     compileOptions {
@@ -29,7 +29,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = "1.8"
     }
     testOptions {
         managedDevices {
@@ -47,7 +47,7 @@ android {
             }
         }
     }
-    namespace 'com.example.android.testing.espresso.screenshotsample'
+    namespace "com.example.android.testing.espresso.screenshotsample"
 }
 
 dependencies {
@@ -55,11 +55,11 @@ dependencies {
     implementation "androidx.core:core-ktx:$androidxCoreVersion"
     implementation "androidx.appcompat:appcompat:$androidxCompatVersion"
     implementation "com.google.android.material:material:1.4.0"
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation "androidx.constraintlayout:constraintlayout:2.1.1"
     // force upgrade to 1.1.0 because its required by androidTestImplementation,
     // and without this statement AGP will silently downgrade to tracing:1.0.0
     implementation "androidx.tracing:tracing:1.1.0"
-    testImplementation 'junit:junit:4.13.2'
+    testImplementation "junit:junit:4.13.2"
     androidTestImplementation "androidx.test.ext:junit-ktx:$extJUnitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
     androidTestUtil "androidx.test.services:test-services:$servicesVersion"

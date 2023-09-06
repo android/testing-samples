@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: "com.android.application"
 
 android {
     compileSdk 33
@@ -33,14 +33,14 @@ android {
     // share test source between local test and androidTest
     sourceSets {
         test {
-            java.srcDir 'src/sharedTest/java'
+            java.srcDir "src/sharedTest/java"
         }
         androidTest {
-            java.srcDir 'src/sharedTest/java'
+            java.srcDir "src/sharedTest/java"
         }
     }
-    namespace 'com.example.android.testing.espresso.IntentsBasicSample'
-    testNamespace 'com.example.android.testing.espresso.IntentsBasicSample.test'
+    namespace "com.example.android.testing.espresso.IntentsBasicSample"
+    testNamespace "com.example.android.testing.espresso.IntentsBasicSample.test"
     lint {
         abortOnError false
     }
@@ -49,26 +49,26 @@ android {
 dependencies {
 
     // App dependencies
-    implementation 'androidx.annotation:annotation:' + rootProject.androidxAnnotationVersion;
-    implementation 'androidx.core:core:' + rootProject.androidxCoreVersion;
+    implementation "androidx.annotation:annotation:" + rootProject.androidxAnnotationVersion;
+    implementation "androidx.core:core:" + rootProject.androidxCoreVersion;
 
     // Testing-only dependencies
-    androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion;
-    androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
-    androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion;
-    androidTestImplementation 'androidx.test:rules:' + rootProject.rulesVersion;
-    androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion;
-    androidTestImplementation 'androidx.test.espresso:espresso-intents:' + rootProject.espressoVersion;
-    androidTestImplementation 'androidx.test.ext:truth:' + rootProject.extTruthVersion;
-    androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
-    androidTestImplementation 'org.robolectric:annotations:' + rootProject.robolectricVersion;
+    androidTestImplementation "androidx.test:core:" + rootProject.coreVersion;
+    androidTestImplementation "androidx.test.ext:junit:" + rootProject.extJUnitVersion;
+    androidTestImplementation "androidx.test:runner:" + rootProject.runnerVersion;
+    androidTestImplementation "androidx.test:rules:" + rootProject.rulesVersion;
+    androidTestImplementation "androidx.test.espresso:espresso-core:" + rootProject.espressoVersion;
+    androidTestImplementation "androidx.test.espresso:espresso-intents:" + rootProject.espressoVersion;
+    androidTestImplementation "androidx.test.ext:truth:" + rootProject.extTruthVersion;
+    androidTestImplementation "androidx.test.ext:junit:" + rootProject.extJUnitVersion;
+    androidTestImplementation "org.robolectric:annotations:" + rootProject.robolectricVersion;
 
-    testImplementation 'androidx.test:core:' + rootProject.coreVersion;
-    testImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
-    testImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion;
-    testImplementation 'androidx.test.espresso:espresso-intents:' + rootProject.espressoVersion;
-    testImplementation 'androidx.test.ext:truth:' + rootProject.extTruthVersion;
-    testImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
-    testImplementation 'org.robolectric:robolectric:' + rootProject.robolectricVersion;
+    testImplementation "androidx.test:core:" + rootProject.coreVersion;
+    testImplementation "androidx.test.ext:junit:" + rootProject.extJUnitVersion;
+    testImplementation "androidx.test.espresso:espresso-core:" + rootProject.espressoVersion;
+    testImplementation "androidx.test.espresso:espresso-intents:" + rootProject.espressoVersion;
+    testImplementation "androidx.test.ext:truth:" + rootProject.extTruthVersion;
+    testImplementation "androidx.test.ext:junit:" + rootProject.extJUnitVersion;
+    testImplementation "org.robolectric:robolectric:" + rootProject.robolectricVersion;
 
 }

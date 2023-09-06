@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: "com.android.application"
 
 android {
     compileSdkVersion 33
@@ -31,8 +31,8 @@ android {
             }
         }
     }
-    namespace 'com.example.android.testing.espresso.intents.AdvancedSample'
-    testNamespace 'com.example.android.testing.espresso.intents.AdvancedSample.test'
+    namespace "com.example.android.testing.espresso.intents.AdvancedSample"
+    testNamespace "com.example.android.testing.espresso.intents.AdvancedSample.test"
     lint {
         abortOnError false
     }
@@ -40,12 +40,12 @@ android {
 
 dependencies {
     // App dependencies
-    implementation 'androidx.annotation:annotation:' + rootProject.androidxAnnotationVersion;
+    implementation "androidx.annotation:annotation:" + rootProject.androidxAnnotationVersion;
     // Testing-only dependencies
-    androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion;
-    androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
-    androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion;
-    androidTestImplementation 'androidx.test:rules:' + rootProject.rulesVersion;
-    androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion;
-    androidTestImplementation 'androidx.test.espresso:espresso-intents:' + rootProject.espressoVersion;
+    androidTestImplementation "androidx.test:core:" + rootProject.coreVersion;
+    androidTestImplementation "androidx.test.ext:junit:" + rootProject.extJUnitVersion;
+    androidTestImplementation "androidx.test:runner:" + rootProject.runnerVersion;
+    androidTestImplementation "androidx.test:rules:" + rootProject.rulesVersion;
+    androidTestImplementation "androidx.test.espresso:espresso-core:" + rootProject.espressoVersion;
+    androidTestImplementation "androidx.test.espresso:espresso-intents:" + rootProject.espressoVersion;
 }

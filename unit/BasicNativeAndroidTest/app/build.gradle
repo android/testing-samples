@@ -1,8 +1,8 @@
 plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
+    id "com.android.application"
+    id "kotlin-android"
 }
-apply plugin: 'kotlin-android'
+apply plugin: "kotlin-android"
 
 android {
     compileSdk 33
@@ -34,7 +34,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
     }
     compileOptions {
@@ -42,7 +42,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = "1.8"
     }
     testOptions {
         managedDevices {
@@ -58,7 +58,7 @@ android {
             }
         }
     }
-    namespace 'com.example.android.testing.nativesample'
+    namespace "com.example.android.testing.nativesample"
 }
 
 dependencies {

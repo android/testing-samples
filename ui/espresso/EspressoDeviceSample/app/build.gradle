@@ -1,6 +1,6 @@
-apply plugin: 'com.android.application'
+apply plugin: "com.android.application"
 
-apply plugin: 'kotlin-android'
+apply plugin: "kotlin-android"
 
 android {
     compileSdk 33
@@ -34,8 +34,8 @@ android {
             }
         }
     }
-    namespace 'com.example.android.testing.espresso.EspressoDeviceSample'
-    testNamespace 'com.example.android.testing.espresso.EspressoDeviceSample.test'
+    namespace "com.example.android.testing.espresso.EspressoDeviceSample"
+    testNamespace "com.example.android.testing.espresso.EspressoDeviceSample.test"
     lint {
         abortOnError false
     }
@@ -49,11 +49,11 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 
 dependencies {
     androidTestImplementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
-    androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion
-    androidTestImplementation 'androidx.test.ext:junit-ktx:' + rootProject.extJUnitVersion
-    androidTestImplementation 'androidx.test.espresso:espresso-device:' + rootProject.espressoDeviceVersion
+    androidTestImplementation "androidx.test.ext:junit:" + rootProject.extJUnitVersion
+    androidTestImplementation "androidx.test.ext:junit-ktx:" + rootProject.extJUnitVersion
+    androidTestImplementation "androidx.test.espresso:espresso-device:" + rootProject.espressoDeviceVersion
 
-    testImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.robolectric:robolectric:' + rootProject.robolectricVersion
+    testImplementation "androidx.test.ext:junit:" + rootProject.extJUnitVersion
+    testImplementation "junit:junit:4.12"
+    testImplementation "org.robolectric:robolectric:" + rootProject.robolectricVersion
 }
