@@ -43,7 +43,7 @@ android {
 }
 
 dependencies {
-    // App"s dependencies, including test
+    // App's dependencies, including test
     implementation "androidx.annotation:annotation:" + rootProject.androidxAnnotationVersion;
     implementation "com.google.guava:guava:" + rootProject.guavaVersion
 
