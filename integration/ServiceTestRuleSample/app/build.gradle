@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: "com.android.application"
 
 android {
     compileSdk 33
@@ -27,7 +27,7 @@ android {
             }
         }
     }
-    namespace 'com.example.android.testing.ServiceTestRuleSample'
+    namespace "com.example.android.testing.ServiceTestRuleSample"
     lint {
         abortOnError false
     }
@@ -35,8 +35,8 @@ android {
 
 dependencies {
     // Testing-only dependencies
-    androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion;
-    androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
-    androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion;
-    androidTestImplementation 'androidx.test:rules:' + rootProject.rulesVersion;
+    androidTestImplementation "androidx.test:core:" + rootProject.coreVersion;
+    androidTestImplementation "androidx.test.ext:junit:" + rootProject.extJUnitVersion;
+    androidTestImplementation "androidx.test:runner:" + rootProject.runnerVersion;
+    androidTestImplementation "androidx.test:rules:" + rootProject.rulesVersion;
 }

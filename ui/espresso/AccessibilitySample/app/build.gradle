@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: "com.android.application"
 
 android {
     compileSdk 33
@@ -36,8 +36,8 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    namespace 'com.example.android.testing.espresso.AccessibilitySample'
-    testNamespace 'com.example.android.testing.espresso.AccessibilitySample.test'
+    namespace "com.example.android.testing.espresso.AccessibilitySample"
+    testNamespace "com.example.android.testing.espresso.AccessibilitySample.test"
     lint {
         abortOnError false
     }
@@ -53,18 +53,18 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 
 dependencies {
     // App dependencies
-    implementation 'androidx.annotation:annotation:' + rootProject.androidxAnnotationVersion;
-    implementation 'com.google.guava:guava:' + rootProject.guavaVersion
-    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation "androidx.annotation:annotation:" + rootProject.androidxAnnotationVersion;
+    implementation "com.google.guava:guava:" + rootProject.guavaVersion
+    implementation "androidx.multidex:multidex:2.0.1"
 
     // Testing-only dependencies
-    androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion
-    androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion
-    androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion
-    androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
-    androidTestImplementation('androidx.test.espresso:espresso-accessibility:' + rootProject.espressoVersion) {
+    androidTestImplementation "androidx.test:core:" + rootProject.coreVersion
+    androidTestImplementation "androidx.test.ext:junit:" + rootProject.extJUnitVersion
+    androidTestImplementation "androidx.test:runner:" + rootProject.runnerVersion
+    androidTestImplementation "androidx.test.espresso:espresso-core:" + rootProject.espressoVersion
+    androidTestImplementation("androidx.test.espresso:espresso-accessibility:" + rootProject.espressoVersion) {
         // workaround for https://github.com/android/android-test/issues/861
-        exclude group: 'org.checkerframework', module: 'checker'
+        exclude group: "org.checkerframework", module: "checker"
     }
-    androidTestImplementation 'com.google.truth:truth:1.1.3'
+    androidTestImplementation "com.google.truth:truth:1.1.3"
 }

@@ -1,6 +1,6 @@
-apply plugin: 'com.android.application'
+apply plugin: "com.android.application"
 
-apply plugin: 'kotlin-android'
+apply plugin: "kotlin-android"
 
 android {
     compileSdk 33
@@ -15,16 +15,16 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
     }
     // share the unified tests
     sourceSets {
         test {
-            java.srcDir 'src/sharedTest/java'
+            java.srcDir "src/sharedTest/java"
         }
         androidTest {
-            java.srcDir 'src/sharedTest/java'
+            java.srcDir "src/sharedTest/java"
         }
     }
     testOptions {
@@ -49,35 +49,35 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = "1.8"
     }
-    namespace 'com.example.android.testing.espresso.fragmentscenario'
+    namespace "com.example.android.testing.espresso.fragmentscenario"
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
-    implementation 'androidx.appcompat:appcompat:' + rootProject.androidxCompatVersion
-    implementation 'androidx.core:core-ktx:' + rootProject.androidxCoreVersion
-    implementation 'androidx.fragment:fragment-ktx:' + rootProject.androidxFragmentVersion
+    implementation "androidx.appcompat:appcompat:" + rootProject.androidxCompatVersion
+    implementation "androidx.core:core-ktx:" + rootProject.androidxCoreVersion
+    implementation "androidx.fragment:fragment-ktx:" + rootProject.androidxFragmentVersion
 
     // TODO: ideally this would only be present in test scope
-    debugImplementation 'androidx.fragment:fragment-testing:' + rootProject.androidxFragmentVersion
-    debugImplementation 'androidx.test:core:' + rootProject.coreVersion
+    debugImplementation "androidx.fragment:fragment-testing:" + rootProject.androidxFragmentVersion
+    debugImplementation "androidx.test:core:" + rootProject.coreVersion
 
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.robolectric:robolectric:' + rootProject.robolectricVersion
-    testImplementation 'androidx.test:core:' + rootProject.coreVersion
-    testImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion
-    testImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
-    testImplementation 'com.google.truth:truth:' + rootProject.truthVersion
-    testAnnotationProcessor 'com.google.auto.service:auto-service:1.0-rc4'
+    testImplementation "junit:junit:4.12"
+    testImplementation "org.robolectric:robolectric:" + rootProject.robolectricVersion
+    testImplementation "androidx.test:core:" + rootProject.coreVersion
+    testImplementation "androidx.test.ext:junit:" + rootProject.extJUnitVersion
+    testImplementation "androidx.test.espresso:espresso-core:" + rootProject.espressoVersion
+    testImplementation "com.google.truth:truth:" + rootProject.truthVersion
+    testAnnotationProcessor "com.google.auto.service:auto-service:1.0-rc4"
 
-    androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion
-    androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion
-    androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion
-    androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
-    androidTestImplementation 'androidx.fragment:fragment-testing:' + rootProject.androidxFragmentVersion
-    androidTestImplementation 'com.google.truth:truth:' + rootProject.truthVersion
-    androidTestImplementation 'org.robolectric:annotations:' + rootProject.robolectricVersion
+    androidTestImplementation "androidx.test:core:" + rootProject.coreVersion
+    androidTestImplementation "androidx.test.ext:junit:" + rootProject.extJUnitVersion
+    androidTestImplementation "androidx.test:runner:" + rootProject.runnerVersion
+    androidTestImplementation "androidx.test.espresso:espresso-core:" + rootProject.espressoVersion
+    androidTestImplementation "androidx.fragment:fragment-testing:" + rootProject.androidxFragmentVersion
+    androidTestImplementation "com.google.truth:truth:" + rootProject.truthVersion
+    androidTestImplementation "org.robolectric:annotations:" + rootProject.robolectricVersion
 }

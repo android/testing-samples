@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-apply plugin: 'com.android.application'
+apply plugin: "com.android.application"
 
 android {
     compileSdk 33
@@ -45,8 +45,8 @@ android {
             }
         }
     }
-    namespace 'com.example.android.testing.espresso.IdlingResourceSample'
-    testNamespace 'com.example.android.testing.espresso.IdlingResourceSample.test'
+    namespace "com.example.android.testing.espresso.IdlingResourceSample"
+    testNamespace "com.example.android.testing.espresso.IdlingResourceSample.test"
     lint {
         abortOnError false
     }
@@ -54,14 +54,14 @@ android {
 
 dependencies {
     // App dependencies
-    implementation 'androidx.annotation:annotation:' + rootProject.androidxAnnotationVersion
-    implementation 'com.google.guava:guava:' + rootProject.guavaVersion
+    implementation "androidx.annotation:annotation:" + rootProject.androidxAnnotationVersion
+    implementation "com.google.guava:guava:" + rootProject.guavaVersion
 
     // Testing-only dependencies
-    androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion
-    androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion
-    androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion
-    androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
+    androidTestImplementation "androidx.test:core:" + rootProject.coreVersion
+    androidTestImplementation "androidx.test.ext:junit:" + rootProject.extJUnitVersion
+    androidTestImplementation "androidx.test:runner:" + rootProject.runnerVersion
+    androidTestImplementation "androidx.test.espresso:espresso-core:" + rootProject.espressoVersion
     // Note that espresso-idling-resource is used in the code under test.
-    implementation 'androidx.test.espresso:espresso-idling-resource:' + rootProject.espressoVersion
+    implementation "androidx.test.espresso:espresso-idling-resource:" + rootProject.espressoVersion
 }

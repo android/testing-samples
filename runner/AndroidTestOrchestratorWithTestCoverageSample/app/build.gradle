@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: "com.android.application"
 
 android {
     compileSdk 33
@@ -10,8 +10,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        testInstrumentationRunnerArguments clearPackageData: 'true'
-        testInstrumentationRunnerArguments useTestStorageService: 'true'
+        testInstrumentationRunnerArguments clearPackageData: "true"
+        testInstrumentationRunnerArguments useTestStorageService: "true"
     }
     buildTypes {
         debug {
@@ -19,23 +19,23 @@ android {
         }
     }
     testOptions {
-        execution 'ANDROIDX_TEST_ORCHESTRATOR'
+        execution "ANDROIDX_TEST_ORCHESTRATOR"
     }
-    namespace 'com.example.android.testing.androidtestorchestratorsample'
+    namespace "com.example.android.testing.androidtestorchestratorsample"
 }
 
 dependencies {
     // App's dependencies, including test
-    implementation 'androidx.annotation:annotation:' + rootProject.androidxAnnotationVersion
-    implementation 'com.google.guava:guava:' + rootProject.guavaVersion
+    implementation "androidx.annotation:annotation:" + rootProject.androidxAnnotationVersion
+    implementation "com.google.guava:guava:" + rootProject.guavaVersion
 
     // Testing-only dependencies
-    androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion
-    androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion
-    androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion
-    androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
-    androidTestImplementation 'com.google.truth:truth:' + rootProject.truthVersion;
-    androidTestUtil 'androidx.test:orchestrator:' + rootProject.orchestratorVersion
-    androidTestUtil 'androidx.test.services:test-services:' + rootProject.testServicesVersion
+    androidTestImplementation "androidx.test:core:" + rootProject.coreVersion
+    androidTestImplementation "androidx.test.ext:junit:" + rootProject.extJUnitVersion
+    androidTestImplementation "androidx.test:runner:" + rootProject.runnerVersion
+    androidTestImplementation "androidx.test.espresso:espresso-core:" + rootProject.espressoVersion
+    androidTestImplementation "com.google.truth:truth:" + rootProject.truthVersion;
+    androidTestUtil "androidx.test:orchestrator:" + rootProject.orchestratorVersion
+    androidTestUtil "androidx.test.services:test-services:" + rootProject.testServicesVersion
 
 }
