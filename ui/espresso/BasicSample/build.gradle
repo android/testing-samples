@@ -6,7 +6,8 @@ buildscript {
     repositories {
         // Insert local test repo here
         google()
-        mavenCentral()
+        mavenCentral() 
+        mavenLocal()
     }
     dependencies {
         classpath "com.android.tools.build:gradle:$agpVersion"
@@ -21,7 +22,8 @@ allprojects {
     repositories {
         // Insert local test repo here
         google()
-        mavenCentral()
+        mavenCentral() 
+        mavenLocal()
     }
 }
 
@@ -30,7 +32,7 @@ ext {
     robolectricVersion = "4.10.3"
     guavaVersion = "31.1-android"
     extTruthVersion = "1.6.0-alpha01"
-    coreVersion = "1.6.0-alpha01"
+    coreVersion = "1.6.0-alpha02"
     extJUnitVersion = "1.2.0-alpha01"
     runnerVersion = "1.6.0-alpha03"
     espressoVersion = "3.6.0-alpha01"

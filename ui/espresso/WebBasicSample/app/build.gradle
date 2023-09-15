@@ -4,7 +4,7 @@ android {
     compileSdk 33
     defaultConfig {
         applicationId "com.example.android.testing.espresso.web.BasicSample"
-        minSdkVersion 14
+        minSdkVersion 19
         targetSdkVersion 33
         versionCode 1
         versionName "1.0"

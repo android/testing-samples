@@ -21,7 +21,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.android.testing.espresso.IdlingResourceSample"
-        minSdkVersion 14
+        minSdkVersion 19
         targetSdkVersion 33
         versionCode 1
         versionName "1.0"
