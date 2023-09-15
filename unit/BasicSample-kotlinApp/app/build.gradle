@@ -8,7 +8,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.example.android.testing.unittesting.BasicSample"
-        minSdkVersion 14
+        minSdkVersion 19
         versionCode 1
         versionName "1.0"
         targetSdkVersion 27
