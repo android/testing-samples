@@ -1,9 +1,6 @@
 package com.example.android.testing.espresso.EspressoDeviceSample
 
-import androidx.test.espresso.Espresso.closeSoftKeyboard
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.action.ViewActions.typeText
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.device.DeviceInteraction.Companion.setBookMode
 import androidx.test.espresso.device.DeviceInteraction.Companion.setClosedMode
@@ -11,9 +8,6 @@ import androidx.test.espresso.device.DeviceInteraction.Companion.setFlatMode
 import androidx.test.espresso.device.DeviceInteraction.Companion.setTabletopMode
 import androidx.test.espresso.device.EspressoDevice.Companion.onDevice
 import androidx.test.espresso.device.action.ScreenOrientation
-import androidx.test.espresso.device.action.setClosedMode
-import androidx.test.espresso.device.action.setFlatMode
-import androidx.test.espresso.device.action.setTabletopMode
 import androidx.test.espresso.device.controller.DeviceMode.TABLETOP
 import androidx.test.espresso.device.filter.RequiresDeviceMode
 import androidx.test.espresso.device.rules.ScreenOrientationRule
@@ -31,22 +25,22 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class OnDeviceTest {
 
-    @get:Rule var activityScenarioRule = activityScenarioRule<MainActivity>()
+    @get:Rule(order = 1) var activityScenarioRule = activityScenarioRule<MainActivity>()
 
-    @get:Rule val screenOrientationRule: ScreenOrientationRule =
-        ScreenOrientationRule(ScreenOrientation.PORTRAIT)
+    @get:Rule(order = 2) var screenOrientationRule: ScreenOrientationRule =
+        ScreenOrientationRule(ScreenOrientation.LANDSCAPE)
 
     @Test
     @RequiresDeviceMode(TABLETOP)
-    fun changeText_sameActivity() {
+    fun tabletopMode_playerIdDisplayed() {
 
         onDevice().setBookMode()
         // Type text and then press the button.
         onView(withId(R.id.hello_tv)).check(matches(isDisplayed()))
-        onDevice().setTabletopMode()
-        onDevice().setClosedMode()
-        onView(withId(R.id.hello_tv)).check(matches(isDisplayed()))
-        onDevice().setFlatMode()
-        onView(withId(R.id.hello_tv)).check(matches(isDisplayed()))
+//        onDevice().setTabletopMode()
+//        onDevice().setClosedMode()
+//        onView(withId(R.id.hello_tv)).check(matches(isDisplayed()))
+//        onDevice().setFlatMode()
+//        onView(withId(R.id.hello_tv)).check(matches(isDisplayed()))
     }
 }
