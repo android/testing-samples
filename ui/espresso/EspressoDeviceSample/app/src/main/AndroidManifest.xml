@@ -16,6 +16,7 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -31,5 +32,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

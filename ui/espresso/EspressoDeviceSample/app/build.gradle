@@ -6,7 +6,7 @@ android {
     compileSdk 33
     defaultConfig {
         applicationId "com.example.android.testing.espresso.EspressoDeviceSample"
-        minSdkVersion 14
+        minSdkVersion 19
         targetSdkVersion 33
         versionCode 1
         versionName "1.0"
@@ -15,13 +15,19 @@ android {
     }
     productFlavors {
     }
+
     testOptions {
+
+        emulatorControl {
+            enable = true
+        }
         unitTests {
+
             includeAndroidResources = true
         }
         managedDevices {
             devices {
-                // run with ../gradlew  nexusOneApi30DebugAndroidTest
+                // run with ./gradlew  nexusOneApi30DebugAndroidTest
                 nexusOneApi30(com.android.build.api.dsl.ManagedVirtualDevice) {
                     // A lower resolution device is used here for better emulator performance
                     device = "Nexus One"
@@ -30,6 +36,16 @@ android {
                     // The androidx.test screenshot APIs will automatically enable hardware rendering
                     // to take a screenshot
                     systemImageSource = "aosp-atd"
+                }
+                // run with ./gradlew  foldApi34DebugAndroidTest
+                foldApi34(com.android.build.api.dsl.ManagedVirtualDevice) {
+                    // A lower resolution device is used here for better emulator performance
+                    device = "Pixel Fold"
+                    apiLevel = 34
+                    // Also use the AOSP ATD image for better emulator performance
+                    // The androidx.test screenshot APIs will automatically enable hardware rendering
+                    // to take a screenshot
+                    systemImageSource = "aosp"
                 }
             }
         }
