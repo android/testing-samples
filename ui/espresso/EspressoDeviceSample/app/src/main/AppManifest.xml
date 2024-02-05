@@ -18,5 +18,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.testing.espresso.EspressoDeviceSample" >
 
-    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="28" />
+    <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="28" />
 </manifest>

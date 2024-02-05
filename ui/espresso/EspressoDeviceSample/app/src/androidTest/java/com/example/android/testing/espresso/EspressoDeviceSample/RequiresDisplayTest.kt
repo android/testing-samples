@@ -15,6 +15,8 @@
  */
 package com.example.android.testing.espresso.EspressoDeviceSample
 
+import androidx.test.espresso.device.EspressoDevice.Companion.onDevice
+import androidx.test.espresso.device.action.setTabletopMode
 import androidx.test.espresso.device.filter.RequiresDisplay
 import androidx.test.espresso.device.sizeclass.HeightSizeClass
 import androidx.test.espresso.device.sizeclass.WidthSizeClass
@@ -27,6 +29,7 @@ import org.junit.runner.RunWith
  */
 @RunWith(AndroidJUnit4::class)
 class RequiresDisplayTest {
+
     @RequiresDisplay(
         widthSizeClass = WidthSizeClass.Companion.WidthSizeClassEnum.COMPACT,
         heightSizeClass = HeightSizeClass.Companion.HeightSizeClassEnum.COMPACT

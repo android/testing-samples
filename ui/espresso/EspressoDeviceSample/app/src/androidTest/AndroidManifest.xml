@@ -19,8 +19,12 @@
     android:versionCode="1"
       android:versionName="1.0">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permissions.ACCESS_NETWORK_STATE" />
+
     <instrumentation android:targetPackage="com.example.android.testing.espresso.EspressoDeviceSample"
                      android:name="androidx.test.runner.AndroidJUnitRunner"/>
 
     <application tools:replace="label" android:label="EspressoDeviceSampleTest" />
+
 </manifest>
