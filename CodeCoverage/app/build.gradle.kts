@@ -17,7 +17,6 @@
 import com.android.build.api.artifact.ScopedArtifact
 import com.android.build.api.variant.AndroidComponentsExtension
 import com.android.build.api.variant.ScopedArtifacts
-import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
 import com.android.build.gradle.internal.scope.InternalArtifactType
 import com.android.build.gradle.internal.scope.getOutputDir
 import java.util.Locale
@@ -75,6 +74,9 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 }
 
+/**
+ * Replace with https://issuetracker.google.com/329683722 when available.
+ */
 fun setupCombinedReportTestCoverage() {
     val coverageExclusions = listOf(
         // Android
@@ -101,8 +103,6 @@ fun setupCombinedReportTestCoverage() {
                     allJars,
                     allDirectories.map { dirs ->
                         dirs.map { dir ->
-                            println(dir)
-                            println("helo")
                             myObjFactory.fileTree().setDir(dir).exclude(coverageExclusions)
                         }
                     }
@@ -113,9 +113,6 @@ fun setupCombinedReportTestCoverage() {
                 }
 
                 val sources = variant.sources
-                println("jjjalc")
-                println(allJars.get().map { it.toString() })
-                println(allDirectories)
                 sourceDirectories.setFrom(files(sources.kotlin?.all, sources.java?.all))
 
                 val outputDirLocal = InternalArtifactType.UNIT_TEST_CODE_COVERAGE.getOutputDir(buildDir)
