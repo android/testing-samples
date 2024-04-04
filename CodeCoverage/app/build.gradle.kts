@@ -17,8 +17,6 @@
 import com.android.build.api.artifact.ScopedArtifact
 import com.android.build.api.variant.AndroidComponentsExtension
 import com.android.build.api.variant.ScopedArtifacts
-import com.android.build.gradle.internal.scope.InternalArtifactType
-import com.android.build.gradle.internal.scope.getOutputDir
 import java.util.Locale
 
 plugins {
@@ -92,10 +90,10 @@ fun setupCombinedReportTestCoverage() {
         project.extensions.getByType(AndroidComponentsExtension::class.java)
 
     androidComponents.onVariants { variant ->
-        val myObjFactory = project.objects
+        val projectObjFactory = project.objects
         val buildDir = layout.buildDirectory.get().asFile
-        val allJars: ListProperty<RegularFile> = myObjFactory.listProperty(RegularFile::class.java)
-        val allDirectories: ListProperty<Directory> = myObjFactory.listProperty(Directory::class.java)
+        val allJars: ListProperty<RegularFile> = projectObjFactory.listProperty(RegularFile::class.java)
+        val allDirectories: ListProperty<Directory> = projectObjFactory.listProperty(Directory::class.java)
         val reportTask =
             tasks.register("create${variant.name.capitalize()}CombinedCoverageReport", JacocoReport::class) {
 
@@ -103,7 +101,7 @@ fun setupCombinedReportTestCoverage() {
                     allJars,
                     allDirectories.map { dirs ->
                         dirs.map { dir ->
-                            myObjFactory.fileTree().setDir(dir).exclude(coverageExclusions)
+                            projectObjFactory.fileTree().setDir(dir).exclude(coverageExclusions)
                         }
                     }
                 )
@@ -115,13 +113,12 @@ fun setupCombinedReportTestCoverage() {
                 val sources = variant.sources
                 sourceDirectories.setFrom(files(sources.kotlin?.all, sources.java?.all))
 
-                val outputDirLocal = InternalArtifactType.UNIT_TEST_CODE_COVERAGE.getOutputDir(buildDir)
-                val outputDirInstr = InternalArtifactType.CODE_COVERAGE.getOutputDir(buildDir)
+                // TODO: Use a proper API when https://issuetracker.google.com/332830826 is fixed
                 executionData.setFrom(
-                    project.fileTree(outputDirLocal.path + "/${variant.name}UnitTest")
+                    project.fileTree("$buildDir/outputs/unit_test_code_coverage/${variant.name}UnitTest")
                         .matching { include("**/*.exec") },
 
-                    project.fileTree(outputDirInstr.path + "/${variant.name}AndroidTest")
+                    project.fileTree("$buildDir/outputs/code_coverage/${variant.name}AndroidTest")
                         .matching { include("**/*.ec") }
                 )
             }
