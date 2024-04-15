@@ -17,6 +17,7 @@
 import com.android.build.api.artifact.ScopedArtifact
 import com.android.build.api.variant.AndroidComponentsExtension
 import com.android.build.api.variant.ScopedArtifacts
+import io.netty.handler.codec.compression.StandardCompressionOptions.gzip
 import java.util.Locale
 
 plugins {
@@ -99,6 +100,9 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 }
 
+interface Injected {
+    @get:Inject val archiveOperations: ArchiveOperations
+}
 /**
  * Replace with https://issuetracker.google.com/329683722 when available.
  */
@@ -118,14 +122,23 @@ fun setupCombinedReportTestCoverage() {
 
     androidComponents.onVariants { variant ->
         val projectObjFactory = project.objects
+        val archiveOperations = project.objects.newInstance<Injected>().archiveOperations
         val buildDir = layout.buildDirectory.get().asFile
         val allJars: ListProperty<RegularFile> = projectObjFactory.listProperty(RegularFile::class.java)
         val allDirectories: ListProperty<Directory> = projectObjFactory.listProperty(Directory::class.java)
+
+
         val reportTask =
             tasks.register("create${variant.name.capitalize()}CombinedCoverageReport", JacocoReport::class) {
 
                 classDirectories.setFrom(
-                    allJars,
+                    allJars.map { it: MutableList<RegularFile> ->
+                        it.map {
+                            archiveOperations.zipTree(it).matching {
+                                exclude(coverageExclusions)
+                            }
+                        }
+                    },
                     allDirectories.map { dirs ->
                         dirs.map { dir ->
                             projectObjFactory.fileTree().setDir(dir).exclude(coverageExclusions)
