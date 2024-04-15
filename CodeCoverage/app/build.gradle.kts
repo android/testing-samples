@@ -52,6 +52,16 @@ android {
             )
         }
     }
+
+    flavorDimensions += "version"
+    productFlavors {
+        create("flavor1") {
+            dimension = "version"
+        }
+        create("flavor2") {
+            dimension = "version"
+        }
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -59,6 +69,23 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    testOptions {
+        managedDevices {
+            localDevices {
+                // run with ../gradlew pixel2api30DebugAndroidTest
+                create("pixel2api30") {
+                    // Use device profiles you typically see in Android Studio.
+                    device = "Pixel 2"
+                    // Use only API levels 27 and higher.
+                    apiLevel = 30
+                    // To include Google services, use "google".
+                    systemImageSource = "aosp"
+                }
+            }
+        }
+    }
+
     setupCombinedReportTestCoverage()
 }
 
@@ -115,11 +142,21 @@ fun setupCombinedReportTestCoverage() {
 
                 // TODO: Use a proper API when https://issuetracker.google.com/332830826 is fixed
                 executionData.setFrom(
+                    // Local tests
                     project.fileTree("$buildDir/outputs/unit_test_code_coverage/${variant.name}UnitTest")
                         .matching { include("**/*.exec") },
 
+                    // Instrumented tests
                     project.fileTree("$buildDir/outputs/code_coverage/${variant.name}AndroidTest")
-                        .matching { include("**/*.ec") }
+                        .matching { include("**/*.ec") },
+
+                    // Instrumented tests with GMD
+                    project.fileTree("$buildDir/outputs/managed_device_code_coverage/${variant.name}")
+                        .matching { include("**/*.ec") },
+
+                    // Instrumented tests with GMD and flavors
+                    project.fileTree("$buildDir/outputs/managed_device_code_coverage/${variant.buildType}/flavors/${variant.flavorName}/")
+                        .matching { include("**/*.ec") },
                 )
             }
 
