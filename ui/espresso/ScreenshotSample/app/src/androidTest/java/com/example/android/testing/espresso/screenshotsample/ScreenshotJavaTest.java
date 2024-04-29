@@ -3,15 +3,13 @@ package com.example.android.testing.espresso.screenshotsample;
 import static androidx.test.core.app.DeviceCapture.takeScreenshot;
 import static androidx.test.core.graphics.BitmapStorage.writeToTestStorage;
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.captureToBitmap;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static androidx.test.espresso.screenshot.ViewInteractionCapture.captureToBitmap;
 
-import android.view.View;
+import android.graphics.Bitmap;
 
-import androidx.concurrent.futures.ResolvableFuture;
-import androidx.test.core.app.ActivityScenario;
-import androidx.test.core.view.ViewCapture;
+import androidx.test.espresso.action.ViewActions;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
@@ -21,8 +19,6 @@ import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 
 import java.io.IOException;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
 /**
  * Equivalent of {@link ScreenshotTest} for java.
@@ -42,7 +38,16 @@ public class ScreenshotJavaTest {
      */
     @Test
     public void saveActivityBitmap() throws IOException {
-        writeToTestStorage(captureToBitmap(onView(isRoot())), getClass().getSimpleName() + "_" + nameRule.getMethodName());
+        onView(isRoot()).perform(captureToBitmap(new ViewActions.BitmapReceiver() {
+            @Override
+            public void onBitmapCaptured(Bitmap bitmap) {
+                try {
+                    writeToTestStorage(bitmap, ScreenshotJavaTest.class.getSimpleName() + "_" + nameRule.getMethodName());
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }));
     }
 
     /**
@@ -50,7 +55,18 @@ public class ScreenshotJavaTest {
      */
     @Test
     public void saveViewBitmap() throws IOException {
-        writeToTestStorage(captureToBitmap(onView(withText("Hello World!"))), getClass().getSimpleName() + "_" + nameRule.getMethodName());
+        onView(withText("Hello World!")).perform(captureToBitmap(new ViewActions.BitmapReceiver() {
+            @Override
+            public void onBitmapCaptured(Bitmap bitmap) {
+                try {
+                    writeToTestStorage(bitmap, ScreenshotJavaTest.class.getSimpleName() + "_" + nameRule.getMethodName());
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }));
+
+
     }
 
     /**

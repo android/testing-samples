@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.android.testing.espresso.screenshotsample"
-        minSdk 18
+        minSdk 19
         targetSdkVersion 33
         versionCode 1
         versionName "1.0"
