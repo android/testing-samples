@@ -1,8 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlinVersion = "1.7.10"
-    ext.agpVersion = "8.1.1"
+    ext.kotlinVersion = "1.8.20"
+    ext.agpVersion = '8.3.2'
     repositories {
         // Insert local test repo here
         google()
@@ -27,7 +27,7 @@ allprojects {
 
 ext {
     robolectricVersion = "4.10.3"
-    extTruthVersion = "1.6.0-alpha01"
-    extJUnitVersion = "1.2.0-alpha01"
-    espressoDeviceVersion = "1.0.0-alpha07"
+    extTruthVersion = "1.6.0-alpha04"
+    extJUnitVersion = "1.2.0-alpha04"
+    espressoDeviceVersion = "1.0.0-alpha09"
 }
