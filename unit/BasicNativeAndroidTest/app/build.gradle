@@ -17,10 +17,28 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
-                arguments "-DANDROID_STL=c++_shared"
+                arguments "-DANDROID_STL=c++_shared", "-DENABLE_NATIVE_TEST=OFF"
             }
         }
     }
+
+    flavorDimensions = ["default"]
+
+    productFlavors {
+        core {
+            dimension "default"
+            applicationId = defaultConfig.applicationId
+        }
+        nativeTest {
+            dimension "default"
+            externalNativeBuild {
+                cmake {
+                    arguments "-DENABLE_NATIVE_TEST=ON"
+                }
+            }
+        }
+    }
+
     externalNativeBuild {
         cmake {
             path "src/main/cpp/CMakeLists.txt"
@@ -47,7 +65,8 @@ android {
     testOptions {
         managedDevices {
             devices {
-                // run with ../gradlew  nexusOneApi30DebugAndroidTest
+                // run with ../gradlew  nexusOneApi30CoreDebugAndroidTest without native tests
+                // or ../gradlew nexusOneApi30NativeTestDebugAndroidTest with native tests
                 nexusOneApi30(com.android.build.api.dsl.ManagedVirtualDevice) {
                     // A lower resolution device is used here for better emulator performance
                     device = "Nexus One"
@@ -62,9 +81,10 @@ android {
 }
 
 dependencies {
-    androidTestImplementation "junit:junit:$rootProject.junitVersion"
-    implementation "androidx.test.ext:junit-gtest:$rootProject.junitGtestVersion"
-    implementation "com.android.ndk.thirdparty:googletest:$rootProject.googletestVersion"
+    nativeTestImplementation "androidx.test.ext:junit-gtest:$rootProject.junitGtestVersion"
+    nativeTestImplementation "com.android.ndk.thirdparty:googletest:$rootProject.googletestVersion"
     androidTestImplementation "androidx.test:runner:$rootProject.runnerVersion"
     androidTestImplementation "androidx.test.ext:junit-ktx:$extJUnitVersion"
+    androidTestImplementation "com.google.truth:truth:rootProject.truthVersion"
+    androidTestImplementation "junit:junit:$rootProject.junitVersion"
 }
