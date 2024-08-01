@@ -2,11 +2,11 @@ apply plugin: "com.android.application"
 
 
 android {
-    compileSdk 33
+    compileSdk 34
     defaultConfig {
         applicationId "com.example.android.testing.androidjunitrunnersample"
-        minSdkVersion 14
-        targetSdkVersion 33
+        minSdkVersion 21
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
 
