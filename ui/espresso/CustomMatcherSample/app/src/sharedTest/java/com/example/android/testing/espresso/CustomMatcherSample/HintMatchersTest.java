@@ -133,7 +133,7 @@ public class HintMatchersTest {
 
     @Test
     public void validation_resultIsIncorrect() {
-        // Type a valid string and click on the button.
+        // Type an invalid string and click on the button.
         onView(withId(R.id.editText))
                 .perform(typeText(INVALID_STRING_TO_BE_TYPED), closeSoftKeyboard());
         onView(withId(R.id.button)).perform(click());
