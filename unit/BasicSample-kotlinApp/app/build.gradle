@@ -5,13 +5,13 @@ apply plugin: "kotlin-android"
 apply plugin: "kotlin-android-extensions"
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 35
     defaultConfig {
         applicationId "com.example.android.testing.unittesting.BasicSample"
-        minSdkVersion 14
+        minSdkVersion 21
         versionCode 1
         versionName "1.0"
-        targetSdkVersion 27
+        targetSdkVersion 35
     }
 }
 
