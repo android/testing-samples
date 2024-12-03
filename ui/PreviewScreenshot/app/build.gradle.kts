@@ -56,9 +56,6 @@ android {
     buildFeatures {
         compose = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.15"
-    }
 
     experimentalProperties["android.experimental.enableScreenshotTest"] = true
 
