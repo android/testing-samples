@@ -66,5 +66,5 @@ dependencies {
         // workaround for https://github.com/android/android-test/issues/861
         exclude group: "org.checkerframework", module: "checker"
     }
-    androidTestImplementation "com.google.truth:truth:1.1.3"
+    androidTestImplementation "com.google.truth:truth:1.4.4"
 }

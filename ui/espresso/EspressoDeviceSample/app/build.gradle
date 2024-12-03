@@ -58,6 +58,6 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-device:" + rootProject.espressoDeviceVersion
 
     testImplementation "androidx.test.ext:junit:" + rootProject.extJUnitVersion
-    testImplementation "junit:junit:4.12"
+    testImplementation "junit:junit:4.13.2"
     testImplementation "org.robolectric:robolectric:" + rootProject.robolectricVersion
 }
