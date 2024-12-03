@@ -1,0 +1,23 @@
+# Workflow name
+name: Build + Test all
+on:
+  # When it will be triggered
+  # And in which branch
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        
+      - name: Set Up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu' # See 'Supported distributions' for available options
+          java-version: '17'
+          cache: 'gradle'
+
+      - name: Build project and run local and device tests
+        run: ./test_all.sh
