@@ -1,12 +1,12 @@
 apply plugin: "com.android.application"
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 35
     buildToolsVersion = rootProject.buildToolsVersion
     defaultConfig {
         applicationId "com.example.android.testing.espresso.intents.AdvancedSample"
         minSdkVersion 21
-        targetSdkVersion 34
+        targetSdkVersion 35
         versionCode 1
         versionName "1.0"
 

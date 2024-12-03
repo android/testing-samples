@@ -75,22 +75,22 @@ maven_install(
         maven.artifact(
             "com.google.inject",
             "guice",
-            "4.0",
+            "7.0.0",
             neverlink = True,
         ),
-        "junit:junit:4.12",
+        "junit:junit:4.13.2",
         "javax.inject:javax.inject:1",
         "org.hamcrest:java-hamcrest:2.0.0.0",
         maven.artifact(
             "org.robolectric",
             "robolectric",
-            "4.3-beta-1",
+            "4.14.1",
             neverlink = True,
             exclusions = ["com.google.guava:guava"],
         ),
-        "com.google.guava:guava:26.0-android",
-        "com.google.truth:truth:0.42",
-        "com.google.android.apps.common.testing.accessibility.framework:accessibility-test-framework:2.0",
+        "com.google.guava:guava:33.3.1-jre",
+        "com.google.truth:truth:1.4.4",
+        "com.google.android.apps.common.testing.accessibility.framework:accessibility-test-framework:4.1.1",
     ],
     jetify = True,
     repositories = [
@@ -102,11 +102,11 @@ maven_install(
 
 http_archive(
     name = "bazel_toolchains",
-    sha256 = "4d348abfaddbcee0c077fc51bb1177065c3663191588ab3d958f027cbfe1818b",
-    strip_prefix = "bazel-toolchains-2.1.0",
+    sha256 = "ef30f61a17ac7f11a121e90818f85faa7ad27a99b6665bd59201afe17eca5182",
+    strip_prefix = "bazel-toolchains-5124557",
     urls = [
-        "https://github.com/bazelbuild/bazel-toolchains/releases/download/2.1.0/bazel-toolchains-2.1.0.tar.gz",
-        "https://mirror.bazel.build/github.com/bazelbuild/bazel-toolchains/archive/2.1.0.tar.gz",
+        "https://github.com/bazelbuild/bazel-toolchains/releases/download/5124557/bazel-toolchains-5124557.tar.gz",
+        "https://mirror.bazel.build/github.com/bazelbuild/bazel-toolchains/archive/5124557.tar.gz",
     ],
 )
 

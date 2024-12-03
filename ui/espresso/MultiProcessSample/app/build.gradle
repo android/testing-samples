@@ -17,11 +17,11 @@
 apply plugin: "com.android.application"
 
 android {
-    compileSdk 34
+    compileSdk 35
     defaultConfig {
         applicationId "com.example.android.testing.espresso.multiprocesssample"
         minSdkVersion 21
-        targetSdkVersion 34
+        targetSdkVersion 35
         versionCode 1
         versionName "1.0"
 
@@ -54,7 +54,7 @@ android {
 }
 
 dependencies {
-    testImplementation "junit:junit:4.12"
+    testImplementation "junit:junit:4.13.2"
     androidTestImplementation "androidx.test:core:" + rootProject.coreVersion
     androidTestImplementation "androidx.test.ext:junit:" + rootProject.extJUnitVersion
     androidTestImplementation "androidx.test.espresso:espresso-core:" + rootProject.espressoVersion

@@ -2,7 +2,7 @@
 
 buildscript {
     ext.kotlinVersion = "1.9.22"
-    ext.agpVersion = "8.5.0"
+    ext.agpVersion = "8.7.3"
     repositories {
         // Insert local test repo here
         google()
@@ -26,8 +26,8 @@ allprojects {
 }
 
 ext {
-    robolectricVersion = "4.13"
+    robolectricVersion = "4.14.1"
     extTruthVersion = "1.6.0"
     extJUnitVersion = "1.2.1"
-    espressoDeviceVersion = "1.0.0-alpha09"
+    espressoDeviceVersion = "1.0.1"
 }

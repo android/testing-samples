@@ -2,7 +2,7 @@
 
 buildscript {
     ext.kotlinVersion = "1.9.22"
-    ext.agpVersion = "8.5.0"
+    ext.agpVersion = "8.7.3"
     repositories {
         // Insert local test repo here
         google()
@@ -26,12 +26,12 @@ allprojects {
 }
 
 ext {
-    androidxAnnotationVersion = "1.5.0"
+    androidxAnnotationVersion = "1.9.1"
     robolectricVersion = "4.13"
     extTruthVersion = "1.6.0"
     coreVersion = "1.6.1"
     extJUnitVersion = "1.2.1"
-    runnerVersion = "1.6.1"
+    runnerVersion = "1.6.2"
     espressoVersion = "3.6.1"
-    guavaVersion = "31.1-android"
+    guavaVersion = "33.3.1-jre"
 }
