@@ -2,6 +2,10 @@ apply plugin: "com.android.application"
 
 apply plugin: "kotlin-android"
 
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+
+apply plugin: 'com.android.internal.application'
+
 android {
     compileSdk 34
     defaultConfig {
