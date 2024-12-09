@@ -29,7 +29,6 @@ ext {
     coreVersion = "1.6.1"
     extJUnitVersion = "1.2.1"
     runnerVersion = "1.6.2"
-    rulesVersion = "1.6.0-alpha01"
     testServicesVersion = "1.5.0"
     orchestratorVersion = "1.5.1"
     espressoVersion = "3.6.1"
