@@ -1,6 +1,7 @@
 # Workflow name
 name: Compose Preview Screenshot
 on:
+  workflow_dispatch:
   # When it will be triggered
   # And in which branch
   pull_request:
