@@ -1,6 +1,9 @@
 # Workflow name
 name: Build + Test all
 on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
   # When it will be triggered
   # And in which branch
   pull_request:
