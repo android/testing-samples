@@ -101,15 +101,14 @@ maven_install(
 )
 
 http_archive(
-    name = "bazel_toolchains",
-    sha256 = "4d348abfaddbcee0c077fc51bb1177065c3663191588ab3d958f027cbfe1818b",
-    strip_prefix = "bazel-toolchains-2.1.0",
-    urls = [
-        "https://github.com/bazelbuild/bazel-toolchains/releases/download/2.1.0/bazel-toolchains-2.1.0.tar.gz",
-        "https://mirror.bazel.build/github.com/bazelbuild/bazel-toolchains/archive/2.1.0.tar.gz",
-    ],
+    name = "bazelci_rules",
+    url = "https://github.com/bazelbuild/continuous-integration/releases/download/rules-1.0.0/bazelci_rules-1.0.0.tar.gz",
+    sha256 = "eca21884e6f66a88c358e580fd67a6b148d30ab57b1680f62a96c00f9bc6a07e",
+    strip_prefix= "bazelci_rules-1.0.0",
 )
+load("@bazelci_rules//:rbe_repo.bzl", "rbe_preconfig")
 
-load("@bazel_toolchains//rules:rbe_repo.bzl", "rbe_autoconfig")
-
-rbe_autoconfig(name = "rbe_default")
+rbe_preconfig(
+    name = "rbe_default",
+    toolchain = "ubuntu1604-bazel-java8",
+)
