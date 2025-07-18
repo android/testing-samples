@@ -25,3 +25,17 @@ jobs:
       - name: Build project and run screenshot tests
         working-directory: ./ui/PreviewScreenshot
         run: ./gradlew validateDebugScreenshotTest
+
+      - name: Upload test results 
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: '**/build/test-results/'
+
+      - name: Upload screenshot tests results 
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reports
+          path: '**/build/reports/screenshotTest/'
