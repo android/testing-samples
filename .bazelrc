@@ -58,6 +58,13 @@ build:remote --remote_executor=remotebuildexecution.googleapis.com
 # default.
 build:remote --google_default_credentials
 
+# Builds without the bytes; no intermediate file downloads.
+# https://github.com/bazelbuild/bazel/issues/6862
+build:remote --experimental_remote_download_outputs=toplevel
+build:remote --experimental_inmemory_jdeps_files
+build:remote --experimental_inmemory_dotd_files
+
+
 # -------------------------------------------
 # Custom RBE configuration for Android builds
 # -------------------------------------------
