@@ -3,11 +3,11 @@ apply plugin: "com.android.application"
 apply plugin: "kotlin-android"
 
 android {
-    compileSdk 34
+    compileSdk 35
     defaultConfig {
         applicationId "com.example.android.testing.espresso.BasicSample"
         minSdkVersion 21
-        targetSdkVersion 34
+        targetSdkVersion 35
         versionCode 1
         versionName "1.0"
 
@@ -62,7 +62,7 @@ dependencies {
 
     testImplementation "androidx.test:core:" + rootProject.coreVersion;
     testImplementation "androidx.test.ext:junit:" + rootProject.extJUnitVersion
-    testImplementation "junit:junit:4.12"
+    testImplementation "junit:junit:4.13.2"
     testImplementation "org.robolectric:robolectric:" + rootProject.robolectricVersion
     testImplementation "androidx.test.espresso:espresso-core:" + rootProject.espressoVersion
     testImplementation "androidx.test.espresso:espresso-intents:" + rootProject.espressoVersion

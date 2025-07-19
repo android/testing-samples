@@ -2,5 +2,11 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "local>android/.github:renovate-config"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["com.google.guava:guava"],
+      "versioning": "regex:^(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?(-(?<compatibility>.*))?$"
+    }
   ]
 }

@@ -5,13 +5,13 @@ apply plugin: "kotlin-android"
 apply plugin: "kotlin-android-extensions"
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 35
     defaultConfig {
         applicationId "com.example.android.testing.unittesting.BasicSample"
-        minSdkVersion 14
+        minSdkVersion 21
         versionCode 1
         versionName "1.0"
-        targetSdkVersion 27
+        targetSdkVersion 35
     }
 }
 
@@ -19,6 +19,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
 
     // Unit testing dependencies.
-    testImplementation "junit:junit:4.12"
-    testImplementation "org.mockito:mockito-core:2.8.9"
+    testImplementation "junit:junit:4.13.2"
+    testImplementation "org.mockito:mockito-core:5.14.2"
 }
