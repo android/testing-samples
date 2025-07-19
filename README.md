@@ -133,7 +133,7 @@ Support
 -------
 
 - Google+ Community: https://plus.google.com/communities/105153134372062985968
-- Stack Overflow: http://stackoverflow.com/questions/tagged/android-testing
+- Stack Overflow: https://stackoverflow.com/questions/tagged/android-testing
 
 If you've found an error in this sample, please file an issue:
 https://github.com/googlesamples/android-testing
@@ -153,7 +153,7 @@ file to you under the Apache License, Version 2.0 (the "License"); you may not
 use this file except in compliance with the License.  You may obtain a copy of
 the License at
 
-http://www.apache.org/licenses/LICENSE-2.0
+https://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
