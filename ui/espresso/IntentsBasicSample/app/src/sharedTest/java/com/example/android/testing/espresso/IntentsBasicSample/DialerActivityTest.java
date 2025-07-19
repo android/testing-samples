@@ -41,13 +41,17 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
+
+import androidx.test.espresso.core.internal.deps.guava.collect.Iterables;
 import androidx.test.espresso.intent.Intents;
 import androidx.test.espresso.intent.rule.IntentsTestRule;
+import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.rule.GrantPermissionRule;
-import com.google.common.collect.Iterables;
+
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -65,24 +69,26 @@ public class DialerActivityTest {
     @Rule public GrantPermissionRule grantPermissionRule = GrantPermissionRule.grant("android.permission.CALL_PHONE");
 
     /**
-     * A JUnit {@link Rule @Rule} to init and release Espresso Intents before and after each
-     * test run.
-     * <p>
-     * Rules are interceptors which are executed for each test method and will run before
-     * any of your setup code in the {@link Before @Before} method.
-     * <p>
-     * This rule is based on {@link ActivityTestRule} and will create and launch the activity
-     * for you and also expose the activity under test.
+     * Use {@link ActivityScenarioRule} to create and launch the activity under test, and close it
+     * after test completes. This is a replacement for {@link androidx.test.rule.ActivityTestRule}.
      */
     @Rule
-    public IntentsTestRule<DialerActivity> mActivityRule = new IntentsTestRule<>(
+    public ActivityScenarioRule<DialerActivity> mActivityRule = new ActivityScenarioRule<>(
             DialerActivity.class);
 
     @Before
     public void stubAllExternalIntents() {
+        // Initializes Intents and begins recording intents.
+        Intents.init();
         // By default Espresso Intents does not stub any Intents. Stubbing needs to be setup before
         // every test run. In this case all external Intents will be blocked.
         intending(not(isInternal())).respondWith(new ActivityResult(Activity.RESULT_OK, null));
+    }
+
+    @After
+    public void tearDown() {
+        // Clears Intents state.
+        Intents.release();
     }
 
     @Test
