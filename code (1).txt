@@ -1,0 +1,257 @@
+import { useState, useCallback } from 'react';
+import { View, Text, StyleSheet, FlatList, TextInput, TouchableOpacity, Share, ScrollView } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import TransactionItem from '../components/TransactionItem';
+import { mockTransactions, Transaction } from '../utils/mockData';
+import { toast } from 'sonner-native';
+import { useNavigation } from '@react-navigation/native'; // Supondo que você use @react-navigation/native
+
+export default function HomeScreen() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [transactions, setTransactions] = useState<Transaction[]>(mockTransactions);
+  const [dateFilter, setDateFilter] = useState<'all' | 'today' | 'week' | 'month'>('all');
+  const navigation = useNavigation();
+
+  const filteredTransactions = transactions.filter(transaction => {
+    const matchesSearch = transaction.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      transaction.amount.toString().includes(searchQuery);
+
+    const transactionDate = new Date(transaction.date);
+    const today = new Date();
+    const oneWeekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+    const oneMonthAgo = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
+
+    switch (dateFilter) {
+      case 'today':
+        return matchesSearch && transactionDate.toDateString() === today.toDateString();
+      case 'week':
+        return matchesSearch && transactionDate >= oneWeekAgo;
+      case 'month':
+        return matchesSearch && transactionDate >= oneMonthAgo;
+      default:
+        return matchesSearch;
+    }
+  });
+
+  const handleTransactionPress = useCallback((transaction: Transaction) => {
+    navigation.navigate('TransactionDetail', { transaction });
+  }, [navigation]);
+
+  const handleTransactionLongPress = useCallback((transaction: Transaction) => {
+    const updatedTransactions = transactions.map(t => {
+      if (t.id === transaction.id) {
+        return { ...t, isIdentified: !t.isIdentified };
+      }
+      return t;
+    });
+    setTransactions(updatedTransactions);
+
+    toast.success(
+      transaction.isIdentified ?
+      'Transacción marcada como no identificada' :
+      'Transacción identificada correctamente'
+    );
+  }, [transactions]);
+
+  const handleExport = useCallback(async () => {
+    const transactionsText = filteredTransactions
+      .map(t => `${t.date} - ${t.description} - ${t.type === 'deposit' ? '+' : '-'}$${t.amount}`)
+      .join('\n');
+
+    try {
+      await Share.share({
+        message: transactionsText,
+        title: 'Exportar Transacciones'
+      });
+    } catch (error) {
+      toast.error('Error al exportar las transacciones');
+    }
+  }, [filteredTransactions]);
+
+  const totalDeposits = transactions
+    .filter(t => t.type === 'deposit')
+    .reduce((sum, t) => sum + t.amount, 0);
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <View style={styles.headerTop}>
+          <Text style={styles.title}>Control de Depósitos</Text>
+          <TouchableOpacity onPress={handleExport} style={styles.exportButton}>
+            <MaterialCommunityIcons name="export-variant" size={24} color="#007AFF" />
+          </TouchableOpacity>
+        </View>
+
+        {/* ÚNICA INSTÂNCIA CORRETA DOS BOTÕES DE FILTRO */}
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          style={styles.filterContainer}
+        >
+          <TouchableOpacity
+            style={[styles.filterButton, dateFilter === 'all' && styles.filterButtonActive]}
+            onPress={() => setDateFilter('all')}
+          >
+            <Text style={[styles.filterText, dateFilter === 'all' && styles.filterTextActive]}>
+              Todos
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.filterButton, dateFilter === 'today' && styles.filterButtonActive]}
+            onPress={() => setDateFilter('today')}
+          >
+            <Text style={[styles.filterText, dateFilter === 'today' && styles.filterTextActive]}>
+              Hoy
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.filterButton, dateFilter === 'week' && styles.filterButtonActive]}
+            onPress={() => setDateFilter('week')}
+          >
+            <Text style={[styles.filterText, dateFilter === 'week' && styles.filterTextActive]}>
+              Esta Semana
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.filterButton, dateFilter === 'month' && styles.filterButtonActive]}
+            onPress={() => setDateFilter('month')}
+          >
+            <Text style={[styles.filterText, dateFilter === 'month' && styles.filterTextActive]}>
+              Este Mes
+            </Text>
+          </TouchableOpacity>
+        </ScrollView>
+      </View>
+
+      <View style={styles.summaryContainer}>
+        <View style={styles.summaryCard}>
+          <MaterialCommunityIcons name="bank-transfer-in" size={24} color="#34C759" />
+          <View style={styles.summaryText}>
+            <Text style={styles.summaryLabel}>Total Depósitos</Text>
+            <Text style={styles.summaryAmount}>${totalDeposits.toFixed(2)}</Text>
+          </View>
+        </View>
+      </View>
+
+      <View style={styles.searchContainer}>
+        <MaterialCommunityIcons name="magnify" size={20} color="#8E8E93" />
+        <TextInput
+          style={styles.searchInput}
+          placeholder="Buscar transacciones..."
+          value={searchQuery}
+          onChangeText={setSearchQuery}
+        />
+      </View>
+
+      <FlatList
+        data={filteredTransactions}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <TransactionItem
+            {...item}
+            onPress={() => handleTransactionPress(item)}
+            onLongPress={() => handleTransactionLongPress(item)}
+          />
+        )}
+        contentContainerStyle={styles.list}
+      />
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  headerTop: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 16,
+  },
+  exportButton: {
+    padding: 8,
+  },
+  filterContainer: {
+    // Mantido como está
+  },
+  filterButton: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 20,
+    backgroundColor: '#F2F2F7',
+    marginRight: 8,
+  },
+  filterButtonActive: {
+    backgroundColor: '#007AFF',
+  },
+  filterText: {
+    color: '#8E8E93',
+    fontSize: 14,
+    fontWeight: '500',
+  },
+  filterTextActive: {
+    color: 'white',
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#F2F2F7',
+  },
+  header: {
+    paddingHorizontal: 16,
+    paddingTop: 16,
+    paddingBottom: 8, // Ajustado para melhor espaçamento
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#1C1C1E',
+  },
+  summaryContainer: { // Adicionado um container para melhor controle do layout do card
+    paddingHorizontal: 16,
+    marginBottom: 8,
+  },
+  summaryCard: {
+    flexDirection: 'row',
+    backgroundColor: 'white',
+    padding: 16,
+    borderRadius: 12,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  summaryText: {
+    marginLeft: 12,
+  },
+  summaryLabel: {
+    fontSize: 14,
+    color: '#8E8E93',
+  },
+  summaryAmount: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#34C759',
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    marginHorizontal: 16,
+    marginTop: 8, // Ajustado
+    padding: 8,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#E5E5EA',
+  },
+  searchInput: {
+    flex: 1,
+    marginLeft: 8,
+    fontSize: 16,
+    color: '#1C1C1E',
+  },
+  list: {
+    paddingBottom: 16,
+    paddingHorizontal: 16, // Adicionado para consistência
+  },
+});
